@@ -1,0 +1,27 @@
+{% assign pages = site.pages | sort: "weight"  %}
+
+{% assign currentUrlParts = page.url | split: '/' %}
+{% assign currentLevel = currentUrlParts | size %}
+{% assign pageName = currentUrlParts | last %}
+
+{% if pageName contains '.html' %}
+  {% assign currentBaseUrl = page.url | remove: pageName %}
+{% else %}
+  {% assign currentBaseUrl = page.url %}
+  {% assign pageName = '' %}
+{% endif %}
+
+{% for node in pages %}
+  {% assign nodeUrlParts = node.url | split: '/' %}
+  {% assign nodeLevel = nodeUrlParts | size %}
+  {% assign filename = nodeUrlParts | last %}
+  {% unless filename contains '.html' %}
+    {% if node.url == currentBaseUrl and currentLevel >= nodeLevel %}
+      <li class="level1 active"><a href='{{site.baseurl}}{{node.url}}'>{{node.title}}</a></li>
+      {% include navlevel2.html %}
+    {% else %}
+      <li class="level1"><a href="{{site.baseurl}}{{node.url}}">{{node.title}}</a></li>
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
