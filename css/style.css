@@ -69,7 +69,10 @@ body {
     /* display: block;
     width: 12em; */
     padding: 0.2em 0em;
+    padding-left: 0.6em;
+    text-indent: -0.4em;
     color: gray;
+
 }
 
 #navigation ul li.active a {
