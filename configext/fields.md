@@ -486,8 +486,13 @@ $BASEDIR/opus4/modules/frontdoor/view s/scripts/index/index_custom.xslt
 
 aufgenommen werden:
 
-<xsl:apply-templates select="Enrichment[@KeyName='externeURL']" mode="unescaped" />
+{% highlight xml %}
+<xsl:apply-templates select="Enrichment[@KeyName='externeURL']"
+    mode="unescaped" />
+{% endhighlight %}
 
 Soll der Inhalt maskiert werden, dann wird der Normalmodus verwendet (wie bisher):
 
+{% highlight xml %}
 <xsl:apply-templates select="Enrichment[@KeyName='externeURL']" />
+{% endhighlight %}
