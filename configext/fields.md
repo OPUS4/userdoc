@@ -457,10 +457,12 @@ werden müssen.
 
 Im Bereich
 
+{% highlight xml %}
 <!-- Enrichment Section: add the enrichment keys that have to be displayed in
 frontdoor -->
 ...
 <!-- End Enrichtments -->
+{% endhighlight %}
 
 beginnt die Auswahl der anzuzeigenden Enrichments. Fügen Sie zwischen Anfang und Ende des
 Kommentars folgende Zeile hinzu, wenn Sie das Feld NeuesFeldXYZ anzeigen möchten:
