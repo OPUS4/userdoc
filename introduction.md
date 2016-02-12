@@ -6,8 +6,8 @@ weight: 0
 # Was ist OPUS?
 
 OPUS ist eine Open Source-Software unter der GNU General Public License für den Betrieb von institutionellen
-Dokumentenservern bzw. Repositorien. OPUS steht für Online Publikationsverbund Universität Stuttgart und wurde dort Ende
-der 90er Jahre vom Rechenzentrum der Universitätsbibliothek entwickelt. Seitdem wird OPUS mit nationalen Partnern
+Dokumentenservern bzw. Repositorien. OPUS steht für Online Publikationsverbund Universität Stuttgart und wurde dort
+Ende der 90er Jahre vom Rechenzentrum der Universitätsbibliothek entwickelt. Seitdem wird OPUS mit nationalen Partnern
 kooperativ weiterentwickelt.
 
 Als frei verfügbare Software basiert OPUS auf PHP und MySQL und kann somit auch mit anderen frei verfügbaren Komponenten
@@ -40,7 +40,8 @@ berücksichtigt, um die Grundlage für eine standardisierte Ablieferung an die D
 
 URN steht für Uniform Resource Name und ist ein Identifikator für digitale Objekte. Der in OPUS4 generierte URN bezieht
 sich auf die Expression "Frontdoor" (also die bibliographische Beschreibung des Dokuments) und nicht auf die (einzelnen)
-Dateien. URNs können in OPUS4 automatisch vergeben werden (s. URN Settings 52). URNs bilden die Grundlage für die
+Dateien. URNs können in OPUS4 automatisch vergeben werden ([s. URN Einstellungen](config/urn.html)). URNs bilden die
+Grundlage für die
 Ablieferung der Dokumente an die Deutsche Nationalbibliothek über die xepicur-Schnittstelle, die in OPUS4 standardmäßig
 integriert ist. Für weitere Informationen zu URNs konsultieren Sie bitte
 [Persistent Identifier](http://www.persistent-identifier.de/?link=3352)
