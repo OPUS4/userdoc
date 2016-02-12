@@ -37,9 +37,10 @@ sudo /etc/init.d/apache2 restart
 
 ## Dateiformate
 
-;publish.filetypes.allowed defines which filetypes can be uploaded.
-;publish.filetypes.allowed = pdf,txt ; filetypes that are accepted in
-publication form
+{% highlight ini %}
+publish.filetypes.allowed defines which filetypes can be uploaded.
+publish.filetypes.allowed = pdf,txt ; filetypes that are accepted in publication form
+{% endhighlight %}
 
 Über den Wert filetypes.allowed (in der OPUS4 config.ini) kann definiert werden, welche
 Dateiformate bei den hochgeladenen Dateien zulässig sind. Die Standard-Formate sind pdf und txt.
