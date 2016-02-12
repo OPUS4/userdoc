@@ -17,5 +17,10 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-
-
+      weight: 0
+      sort: "weight"
+  -
+    scope:
+      path: "documenttypes"
+    values:
+      sort: "title"
