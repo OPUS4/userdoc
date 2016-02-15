@@ -13,10 +13,10 @@ Die Online-Version des OPUS 4 Anwenderhandbuchs befindet sich noch im Aufbau.
 Auf diesen Seiten finden sie Informationen zu OPUS 4, der Anpassung, Konfiguration und dem Betrieb eines Repositoriums
 bzw. institutionellen Dokumentenservers.
 
-[Was ist OPUS?](introduction.html)
-
 Die Dokumentation hier bezieht sich auf die OPUS 4 Version, die auf [GitHub][GITHUB] entwickelt wird. Momentan
 wird dort an der Version 4.5 von OPUS gearbeitet.
+
+[Was ist OPUS?](introduction.html)
 
 ## OPUS 4.4.5 (und früher)
 
