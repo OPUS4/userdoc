@@ -8,27 +8,27 @@ weight: 0
 Die Online-Version des OPUS 4 Anwenderhandbuchs befindet sich noch im Aufbau.
 </p>
 
-## Was ist OPUS 4?
+# Willkommen zur OPUS 4 Dokumentation
 
-OPUS 4 ist eine Open Source Software unter der [GNU General Public License][GNUGPL] für
-den Betrieb von institutionellen und fachlichen Repositorien. OPUS 4 ermöglicht die Erschließung, Veröffentlichung,
-Administration, Recherche und Verbreitung von Dokumenten mit und ohne Volltext.
+Auf diesen Seiten finden sie Informationen zu OPUS 4, der Anpassung, Konfiguration und dem Betrieb eines Repositoriums
+bzw. institutionellen Dokumentenservers.
 
-OPUS 4 richtet sich an alle Hochschulen und andere Kultureinrichtungen, die eigene Publikationen (Hochschulschriften,
-Preprints, Projektergebnisse, etc) als Open Access in einem instituts- oder fachbezogenen Repositorium zur Verfügung
-stellen wollen.
+[Was ist OPUS?](introduction.html)
 
-## Weitere Informationen
+Die Dokumentation hier bezieht sich auf die OPUS 4 Version, die auf [GitHub][GITHUB] entwickelt wird. Momentan
+wird dort an der Version 4.5 von OPUS gearbeitet.
+
+## OPUS 4.4.5 (und früher)
+
+Für die vorhergehenden Versionen bis 4.4.5 gibt es ein Handbuch im [PDF][OPUS4PDF] Format, das heruntergeladen werden
+kann.
 
 Die offizielle [OPUS 4 Homepage][OPUS4] bietet weitere Informationen zum Projekt und den bisher veröffentlichten
 Releases bis Version 4.4.5.
-
-Die Anleitung für Nutzer gibt es als [PDF Datei][OPUS4PDF], die ebenfalls auf der [OPUS 4 Homepage][OPUS4] gefunden
-werden kann. Die im PDF enthaltenen Informationen werden nach und nach Online gebracht.
-
-Der Source Code und diese Dokumentation werden auf [GitHub][GITHUB] gehostet.
 
 [GNUGPL]: http://www.gnu.org/copyleft/gpl.html
 [OPUS4]: http://opus4.kobv.de
 [OPUS4PDF]: https://www.kobv.de/wp-content/uploads/2015/03/kobv_opus_dokumentation_version-4.4.4_de.pdf
 [GITHUB]: https://github.com/opus4
+[DEVDOC]: https://opus4.github.io
+
