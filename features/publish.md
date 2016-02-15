@@ -3,7 +3,7 @@ title: Veröffentlichen
 weight: 70
 ---
 
-## Veröffentlichen
+# Veröffentlichen
 
 Neben der Suche und dem Browsen stellt das Veröffentlichen von Dokumenten die dritte zentrale Funktion in OPUS dar.
 Grundlage für das Veröffentlichen von Dokumenten bilden die Dokumenttypen. Die Standardversion von OPUS4 enthält

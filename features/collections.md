@@ -3,7 +3,7 @@ title: Sammlungen
 weight: 80
 ---
 
-### Sammlungen
+# Sammlungen
 
 Hierarchische Systeme, wie z.B. Institutionen (z.B. Organigramme von Universitäten, Arbeitsgruppen, Forschungsbereiche)
 und Klassifikationen, werden in OPUS4 über die Sammlungen verwaltet. Mit OPUS4 werden standardmäßig folgende

@@ -3,23 +3,23 @@ title: Browsing
 weight: 40
 ---
 
-## Browsing
+# Browsing
 
 Die Funktion 'Browsen' dient dazu, sich einen Überblick über Dokumente nach bestimmten Ordnungskriterien wie z.B.
 anhand des Dokumenttyps oder der Zugehörigkeit zu einer Sammlung, zu verschaffen.
 
-### Zuletzt veröffentlichte Dokumente im Repositorium
+## Zuletzt veröffentlichte Dokumente im Repositorium
 
 Diese Funktion listet für einen schnellen Überblick die zuletzt veröffentlichten Dokumente im Repositorium auf. Die
 Reihenfolge orientiert sich an der erstmaligen Veröffentlichung des Dokuments (Datum der Freischaltung).
 
-### Dokumenttypen
+## Dokumenttypen
 
 Diese Funktion ermöglicht es, nach Dokumenten anhand des Dokumenttyps zu browsen. OPUS4 wird in der Standardversion
 mit den im Anhang 207 beschriebenen und in der Beschreibungssprache XML formulierten Dokumenttypen ausgeliefert. Diese
 Dokumenttypen können geändert (S.83) und es können neue Dokumenttypen (S. 95 definiert werden.
 
-### Schriftenreihen
+## Schriftenreihen
 
 Die Schriftenreihe (auch Serie, Serienwerk, Reihenwerk, Nummerierte Reihe) gehört – in der Fachsprache des
 Bibliothekswesens – gemeinsam mit den Periodika zu den fortlaufenden Sammelwerken. Schriftenreihen sind wie Periodika

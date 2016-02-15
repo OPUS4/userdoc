@@ -3,6 +3,8 @@ title: DINI-Zertifikat
 weight: 60
 ---
 
+# DINI-Zertifikat
+
 Das von der DINI (Deutsche Initiative für Netzwerkinformation) geschaffene Zertifizierungsverfahren für Dokumenten-
 und Publikationsservice (DINI-Zertifikat), das nach den Fassungen von 2004 und 2007 nun bereits in der dritten Version
 2010 vorliegt, verfolgt folgende Ziele:

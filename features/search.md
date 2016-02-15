@@ -3,25 +3,25 @@ title: Suche
 weight: 30
 ---
 
-## Suche
+# Suche
 
 Die Suche wird in OPUS4 über Apache Solr realisiert. Dass bedeutet, dass alle gängigen Funktionen zur Verfügung stehen,
 die Nutzer von anderen Suchmaschinen her kennen, wie beispielsweise Phrasensuche, Trunkierung und eine einfache Suche
 über alle relevanten Felder hinweg.
 
-### Einfache Suche
+## Einfache Suche
 
 In der einfachen Suche wird in den Titeln (Haupt- und Untertitel, Übergeordneter Titel, Übersetzter Titel), den
 Körperschaften, den Abstracts, allen Personen, allen Identifiern, den Volltexten (wenn vorhanden), den Schlagwörtern
 (SWD und freie) und Verlagsinformationen (Name und Ort) der Dokumente gesucht.
 
-### Erweiterte Suche
+## Erweiterte Suche
 
 In der Erweiterten Suche kann gezielt nach Autoren, Titeln, Weiteren Personen, Gutachtern, Zusammenfassungen,
 Volltexten und Jahren gesucht werden. Diese Suchfelder können miteinander kombiniert werden ('Alle Wörter' 'Mindestens
 ein Wort' 'Keines der Wörter').
 
-### RSS-Feeds auf Suchanfragen
+## RSS-Feeds auf Suchanfragen
 
 In OPUS4 können beliebige Suchen (inkl. ausgewählter Facetten) als RSS-Feed abonniert werden. Dazu muss einfach nur
 ```/export/rss``` an die URL angehängt werden.
