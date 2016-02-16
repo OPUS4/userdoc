@@ -24,3 +24,6 @@ defaults:
       path: "documenttypes"
     values:
       sort: "title"
+
+gems:
+  - jekyll-sitemap
