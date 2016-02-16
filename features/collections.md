@@ -1,6 +1,6 @@
 ---
 title: Sammlungen
-weight: 80
+weight: 40
 ---
 
 # Sammlungen

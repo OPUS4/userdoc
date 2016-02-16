@@ -3,7 +3,7 @@ title: Begriffe und Funktionen
 weight: 20
 ---
 
-# Begriffe und Funktionen
+# Funktionen
 
 Das verwendete Vokabular für Funktionen und Bereiche ist in einigen Punkten spezifisch für OPUS.
 An dieser Stelle werden daher alle Funktionen vorgestellt, auf die in der Applikation zugegriffen

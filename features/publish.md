@@ -1,6 +1,6 @@
 ---
 title: Veröffentlichen
-weight: 70
+weight: 30
 ---
 
 # Veröffentlichen

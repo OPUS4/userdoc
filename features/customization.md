@@ -1,6 +1,6 @@
 ---
 title: Anpassungen
-weight: 90
+weight: 80
 ---
 
 # Anpassungen
