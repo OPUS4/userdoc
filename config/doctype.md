@@ -11,7 +11,7 @@ dieser Parameter auskommentiert, werden alle Dokumenttypen angezeigt. Sollen nur
 angezeigt werden, können diese durch exclude ausgeschlossen werden.
 
 {% highlight ini %}
-DOCUMENTTYPE SETTINGS
+; DOCUMENTTYPE SETTINGS
 ; You can define which document types should be shown in the publish module or
 ; which ones should be excluded (comma separated names of XML files without
 ; extension). If you don't set documentTypes.include and documentTypes.exclude

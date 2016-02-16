@@ -6,7 +6,7 @@ weight: 20
 # Export Settings
 
 Um den XML-Export 16 aus OPUS zu erleichtern gibt es seit der Version 4.4.4 die Möglichkeit, einen Button auf der
-Frontdoor und auf den Ergebnisseiten der Suche anzuzeigen. Dieser Button wird über Parameter in der config.ini 
+Frontdoor und auf den Ergebnisseiten der Suche anzuzeigen. Dieser Button wird über Parameter in der config.ini
 aktiviert, indem die entsprechenden Schlüssel aus der config.ini.template kopiert und die Kommentarzeichen entfernt
 werden, und steht dann dem Administrator und allen Nutzerrollen mit dem Recht export zur Verfügung.
 
@@ -17,7 +17,7 @@ export.stylesheet.frontdoor = example
 export.stylesheet.search = example
 {% endhighlight %}
 
-Diese Werte triggern zum einen die Anzeige des Buttons und gibt zum anderen das zu verwendende Stylesheet an. Die 
-Stylesheets werden unter ```$BASEDIR/opus4/modules/ex port/view s/scripts/stylesheets-custom``` abgelegt, wobei das 
-```example.xslt``` in der OPUS-Standardauslieferung enthalten ist (siehe auch die Beschreibung unter Export) 16. 
+Diese Werte triggern zum einen die Anzeige des Buttons und gibt zum anderen das zu verwendende Stylesheet an. Die
+Stylesheets werden unter `$BASEDIR/opus4/modules/ex port/view s/scripts/stylesheets-custom` abgelegt, wobei das
+`example.xslt` in der OPUS-Standardauslieferung enthalten ist (siehe auch die Beschreibung unter Export) 16.
 Die Parameter können auch einzeln gesetzt werden.

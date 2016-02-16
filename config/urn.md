@@ -3,12 +3,12 @@ title: URN
 weight: 90
 ---
 
-# URN Parameter
+## URN Parameter
 
 Es gibt die Möglichkeit, automatisch URNs in OPUS4 zu vergeben. Im ausgelieferten
-$BASEDIR/opus4/application/configs/config.ini.template sind die entsprechenden URN-Parameter mit Testwerten befüllt
-und die Funktion ist deaktiviert ( urn.autoCreate = 0 ). Um die Funktion zu benutzen, müssen die Werte der Parameter
-urn.nid und urn.nss Instanz-spezifisch befüllt und der Parameter urn.autoCreate =1 gesetzt werden.
+`$BASEDIR/application/configs/config.ini.template` sind die entsprechenden URN-Parameter mit Testwerten befüllt
+und die Funktion ist deaktiviert (`urn.autoCreate = 0`). Um die Funktion zu benutzen, müssen die Werte der Parameter
+`urn.nid` und `urn.nss` Instanz-spezifisch befüllt und der Parameter `urn.autoCreate = 1` gesetzt werden.
 
 {% highlight ini %}
 ; URN SETTINGS
@@ -33,6 +33,6 @@ $ php opus-console.php snippets/find_urns_for_docs_without_visible_files.php
 {% endhighlight %}
 
 Bitte achten Sie beim Migrieren von Dokumenten, die bereits URNs besitzen, darauf, innerhalb des Konfigschlüssels
-urn.nss das Suffix, welches das digitale Objekt an sich kennzeichnet (Namespace Specific String), ggf. anzupassen. Für
-das obige Beispiel könnte aus -opus z. B. -opus4 werden. Für weiterführende Informationen siehe "URN-Vergabe" im
+`urn.nss` das Suffix, welches das digitale Objekt an sich kennzeichnet (Namespace Specific String), ggf. anzupassen. Für
+das obige Beispiel könnte aus -opus z.B. -opus4 werden. Für weiterführende Informationen siehe "URN-Vergabe" im
 Kapitel Standards 10.
