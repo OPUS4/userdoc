@@ -379,18 +379,18 @@ oai.sample.identifier = oai:opus4.demo:90
 oai.ddb.contactid =
 {% endhighlight %}
 
-Bei dem Parameter oai.baseurl wird die URL eingetragen, unter der die OAI-Schnittstelle
+Bei dem Parameter `oai.baseurl` wird die URL eingetragen, unter der die OAI-Schnittstelle
 erreichbar ist. Diese wird in der Schnittstelle unter <baseURL> angezeigt und wird normalerweise
 automatisch auf den Hostnamen der Opus-Instanz gesetzt. Sie sollte daher nur geändert werden,
 falls eine abweichende URL gewünscht wird (z.B. bei Rechnern, die mehrere DNS-Einträge
-besitzen). Der Parameter oai.repository.name wird in der OAI-Schnittstelle unter
-<repositoryName> und oai.repository.identifier unter <repositoryIdentifier> angezeigt. Bei
-oai.sample.identifier kann ein existierendes Dokument eingetragen werden, das in der
-Schnittstelle unter <sampleIdentifier> (d.h. Beispiel-Dokument) angezeigt wird. Schließlich kann bei
+besitzen). Der Parameter `oai.repository.name` wird in der OAI-Schnittstelle unter
+\<repositoryName\> und `oai.repository.identifier` unter \<repositoryIdentifier\> angezeigt. Bei
+`oai.sample.identifier` kann ein existierendes Dokument eingetragen werden, das in der
+Schnittstelle unter \<sampleIdentifier\> (d.h. Beispiel-Dokument) angezeigt wird. Schließlich kann bei
 oai.ddb.contactid eine DNB-Contact-ID (wenn vorhanden) eingetragen werden.
 
-Die darüber hinaus existierenden Parameter oai.max.listrecords ( Anzahl der Einträge für das
-Kommando "ListRecords) und oai.max.listidentifiers (Anzahl der Einträge für das Kommando
+Die darüber hinaus existierenden Parameter oai.max.listrecords (Anzahl der Einträge für das
+Kommando "ListRecords") und oai.max.listidentifiers (Anzahl der Einträge für das Kommando
 "ListIdentifiers") werden bereits bei der Installation mit Standardwerten befüllt und müssen in der
 Regel nicht angepasst werden.
 
@@ -410,7 +410,7 @@ befüllen:
 ; To enable print on demand services specifiy the provider's url
 ; and (optionally) the name of a button image.
 ; The image must reside in the current layout's image folder
-; ($BASEDIR/public/layouts/<LAYOUT>/img/)
+; ($BASEDIR/public/layouts/\<LAYOUT\>/img/)
 ;
 ; When a provider is specified, the print on demand button or link will
 ; be displayed if the document's licence allows it.
@@ -420,12 +420,12 @@ printOnDemand.button =
 
 Bei dem Parameter printOnDemand.url wird die URL eines Anbieters eingetragen. Optional kann
 für den Parameter printOnDemand.button eine Bild-Datei für einen Button eingetragen werden.
-Diese Datei muss im image-Ordner ($BASEDIR/opus4/public/layouts/<LAYOUTNAME>/img/) des
+Diese Datei muss im image-Ordner ($BASEDIR/public/layouts/\<LAYOUTNAME\>/img/) des
 verwendeten Layouts 94 abgelegt werden.
 Bsp:
 
 {% highlight ini %}
-printOnDemand.url = http://www.epubli.de/oai/<OAI.REPOSITORY.IDENTIFIER>/
+printOnDemand.url = http://www.epubli.de/oai/\<OAI.REPOSITORY.IDENTIFIER\>/
 printOnDemand.button = mybutton.png
 {% endhighlight %}
 
