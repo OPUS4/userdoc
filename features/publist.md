@@ -59,9 +59,7 @@ Sammlung mit Dokument verknüpfen 144 ).
 
 Die Publikationsliste wird als HTML-Snippet ausgeliefert und ist unter folgender URL abrufbar:
 
-```
-http://<$BASEDIR>/opus4/export/index/publist/role/persons/number/musterfrau
-```
+    http://example.org/opus4/export/index/publist/role/persons/number/musterfrau
 
 <p class="warning">
 Um die Publikationsliste sehen zu können, müssen Sie weiterhin als Administrator eingeloggt
