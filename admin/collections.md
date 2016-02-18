@@ -1,0 +1,6 @@
+---
+title: Sammlungen
+---
+
+# Sammlungen
+
