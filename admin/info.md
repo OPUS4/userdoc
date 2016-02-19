@@ -1,5 +1,6 @@
 ---
 title: Systeminformationen
+weight: 100
 ---
 
 # Systeminformationen
@@ -94,3 +95,8 @@ Beispielfälle von Inkonsistenz.
 Hinweis: Bitte beachten Sie, dass die Logausgabe nur in englischer Sprache erfolgt.
 
 ## Dokumenttypen
+
+Diese Seite listet die lokal verfügbaren Dokumenttypen, die deutsche oder englische Bezeichnung,
+den Dateinamen und ob der Dokumenttyp aktiv ist, also beim Hinzufügen eines neuen Dokuments
+ausgewählt werden kann. Darüber hinaus werden die XML Definitionsdateien gegen das Schema validiert
+und die Fehlermeldungen gegebenenfalls angezeigt.
