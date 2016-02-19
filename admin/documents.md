@@ -1,5 +1,6 @@
 ---
 title: Dokumente
+weight: 10
 ---
 
 # Dokumente
