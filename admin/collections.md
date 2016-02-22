@@ -49,9 +49,9 @@ Nach dem Speichern wird der Name der Sammlung in der Administration, im Browsing
 Frontdoor so angezeigt, wie er in der Datenbank gespeichert ist (in diesem Beispielfall:
 "Testsammlung"), da für die neue Sammlung noch keine Übersetzung existiert. Damit neu angelegte
 Sammlungen im Browsing und in der Frontdoor in allen verfügbaren Sprachen korrekt (Standard
-deutsch und englisch) angezeigt werden, muss die Übersetzungsdatei $BASEDIR/opus4/modules/
-default/language_custom/my_collectionroles.tmx angelegt (einmalig) und folgender Eintrag
-aufgenommen werden:
+deutsch und englisch) angezeigt werden, muss die Übersetzungsdatei
+`$BASEDIR/modules/default/language_custom/my_collectionroles.tmx`
+angelegt (einmalig) und folgender Eintrag aufgenommen werden:
 
 Bsp.:
 
@@ -95,8 +95,8 @@ Tooltip der interne Übersetzungsschlüssel der betreffenden Sammlung (Collectio
 werden. Dieser wird angezeigt, wenn man in der Übersicht der Sammlungen im
 Administrationsbereich mit der Maus auf die gewünschte Sammlung zeigt:
 
-Dann den so ermittelten Schlüssel aus der Datei in die Datei modules/default/language_custom/
-browsing.tmx kopieren und eine neue Übersetzung festlegen.
+Dann den so ermittelten Schlüssel aus der Datei in die Datei `modules/default/language_custom/browsing.tmx`
+kopieren und eine neue Übersetzung festlegen.
 
 Sammlungseinträge können bislang nicht übersetzt werden.
 
@@ -112,7 +112,8 @@ Gleiches gilt für Sammlungseinträge.
 Frontdoor
 Standardmäßig wird eine neu erstellte Sammlung "Testsammlung" immer an letzter Stelle aller
 Sammlungen in der Frontdoor eines Dokuments angezeigt. Soll die Reihenfolge der Sammlungen
-geändert werden, muss in der Datei $BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt das folgende Statement
+geändert werden, muss in der Datei `$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt`
+das folgende Statement
 
     <xsl:apply-templates select="Collection[@RoleName='Testsammlung']" />
 
@@ -124,17 +125,17 @@ im Bereich
 
 aufgenommen werden.
 
-Existiert noch keine Datei $BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt so ist diese als erstes
-zu erstellen, in dem die Datei index.xslt kopiert wird:
+Existiert noch keine Datei `$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt` so
+ist diese als erstes zu erstellen, in dem die Datei index.xslt kopiert wird:
 
     $ cd $BASEDIR/opus4/modules/frontdoor/views/scripts/index
     $ cp index.xslt index_custom.xslt
 
 <p class="warning">
-Änderungen der Anzeige auf der Frontdoor können in der Datei $BASEDIR/opus4/modules/
-frontdoor/views/scripts/index/index_custom.xslt vorgenommen werden. Bei einem OPUS-
+Änderungen der Anzeige auf der Frontdoor können in der Datei
+`$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt` vorgenommen werden. Bei einem OPUS-
 Software-Update wird diese Datei nicht verändert, so dass eventuelle Änderungen an der originalen
-index.xslt bei Bedarf manuell in die lokal angepasste index_custom.xslt Datei übernommen
+`index.xslt` bei Bedarf manuell in die lokal angepasste `index_custom.xslt` Datei übernommen
 werden müssen.
 </p>
 
