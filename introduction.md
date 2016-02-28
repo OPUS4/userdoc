@@ -21,7 +21,7 @@ machen, darauf zu suchen, zu browsen und den Veröffentlichungsprozess zu verein
 Für die Erstellung der Dokumenttypen in OPUS4 wurde das "Gemeinsames Vokabular für Publikations- und Dokumenttypen"
 [(DINI AG Elektronisches Publizieren, DNB, BSZ, DINI Schriften 12-de, Version 1.0, Juni 2010)][DINI] als Grundlage
 genommen. Entsprechend diesem Standard sind die
-ausgelieferten Dokumenttypen definiert (s. Anhang 196). Dieser Standard wird weiterentwickelt und gestattet es den
+ausgelieferten [Dokumenttypen][DOCTYPES] definiert. Dieser Standard wird weiterentwickelt und gestattet es den
 Betreibern von Repositorien, eigene Dokumenttypen zu definieren, wenn sie bei der Auslieferung über eine
 OAI-Schnittstelle auf die entsprechenden DINI-Dokumenttypen gemappt werden. Der Hintergrund hierfür ist das Ziel,
 den Metadatenaustausch im Bereich der Dokument- und Publikationstypen auf institutionellen und fachlichen Repositorien
@@ -65,7 +65,7 @@ beim Veröffentlichen eines Dokuments ein Häkchen bei 'Zur Bibliographie hinzuf
 
 Um Dokumente, die zur Bibliographie gehören, zu exportieren, führt man eine Suche nach allen Dokumenten durch (Klick
 auf "Alle Dokumente" unter dem Suchschlitz). Danach schränkt man die Treffer mit Hilfe der Facette "Gehört zur
-Bibliographie -> Ja" ein und exportiert diese (vgl. Kapitel "Export 15").
+Bibliographie -> Ja" ein und [exportiert][EXPORT] diese.
 
 <p class="info">
 Selbstverständlich kann man die Dokumente auch noch zusätzlich nach anderen Aspekten einschränken.
@@ -77,4 +77,5 @@ Selbstverständlich kann man die Dokumente auch noch zusätzlich nach anderen As
 [XMETADISSPLUS]: http://d-nb.info/1020009535/34
 [PERSISTENTID]: http://www.persistent-identifier.de/?link=3352
 [NESTOR]: http://nestor.sub.uni-goettingen.de/handbuch/artikel/nestor_handbuch_artikel_336.pdf
-
+[DOCTYPES]: documenttypes/index.html
+[EXPORT]: features/export.html
