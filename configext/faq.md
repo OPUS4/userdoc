@@ -52,7 +52,7 @@ Hier ein Beispiel:
 ## 2. Vorhandenen Eintrag (Sektionseintrag) umbenennen
 
 Um die Überschrift eines bereits vorhandenen Eintrags der FAQ-Seite umzubenennen, muss die
-Datei $BASEDIR/opus4/modules/home/language_custom/help_custom.tmx angelegt werden
+Datei `$BASEDIR/modules/home/language_custom/help_custom.tmx` angelegt werden
 (siehe oben) und die Übersetzungsressourcen für den gewünschten Schlüssel geändert werden. Die
 Schlüssel für die Überschriften der Einträge finden sich unterhalb des Bereichs "headlines help
 sections" und besitzen den Aufbau 'help_title_Eintragsname'
@@ -71,7 +71,7 @@ sections" und besitzen den Aufbau 'help_title_Eintragsname'
 ## 3. Inhalt eines Eintrags (Sektionseintrag) ändern
 
 Die eigentlichen Inhalte (Texte) der einzelnen Einträge liegen als .txt-Dateien im Verzeichnis
-$BASEDIR/opus4/application/configs/help/. Vorhandene Inhalte können mit Hilfe eines Editors
+`$BASEDIR/application/configs/help/`. Vorhandene Inhalte können mit Hilfe eines Editors
 geöffnet, verändert und wieder an der gleichen Stellen gespeichert werden. Es sollten
 selbstverständlich immer alle Versionen (deutsch, englisch, etc.) geändert werden. Eine
 Auszeichnung der Texte mit HTML-Markup ist möglich.
@@ -81,7 +81,7 @@ Auszeichnung der Texte mit HTML-Markup ist möglich.
 ### Allgemeines
 
 Die Hauptbereiche und Einträge werden in der Datei
-$BASEDIR/opus4/application/configs/help/help.ini verwaltet. Der Aufbau der Schlüssel lautet
+`$BASEDIR/application/configs/help/help.ini` verwaltet. Der Aufbau der Schlüssel lautet
 
 {% highlight ini %}
 Hauptbereichsschlüssel[] = 'Bereichsschlüssel' :

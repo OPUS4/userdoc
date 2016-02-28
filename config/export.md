@@ -18,6 +18,6 @@ export.stylesheet.search = example
 {% endhighlight %}
 
 Diese Werte triggern zum einen die Anzeige des Buttons und gibt zum anderen das zu verwendende Stylesheet an. Die
-Stylesheets werden unter `$BASEDIR/opus4/modules/ex port/view s/scripts/stylesheets-custom` abgelegt, wobei das
+Stylesheets werden unter `$BASEDIR/modules/export/views/scripts/stylesheets-custom` abgelegt, wobei das
 `example.xslt` in der OPUS-Standardauslieferung enthalten ist (siehe auch die Beschreibung unter Export) 16.
 Die Parameter können auch einzeln gesetzt werden.

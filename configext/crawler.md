@@ -19,8 +19,8 @@ sollen, ist dies dringend zu empfehlen.
 </p>
 
 Für weniger kritische Fälle kann, um eine Suchmaschine davon abzuhalten, die Seite zu
-durchsuchen, folgender Tag im html-head in der $BASEDIR/opus4/public/layouts/opus4/
-common.phtml ergänzt werden:
+durchsuchen, folgender Tag im html-head in der `$BASEDIR/public/layouts/opus4/common.phtml`
+ergänzt werden:
 
 <meta name="robots" content="noindex, nofollow">
 

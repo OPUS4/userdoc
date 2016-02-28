@@ -25,22 +25,22 @@ geändert werden müssen.
 Um dieses Problem zu umgehen, kann die Wiederherstellung des Caches regelmäßig über einen
 Cronjob erfolgen. Hierfür gibt es ein entsprechendes Skript, das unter
 
-    $BASEDIR/opus4/scripts/cron/cron-update-document-cache.php
+    $BASEDIR/scripts/cron/cron-update-document-cache.php
 
 zu finden ist.
 
 Der Aufruf des Skript erfolgt entsprechend der anderen Opus-Cron-Skripte 58 wie folgt:
 
-    $ cd $BASEDIR/opus4/scripts/cron
+    $ cd $BASEDIR/scripts/cron
     $ cron-php-runner.sh cron-update-document-cache.php /somepath/var/lock/ /somepath/var/log/
 
 Ein Cron-Job (hier als Beispiel für die Ausführung alle 5 Minuten) wird wie folgt angelegt:
 
     $ crontab –e
         5 * * * *
-        $BASEDIR/opus4/scripts/cron/cron-php-runner.sh
-        $BASEDIR/opus4/scripts/cron/cron-update-document-cache.php $BASEDIR/opus4/workspace/lock
-        $BASEDIR/opus4/workspace/log > /dev/null 2> /dev/null
+        $BASEDIR/scripts/cron/cron-php-runner.sh
+        $BASEDIR/scripts/cron/cron-update-document-cache.php $BASEDIR/workspace/lock
+        $BASEDIR/workspace/log > /dev/null 2> /dev/null
 
 Mit der Cache-Revalidierung wird nun auch der Solr-Index aktualisiert. Bis zu dieser
 Aktualisierung sind die betroffenen Dokumente nicht korrekt indexiert und werden über die Suche

@@ -5,7 +5,7 @@ weight: 100
 
 # Dokumenttyp Einstellungen
 
-In der $BASEDIR/opus4/application/configs/config.ini besteht die Möglichkeit, Einstellungen an den Dokumenttypen
+In der `$BASEDIR/application/configs/config.ini` besteht die Möglichkeit, Einstellungen an den Dokumenttypen
 vorzunehmen. Es kann definiert werden, welche Dokumenttypen dem Benutzer zur Auswahl stehen sollen ( include ). Ist
 dieser Parameter auskommentiert, werden alle Dokumenttypen angezeigt. Sollen nur einzelne Dokumenttypen nicht
 angezeigt werden, können diese durch exclude ausgeschlossen werden.

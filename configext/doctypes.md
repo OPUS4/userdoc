@@ -22,7 +22,9 @@ Einträge in den XML-Dokumenttypdefinitionen und in den Templates näher erläut
 ## Grundlage: XML-Dokumenttypdefinition
 
 Die XML-Dokumenttypdefinitionen liegen im Ordner
-$BASEDIR/opus4/application/configs/doctypes/.
+
+    $BASEDIR/application/configs/doctypes/
+
 In ihnen wird festgelegt, welche Felder ein Dokumenttyp beinhalten soll. Darüber hinaus kann darauf
 Einfluss genommen werden, ob ein Feld obligatorisch (required) oder optional ist.
 
@@ -268,8 +270,11 @@ Beispiel: Vorname als Pflichtfeld
 
 ## Grundlage: Templates
 
-Die Templates zu den Dokumenttypen liegen im Verzeichnis $BASEDIR/opus4/application/
-configs/doctypes_templates. In den Templates wird festgelegt, in welcher Reihenfolge die Felder
+Die Templates zu den Dokumenttypen liegen im Verzeichnis 
+
+    $BASEDIR/application/configs/doctypes_templates 
+
+In den Templates wird festgelegt, in welcher Reihenfolge die Felder
 eines Dokumenttyps im Veröffentlichungsformular angezeigt werden.
 
 ### Erweiterte Einstellungen
@@ -333,16 +338,16 @@ Metadaten) dem Nutzer anzuzeigen, welche Dateien hochgeladen wurden, kann mit de
 {% endhighlight %}
 
 ein entsprechendes Fieldset eingebunden werden (als Bsp. kann hier das Template des
-Testdokumenttyps "all" unter $BASEDIR/opus4/application/configs/doctypes_templates/
-all.phtml dienen).
+Testdokumenttyps "all" unter `$BASEDIR/application/configs/doctypes_templates/all.phtml` 
+dienen).
 
 ### Anzeige der Checkbox für rechtliche Hinweise für einzelne Dokumenttypen
 
 Neben der Checkbox für rechtliche Hinweise, die auf der ersten Seite angezeigt wird (s. Kapitel 7.9
 FORM SETTINGS 56 ), kann die Anzeige dieser Checkbox als Pflichtfeld auch für einzelne
 Dokumenttypen erfolgen. Dafür muss im entsprechenden Template folgender Aufruf eingefügt werden
-als Bsp. kann hier das Template des Testdokumenttyps "all" unter $BASEDIR/opus4/application/
-configs/doctypes_templates/all.phtml dienen):
+als Bsp. kann hier das Template des Testdokumenttyps "all" unter 
+`$BASEDIR/application/configs/doctypes_templates/all.phtml` dienen):
 
 {% highlight php %}
 <?= $this->legalNotices($this->form); ?>
@@ -355,7 +360,7 @@ Feldes, Hilfetext) angepasst werden (s. hierzu auch: Leitlinien 102 ).
 
 Die Reihenfolge der Felder im Veröffentlichungsformular kann verändert werden, indem im
 entsprechenden Template im Verzeichnis
-$BASEDIR/opus4/application/configs/doctypes_templates die Zeile, in der ein Feld definiert wird,
+`$BASEDIR/application/configs/doctypes_templates` die Zeile, in der ein Feld definiert wird,
 nach oben oder unten verschoben wird:
 
 Ursprüngliche Reihenfolge:
@@ -385,7 +390,7 @@ einer externen URL zu einem Dokument zu ermöglichen.
 
 ### 1. Schritt: XML-Dokumenttypdefinition anpassen
 
-Die Datei $BASEDIR/opus4/application/configs/doctypes/article.xml mit einem Editor (z.B.
+Die Datei `$BASEDIR/application/configs/doctypes/article.xml` mit einem Editor (z.B.
 Notepad++) öffnen und die Zeile
 
 {% highlight xml %}
@@ -415,7 +420,7 @@ Hinweise aus dem Kapitel "Grundlage: XML-Dokumenttypdefinition" 80 beachten.
 ### 2. Schritt: Template anpassen
 
 2. Schritt: Template anpassen
-Die Datei $BASEDIR/opus4/application/configs/doctypes_templates/article.phtml mit einem
+Die Datei `$BASEDIR/application/configs/doctypes_templates/article.phtml` mit einem
 Editor (z.B. Notepad++) öffnen und die Zeile
 
 {% highlight xml %}
@@ -445,8 +450,8 @@ Tabellen im Anhang 202 entnommen werden.
 ## Dokumenttypen umbenennen
 
 Um Dokumenttypen umzubenennen, muss der entsprechende Schlüssel aus der Datei
-$BASEDIR/opus4/modules/default/language/doctypes.tmx in die Datei
-$BASEDIR/opus4/modules/default/language_custom/my_doctypes.tmx kopiert und angepasst
+`$BASEDIR/modules/default/language/doctypes.tmx` in die Datei
+`$BASEDIR/modules/default/language_custom/my_doctypes.tmx` kopiert und angepasst
 werden:
 
 {% highlight xml %}
@@ -471,9 +476,9 @@ beschrieben.
 Um einen neuen Dokumenttyp zu erstellen, ist es am Einfachsten, einen vorhandenen Dokumenttyp,
 der bereits viele der gewünschten Felder enthält, zu kopieren. Hierzu legen Sie bitte eine Kopie der
 gewünschten XML-Dokumenttypdefinition im Verzeichnis
-$BASEDIR/opus4/application/configs/doctypes/ und eine Kopie des entsprechenden Templates
-im Verzeichnis $BASEDIR/opus4/application/configs/doctypes_templates/ an und benennen diese
-identisch, z. B. mydocumenttype.x ml und mydocumenttype.phtml.
+`$BASEDIR/application/configs/doctypes/` und eine Kopie des entsprechenden Templates
+im Verzeichnis `$BASEDIR/application/configs/doctypes_templates/` an und benennen diese
+identisch, z. B. `mydocumenttype.xml` und `mydocumenttype.phtml`.
 
 Die Benennung eines Dokumenttyps muss in folgendem Format erfolgen:
 
@@ -509,8 +514,8 @@ werden:
 
 Neu angelegte Dokumenttypen werden beim Export in Literaturverwaltungssysteme (RIS- bzw.
 BibTeX-Export) standardmäßig dem Typ "Generic" (RIS) bzw. "MISC" (BibTeX) zugeordnet. Um
-dies zu ändern, muss der neue Dokumenttyp wie folgt in der Datei $BASEDIR/opus4/modules/
-citationEx port/view s/scripts/index /ris.x slt (für den RIS-Export) eingetragen werden:
+dies zu ändern, muss der neue Dokumenttyp wie folgt in der Datei 
+`$BASEDIR/modules/citationExport/views/scripts/index/ris.xslt` (für den RIS-Export) eingetragen werden:
 
 Folgende Zeile muss ergänzt werden:
 
@@ -519,7 +524,7 @@ Folgende Zeile muss ergänzt werden:
 <xsl:text>TY - gewünschter RIS-Dok umenttyp </xsl:text>
 {% endhighlight %}
 
-Für den BibTeX-Export ist es notwendig, analog zu den im Verzeichnis $BASEDIR/opus4/modules/citationEx port/views/scripts/index/
+Für den BibTeX-Export ist es notwendig, analog zu den im Verzeichnis `$BASEDIR/modules/citationEx port/views/scripts/index/`
 bereits vorhandenen Stylesheets
 
 * bibtex_article.xslt
@@ -538,8 +543,8 @@ ein weiteres Stylesheet für den neuen Dokumenttyp zu erstellen.
 Für die Ablieferung der Dokumente an die Deutsche Nationalbibliothek über die OAI-
 Schnittstelle ist es bei neu angelegten Dokumenttypen sinnvoll, sie auf die Publikationstypen des
 Gemeinsamen Vokabulars für Publikations- und Dokumenttypen zu mappen, da sie sonst dem
-Dokumenttyp "other" (Sonstiges) zugeordnet werden. Hierfür muss in der Datei $BASEDIR/opus4/
-modules/oai/views/scripts/index/prefixes/XMetaDissPlus.xslt folgende Zeile ergänzt werden:
+Dokumenttyp "other" (Sonstiges) zugeordnet werden. Hierfür muss in der Datei 
+`$BASEDIR/modules/oai/views/scripts/index/prefixes/XMetaDissPlus.xslt` folgende Zeile ergänzt werden:
 
 {% highlight xml %}
 <xsl:when test="@Type=' neuer Dok umenttyp '">
@@ -554,7 +559,7 @@ Nach dem Anlegen kann der neue Dokumenttyp auf Konformität bezüglich des XML-S
 documenttype.x sd geprüft werden. Dazu bietet sich folgender Befehl an (hier am Beispiel der
 Dokumenttypdefinition beispiel.xml):
 
-    cd $BASEDIR/opus4/application/configs/doctypes
+    cd $BASEDIR/application/configs/doctypes
     xmllint --noout --schema ../../../library/Opus/Document/documenttype.xsd
         beispiel.xml
 

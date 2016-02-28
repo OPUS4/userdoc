@@ -70,13 +70,13 @@ bleiben.
 
 OPUS4 liefert ein Standard-Layout für Publikationslisten aus:
 
-$BASEDIR/opus4/modules/ex port/view s/scripts/publist/default.xslt
+    $BASEDIR/modules/ex port/view s/scripts/publist/default.xslt
 
 Dieses sollte nicht verändert werden, da diese Änderungen bei Updates überschrieben werden. Um
 ein eigenes Layout (im Folgenden mylayout genannt) zu erstellen, müssen die folgenden Schritte
 vollzogen werden.
 
-1. Legen Sie unter $BASEDIR/opus4/modules/ex port/view s/scripts/publist die Datei
+1. Legen Sie unter `$BASEDIR/modules/ex port/view s/scripts/publist` die Datei
 mylayout.xslt auf Basis von default.xslt an.
 2. Ändern Sie den Konfigurationsparameter:
 

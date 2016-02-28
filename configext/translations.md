@@ -9,7 +9,7 @@ verschiedenen Sprachen umzuschalten. Diese Übersetzungsressourcen (Schlüssel) 
 Sprachdateien (.tmx-Dateien) verwaltet. OPUS4 liefert für OPUS-Module, in denen
 Übersetzungsressourcen angepasst werden können, ein Verzeichnis
 
-$BASEDIR/opus4/(modulname)/language_custom/
+    $BASEDIR/(modulname)/language_custom/
 
 mit aus. Beim Laden der Sprachdateien gilt folgende Reihenfolge:
 
@@ -27,7 +27,7 @@ der Namen der Dokumenttypen).
 
 ## Aufbau der Schlüssel und Bearbeitung
 
-Im Verzeichnis $BASEDIR/opus4/(modulname)/language_custom/ existiert bereits eine
+Im Verzeichnis `$BASEDIR/(modulname)/language_custom/` existiert bereits eine
 Beispielsprachdatei example.tmx.template, die als Vorlage genutzt werden kann und bereits einen
 Beispielschlüssel enthält. Anhand dieses Beispielschlüssels wird im Folgenden der grundlegende
 Aufbau eines Übersetzungsschlüssels in einer .tmx-Datei erläutert:
@@ -45,10 +45,10 @@ Aufbau eines Übersetzungsschlüssels in einer .tmx-Datei erläutert:
 
 Die gewünschten Texte können direkt in den entsprechenden .tmx-Dateien editiert werden. Für
 Hilfetexte (FAQ) existiert zusätzlich die Möglichkeit, diese in Textdateien in das Verzeichnis
-$BASEDIR/opus4/application/configs/help auszulagern (vgl. Kapitel "FAQ-Seite" 97 ).
+`$BASEDIR/application/configs/help` auszulagern (vgl. Kapitel "FAQ-Seite" 97 ).
 
 Nach der Bearbeitung der .tmx-Datei wird die Endung '.template' entfernt und sie wird wieder im
-Verzeichnis $BASEDIR/opus4/(modulname)/language_custom/ gespeichert. Es können beliebig
+Verzeichnis `$BASEDIR/(modulname)/language_custom/` gespeichert. Es können beliebig
 viele .tmx-Dateien angelegt werden. Dateien in diesem Verzeichnis werden bei einem Update nicht
 überschrieben und die geänderten Schlüssel behalten weiter ihre Gültigkeit. Deshalb sollten
 Übersetzungsschlüssel ausschließlich an dieser Stelle geändert werden.
@@ -71,10 +71,11 @@ vier Einstiegspunkte:
 3. Statische Seiten (Hauptseite, Kontaktinformationen, Impressum)
 4. Übersetzungen (Feldnamen, Feldüberschriften, Feldhilfen)
 
-<p class="warning">
+<p class="warning" markdown="1">
 Um diese Funktion zu nutzen muss zunächst konfiguriert werden, welche Module für die
-Bearbeitung freigegeben werden sollen. Dies geschieht in der Datei $BASEDIR/opus4/application/
-configs/config.ini über den Konfigurationsschlüssel setup.translation.modules.allowed . Die
+Bearbeitung freigegeben werden sollen. Dies geschieht in der Datei 
+`$BASEDIR/application/configs/config.ini` über den Konfigurationsschlüssel 
+`setup.translation.modules.allowed`. Die
 zu erlaubenden Modulnamen sind dort ohne Leerzeichen durch ein Komma getrennt aufzuführen.
 </p>
 
@@ -113,25 +114,27 @@ Umstrukturieren von Abschnitten ist über die Oberfläche bisher nicht möglich.
 
 In diese Datei werden alle geänderten Übersetzungsschlüssel eingetragen:
 
-$BASEDIR/opus4/modules/home/language_custom/help_custom.tmx
+    $BASEDIR/modules/home/language_custom/help_custom.tmx
 
-Alle Dateien mit der Endung " .txt" im Verzeichnis: $BASEDIR/opus4/application/configs/help/
+Alle Dateien mit der Endung " .txt" im Verzeichnis: 
+
+    $BASEDIR/application/configs/help/
 
 ### 3. Statische Seiten (Hauptseite, Kontaktinformationen, Impressum)
 
 Hier können die Startseite, die Kontaktdaten und das Impressum angepasst werden.
 Dafür sind folgende Schreibrechte erforderlich:
 
-$BASEDIR/opus4/application/configs/help/<Seitenname>.de.txt
-$BASEDIR/opus4/application/configs/help/<Seitenname>.en.t t
+    $BASEDIR/application/configs/help/<Seitenname>.de.txt
+    $BASEDIR/application/configs/help/<Seitenname>.en.t t
 
-$BASEDIR/opus4/modules/home/language_custom/<Seitenname>.tmx (wenn bereits vorhanden, ansonsten das Verzeichnis)
+    $BASEDIR/modules/home/language_custom/<Seitenname>.tmx (wenn bereits vorhanden, ansonsten das Verzeichnis)
 
-Dabei ist <Seitenname> jeweils durch home , contact oder imprint zu ersetzen.
+Dabei ist `<Seitenname>` jeweils durch home , contact oder imprint zu ersetzen.
 
 <p class="warning">
 Bei Änderungen an den Übersetzungsschlüsseln werden die geänderten Übersetzungen in den
-Dateien $BASEDIR/opus4/modules/home/language_custom/<Seitenname>.tmx gespeichert.
+Dateien `$BASEDIR/modules/home/language_custom/<Seitenname>.tmx` gespeichert.
 Sind in diesem Verzeichnis bereits anders benannte Dateien angelegt, die die gleichen Schlüssel
 beinhalten, dann kann es sein, dass die Änderung nicht übernommen wird.
 </p>

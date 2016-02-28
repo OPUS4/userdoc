@@ -5,7 +5,7 @@ weight: 50
 
 # Export
 
-Mit OPUS Version 4.4.4 gibt es nun die Möglichkeit, einen Button für den Export nach XML auf der Frontdoor und auf den Ergebnisseiten der Suche anzuzeigen. Dieser Button wird über Parameter in der config.ini aktiviert, wie in EXPORT SETTINGS 65 beschrieben, und steht dann für den Administrator und für alle Nutzerrollen mit dem Recht export zur Verfügung.
+Mit OPUS Version 4.4.4 gibt es nun die Möglichkeit, einen Button für den Export nach XML auf der Frontdoor und auf den Ergebnisseiten der Suche anzuzeigen. Dieser Button wird über Parameter in der `config.ini` aktiviert, wie in EXPORT SETTINGS 65 beschrieben, und steht dann für den Administrator und für alle Nutzerrollen mit dem Recht export zur Verfügung.
 
 <p class="note">
 In der Standardauslieferung ist der Zugriff auf das Modul nur für Admins erlaubt. Soll der Zugriff weiteren Personen erlaubt sein, muss die ihnen zugewiesene Rolle das Recht erhalten, auf das Modul "export" zuzugreifen (Informationen zu den Einstellungen der Zugriffskontrolle siehe Kapitel "Nutzerrollen 165 ").
@@ -13,7 +13,7 @@ In der Standardauslieferung ist der Zugriff auf das Modul nur für Admins erlaub
 
 Standardmäßig wird die Datei
 
-$BASEDIR/opus4/modules/export/views/scripts/stylesheets-custom/example.xslt
+    $BASEDIR/modules/export/views/scripts/stylesheets-custom/example.xslt
 
 als Beispiel-Stylesheet mitgeliefert. Es gibt alle Metadaten eines Dokuments aus, außer:
 
@@ -21,7 +21,7 @@ als Beispiel-Stylesheet mitgeliefert. Es gibt alle Metadaten eines Dokuments aus
 * Personen mit einer anderen Rolle als der Autor
 * Lizenzen, die nicht im Status aktiv sind (und von aktiven Lizenzen nur das Feld NameLong),
 * Sammlungen, die als unsichtbar markiert sind (und von den sichtbaren nur das Feld Name und den RoleName),
-* Dateien, für die nicht gilt: sichtbar in OAI (visible_in_oai = TRUE) und sichtbar auf der Frontdoor (visible_in_frontdoor = TRUE).
+* Dateien, für die nicht gilt: sichtbar in OAI (visible_in_oai = TRUE) und sichtbar auf der Frontdoor (visible_in_frontdoor = TRUE).
 
 Vom Autor werden nur Vor- und Nachname und von ThesisPublisher und ThesisGrantor nur das Feld Name exportiert.
 

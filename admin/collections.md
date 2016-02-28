@@ -128,7 +128,7 @@ aufgenommen werden.
 Existiert noch keine Datei `$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt` so
 ist diese als erstes zu erstellen, in dem die Datei index.xslt kopiert wird:
 
-    $ cd $BASEDIR/opus4/modules/frontdoor/views/scripts/index
+    $ cd $BASEDIR/modules/frontdoor/views/scripts/index
     $ cp index.xslt index_custom.xslt
 
 <p class="warning">

@@ -31,27 +31,30 @@ und nicht die ausgelieferten zu verändern. Der Vorteil bei lokalen Sprachdateie
 diese bei Updates erhalten bleiben.
 
 Bitte also die folgenden Sprachdateien einmalig im Verzeichnis
-$BASEDIR/opus4/modules/publish/language_custom/ anlegen oder die mitgelieferte
-ex ample.tmx .template wie im Kapitel Übersetzungsressourcen 65 beschrieben modifizieren:
+`$BASEDIR/modules/publish/language_custom/` anlegen oder die mitgelieferte
+`example.tmx.template` wie im Kapitel Übersetzungsressourcen 65 beschrieben modifizieren:
 
-my_field_header.tmx
-my_field_hints.tmx
-my_fieldnames.tmx
+    my_field_header.tmx
+    my_field_hints.tmx
+    my_fieldnames.tmx
 
 Damit die geänderten Felder auch im Administrationsbereich korrekt angezeigt werden, muss
-folgende Datei im Verzeichnis $BASEDIR/opus4/modules/default/language_custom/ angelegt
+folgende Datei im Verzeichnis `$BASEDIR/modules/default/language_custom/` angelegt
 werden:
 
-my_fieldnames.tmx
+    my_fieldnames.tmx
 
 Sollen auch Gruppenfelder verändert bzw. neu angelegt werden, muss zusätzlich folgende Datei im
-Verzeichnis $BASEDIR/opus4/modules/publish/language_custom/ angelegt werden:
+Verzeichnis `$BASEDIR/modules/publish/language_custom/` angelegt werden:
 
-my_buttons.tmx
+    my_buttons.tmx
 
-<p class="note">
+<p class="note" markdown="1">
 Es ist vollkommen unerheblich, wie die Dateien heißen. Wichtig ist nur der Ablageort
-$BASEDIR/opus4/modules/(modulname)/language_custom/! Darüber hinaus ist es essentiell,
+
+    $BASEDIR/modules/(modulname)/language_custom/
+
+Darüber hinaus ist es essentiell,
 dass die .tmx-Dateien in UTF-8 codiert sind (um dies sicherzustellen, eignet sich z.B. der Open-
 Source-Editor Notepad++, bei dem vor der Bearbeitung einer Datei die Kodierung auf UTF-8
 umgestellt werden kann.
@@ -72,8 +75,8 @@ Im Folgenden werden die Änderungen am Bsp. des Feldes Note verdeutlicht.
 ### 1. Titel / Überschrift des Feldes ändern
 
 Um den Titel des Feldes Note zu ändern, wird der Schlüssel header_note aus der Sprachdatei
-$BASEDIR/opus4/modules/publish/language/field_header.tmx in die Sprachdatei
-$BASEDIR/opus4/modules/publish/language_custom/my_field_header.tmx kopiert und wie
+`$BASEDIR/modules/publish/language/field_header.tmx` in die Sprachdatei
+`$BASEDIR/modules/publish/language_custom/my_field_header.tmx` kopiert und wie
 folgt angepasst:
 
 Defaultwerte für Schlüssel vor der Anpassung:
@@ -108,8 +111,8 @@ werden.
 ### 2. Hilfetext des Feldes ändern
 
 Um den Hilfetext des Feldes Note zu ändern, wird der Schlüssel hint_note aus der Sprachdatei
-$BASEDIR/opus4/modules/publish/language/field_hints.tmx in die Sprachdatei
-$BASEDIR/opus4/modules/publish/language_custom/my_field_hints.tmx kopiert und wie folgt
+`$BASEDIR/modules/publish/language/field_hints.tmx` in die Sprachdatei
+`$BASEDIR/modules/publish/language_custom/my_field_hints.tmx` kopiert und wie folgt
 angepasst:
 
 Defaultwerte für Schlüssel vor der Anpassung:
@@ -149,8 +152,8 @@ Eingabefelder angezeigt.
 ### 3. Namen / Bezeichnung des Feldes ändern
 
 Um den Namen bzw. die Bezeichnung des Feldes Note zu ändern, wird der Schlüssel note aus der
-Sprachdatei $BASEDIR/opus4/modules/publish/language/fieldnames.tmx in die Sprachdatei
-$BASEDIR/opus4/modules/publish/language_custom/my_fieldnames.tmx kopiert und wie folgt
+Sprachdatei `$BASEDIR/modules/publish/language/fieldnames.tmx` in die Sprachdatei
+`$BASEDIR/modules/publish/language_custom/my_fieldnames.tmx` kopiert und wie folgt
 angepasst:
 
 Ursprüngliche Bezeichnungen
@@ -179,11 +182,11 @@ Angepasste Bezeichnungen
 </tu>
 {% endhighlight %}
 
-<p class="warning">
+<p class="warning" markdown="1">
 Damit die geänderten Bezeichnungen der Felder auch im Administrationsbereich korrekt
 angezeigt werden, müssen die Schlüssel zusätzlich aus der Sprachdatei
-$BASEDIR/opus4/modules/default/language/fieldnames.tmx in die Sprachdatei
-$BASEDIR/opus4/modules/default/language_custom/my_fieldnames.tmx kopiert und
+`$BASEDIR/modules/default/language/fieldnames.tmx` in die Sprachdatei
+`$BASEDIR/modules/default/language_custom/my_fieldnames.tmx` kopiert und
 entsprechend angepasst werden.
 </p>
 
@@ -191,8 +194,8 @@ entsprechend angepasst werden.
 
 Wurde die Bezeichnung eines Feldes geändert, ist es sinnvoll, auch die Beschriftung der
 dazugehörigen Buttons anzupassen. Hierfür müssen die entsprechenden beiden Schlüssel aus der
-Sprachdatei $BASEDIR/opus4/modules/publish/language/buttons.tmx in die Sprachdatei
-$BASEDIR/opus4/modules/publish/language_custom/my_buttons.tmx kopiert und wie folgt
+Sprachdatei `$BASEDIR/modules/publish/language/buttons.tmx` in die Sprachdatei
+`$BASEDIR/modules/publish/language_custom/my_buttons.tmx` kopiert und wie folgt
 angepasst werden:
 
 {% highlight xml %}
@@ -299,7 +302,7 @@ Nach dem Einbinden des neuen Browsing-Feldes ins Veröffentlichungsformular fehl
 Anzeige zunächst einige Übersetzungen:
 
 Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B. sammlungXYZ.tmx) im Verzeichnis
-$BASEDIR/opus4/modules/default/language_custom und dort werden folgende Schlüssel
+`$BASEDIR/modules/default/language_custom` und dort werden folgende Schlüssel
 eingetragen (der Aufbau der Schlüssel wird exemplarisch im Kapitel Felder umbenennen 69
 erläutert):
 
@@ -359,7 +362,7 @@ Wünschen ändern.
 
 Nach dem Einbinden des neuen Feldes ins Veröffentlichungsformular fehlen bei der Anzeige
 zunächst einige Übersetzungen. Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B.
-feldXYZ.tmx) im Verzeichnis $BASEDIR/opus4/modules/default/language_custom und dort
+feldXYZ.tmx) im Verzeichnis `$BASEDIR/modules/default/language_custom` und dort
 werden folgende Schlüssel eingetragen (der Aufbau der Schlüssel wird exemplarisch im Kapitel
 Felder umbenennen 69 erläutert):
 
@@ -423,7 +426,7 @@ Soll das Feld nicht wiederholbar sein (Multiplicity von genau 1), bindet man ein
 
 Nach dem Einbinden des neuen Select-Feldes ins Veröffentlichungsformular fehlen bei der Anzeige
 zunächst einige Übersetzungen. Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B.
-NeuesSelectXYZ.tmx) im Verzeichnis $BASEDIR/opus4/modules/default/language_custom und
+NeuesSelectXYZ.tmx) im Verzeichnis `$BASEDIR/modules/default/language_custom` und
 dort werden folgende Schlüssel eingetragen (der Aufbau der Schlüssel wird exemplarisch im Kapitel
 Felder umbenennen 69 erläutert):
 
@@ -440,19 +443,19 @@ Felder umbenennen 69 erläutert):
 ## Anzeige in der Frontdoor
 
 Neu angelegte Felder werden nicht automatisch in der Frontdoor des Dokuments angezeigt. Dafür
-müssen Änderungen an der Datei $BASEDIR/opus4/modules/frontdoor/view s/scripts/index /
-index _custom.x slt vorgenommen werden. Existiert noch keine Datei index _custom.x slt so ist
-diese als erstes zu erstellen, in dem die Datei index .x slt kopiert wird:
+müssen Änderungen an der Datei `$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt`
+vorgenommen werden. Existiert noch keine Datei `index_custom.xslt` so ist
+diese als erstes zu erstellen, in dem die Datei `index.xslt` kopiert wird:
 
 {% highlight shell %}
-$ cd $BASEDIR/opus4/modules/frontdoor/views/scripts/index
+$ cd $BASEDIR/modules/frontdoor/views/scripts/index
 $ cp index.xslt index_custom.xslt
 {% endhighlight %}
 
 Änderungen der Anzeige auf der Frontdoor können in der Datei
-$BASEDIR/opus4/modules/frontdoor/views/scripts/index/index_custom.xslt vorgenommen werden. Bei einem OPUS-
+`$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt` vorgenommen werden. Bei einem OPUS-
 Software-Update wird diese Datei nicht verändert, so dass eventuelle Änderungen an der originalen
-index.xslt bei Bedarf manuell in die lokal angepasste index_custom.xslt Datei übernommen
+`index.xslt` bei Bedarf manuell in die lokal angepasste `index_custom.xslt` Datei übernommen
 werden müssen.
 
 Im Bereich
@@ -484,7 +487,7 @@ Sicherheitsprobleme (Cross-Site-Scripting) hin überprüft wurde.
 Soll z.B. das Enrichment externeURL auf der Frontdoor ausgegeben werden und der Inhalt dabei
 nicht maskiert werden, dann muss folgende Zeile in die Datei
 
-$BASEDIR/opus4/modules/frontdoor/view s/scripts/index/index_custom.xslt
+    $BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt
 
 aufgenommen werden:
 
