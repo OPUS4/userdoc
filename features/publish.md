@@ -6,7 +6,7 @@ weight: 30
 # Veröffentlichen
 
 Neben der Suche und dem Browsen stellt das Veröffentlichen von Dokumenten die dritte zentrale Funktion in OPUS dar.
-Grundlage für das Veröffentlichen von Dokumenten bilden die [Dokumenttypen](../documenttypes/index.html).
+Grundlage für das Veröffentlichen von Dokumenten bilden die [Dokumenttypen][DOCTYPES].
 
 Die Dokumente werden über ein 3-stufiges Formular in OPUS eingestellt. Im ersten Schritt werden ein Dokumenttyp
 ausgewählt und (optional) die entsprechenden Datei(en) hochgeladen. Zusätzlich kann das Dokument durch das Setzen
@@ -24,10 +24,10 @@ Dokument (optional) einer Sammlung zuzuordnen. Ein Klick auf den Button 'Abspeic
 Status "unpublished" auf dem Dokumentenserver und es muss nach einer Prüfung durch den Administrator oder (eine)
 berechtigte Person(en) freigeschaltet werden. Anschließend ist das Dokument mit dem Status "published" verfügbar.
 
-## Untergeordnete Dokumenttypen
+## Übergeordnete Dokumente
 
 Die Standardversion von OPUS4 enthält
-[Dokumenttypen](../documenttypes/index.html), die prinzipiell anderen Dokumenttypen untergeordnet sind
+[Dokumenttypen][DOCTYPES], die prinzipiell anderen Dokumenttypen untergeordnet sind
 (z.B. "Teil eines Buches" und "Buch (Monographie)"). Diese Form der Beziehung wird jedoch in der aktuellen Version
 nicht funktionell unterstützt,
 das heißt, es gibt keine Möglichkeit, beispielsweise Dokumente, die als "Teil eines Buches" im Repositorium
@@ -36,3 +36,5 @@ innerhalb eines Dokumenttyps auf ein übergeordnetes Dokument verweisen möchte,
 "TitleParent/Übergeordnetes Werk" benutzen. Der Inhalt dieses Feldes ist dann suchbar, das heißt, eine Suche über
 alle Felder oder eine Titelsuche nach dem betreffenden übergeordneten Werk würde als Ergebnis auch die Dokumente
 anzeigen, die nur auf dieses übergeordnete Werk verweisen.
+
+[DOCTYPES]: ../documenttypes/index.html
