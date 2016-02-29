@@ -194,7 +194,7 @@ body {
     line-height: 150%;
 }
 
-pre .highlight {
+.highlight pre {
     margin: 0px;
     padding: 0px;
     white-space: pre-wrap;
