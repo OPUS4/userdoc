@@ -23,7 +23,7 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 | Edition | Auflage | z.B. Auflage eines Buches (bibliographisches Feld) |
 | Issue | Heft | Heft, in dem bspw. ein Artikel erschienen ist; bibliographisches Feld |
 | Language | Sprache der Veröffentlichung | Sprache, in der die elektronische Ressource verfasst wurde |
-| Licence | Lizenz beschreibt die Rechte / den Zugriff auf das Dokument (mit / ohne Print on Demand, welche CC-Lizenz ) |
+| Licence | Lizenz | beschreibt die Rechte / den Zugriff auf das Dokument (mit / ohne Print on Demand, welche CC-Lizenz ) |
 | Note | Bemerkung | freies Feld für (öffentliche und private) Anmerkungen |
 | PageFirst | Erste Seite | Nummer der ersten Textseite |
 | PageLast | Letzte Seite | Nummer der letzten Textseite |
@@ -60,22 +60,23 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 | IdentifierPubmed | | |
 | IdentifierSerial | SICI | [Serial Item and Contribution Identifier](http://en.wikipedia.org/wiki/Serial_Item_and_Contribution_Identifier) |
 | IdentifierUrl | URL | kann z.B. benutzt werden, um eine externe URL zum Dokument zu erfassen |
-| IdentifierUrn | URN | eindeutiger Identifikator des Dokuments, der bei der Freischaltung eines Dokuments automatisch vergeben wird, siehe URN SETTINGS 54 (Wichtiger Hinweis zu diesem Feld siehe unten.) |
+| [IdentifierUrn](#identifierurn) | URN | eindeutiger Identifikator des Dokuments, der bei der Freischaltung eines Dokuments automatisch vergeben wird, siehe URN SETTINGS 54 (Wichtiger Hinweis zu diesem Feld siehe unten.) |
 | IdentifierUuid | UUID | Universal Identifier |
 
-<p class="note" markdown="1">
+### IdentifierUrn
+
 Seit OPUS 4.4 wird beim Veröffentlichen geprüft, ob die vom Anwender im Feld
 IdentifierUrn eingegebene URN kollisionsfrei ist. Besteht eine Kollision, so erfolgt eine
 Fehlermeldung mit der Aufforderung die URN zu ändern. Hier ist jedoch folgendes zu beachten:
 
-* Die Überprüfung der Kollisionsfreiheit erfolgt immer nur bezüglich der in der OPUS-Datenbank (in der Tabelle document_identifiers) gespeicherten URNs.
+* Die Überprüfung der Kollisionsfreiheit erfolgt immer nur bezüglich der in der OPUS-Datenbank (in der Tabelle
+  `document_identifiers`) gespeicherten URNs.
 * Es können daher keine globalen Aussagen bezüglich der Kollisionsfreiheit getroffen werden.
 * Insbesondere kann der Benutzer auch URNs eingeben, die aus einem anderen Namensraum kommen.
 
 Wir empfehlen, das Feld IdentifierUrn möglichst gar nicht mehr im Publikationsformular zu
 verwenden. Wenn es dennoch verwendet wird, dann muss beim Freischalten des Dokuments darauf
 geachtet werden, dass die URN aus dem eigenen Namensraum kommt.
-</p>
 
 ## Personen
 
