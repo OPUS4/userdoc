@@ -55,6 +55,7 @@ Erzeugung von Publikationslisten in unterschiedlichen Ausgabeformaten mit Hilfe 
 
 ## Anpassungen
 
-Anpassbares webbasiertes Nutzerinterface.
+OPUS 4 kann in vieler Hinsicht angepasst werden. Die Inhalte der Startseite und der Hilfeseiten (FAQ) können für
+das eigene Repositorium geändert werden und die Übersetzungen fast aller Texte können angepasst werden.
 
 [Mehr](customization.html)
