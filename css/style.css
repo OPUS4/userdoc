@@ -8,18 +8,21 @@ body {
     border-bottom: 1px solid #26517c;
     padding-left: 0em;
     padding-right: 1em;
+    display: table;
+    width: 100%;
 }
 
 #header .logo {
     width: 20%;
     min-width: 12em;
-    display: inline-block;
+    display: table-cell;
     text-align: center;
+    padding: 0em 1em;
 }
 
 #header .title {
     font-size: 2em;
-    display: inline-block;
+    display: table-cell;
     vertical-align: bottom;
     padding-bottom: 10px;
     padding-left: 0.5em;
@@ -55,7 +58,7 @@ body {
 }
 
 #navigation a {
-    color: #f0f0f0;
+    color: #e0f0f0;
     text-decoration: none;
 }
 
@@ -100,7 +103,7 @@ body {
     font-size: 1.1em;
     line-height: 180%;
     color: #26517d;
-    background-color: white; /* #f3f6f8; */
+    background-color: white;
 }
 
 #content-wrapper {
