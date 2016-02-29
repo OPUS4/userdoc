@@ -1,7 +1,7 @@
 body {
-    background: white;
     margin: 0em;
     font-family: 'Open Sans Pro', sans-serif;
+    background: #f3f6f8;
 }
 
 #header {
@@ -38,8 +38,8 @@ body {
 
 #navigation {
     display: table-cell;
-    color: white;
-    background-color: #6677aa;
+    color: black;
+    background-color: #26517c;
     width: 20%;
     min-width: 12em;
     padding: 1em 1em;
@@ -99,6 +99,8 @@ body {
     vertical-align: top;
     font-size: 1.1em;
     line-height: 180%;
+    color: #26517d;
+    background-color: white; /* #f3f6f8; */
 }
 
 #content-wrapper {
@@ -166,6 +168,7 @@ body {
     border-top: 1px solid #26517c;
     padding-top: 0.5em;
     clear: both;
+    min-height: 2em;
 }
 
 #footer a {
