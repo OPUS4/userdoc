@@ -21,6 +21,7 @@ Diese können editiert und neue Typen können hinzugefügt werden.
 
 * [Dokumenttypen ändern](../configext/doctypes.html)
 * [Dokumenttypen hinzufügen](../configext/doctypes.html#neuen-dokumenttyp-anlegen)
+{: class="navlist" }
 
 ## Schriftenreihen
 
@@ -39,6 +40,7 @@ Diese Schriftenreihen sind über das Browsing zugänglich und können im Adminis
 werden.
 
 * [Schriftenreihen verwalten](../admin/series.html)
+{: class="navlist" }
 
 ## Sammlungen
 
@@ -49,4 +51,5 @@ PACS, JEL, MSC und BKL. Diese Sammlungen sind über das Browsing zugänglich und
 Administrationsbereich angelegt und editiert werden.
 
 * [Sammlungen verwalten](../admin/collections.html)
+{: class="navlist" }
 

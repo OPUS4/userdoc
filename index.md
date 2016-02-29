@@ -16,13 +16,11 @@ bzw. institutionellen Dokumentenservers.
 Die Dokumentation hier bezieht sich auf die OPUS 4 Version, die auf [GitHub][GITHUB] entwickelt wird. Momentan
 wird dort an der Version 4.5 von OPUS gearbeitet.
 
-[Was ist OPUS?](introduction.html)
-
-[OPUS 4.5](opus45.html)
-
-[OPUS mit Git](gitopus.html)
-
-[Installation](installation/index.html)
+* [Was ist OPUS?](introduction.html)
+* [OPUS 4.5](opus45.html)
+* [OPUS mit Git](gitopus.html)
+* [Installation](installation/index.html)
+{: class="navlist" }
 
 ## OPUS 4.4.5 (und früher)
 
