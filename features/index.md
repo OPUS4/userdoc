@@ -23,7 +23,8 @@ Browsing anhand der Klassifikation, des Dokumenttyps, Sammlungen und anderen Kri
 
 ## Veröffentlichen
 
-Formular für das Hinzufügen von Dokumenten zum Repositorium.
+Formular für das Hinzufügen von Dokumenten zum Repositorium. Es können Metadaten eingegeben und Volltexte
+hochgeladen werden.
 
 [Mehr](publish.html)
 
