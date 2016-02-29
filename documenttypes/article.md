@@ -1,8 +1,8 @@
 ---
-title: (Wissenschaftlicher) Artikel
+title: Wissenschaftlicher Artikel
 ---
 
-# (Wissenschaftlicher) Artikel
+# Wissenschaftlicher Artikel
 
 Der Dokumenttyp (wissenschaftlicher) Artikel [**article**] beinhaltet Dokumente, die als Artikel,
 Leitartikel, Editorial, Register, Inhaltsverzeichnis oder redaktioneller Teil in einer wissenschaftlichen
