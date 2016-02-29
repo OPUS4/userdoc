@@ -4,7 +4,7 @@ title: BibTeX Export
 
 # BibTeX Export
 
-Mit dem Konfigurationsschlüssel citationExport.bibtex.enrichment kann ein vorhandenes
+Mit dem Konfigurationsschlüssel `citationExport.bibtex.enrichment` kann ein vorhandenes
 Enrichment angegeben werden, das beim Bibtex-Export als "note" ausgegeben wird. Dazu wird der
 Schlüssel in die `config.ini` wie folgt eingetragen:
 

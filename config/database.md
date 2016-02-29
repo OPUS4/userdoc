@@ -6,6 +6,7 @@ weight: 90
 # Datenbank
 
 Diese Parameter wurden bereits bei der Installation befüllt und erscheinen hier nur der Vollständigkeit halber.
+Sie dienen dazu eine Verbindung zur MySQL Datenbank aufzubauen.
 
 {% highlight ini %}
 ; DB SETTINGS

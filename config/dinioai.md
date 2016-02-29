@@ -16,10 +16,9 @@ Anwender, die originär mit der Version 4.2.2 starten, die unten aufgeführten S
 </p>
 
 Um diese Anforderung zu erfüllen, muss eine Sammlung "open_access" mit einem Sammlungseintrag "open_access" im Bereich
-"Sammlungen verwalten 145 " angelegt werden:
+[Sammlungen verwalten](../admin/collections.html) angelegt werden:
 
 ![Add Collection](../img/admin/SC_DINI_open_access.png){:width="640px"}
-
 
 Der Parameter OAISubset hat den Wert: "open_access", die Option "sichtbar" ist ausgewählt.
 
