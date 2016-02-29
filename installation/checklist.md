@@ -1,6 +1,6 @@
 ---
 title: Checkliste vor Liveschaltung
-weight: 10
+weight: 100
 ---
 
 # Checkliste vor Liveschaltung
