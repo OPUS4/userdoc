@@ -24,29 +24,30 @@ ein Wort' 'Keines der Wörter').
 ## RSS-Feeds auf Suchanfragen
 
 In OPUS4 können beliebige Suchen (inkl. ausgewählter Facetten) als RSS-Feed abonniert werden. Dazu muss einfach nur
-```/export/rss``` an die URL angehängt werden.
+`/export/rss` an die URL angehängt werden.
 
-Ein Beispiel aus der Suche, um alle neuen Dokumente zu abonnieren, die eine Suche nach dem Stichwort "doe" und dem
-Schlagwort "eBook" liefert:
+Ein Beispiel für eine einfache Suche, um alle neuen Dokumente zu abonnieren, die eine Suche nach dem Stichwort "doe"
+und dem Schlagwort "eBook" liefert:
 
-<http://example.org/solrsearch/index/search/searchtype/simple/query/doe/subjectfq/eBook>
+    /solrsearch/index/search/searchtype/simple/query/doe/subjectfq/eBook
 
 wird zu
 
-<http://example.org/solrsearch/index/search/searchtype/simple/query/doe/subjectfq/eBook/export/rss>
+    /solrsearch/index/search/searchtype/simple/query/doe/subjectfq/eBook/export/rss
 
 Ein Beispiel aus dem Browsing, um alle neuen Dokumente einer Schriftenreihe zu abonnieren:
 
-<http://example.org/solrsearch/index/search/searchtype/series/id/1>
+    /solrsearch/index/search/searchtype/series/id/1
 
 wird zu
 
-<http://example.org/solrsearch/index/search/searchtype/series/id/1/export/rss>
+    /solrsearch/index/search/searchtype/series/id/1/export/rss
 
-Stehen in der URL die Parameter start, rows, sortfield und/oder sortorder, so werden diese automatisch entfernt
+Stehen in der URL die Parameter `start`, `rows`, `sortfield` und/oder `sortorder`, so werden diese automatisch entfernt
 (und ignoriert).
 
-<p class="warning">
-Die Dokumente im RSS-Feed werden nach <code>server_date_published</code> absteigend sortiert. Es werden immer 25
-Einträge ausgegeben. Es können auch RSS-Feeds auf Suchanfragen abonniert werden, die aktuell noch keine Treffer liefern.
+<p class="info" markdown="1">
+Die Dokumente im RSS-Feed werden nach dem Feld `server_date_published` absteigend sortiert.
+Es werden immer 25 Einträge ausgegeben.
+Es können auch RSS-Feeds auf Suchanfragen abonniert werden, die aktuell noch keine Treffer liefern.
 </p>

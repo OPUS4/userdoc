@@ -1,5 +1,5 @@
 ---
-title: Begriffe und Funktionen
+title: Funktionen
 weight: 20
 ---
 
@@ -9,42 +9,51 @@ Das verwendete Vokabular für Funktionen und Bereiche ist in einigen Punkten spe
 An dieser Stelle werden daher alle Funktionen vorgestellt, auf die in der Applikation zugegriffen
 werden kann. Dabei werden spezifische Begriffe entsprechend definiert und erläutert.
 
-<p class="warning">
-OPUS ist nur sinnvoll zu benutzen, wenn im Webbrowser Cookies eingeschaltet sind. Sind
-Cookies nicht erlaubt, so funktioniert der Login in die Administration nicht und der normale Anwender
-kann ohne Cookies keine Dokumente über das Veröffentlichungsformular einstellen.
-</p>
-
 ## Suche
 
-Einfache und erweiterte Suche mit Facetten, um die Suchergebnisse zu filtern.
+Einfache und erweiterte Suche mit Facetten für die Filterung von Suchergebnissen basierend auf Apache Solr.
 
 [Mehr](search.html)
 
 ## Browsing
 
+Browsing anhand der Klassifikation, des Dokumenttyps, Sammlungen und anderen Kriterien.
+
 [Mehr](browsing.html)
 
 ## Veröffentlichen
+
+Formular für das Hinzufügen von Dokumenten zum Repositorium.
 
 [Mehr](publish.html)
 
 ## Sammlungen
 
+Hierarchische System zur Organisation von Dokumenten, z.B. Institute, Klassifikationen oder Projekte.
+
 [Mehr](collections.html)
 
 ## Export
+
+Export von Suchergebnissen als XML bzw. transformiert in andere Formate mit Hilfe von XSLT.
 
 [Mehr](export.html)
 
 ## OpenAIRE
 
+Export von Dokumenten über oai-dc nach OpenAire 3.0. OpenAire ist ein OpenAccess-Repository, welches aus EU-Mitteln
+geförderte Dokumente beinhaltet und zur Verfügung stellt.
+
 [Mehr](openaire.html)
 
 ## Publikationslisten
 
+Erzeugung von Publikationslisten in unterschiedlichen Ausgabeformaten mit Hilfe von XSLT.
+
 [Mehr](publist.html)
 
 ## Anpassungen
+
+Anpassbares webbasiertes Nutzerinterface.
 
 [Mehr](customization.html)
