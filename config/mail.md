@@ -2,7 +2,7 @@
 title: E-Mail
 ---
 
-## Mail
+# Mail
 
 Die folgenden Einstellungen legen fest, welche E-Mailadresse benutzt wird, wenn OPUS4 Mails
 verschickt:
@@ -22,7 +22,7 @@ Ereignissen "Submission" (Neues Dokument wurde eingestellt) und "Publication" (D
 freigeschaltet) E-Mails an vorher festgelegte E-Mail-Adressen verschicken.
 Grundsätzlich ist die Benachrichtigungsfunktion per Default deaktiviert. Sie kann getrennt für die
 Ereignisse "Submission" und "Publication" in der config.ini aktiviert werden, indem die
-entsprechenden Schlüssel aus der config.ini.template kopiert und die Kommentarzeichen entfernt
+entsprechenden Schlüssel aus der `config.ini.template` kopiert und die Kommentarzeichen entfernt
 werden:
 
 {% highlight ini %}
@@ -49,7 +49,7 @@ ist.
 
 ### Konfiguration der "Submission"-Benachrichtigung
 
-1. Benachrichtigungsfunktion aktivieren, indem das Kommentarzeichen vor dem Schlüssel
+1\. Benachrichtigungsfunktion aktivieren, indem das Kommentarzeichen vor dem Schlüssel
 `notification.document.submitted.enabled = 1` entfernt wird:
 
 {% highlight ini %}
@@ -59,7 +59,7 @@ ist.
 notification.document.submitted.enabled = 1
 {% endhighlight %}
 
-2. Den Schlüssel notification.document.submitted.email aktivieren und die E-Mail-Adressen
+2\. Den Schlüssel notification.document.submitted.email aktivieren und die E-Mail-Adressen
 eintragen, an die die Submission-Mail verschickt werden soll. Mehrere Adressen werden durch
 Komma getrennt:
 
@@ -72,7 +72,7 @@ notification.document.submitted.email = "mustermann@example.org,musterfrau@examp
 
 ### Konfiguration der "Publication"-Benachrichtigung
 
-1. Benachrichtigungsfunktion aktivieren, indem das Kommentarzeichen vor dem Schlüssel
+1\. Benachrichtigungsfunktion aktivieren, indem das Kommentarzeichen vor dem Schlüssel
 `notification.document.published.enabled = 1` entfernt wird:
 
 {% highlight ini %}
@@ -82,7 +82,7 @@ notification.document.submitted.email = "mustermann@example.org,musterfrau@examp
 notification.document.published.enabled = 1
 {% endhighlight %}
 
-2. Den Schlüssel notification.document.published.email aktivieren und die E-Mail-Adressen
+2\. Den Schlüssel notification.document.published.email aktivieren und die E-Mail-Adressen
 eintragen, an die die Publication-Mail verschickt werden soll. Mehrere Adressen werden durch
 Komma getrennt:
 
@@ -139,7 +139,7 @@ Die Platzhalter bezeichnen dabei:
 
 Sind keine Autoren bzw. kein Haupttitel vorhanden, wird "n/a" ausgegeben.
 
-<p class="warning">
+<p class="warning" markdown="1">
 Die "Submission"-Benachrichtigung übernimmt direkt die Eingaben bezüglich Haupttitel und
 Autorennamen aus dem Formular. Ein Benutzer kann hier durchaus beliebigen Inhalt eintragen,
 also auch HTML-Markup oder beliebige URLs, die beim Anklicken Schaden verursachen können
@@ -157,7 +157,7 @@ hinterlegt ist.
 
 Hierfür wird beim Freischalten eines Dokuments nachgefragt, wer eine E-Mail erhalten soll:
 
-![Menü](../img/config/sc_notification_authors.png){:width="640px"}
+![Benachrichtigung](../img/config/sc_notification_authors.png){:width="640px"}
 
 Für den Fall, dass es sich bei Einsteller und Autor um dieselbe Person handelt, wird nur einmal eine
 E-Mail verschickt.

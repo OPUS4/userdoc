@@ -103,7 +103,7 @@ einmal täglich ausgeführt werden sollte.
 ## Aktivieren der asynchronen Jobverarbeitung
 
 Jobs werden im System nur generiert, wenn in der `config.ini` der Wert für `runjobs.asynchronous`
-auf 1 gesetzt wird (Standard ist 0):
+auf `1` gesetzt wird (Standard ist `0`):
 
 {% highlight ini %}
 ; JOB EXECUTION SETTINGS
@@ -113,11 +113,12 @@ auf 1 gesetzt wird (Standard ist 0):
 runjobs.asynchronous = 0
 {% endhighlight %}
 
-<p class="info">
+<p class="info" markdown="1">
 Bei Bedarf: Einrichten des Monitoring (z.B. Nagios)
-Die URL $BASEDIR/admin/info/worker-monitor gibt den Wert 1 zurück, wenn es Jobs gibt, die
-nicht verarbeitet werden konnten. Ansonsten wird der Wert 0 zurückgeliefert. Es ist so möglich, die
+Die URL `$BASEDIR/admin/info/worker-monitor` gibt den Wert `1` zurück, wenn es Jobs gibt, die
+nicht verarbeitet werden konnten. Ansonsten wird der Wert `0` zurückgeliefert. Es ist so möglich, die
 erfolgreiche Jobverarbeitung mit Monitoring-Systemen zu überwachen. Dafür muss im Admin-
-Bereich unter Zugriffskontrolle der IP-Bereich 164 für das Monitoring freigeschaltet werden,
+Bereich unter [Zugriffskontrolle der IP-Bereich](../admin/security.html#ip-adressbereiche)
+für das Monitoring freigeschaltet werden,
 ansonsten ist die URL von außen nicht erreichbar.
 </p>

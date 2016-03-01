@@ -9,7 +9,7 @@ konfiguriert ist, wird auf der Frontdoor eines Dokuments ein entsprechender Link
 angezeigt. Ob ein Dokument auf diese Weise bestellbar ist, wird über die Lizenz des Dokuments
 geregelt. Nur wenn dort durch ein Häkchen PoD erlaubt ist, erfolgt die Anzeige auf der Frontdoor.
 
-Um diese Funktion auf der Frontdoor zu aktivieren, sind in der config.ini für die entsprechenden
+Um diese Funktion auf der Frontdoor zu aktivieren, sind in der `config.ini` für die entsprechenden
 Parameter die Kommentarzeichen zu entfernen und die Parameter mit entsprechenden Werten zu
 befüllen:
 
@@ -26,10 +26,10 @@ printOnDemand.url =
 printOnDemand.button =
 {% endhighlight %}
 
-Bei dem Parameter printOnDemand.url wird die URL eines Anbieters eingetragen. Optional kann
-für den Parameter printOnDemand.button eine Bild-Datei für einen Button eingetragen werden.
-Diese Datei muss im image-Ordner ($BASEDIR/public/layouts/\<LAYOUTNAME\>/img/) des
-verwendeten Layouts 94 abgelegt werden.
+Bei dem Parameter `printOnDemand.url` wird die URL eines Anbieters eingetragen. Optional kann
+für den Parameter `printOnDemand.button` eine Bild-Datei für einen Button eingetragen werden.
+Diese Datei muss im `image`-Ordner (`$BASEDIR/public/layouts/<LAYOUTNAME>/img/`) des
+verwendeten [Layouts](../configext/layout.html) abgelegt werden.
 Bsp:
 
 {% highlight ini %}

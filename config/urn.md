@@ -18,10 +18,10 @@ urn.nid = nbn                  # Namensraum (i.d.R. nbn)
 urn.nss = de:kobv:test-opus    # de:[Bibliotheksverbund]:[Bibliothekssigel] oder de:[vierstellige Ziffer]
 {% endhighlight %}
 
-<p class="warning">
+<p class="warning" markdown="1">
 Die DNB lässt nur URNs für Dokumente mit Volltexten zu. Daher ist die Vergabe von URNs auf Dokumente im Status
 "published" beschränkt, die per OAI sichtbare Dateien besitzen. Sichtbar per OAI sind alle Dateien, bei denen das
-Attribut "VisibleInOai" auf 1 gesetzt ist.
+Attribut `VisibleInOai` auf `1` gesetzt ist.
 </p>
 
 Um zu prüfen, ob in einer früheren OPUS-Version URNs für Dokumente ohne sichtbaren Dateien vergeben wurden, kann
@@ -34,5 +34,7 @@ $ php opus-console.php snippets/find_urns_for_docs_without_visible_files.php
 
 Bitte achten Sie beim Migrieren von Dokumenten, die bereits URNs besitzen, darauf, innerhalb des Konfigschlüssels
 `urn.nss` das Suffix, welches das digitale Objekt an sich kennzeichnet (Namespace Specific String), ggf. anzupassen. Für
-das obige Beispiel könnte aus -opus z.B. -opus4 werden. Für weiterführende Informationen siehe "URN-Vergabe" im
-Kapitel Standards 10.
+das obige Beispiel könnte aus -opus z.B. -opus4 werden.
+
+* [URN-Vergabe](../introduction.html#urn-vergabe)
+{: class="navlist" }
