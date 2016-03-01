@@ -6,7 +6,7 @@ title: Übersetzungsressourcen
 
 OPUS4 arbeitet mit Übersetzungsressourcen, die es ermöglichen, in der Applikation zwischen
 verschiedenen Sprachen umzuschalten. Diese Übersetzungsressourcen (Schlüssel) werden in
-Sprachdateien (.tmx-Dateien) verwaltet. OPUS4 liefert für OPUS-Module, in denen
+Sprachdateien (`.tmx`-Dateien) verwaltet. OPUS4 liefert für OPUS-Module, in denen
 Übersetzungsressourcen angepasst werden können, ein Verzeichnis
 
     $BASEDIR/(modulname)/language_custom/
@@ -28,9 +28,9 @@ der Namen der Dokumenttypen).
 ## Aufbau der Schlüssel und Bearbeitung
 
 Im Verzeichnis `$BASEDIR/(modulname)/language_custom/` existiert bereits eine
-Beispielsprachdatei example.tmx.template, die als Vorlage genutzt werden kann und bereits einen
+Beispielsprachdatei `example.tmx.template`, die als Vorlage genutzt werden kann und bereits einen
 Beispielschlüssel enthält. Anhand dieses Beispielschlüssels wird im Folgenden der grundlegende
-Aufbau eines Übersetzungsschlüssels in einer .tmx-Datei erläutert:
+Aufbau eines Übersetzungsschlüssels in einer `.tmx`-Datei erläutert:
 
 {% highlight xml %}
 <tu tuid="example_key"> <!-- Übersetzungsschlüssels -->
@@ -43,13 +43,13 @@ Aufbau eines Übersetzungsschlüssels in einer .tmx-Datei erläutert:
 </tu>
 {% endhighlight %}
 
-Die gewünschten Texte können direkt in den entsprechenden .tmx-Dateien editiert werden. Für
+Die gewünschten Texte können direkt in den entsprechenden `.tmx`-Dateien editiert werden. Für
 Hilfetexte (FAQ) existiert zusätzlich die Möglichkeit, diese in Textdateien in das Verzeichnis
-`$BASEDIR/application/configs/help` auszulagern (vgl. Kapitel "FAQ-Seite" 97 ).
+`$BASEDIR/application/configs/help` auszulagern.
 
-Nach der Bearbeitung der .tmx-Datei wird die Endung '.template' entfernt und sie wird wieder im
+Nach der Bearbeitung der .tmx-Datei wird die Endung `.template` entfernt und sie wird wieder im
 Verzeichnis `$BASEDIR/(modulname)/language_custom/` gespeichert. Es können beliebig
-viele .tmx-Dateien angelegt werden. Dateien in diesem Verzeichnis werden bei einem Update nicht
+viele `.tmx`-Dateien angelegt werden. Dateien in diesem Verzeichnis werden bei einem Update nicht
 überschrieben und die geänderten Schlüssel behalten weiter ihre Gültigkeit. Deshalb sollten
 Übersetzungsschlüssel ausschließlich an dieser Stelle geändert werden.
 
@@ -73,8 +73,8 @@ vier Einstiegspunkte:
 
 <p class="warning" markdown="1">
 Um diese Funktion zu nutzen muss zunächst konfiguriert werden, welche Module für die
-Bearbeitung freigegeben werden sollen. Dies geschieht in der Datei 
-`$BASEDIR/application/configs/config.ini` über den Konfigurationsschlüssel 
+Bearbeitung freigegeben werden sollen. Dies geschieht in der Datei
+`$BASEDIR/application/configs/config.ini` über den Konfigurationsschlüssel
 `setup.translation.modules.allowed`. Die
 zu erlaubenden Modulnamen sind dort ohne Leerzeichen durch ein Komma getrennt aufzuführen.
 </p>
@@ -101,14 +101,16 @@ Webservers auf die Instanz generell als Sicherheitsrisiko angesehen werden müss
 Unter diesem Punkt können Benutzerdefinierte Felder (sogenannte "Enrichments") neu angelegt und
 vorhandene, noch nicht in Verwendung befindliche, umbenannt und gelöscht werden. Momentan ist
 es noch notwendig, die erste Definition der Übersetzungen wie bisher auf Systemebene
-vorzunehmen (s. Kapitel Felder 68 und dessen Unterkapitel). Vorhandene Übersetzungen können
-dann wie unter Punkt 4. "Übersetzungen (Feldnamen, Feldüberschriften, Feldhilfen)" beschrieben
-bearbeitet werden.
+vorzunehmen.
+
+* [Felder](fields.html)
+* [Übersetzungen in der Administration](../admin/userinterface.html#bersetzungen)
+{: class="navlist" }
 
 ### 2. FAQ-Seite
 
 Für die Bearbeitung der Hilfeseite (FAQ) steht ein Formular zur Verfügung. Die Konfiguration der
-Hilfeseite findet weiter wie im Kapitel FAQ-Seite 97 beschrieben statt, d.h. das Anlegen oder
+Hilfeseite findet weiter wie im Kapitel [FAQ-Seite](faq.html) beschrieben statt, d.h. das Anlegen oder
 Umstrukturieren von Abschnitten ist über die Oberfläche bisher nicht möglich. Für die Bearbeitung
 über die Oberfläche sind folgende Schreibrechte nötig:
 
@@ -116,7 +118,7 @@ In diese Datei werden alle geänderten Übersetzungsschlüssel eingetragen:
 
     $BASEDIR/modules/home/language_custom/help_custom.tmx
 
-Alle Dateien mit der Endung " .txt" im Verzeichnis: 
+Alle Dateien mit der Endung `.txt` im Verzeichnis:
 
     $BASEDIR/application/configs/help/
 
@@ -130,7 +132,7 @@ Dafür sind folgende Schreibrechte erforderlich:
 
     $BASEDIR/modules/home/language_custom/<Seitenname>.tmx (wenn bereits vorhanden, ansonsten das Verzeichnis)
 
-Dabei ist `<Seitenname>` jeweils durch home , contact oder imprint zu ersetzen.
+Dabei ist `<Seitenname>` jeweils durch `home`, `contact` oder `imprint` zu ersetzen.
 
 <p class="warning">
 Bei Änderungen an den Übersetzungsschlüsseln werden die geänderten Übersetzungen in den
@@ -149,8 +151,8 @@ und können nach den Tabellenspalten sortiert werden.
 
 Zu jedem Eintrag wird ein Link angeboten, der auf eine Bearbeitungsseite für den
 Übersetzungsschlüssel führt. Liegt der Inhalt in einer nicht zu bearbeitenden Datei (also im
-Unterverzeichnis " language "), so werden die Inhalte für diesen Schlüssel für die Bearbeitung
-übernommen, aber in der zu bearbeitenden Datei (im Verzeichnis " language_custom ")
+Unterverzeichnis `language`), so werden die Inhalte für diesen Schlüssel für die Bearbeitung
+übernommen, aber in der zu bearbeitenden Datei (im Verzeichnis `language_custom`)
 gespeichert.Auch hier muss sichergestellt werden, dass der Webserver Schreibzugriff auf die
 entsprechende Datei hat (bzw. auf das entsprechende Verzeichnis, sofern noch keine Anpassungen
 vorgenommen wurden).

@@ -13,8 +13,8 @@ Rechte beim Veröffentlichen geregelt wird. Die entsprechenden Texte müssen in 
     $BASEDIR/application/configs/help/policies.de.txt
 
 Es existieren viele gute Beispiele für Leitlinien und Rechtseinräumung im Internet (z.B. für den edoc-
-Server der Humboldt Universität zu Berlin: http://edoc.hu-berlin.de/e_info/leitlinien.php bzw. http://
-edoc.hu-berlin.de/e_info/license.php). Diese sollten aber nicht einfach übernommen werden.
+Server der Humboldt Universität zu Berlin: `http://edoc.hu-berlin.de/e_info/leitlinien.php` bzw.
+`http://edoc.hu-berlin.de/e_info/license.php`). Diese sollten aber nicht einfach übernommen werden.
 Besonders im Hinblick auf Rechtssicherheit beim Betrieb des Repositoriums (Übertragung eines
 einfachen Nutzungsrechts bei Veröffentlichung, Haftungsausschluss) sollten diese Texte von der
 Rechtsabteilung o.ä. geprüft werden.

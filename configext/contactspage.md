@@ -47,10 +47,9 @@ Der eigentliche Inhalt wird über die Dateien
     $BASEDIR/application/configs/help/contact.de.txt
     $BASEDIR/application/configs/help/contact.en.txt
 
-angepasst (siehe Kapitel "FAQ-Seite" 97 , "3. Inhalt eines Eintrags (Sektionseintrag) ändern").
+angepasst (siehe [Inhalt eines Eintrags (Sektionseintrag) ändern](faq.html#inhalt-eines-eintrags-sektionseintrag-ndern)).
 
-<p class="note">
-Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in Kapitel Übersetzungsressourcen 65
-beschrieben.
+<p class="note" markdown="1">
+Die Bearbeitung von [Übersetzungsressourcen](translations.html) sowie statischer Seiten ist seit Version 4.4 über
+die Opus4-Oberfläche möglich.
 </p>

@@ -4,10 +4,10 @@ title: Indexieren durch Crawler verhindern
 
 # Indexieren durch Crawler verhindern
 
-Das OPUS-Modul crawlers erleichtert Suchmaschinen die Indexierung, indem es sogenannte
+Das OPUS-Modul `crawlers` erleichtert Suchmaschinen die Indexierung, indem es sogenannte
 Deeplink s auf die Frontdoors der veröffentlichten Dokumente auflistet. Aber auch wenn das Modul
 nicht freigeschaltet ist, können Suchmaschinen durchaus Inhalte indexieren, z.B. wenn sie über das
-Browsing auf die Frontdoors gelangen. Das Anlegen einer robots.txt-Datei schützt nicht in jedem Fall
+Browsing auf die Frontdoors gelangen. Das Anlegen einer `robots.txt`-Datei schützt nicht in jedem Fall
 davor, dass alle Suchmaschinen-Crawler die Indexierung unterlassen, da es lediglich ein Hinweis
 oder eine Bitte ist, dies zu unterlassen.
 
@@ -22,11 +22,11 @@ Für weniger kritische Fälle kann, um eine Suchmaschine davon abzuhalten, die S
 durchsuchen, folgender Tag im html-head in der `$BASEDIR/public/layouts/opus4/common.phtml`
 ergänzt werden:
 
-<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
 
 Der Eintrag sieht dann folgendermaßen aus:
 
-{% highlight phtml %}
+{% highlight html %}
 <head>
     <?= $this->headMeta() ?>
     <?= $this->headTitle() ?>
@@ -45,7 +45,7 @@ Der Eintrag sieht dann folgendermaßen aus:
 </head>
 {% endhighlight %}
 
-<p class="note">
-Die Datei common.phtml muss innerhalb des entsprechenden (aktuell genutzten
+<p class="note" markdown="1">
+Die Datei `common.phtml` muss innerhalb des entsprechenden (aktuell genutzten
 Verzeichnisses geändert werden.
 </p>

@@ -4,8 +4,8 @@ title: Dokumenttypen
 
 # Dokumenttypen
 
-OPUS4 liefert standardmäßig 21 vordefinierte Dokumenttypen (plus einen Beispiel-Dokumenttyp
-"Alle Felder") aus (siehe Anhang 202 ). Jeder Dokumenttyp besteht aus einer XML-
+OPUS4 liefert standardmäßig 21 vordefinierte [Dokumenttypen](../documenttypes/index.html)
+(plus einen Beispiel-Dokumenttyp "Alle Felder") aus. Jeder Dokumenttyp besteht aus einer XML-
 Dokumenttypdefinition und einem Template. Wir empfehlen Ihnen zur Erstellung und Validierung der
 Dokumenttypen einen XML-Editor.
 
@@ -15,8 +15,11 @@ Folgende Änderungen sind möglich:
 3. Dokumenttypen umbenennen
 4. Neuen Dokumenttyp anlegen
 
-In den folgenden beiden Grundlagenkapiteln "Grundlage: XML-Dokumenttypdefinitionen" 80 und
-"Grundlage: Templates" 85 werden zunächst der generelle Aufbau und die Bedeutung der
+In den folgenden beiden Grundlagenkapiteln
+[Grundlage: XML-Dokumenttypdefinitionen](#grundlage-xml-dokumenttypdefinition)
+und
+["Grundlage: Templates](#grundlage-templates)
+werden zunächst der generelle Aufbau und die Bedeutung der
 Einträge in den XML-Dokumenttypdefinitionen und in den Templates näher erläutert.
 
 ## Grundlage: XML-Dokumenttypdefinition
@@ -28,13 +31,13 @@ Die XML-Dokumenttypdefinitionen liegen im Ordner
 In ihnen wird festgelegt, welche Felder ein Dokumenttyp beinhalten soll. Darüber hinaus kann darauf
 Einfluss genommen werden, ob ein Feld obligatorisch (required) oder optional ist.
 
-Das Wurzelement in einem Dokumenttyp heißt documenttype. Innerhalb dieses Wurzelelements
-werden die für diesen Dokumenttyp notwendigen Felder mit dem Element field definiert.
+Das Wurzelement in einem Dokumenttyp heißt `documenttype`. Innerhalb dieses Wurzelelements
+werden die für diesen Dokumenttyp notwendigen Felder mit dem Element `field` definiert.
 
 ### Das Element field
 
-Das Element field besitzt die Attribute name , formelement , required , datatype und
-multiplicity . Jedes field im Dokumenttyp muss immer alle fünf Attribute besitzen und diese
+Das Element `field` besitzt die Attribute `name`, `formelement`, `required`, `datatype` und
+`multiplicity`. Jedes field im Dokumenttyp muss immer alle fünf Attribute besitzen und diese
 müssen deklariert werden, z.B.:
 
 {% highlight xml %}
@@ -44,33 +47,37 @@ müssen deklariert werden, z.B.:
 
 ### Das Attribut name
 
-Das Attribut name legt die Bezeichnung des Feldes fest. Die Namen der Felder sind in der
-CamelCase Schreibweise formuliert. Zur Wahl stehen 70 verschiedene Standardfelder, die der
-Tabelle im Anhang 229 entnommen werden können. Wie benutzerdefinierte Felder angelegt werden
-können, wird in den Kapiteln Einfache Textfelder neu anlegen 75 , Select-Felder neu anlegen 77 und
-Benutzerdefinierte Felder (EnrichmentKeys) 166 erklärt.
+Das Attribut `name` legt die Bezeichnung des Feldes fest. Die Namen der Felder sind in der
+CamelCase Schreibweise formuliert. Zur Wahl stehen 70 verschiedene [Standardfelder](../reference/fields.html).
+Es können neue, benutzerdefinierte Felder angelegt werden.
+
+* [Einfache Textfelder neu anlegen](fields.html#einfache-textfelder-neu-anlegen)
+* [Select-Felder neu anlegen](fields.html#select-felder-neu-anlegen)
+* [Benutzerdefinierte Felder (EnrichmentKeys)](../admin/userinterface.html#benutzerdefinierte-felder-enrichmentkeys)
+{: class="navlist" }
 
 ### Das Attribut required
 
 In diesem Attribut wird festgelegt, ob das Feld ein Pflichtfeld ist. In diesem Fall wird es in der
 Anzeige mit einem Stern markiert und muss zwingend ausgefüllt werden. Als mögliche Werte
-können yes und no eingetragen werden.
+können `yes` und `no` eingetragen werden.
 
 ### Das Attribut formelement
 
-Das Attribut formelement gibt an, welches HTML-Formelement zur Darstellung benutzt werden soll.
+Das Attribut `formelement` gibt an, welches HTML-Formelement zur Darstellung benutzt werden soll.
 Folgende Werte sind möglich:
 
-| Werte für formelement | Bedeutung |
-|:----------------------|:----------|
-| text, Text | einzeiliges Eingabefeld |
-| textarea, Textarea |mehrzeiliges größeres Eingabefeld |
-| select, | Select Auswahlfeld |
-| checkbox, | Checkbox Ankreuzfeld |
+| Werte für formelement | Bedeutung                         |
+|:----------------------+:----------------------------------|
+| text, Text            | einzeiliges Eingabefeld           |
+| textarea, Textarea    | mehrzeiliges größeres Eingabefeld |
+| select, Select        | Auswahlfeld                       |
+| checkbox, Checkbox    | Ankreuzfeld                       |
+/-----------------------+-----------------------------------/
 
 ### Das Attribut datatype
 
-Das Attribut datatyp definiert, welchen Eingaben ein Feld erwartet. Folgende Werte sind möglich:
+Das Attribut `datatyp` definiert, welchen Eingaben ein Feld erwartet. Folgende Werte sind möglich:
 
 | Wert für datatype | Bedeutung |
 |-------------------+-----------|
@@ -125,11 +132,12 @@ diesen Feldern eine multiplicity von 1 zwingend notwendig ist:
 
 ### Das Unterelement required-if-fulltext
 
-Das Element required-if-fulltext ist ein optionales Unterelement des Elements field . Es kann
+Das Element `required-if-fulltext` ist ein optionales Unterelement des Elements `field`. Es kann
 benutzt werden um festzulegen, dass ein Feld zum Pflichtfeld wird, sobald im ersten Schritt des
 Veröffentlichungsprozesses ein Volltext hochgeladen wurde. Wenn es verwendet wird, dann muss es
 als erstes Unterelement angegeben werden.
-Bsp:
+
+Beispiel:
 
 {% highlight xml %}
 <field name="PersonAuthor" formelement="text" datatype="Person" required="no"
@@ -138,12 +146,11 @@ Bsp:
 </field>
 {% endhighlight %}
 
-
 ### Das Unterelement subfield
 
-Mit subfield besteht die Möglichkeit, Unterfelder für field zu definieren. Es besitzt analog zu
-field die Attribute name, required, datatype und formelement . Auf multiplicity kann hier
-verzichtet werden, da ein jedes subfield pro Feld nur einmal vorkommen darf.
+Mit `subfield` besteht die Möglichkeit, Unterfelder für `field` zu definieren. Es besitzt analog zu
+`field` die Attribute `name`, `required`, `datatype` und `formelement`. Auf `multiplicity` kann hier
+verzichtet werden, da ein jedes `subfield` pro Feld nur einmal vorkommen darf.
 
 | Attribute von subfield | Bedeutung |
 |------------------------+-----------|
@@ -152,7 +159,7 @@ verzichtet werden, da ein jedes subfield pro Feld nur einmal vorkommen darf.
 | datatype | Typ des Feldinhalts |
 | required | legt fest, ob das subfield ein Pflichtfeld ist |
 
-Bsp:
+Beispiel:
 
 {% highlight xml %}
 <field name="PersonAuthor" formelement="text" datatype="Person" required="no"
@@ -166,11 +173,11 @@ Bsp:
 ### Das Unterelement value
 
 Es ist möglich, Default-Werte für Felder und Unterfelder festzulegen. Hierzu wird das Element field
-bzw. das Element subfield um einen Eintrag mit dem Attribut value erweitert, in das dann ein
+bzw. das Element `subfield` um einen Eintrag mit dem Attribut `value` erweitert, in das dann ein
 Wert eingetragen wird, der dem Nutzer bereits beim Aufruf des Formulars im entsprechenden Feld
-angezeigt wird.
+angezeigt wird. Das Element `value` hat drei mögliche Attribute.
 
-| Attribut von value | Bedeutung |
+| Attribut | Bedeutung |
 |--------------------+-----------|
 |  value | Wert, der voreingestellt werden soll. Bei Select-Feldern ist das die ID des gewünschten Wertes (sichtbar in der Administration). |
 | edit | legt fest, ob der Nutzer diesen Wert verändern kann
@@ -217,8 +224,8 @@ Beispiel 3: Vorbelegung von Select-Feldern
 
 ### Das Unterelement option
 
-Das Unterelement option kann benutzt werden, um bei benutzerdefinierten Select-Feldern
-(datatype="Select" bzw. datatype="select") Werte für die Auswahl festzulegen.
+Das Unterelement `option` kann benutzt werden, um bei benutzerdefinierten Select-Feldern
+(`datatype="Select"` bzw. `datatype="select"`) Werte für die Auswahl festzulegen.
 
 ### Spezialfall "implizite" Felder
 
@@ -230,8 +237,8 @@ Beispiel 1: Personen
 Für Felder des Typs "Person" (Advisor, Author, Contributor, Editor, Referee, Submitter, Translator)
 werden die Felder FirstName und LastName automatisch mit erstellt. Möchte man nun diesen
 Feldern einen Defaultwert geben, müssen diese vor der Belegung mit einem Wert im Attribut value
-noch direkt referenziert werden. Dies geschieht mit dem Attribut for="FirstName" bzw.
-for="LastName:
+noch direkt referenziert werden. Dies geschieht mit dem Attribut `for="FirstName"` bzw.
+`for="LastName`:
 
 {% highlight xml %}
 <field name="PersonSubmitter" required="yes" multiplicity="1"
@@ -245,7 +252,7 @@ Beispiel 2: Titel
 
 Analog dazu wird für Titel-Felder (Abstract, Additional, Main, Parent, Sub) das Feld Language
 automatisch mit erstellt. Dieses Feld kann wie folgt mit einem Defaultwert belegt werden, indem dem
-Attribut value noch das Attribut for="Language" vorangestellt wird:
+Attribut `value` noch das Attribut `for="Language"` vorangestellt wird:
 
 {% highlight xml %}
 <field name="TitleMain" required="no" formelement="text"
@@ -258,7 +265,8 @@ Attribut value noch das Attribut for="Language" vorangestellt wird:
 
 Wenn z.B. ein Personenfeld als Pflichtfeld deklariert ist und keine impliziten Felder angegeben sind
 wird nur der Nachname als Pflichtfeld behandelt. Um nun z.B. auch den Vornamen als Pflichtfeld zu
-erhalten ist die Definition entsprechend zu erweitern und das Attribut required=yes anzugeben:
+erhalten ist die Definition entsprechend zu erweitern und das Attribut `required=yes` anzugeben:
+
 Beispiel: Vorname als Pflichtfeld
 
 {% highlight xml %}
@@ -270,9 +278,9 @@ Beispiel: Vorname als Pflichtfeld
 
 ## Grundlage: Templates
 
-Die Templates zu den Dokumenttypen liegen im Verzeichnis 
+Die Templates zu den Dokumenttypen liegen im Verzeichnis
 
-    $BASEDIR/application/configs/doctypes_templates 
+    $BASEDIR/application/configs/doctypes_templates
 
 In den Templates wird festgelegt, in welcher Reihenfolge die Felder
 eines Dokumenttyps im Veröffentlichungsformular angezeigt werden.
@@ -280,7 +288,7 @@ eines Dokumenttyps im Veröffentlichungsformular angezeigt werden.
 ### Erweiterte Einstellungen
 
 Neben der Möglichkeit, die Reihenfolge der Elemente zu bestimmen, kann über die Veränderung der
-eingebundenen css-Klassen auch das Aussehen verändert werden. Darüberhinaus besteht die
+eingebundenen css-Klassen auch das Aussehen verändert werden. Darüber hinaus besteht die
 Möglichkeit, den Elementen Optionswerte mitzugeben. Die Signatur der Methoden lautet:
 
 {% highlight php %}
@@ -288,11 +296,11 @@ element($value, $options = null, $type = null, $name = null)
 group($value, $options = null, $name = null)
 {% endhighlight %}
 
-Wann Felder als element bzw. als group benutzt werden müssen, kann einer Tabelle im Kapitel
-12.3 "Feldtypen für die Templates 233 " im Anhang entnommen werden. Der Wert "value" wird immer
-mit dem Namen übergeben, "options" sind auch optional und repäsentieren einen String, der
-mögliche html-Attribute des Elements enthalten kann. "type" bezeichnet den Typ des Elements und
-ist optional, sowie auch der "name".
+Wann Felder als `element` bzw. als `group` benutzt werden müssen, kann der Tabelle
+[Feldtypen für die Templates](../reference/templatefields.html) entnommen werden. Der Wert `value` wird immer
+mit dem Namen übergeben, `options` sind auch optional und repäsentieren einen String, der
+mögliche html-Attribute des Elements enthalten kann. `type` bezeichnet den Typ des Elements und
+ist optional, sowie auch der `name`.
 
 So können die Optionswerte benutzt werde:
 
@@ -300,17 +308,17 @@ So können die Optionswerte benutzt werde:
 <?= $this->group($this->groupTitleAbstract, "cols='60' rows='9'"); ?>
 {% endhighlight %}
 
-In diesem Beispiel entspricht der String "cols='60' rows='9'" dem Wert $options . Um Fehler zu
+In diesem Beispiel entspricht der String `cols='60' rows='9'` dem Wert `$options` . Um Fehler zu
 vermeiden, sollte genau diese Schreibweise angewendet werden. Damit wird festgelegt, dass das
-Textfeld für einen Abstract 60 Spalten breit und 9 Zeilen hoch ist. Dieses Element benutzt bereits die
-css-Klasse form-textarea , in der Sie das Aussehen anpassen können.
+Textfeld für einen Abstract `60` Spalten breit und `9` Zeilen hoch ist. Dieses Element benutzt bereits die
+css-Klasse `form-textarea`, in der Sie das Aussehen anpassen können.
 
 {% highlight php %}
 <?= $this->group($this->groupTitleMain, "size='60'"); ?>
 {% endhighlight %}
 
 Mit diesem Optionswert wird die Länge des Titel-Feldes z.B. auf 60 Zeichen eingestellt. Das Element
-benutzt standardmäßig die css-Klasse form-textfield , die entsprechend angepasst werden kann.
+benutzt standardmäßig die css-Klasse `form-textfield`, die entsprechend angepasst werden kann.
 Für den Fall, dass das Element keine Klasse benutzt, gibt es folgende Variante:
 
 {% highlight php %}
@@ -319,13 +327,13 @@ Für den Fall, dass das Element keine Klasse benutzt, gibt es folgende Variante:
 {% endhighlight %}
 
 Hierbei steht der Optionswert für den Button an zweiter Stelle. Damit wird für den Button jetzt die
-css-Klasse form-button submit-button benutzt.
+css-Klasse `form-button submit-button` benutzt.
 
-<p class="note">
+<p class="note" markdown="1">
 Generell gilt, dass viele unterschiedliche Attribute von html-Elementen verwendet werden
-können. Dabei bestimmen Sie im Dokumenttyp mit formelement , um welches html-Element es
-sich handelt und welche Attribute überhaupt möglich sind. (für "text" sind bspw. andere Werte
-möglich als für "textarea").
+können. Dabei bestimmen Sie im Dokumenttyp mit `formelement`, um welches html-Element es
+sich handelt und welche Attribute überhaupt möglich sind. (für `text` sind bspw. andere Werte
+möglich als für `textarea`).
 </p>
 
 ### Anzeige der hochgeladenen Dateien
@@ -338,23 +346,26 @@ Metadaten) dem Nutzer anzuzeigen, welche Dateien hochgeladen wurden, kann mit de
 {% endhighlight %}
 
 ein entsprechendes Fieldset eingebunden werden (als Bsp. kann hier das Template des
-Testdokumenttyps "all" unter `$BASEDIR/application/configs/doctypes_templates/all.phtml` 
+Testdokumenttyps "all" unter `$BASEDIR/application/configs/doctypes_templates/all.phtml`
 dienen).
 
 ### Anzeige der Checkbox für rechtliche Hinweise für einzelne Dokumenttypen
 
-Neben der Checkbox für rechtliche Hinweise, die auf der ersten Seite angezeigt wird (s. Kapitel 7.9
-FORM SETTINGS 56 ), kann die Anzeige dieser Checkbox als Pflichtfeld auch für einzelne
+Neben der Checkbox für rechtliche Hinweise, die auf der ersten Seite angezeigt wird (siehe
+[Publish-Formular](../config/publish.html)), kann die Anzeige dieser Checkbox als Pflichtfeld auch für einzelne
 Dokumenttypen erfolgen. Dafür muss im entsprechenden Template folgender Aufruf eingefügt werden
-als Bsp. kann hier das Template des Testdokumenttyps "all" unter 
+als Bsp. kann hier das Template des Testdokumenttyps "all" unter
 `$BASEDIR/application/configs/doctypes_templates/all.phtml` dienen):
 
 {% highlight php %}
 <?= $this->legalNotices($this->form); ?>
 {% endhighlight %}
 
-Schließlich sollten noch die in Kapitel 8.3.2 69 erläuterten Sprachdateien (Überschrift und Name des
-Feldes, Hilfetext) angepasst werden (s. hierzu auch: Leitlinien 102 ).
+Schließlich sollten noch die erläuterten Sprachdateien (Überschrift und Name des
+Feldes, Hilfetext) angepasst werden (siehe auch [Leitlinien](../configext/policies.html)).
+
+* [Felder umbenennen](fields.html#felder-umbenennen)
+{: class="navlist" }
 
 ## Reihenfolge der angezeigten Felder eines Dokumenttyps ändern
 
@@ -385,7 +396,8 @@ Alle 21 Dokumenttypen, die standardmäßig mit OPUS4 ausgeliefert werden, besteh
 bestimmten Set an Feldern. Diese Vorauswahl kann individuell angepasst werden, indem Felder aus
 den entsprechenden XML-Dokumenttypdefinitionen und den dazugehörigen Templates entfernt oder
 hinzugefügt werden. Zur Veranschaulichung wird im Folgenden beispielhaft dem Dokumenttyp
-(wissenschaftlicher) Artikel [Article] das Feld IdentifierUrl hinzugefügt, um z.B. das Eintragen
+[(wissenschaftlicher) Artikel](../documenttypes/article.html) ([Article) das Feld
+`IdentifierUrl` hinzugefügt, um z.B. das Eintragen
 einer externen URL zu einem Dokument zu ermöglichen.
 
 ### 1. Schritt: XML-Dokumenttypdefinition anpassen
@@ -408,18 +420,19 @@ eintragen:
 {% endhighlight %}
 
 
-Die Reihenfolge der Felder im XML-Dokumenttyp hat keine Auswirkung auf die spätere Darstellung,
-da diese, wie im Kapitel "Reihenfolge der angezeigten Felder eines Dokumenttyps ändern" 88
-beschrieben, über das dazugehörige Template gesteuert wird.
+Die Reihenfolge der Felder im XML-Dokumenttyp hat keine Auswirkung auf die spätere Darstellung.
+Die wird separat über das dazugehörige Template gesteuert.
 
-<p class="warning">
-Bitte bei der Definition der Attribute required , formelement , datatype und multiplicity die
-Hinweise aus dem Kapitel "Grundlage: XML-Dokumenttypdefinition" 80 beachten.
+* [Reihenfolge der angezeigten Felder eines Dokumenttyps ändern](doctypes.html#reihenfolge-der-angezeigten-felder-eines-dokumenttyps-ndern)
+{: class="navlist" }
+
+<p class="warning" markdown="1">
+Bitte bei der Definition der Attribute `required`, `formelement`, `datatype` und `multiplicity` die
+Hinweise in [Grundlage: XML-Dokumenttypdefinition](#grundlage-xml-dokumenttypdefinition) beachten.
 </p>
 
 ### 2. Schritt: Template anpassen
 
-2. Schritt: Template anpassen
 Die Datei `$BASEDIR/application/configs/doctypes_templates/article.phtml` mit einem
 Editor (z.B. Notepad++) öffnen und die Zeile
 
@@ -429,22 +442,25 @@ Editor (z.B. Notepad++) öffnen und die Zeile
 
 eintragen:
 
-<p class="warning">
+<p class="note">
 Die neue Zeile kann an einer beliebigen Stelle im Template (nicht zwingend am Ende) eingefügt
-werden, vgl. hierzu Kapitel "Reihenfolge der angezeigten Felder eines Dokumenttyps ändern" 88 .
+werden. Die Reihenfolge der Felder wird über das dazugehörige Template gesteuert.
 </p>
+
+* [Reihenfolge der angezeigten Felder eines Dokumenttyps ändern](doctypes.html#reihenfolge-der-angezeigten-felder-eines-dokumenttyps-ndern)
+{: class="navlist" }
 
 Auf die gleiche Weise können Felder aus einem Dokumenttyp entfernt werden.
 
-<p class="warning">
-Wenn in den Dokumenttypen das Feld language entfernt wird, tritt ein Fehler auf, da ein
+<p class="warning" markdown="1">
+Wenn in den Dokumenttypen das Feld `language` entfernt wird, tritt ein Fehler auf, da ein
 Dokument ohne Sprache als "unbekannter Titel" angezeigt wird und somit nicht suchbar ist.
 </p>
 
-<p class="warning">
+<p class="warning" markdown="1">
 Einige Felder sollten im Hinblick auf die Ablieferung von Netzpublikationen an die DNB (über
 XMetadissPlus) in allen Dokumenttypen erhalten bleiben. Welche Felder dies sind, kann den
-Tabellen im Anhang 202 entnommen werden.
+Beschreibungen der [Dokumenttypen](../documenttypen/index.html) entnommen werden.
 </p>
 
 ## Dokumenttypen umbenennen
@@ -465,10 +481,9 @@ werden:
 </tu>
 {% endhighlight %}
 
-<p class="note">
+<p class="note" markdown="1">
 Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in Kapitel Übersetzungsressourcen 65
-beschrieben.
+die Opus4-Oberfläche möglich. Näheres dazu ist in [Übersetzungsressourcen](translations.html) beschrieben.
 </p>
 
 ## Neuen Dokumenttyp anlegen
@@ -482,9 +497,7 @@ identisch, z. B. `mydocumenttype.xml` und `mydocumenttype.phtml`.
 
 Die Benennung eines Dokumenttyps muss in folgendem Format erfolgen:
 
-{% highlight plain %}
-[a-z]+[a-z0-9]*(_[a-z0-9]+)*
-{% endhighlight %}
+    [a-z]+[a-z0-9]*(_[a-z0-9]+)*
 
 Diese Restriktion bedeutet, dass die Benennung des Dokumenttyps mit einem kleinen Buchstaben
 (a-z) anfangen muss; danach kann ein beliebiger Mix aus Kleinbuchstaben (a-z), Ziffern (0-9) und
@@ -492,11 +505,13 @@ als einzigem erlaubten Sonderzeichen der Unterstrich folgen (mit der Einschränk
 Unterstrich nicht zweimal direkt hintereinander auftreten kann und nicht ganz am Ende stehen
 darf).
 
-Danach ergänzen bzw. entfernen Sie die Felder wie im Kapitel "Felder zu einem Dokumenttyp
-hinzufügen/entfernen" 88 beschrieben.
+Danach ergänzen bzw. entfernen Sie die Felder.
+
+* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufgenentfernen)
+{: class="navlist" }
 
 Nach dem Erstellen eines neuen Dokumenttyps muss in der Datei
-opus4/modules/default/language_custom/my_doctypes.tmx ein entsprechender Eintrag ergänzt
+`modules/default/language_custom/my_doctypes.tmx` ein entsprechender Eintrag ergänzt
 werden:
 
 {% highlight xml %}
@@ -514,7 +529,7 @@ werden:
 
 Neu angelegte Dokumenttypen werden beim Export in Literaturverwaltungssysteme (RIS- bzw.
 BibTeX-Export) standardmäßig dem Typ "Generic" (RIS) bzw. "MISC" (BibTeX) zugeordnet. Um
-dies zu ändern, muss der neue Dokumenttyp wie folgt in der Datei 
+dies zu ändern, muss der neue Dokumenttyp wie folgt in der Datei
 `$BASEDIR/modules/citationExport/views/scripts/index/ris.xslt` (für den RIS-Export) eingetragen werden:
 
 Folgende Zeile muss ergänzt werden:
@@ -524,7 +539,8 @@ Folgende Zeile muss ergänzt werden:
 <xsl:text>TY - gewünschter RIS-Dok umenttyp </xsl:text>
 {% endhighlight %}
 
-Für den BibTeX-Export ist es notwendig, analog zu den im Verzeichnis `$BASEDIR/modules/citationEx port/views/scripts/index/`
+Für den BibTeX-Export ist es notwendig, analog zu den im Verzeichnis
+`$BASEDIR/modules/citationEx port/views/scripts/index/`
 bereits vorhandenen Stylesheets
 
 * bibtex_article.xslt
@@ -543,11 +559,11 @@ ein weiteres Stylesheet für den neuen Dokumenttyp zu erstellen.
 Für die Ablieferung der Dokumente an die Deutsche Nationalbibliothek über die OAI-
 Schnittstelle ist es bei neu angelegten Dokumenttypen sinnvoll, sie auf die Publikationstypen des
 Gemeinsamen Vokabulars für Publikations- und Dokumenttypen zu mappen, da sie sonst dem
-Dokumenttyp "other" (Sonstiges) zugeordnet werden. Hierfür muss in der Datei 
+Dokumenttyp [Sonstiges (other)](../documenttypes/other.html) zugeordnet werden. Hierfür muss in der Datei
 `$BASEDIR/modules/oai/views/scripts/index/prefixes/XMetaDissPlus.xslt` folgende Zeile ergänzt werden:
 
 {% highlight xml %}
-<xsl:when test="@Type=' neuer Dok umenttyp '">
+<xsl:when test="@Type='neuer Dokumenttyp'">
   <xsl:text> hier einen passenden Dok umenttyp aus dem Gemeinsamen Vok abular für
              Publik ations- und Dok umenttypen eintragen </xsl:text>
 </xsl:when>
@@ -556,11 +572,12 @@ Dokumenttyp "other" (Sonstiges) zugeordnet werden. Hierfür muss in der Datei
 ### Prüfung der neu angelegten XML-Dokumenttypdefinition(en)
 
 Nach dem Anlegen kann der neue Dokumenttyp auf Konformität bezüglich des XML-Schemas
-documenttype.x sd geprüft werden. Dazu bietet sich folgender Befehl an (hier am Beispiel der
-Dokumenttypdefinition beispiel.xml):
+`documenttype.xsd` geprüft werden. Dazu bietet sich folgender Befehl an (hier am Beispiel der
+Dokumenttypdefinition `beispiel.xml`):
 
     cd $BASEDIR/application/configs/doctypes
-    xmllint --noout --schema ../../../library/Opus/Document/documenttype.xsd
+    xmllint --noout --schema
+        ../../library/Opus/Document/documenttype.xsd
         beispiel.xml
 
 War die Validierung erfolgreich, so erscheint:

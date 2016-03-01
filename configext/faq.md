@@ -30,11 +30,11 @@ beschrieben.
 ## 1. Vorhandenen Hauptbereich (Sektion) umbenennen
 
 Um die Überschrift eines bereits vorhandenen Hauptbereich der FAQ-Seite umzubenennen, muss die
-Datei $BASEDIR/modules/home/language_custom/help_custom.tmx angelegt werden
-(einmalig, z.B. durch Kopieren der Datei $BASEDIR/modules/home/language/help.tmx) und die
+Datei `$BASEDIR/modules/home/language_custom/help_custom.tmx` angelegt werden
+(einmalig, z.B. durch Kopieren der Datei `$BASEDIR/modules/home/language/help.tmx`) und die
 Übersetzungsressourcen für den
 gewünschten Schlüssel geändert werden. Die Schlüssel für die Überschriften finden sich in der Datei
-im Bereich "headlines help sections" und besitzen den Aufbau 'help_index_Hauptbereichsname'.
+im Bereich "headlines help sections" und besitzen den Aufbau `help_index_Hauptbereichsname`.
 
 Hier ein Beispiel:
 
@@ -55,7 +55,7 @@ Um die Überschrift eines bereits vorhandenen Eintrags der FAQ-Seite umzubenenne
 Datei `$BASEDIR/modules/home/language_custom/help_custom.tmx` angelegt werden
 (siehe oben) und die Übersetzungsressourcen für den gewünschten Schlüssel geändert werden. Die
 Schlüssel für die Überschriften der Einträge finden sich unterhalb des Bereichs "headlines help
-sections" und besitzen den Aufbau 'help_title_Eintragsname'
+sections" und besitzen den Aufbau `help_title_Eintragsname`
 
 {% highlight xml %}
 <tu tuid="help_title_searchtipps">
@@ -70,7 +70,7 @@ sections" und besitzen den Aufbau 'help_title_Eintragsname'
 
 ## 3. Inhalt eines Eintrags (Sektionseintrag) ändern
 
-Die eigentlichen Inhalte (Texte) der einzelnen Einträge liegen als .txt-Dateien im Verzeichnis
+Die eigentlichen Inhalte (Texte) der einzelnen Einträge liegen als `.txt`-Dateien im Verzeichnis
 `$BASEDIR/application/configs/help/`. Vorhandene Inhalte können mit Hilfe eines Editors
 geöffnet, verändert und wieder an der gleichen Stellen gespeichert werden. Es sollten
 selbstverständlich immer alle Versionen (deutsch, englisch, etc.) geändert werden. Eine
@@ -83,36 +83,32 @@ Auszeichnung der Texte mit HTML-Markup ist möglich.
 Die Hauptbereiche und Einträge werden in der Datei
 `$BASEDIR/application/configs/help/help.ini` verwaltet. Der Aufbau der Schlüssel lautet
 
-{% highlight ini %}
-Hauptbereichsschlüssel[] = 'Bereichsschlüssel' :
-help_index_general[] = 'searchtipps'
-help_index_authorhelp[] = 'contact'
-help_index_formfields[] = 'publicationprocess'
-help_index_formfields[] = 'metadata'
-help_index_legal_title[] = 'legal_parallel'
-help_index_legal_title[] = 'legal_license'
-help_index_misc[] = 'policies'
-help_index_misc[] = 'documentation'
-help_index_misc[] = 'imprint'
-{% endhighlight %}
+    Hauptbereichsschlüssel[] = 'Bereichsschlüssel'
+    help_index_general[] = 'searchtipps'
+    help_index_authorhelp[] = 'contact'
+    help_index_formfields[] = 'publicationprocess'
+    help_index_formfields[] = 'metadata'
+    help_index_legal_title[] = 'legal_parallel'
+    help_index_legal_title[] = 'legal_license'
+    help_index_misc[] = 'policies'
+    help_index_misc[] = 'documentation'
+    help_index_misc[] = 'imprint'
 
 ### Schritt 1
 
 Um einen neuen Bereich "MyFAQ" anzulegen, fügt man zu den bestehenden Schlüsseln an der
 gewünschten Stelle (hier im Beispiel ganz am Schluss) eine neue Zeile hinzu:
 
-{% highlight ini %}
-help_index_general[] = 'searchtipps'
-help_index_authorhelp[] = 'contact'
-help_index_formfields[] = 'publicationprocess'
-help_index_formfields[] = 'metadata'
-help_index_legal_title[] = 'legal_parallel'
-help_index_legal_title[] = 'legal_license'
-help_index_misc[] = 'policies'
-help_index_misc[] = 'documentation'
-help_index_misc[] = 'imprint'
-help_index_MyFAQ[] = 'MyFAQ-Eintrag'
-{% endhighlight %}
+    help_index_general[] = 'searchtipps'
+    help_index_authorhelp[] = 'contact'
+    help_index_formfields[] = 'publicationprocess'
+    help_index_formfields[] = 'metadata'
+    help_index_legal_title[] = 'legal_parallel'
+    help_index_legal_title[] = 'legal_license'
+    help_index_misc[] = 'policies'
+    help_index_misc[] = 'documentation'
+    help_index_misc[] = 'imprint'
+    help_index_MyFAQ[] = 'MyFAQ-Eintrag'
 
 Bitte beachten Sie, dass es einen Eintrag (eine Zeile) pro Hauptbereichsschlüssel-
 Bereichsschlüssel-Paar geben muss. Das bedeutet für einen Hauptbereich, der z.B. 3 Bereiche
@@ -156,7 +152,7 @@ sections" eingetragen:
 
 Die eigentlichen Inhalte (Texte) der einzelnen Einträge liegen als .txt-Dateien im Verzeichnis
 `$BASEDIR/application/configs/help/`. Es können auch neue .txt-Dateien (für unser Beispiel
-etwa myfaq.de.tx t und myfaq.en.txt) an dieser Stelle abgelegt werden. Die Benennung der .txt-
+etwa `myfaq.de.txt` und `myfaq.en.txt`) an dieser Stelle abgelegt werden. Die Benennung der .txt-
 Dateien ist frei wählbar, es bietet sich jedoch im Hinblick auf die Übersichtlichkeit die Form
 `name.de.txt` bzw. `name.en.txt` an. Damit das System die Texte benutzt, müssen die Dateinamen in
 einen eigenen Schlüssel vom Typ `help_content_Eintragsname` in der Datei
@@ -232,7 +228,7 @@ ersetzt werden durch
 </help>
 {% endhighlight %}
 
-wobei http://examplehost/faq die URL der externen FAQ ist.
+wobei `http://examplehost/faq` die URL der externen FAQ ist.
 
 <p class="note">
 Bei dieser Variante wird die externe Website nicht in OPUS4 eingebunden, sondern der Nutzer
@@ -242,8 +238,8 @@ verlässt beim Klick auf diesen Link die Anwendung.
 ## Direktverlinkungen in den FAQ
 
 Um in der FAQ externe Websites direkt zu verlinken, kann im Schlüssel für die Überschrift
-('help_title_...') in der Custom-Sprachdatei der gewünschten Link eintragen werden. Es darf kein
-Schlüssel für eine Textdatei ("help_content_...") angeben werden. Also z.B. so:
+(`help_title_...`) in der Custom-Sprachdatei der gewünschten Link eintragen werden. Es darf kein
+Schlüssel für eine Textdatei (`help_content_...`) angeben werden. Also z.B. so:
 
 {% highlight xml %}
 <tu tuid="help_title_imprint">
@@ -256,8 +252,8 @@ Schlüssel für eine Textdatei ("help_content_...") angeben werden. Also z.B. so
 </tu>
 {% endhighlight %}
 
-<p class="warning">
-Wichtig ist, dass es sich um eine absolute URL handelt (also unbedingt mit "http://").
+<p class="warning" markdown="1">
+Wichtig ist, dass es sich um eine absolute URL handelt (also unbedingt mit `http://`).
 </p>
 
 

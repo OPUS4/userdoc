@@ -4,10 +4,10 @@ title: Felder
 
 # Felder
 
-OPUS4 liefert standardmäßig bereits über 50 Felder (s. Anhang 229 ) aus, die in den Dokumenttypen
+OPUS4 liefert standardmäßig bereits über [50 Felder](../reference/fields.html) aus, die in den Dokumenttypen
 zur Erfassung von Metadaten verwendet werden können. Darüber hinaus können neue Felder definiert
 werden, um lokale oder sehr spezifische Sachverhalte abzuspeichern (z.B. eine lokale ID). Es gibt
-grundsätzlich zwei verschiedene Ausprägungen von Feldern (s.a. Anhang 233 ):
+grundsätzlich zwei verschiedene [Ausprägungen von Feldern](../reference/templatefields.html):
 
 * einfache Felder (dürfen pro Dokument nur einmal vorhanden sein)
 * Gruppenfelder (bestehen entweder aus mehr als einem Feld (siehe z.B. Title + Sprache) oder
@@ -16,10 +16,9 @@ grundsätzlich zwei verschiedene Ausprägungen von Feldern (s.a. Anhang 233 ):
 Da auch bei den Bezeichnungen der Felder (z.B. auf der Frontdoor oder im Veröffentlichungsformular)
 Übersetzungsressourcen zum Einsatz kommen, besteht die Möglichkeit vorhandene Felder umzubenennen.
 
-<p class="info">
-Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in Kapitel Übersetzungsressourcen 65
-beschrieben.
+<p class="info" markdown="1">
+Die Bearbeitung von [Übersetzungsressourcen][TRANSLATIONS] sowie statischer Seiten ist seit
+Version 4.4 über die Opus4-Oberfläche möglich.
 </p>
 
 ## Vorbereitung
@@ -32,7 +31,7 @@ diese bei Updates erhalten bleiben.
 
 Bitte also die folgenden Sprachdateien einmalig im Verzeichnis
 `$BASEDIR/modules/publish/language_custom/` anlegen oder die mitgelieferte
-`example.tmx.template` wie im Kapitel Übersetzungsressourcen 65 beschrieben modifizieren:
+`example.tmx.template` wie im Kapitel [Übersetzungsressourcen][TRANSLATIONS] beschrieben modifizieren:
 
     my_field_header.tmx
     my_field_hints.tmx
@@ -49,16 +48,14 @@ Verzeichnis `$BASEDIR/modules/publish/language_custom/` angelegt werden:
 
     my_buttons.tmx
 
-<p class="note" markdown="1">
 Es ist vollkommen unerheblich, wie die Dateien heißen. Wichtig ist nur der Ablageort
 
     $BASEDIR/modules/(modulname)/language_custom/
 
 Darüber hinaus ist es essentiell,
-dass die .tmx-Dateien in UTF-8 codiert sind (um dies sicherzustellen, eignet sich z.B. der Open-
-Source-Editor Notepad++, bei dem vor der Bearbeitung einer Datei die Kodierung auf UTF-8
+dass die `.tmx`-Dateien in `UTF-8` codiert sind (um dies sicherzustellen, eignet sich z.B. der Open-
+Source-Editor Notepad++, bei dem vor der Bearbeitung einer Datei die Kodierung auf `UTF-8`
 umgestellt werden kann.
-</p>
 
 ## Felder umbenennen
 
@@ -74,7 +71,7 @@ Im Folgenden werden die Änderungen am Bsp. des Feldes Note verdeutlicht.
 
 ### 1. Titel / Überschrift des Feldes ändern
 
-Um den Titel des Feldes Note zu ändern, wird der Schlüssel header_note aus der Sprachdatei
+Um den Titel des Feldes Note zu ändern, wird der Schlüssel `header_note` aus der Sprachdatei
 `$BASEDIR/modules/publish/language/field_header.tmx` in die Sprachdatei
 `$BASEDIR/modules/publish/language_custom/my_field_header.tmx` kopiert und wie
 folgt angepasst:
@@ -105,12 +102,12 @@ Angepasste Überseztungen für die Schlüssel
 </tu>
 {% endhighlight %}
 
-Bei Gruppenfeldern (z.B. Personen) muss für die Überschrift der Schlüssel group<Feld> geändert
+Bei Gruppenfeldern (z.B. Personen) muss für die Überschrift der Schlüssel `group<Feld>` geändert
 werden.
 
 ### 2. Hilfetext des Feldes ändern
 
-Um den Hilfetext des Feldes Note zu ändern, wird der Schlüssel hint_note aus der Sprachdatei
+Um den Hilfetext des Feldes Note zu ändern, wird der Schlüssel `hint_note` aus der Sprachdatei
 `$BASEDIR/modules/publish/language/field_hints.tmx` in die Sprachdatei
 `$BASEDIR/modules/publish/language_custom/my_field_hints.tmx` kopiert und wie folgt
 angepasst:
@@ -141,7 +138,7 @@ Angepasste Übersetzungen für die Schlüssel
 </tu>
 {% endhighlight %}
 
-Bei Gruppenfeldern (z.B. Personen) muss entsprechend der Schlüssel hint_group<Feld> geändert
+Bei Gruppenfeldern (z.B. Personen) muss entsprechend der Schlüssel `hint_group<Feld>` geändert
 werden.
 
 <p class="warning">
@@ -151,7 +148,7 @@ Eingabefelder angezeigt.
 
 ### 3. Namen / Bezeichnung des Feldes ändern
 
-Um den Namen bzw. die Bezeichnung des Feldes Note zu ändern, wird der Schlüssel note aus der
+Um den Namen bzw. die Bezeichnung des Feldes Note zu ändern, wird der Schlüssel `note` aus der
 Sprachdatei `$BASEDIR/modules/publish/language/fieldnames.tmx` in die Sprachdatei
 `$BASEDIR/modules/publish/language_custom/my_fieldnames.tmx` kopiert und wie folgt
 angepasst:
@@ -275,11 +272,15 @@ Wenn neue Sammlungen im Administrationsbereich angelegt wurden 141 (z.B. "Sammlu
 diese im Veröffentlichungsformular zur Verfügung stehen sollen, dann werden diese neuen Browsing-
 Felder wie folgt definiert:
 
+{% highlight xml %}
 <field name="SammlungXYZ" required="no" formelement="Select" datatype="Collection" root="sammlungXYZ" multiplicity="1"/>
+{% endhighlight %}
 
 beziehungsweise
 
+{% highlight xml %}
 <field name="SammlungXYZ" required="no" formelement="Select" datatype="CollectionLeaf" root="sammlungXYZ" multiplicity="1"/>
+{% endhighlight %}
 
 <p class="warning">
 Als Name muss die Bezeichnung gewählt werden, die auch bei der Erstellung der Sammlung
@@ -301,7 +302,7 @@ Kleinschreibung geachtet wird).
 Nach dem Einbinden des neuen Browsing-Feldes ins Veröffentlichungsformular fehlen bei der
 Anzeige zunächst einige Übersetzungen:
 
-Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B. sammlungXYZ.tmx) im Verzeichnis
+Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B. `sammlungXYZ.tmx`) im Verzeichnis
 `$BASEDIR/modules/default/language_custom` und dort werden folgende Schlüssel
 eingetragen (der Aufbau der Schlüssel wird exemplarisch im Kapitel Felder umbenennen 69
 erläutert):
@@ -343,28 +344,30 @@ Wichtig ist, dass für das Attribut formelement "text" eingetragen werden muss.
 
 Template
 
-<?= $this->element($this->feldXYZ); ?>
+    <?= $this->element($this->feldXYZ); ?>
 
 Soll ein (wiederholbares) Gruppen-Feld erzeugt werden, schreiben Sie Folgendes:
 
 XML-Dokumenttypdefinition
 
+{% highlight xml %}
 <field name="feldXYZ" formelement="text" datatype="Enrichment" required="no" multiplicity="*" />
+{% endhighlight %}
 
 Template
 
-<?= $this->group($this->groupfeldXYZ); ?>
+    <?= $this->group($this->groupfeldXYZ); ?>
 
 Bei beiden Beispielen können Sie die Attribute name , required und multiplicity nach eigenen
 Wünschen ändern.
 
-Übersetzungen
+### Übersetzungen
 
 Nach dem Einbinden des neuen Feldes ins Veröffentlichungsformular fehlen bei der Anzeige
 zunächst einige Übersetzungen. Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B.
 feldXYZ.tmx) im Verzeichnis `$BASEDIR/modules/default/language_custom` und dort
-werden folgende Schlüssel eingetragen (der Aufbau der Schlüssel wird exemplarisch im Kapitel
-Felder umbenennen 69 erläutert):
+werden folgende Schlüssel eingetragen (der Aufbau der Schlüssel wird exemplarisch im Abschnitt
+[Felder umbenennen](#felder-umbenennen) erläutert):
 
 | Schlüssel | Erläuterung | Default | Beispiel |
 |-----------+-------------+---------+----------+
@@ -408,7 +411,7 @@ Dafür muss der gewünschte Dokumenttyp angepasst werden. Beispiel für ein Feld
 Template
 
 Im Template bindet man das neue Select-Feld mit einem der folgenden Befehle ein. Der
-Parametername setzt sich bei wiederholbaren Feldern (Multiplicity größer als 1 oder für *) immer aus
+Parametername setzt sich bei wiederholbaren Feldern (Multiplicity größer als `1` oder für `*`) immer aus
 dem Prefix "group" und dem selbstgewählten Namen des Feldes (in diesem Fall "NeuesSelectXYZ")
 zusammen:
 
@@ -416,7 +419,7 @@ zusammen:
 <?= $this->group($this->groupNeuesSelectXYZ); ?>
 {% endhighlight %}
 
-Soll das Feld nicht wiederholbar sein (Multiplicity von genau 1), bindet man ein Element ein:
+Soll das Feld nicht wiederholbar sein (Multiplicity von genau `1`), bindet man ein Element ein:
 
 {% highlight php %}
 <?= $this->element($this->NeuesSelectXYZ); ?>
@@ -427,18 +430,20 @@ Soll das Feld nicht wiederholbar sein (Multiplicity von genau 1), bindet man ein
 Nach dem Einbinden des neuen Select-Feldes ins Veröffentlichungsformular fehlen bei der Anzeige
 zunächst einige Übersetzungen. Für diese Übersetzungen wird eine .tmx-Datei angelegt (z.B.
 NeuesSelectXYZ.tmx) im Verzeichnis `$BASEDIR/modules/default/language_custom` und
-dort werden folgende Schlüssel eingetragen (der Aufbau der Schlüssel wird exemplarisch im Kapitel
-Felder umbenennen 69 erläutert):
+dort werden folgende Schlüssel eingetragen.
 
-| Schlüssel | Erläuterung | Default | Beispiel |
-|-----------+-------------+---------+----------|
-| EnrichmentNeuesSelectXYZ | | | |
-| hint_EnrichmentNeuesselectXYZ | | | |
-| header_EnrichmentNeuesSelectXYZ | | | |
-| groupNeuesSelectXYZ | | | |
-| hint_groupNeuesSelectXYZ | | | |
-| button_label_add_one_moreEnrichmentNeuesSelectXYZ | | | |
-| button_label_deleteEnrichmentNeuesSelectXYZ | | | |
+* [Felder umbenennen](#felder-umbenennen)
+{: class="navlist" }
+
+| Schlüssel | Erläuterung |
+|-----------+-------------|
+| EnrichmentNeuesSelectXYZ | Bezeichnung des Feldes |
+| hint_EnrichmentNeuesselectXYZ | Hilfetext zum Feld |
+| header_EnrichmentNeuesSelectXYZ | Überschrift des Feldes |
+| groupNeuesSelectXYZ | Überschrift des Feldes |
+| hint_groupNeuesSelectXYZ | Hilfetext zum Feld |
+| button_label_add_one_moreEnrichmentNeuesSelectXYZ | Aufschrift des Buttons zum Anfordern eines weiteren Feldes |
+| button_label_deleteEnrichmentNeuesSelectXYZ | Aufschrift des Buttons zum Löschen des letzten Feldes |
 
 ## Anzeige in der Frontdoor
 
@@ -468,9 +473,9 @@ frontdoor -->
 {% endhighlight %}
 
 beginnt die Auswahl der anzuzeigenden Enrichments. Fügen Sie zwischen Anfang und Ende des
-Kommentars folgende Zeile hinzu, wenn Sie das Feld NeuesFeldXYZ anzeigen möchten:
+Kommentars folgende Zeile hinzu, wenn Sie das Feld `NeuesFeldXYZ` anzeigen möchten:
 
-<xsl:apply-templates select="Enrichment[@KeyName='NeuesFeldXYZ']" />
+    <xsl:apply-templates select="Enrichment[@KeyName='NeuesFeldXYZ']" />
 
 Neu angelegte Felder werden im Administrationsbereich -> Dokumente verwalten unter
 "Enrichments" angezeigt und ihre Inhalte sind dort editierbar.
@@ -501,3 +506,6 @@ Soll der Inhalt maskiert werden, dann wird der Normalmodus verwendet (wie bisher
 {% highlight xml %}
 <xsl:apply-templates select="Enrichment[@KeyName='externeURL']" />
 {% endhighlight %}
+
+
+[TRANSLATIONS]: translations.html

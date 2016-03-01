@@ -29,17 +29,20 @@ Cronjob erfolgen. Hierfür gibt es ein entsprechendes Skript, das unter
 
 zu finden ist.
 
-Der Aufruf des Skript erfolgt entsprechend der anderen Opus-Cron-Skripte 58 wie folgt:
+Der Aufruf des Skript erfolgt entsprechend der anderen [Opus-Cron-Skripte](../config/jobs.html) wie folgt:
 
     $ cd $BASEDIR/scripts/cron
-    $ cron-php-runner.sh cron-update-document-cache.php /somepath/var/lock/ /somepath/var/log/
+    $ cron-php-runner.sh cron-update-document-cache.php
+        /somepath/var/lock/
+        /somepath/var/log/
 
 Ein Cron-Job (hier als Beispiel für die Ausführung alle 5 Minuten) wird wie folgt angelegt:
 
     $ crontab –e
         5 * * * *
         $BASEDIR/scripts/cron/cron-php-runner.sh
-        $BASEDIR/scripts/cron/cron-update-document-cache.php $BASEDIR/workspace/lock
+        $BASEDIR/scripts/cron/cron-update-document-cache.php
+        $BASEDIR/workspace/lock
         $BASEDIR/workspace/log > /dev/null 2> /dev/null
 
 Mit der Cache-Revalidierung wird nun auch der Solr-Index aktualisiert. Bis zu dieser

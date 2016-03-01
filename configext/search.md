@@ -8,9 +8,12 @@ Zum Bearbeiten der Texte und Ausgabebezeichnungen für die Suchoberfläche, die 
 die Facetten muss die Datei
 `$BASEDIR/modules/solrsearch/language_custom/solrsearch.tmx`
 angelegt (einmalig)
-und entsprechend geändert werden. (Siehe Kapitel "Übersetzungsressourcen" 65 ) Beispielsweise
+und entsprechend geändert werden. Beispielsweise
 können hier auch die Werte der Facetten "Volltext vorhanden" und "Gehört zur Bibliographie"
 angepasst werden.
+
+* [Übersetzungsressourcen](translations.html)
+{: class="navlist" }
 
 {% highlight xml %}
 <tu tuid="facetvalue_has_fulltext_true">
@@ -52,6 +55,5 @@ angepasst werden.
 
 <p class="note">
 Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in Kapitel Übersetzungsressourcen 65
-beschrieben.
+die Opus4-Oberfläche möglich.
 </p>

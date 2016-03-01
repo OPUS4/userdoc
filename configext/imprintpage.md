@@ -21,19 +21,19 @@ Der eigentliche Inhalt wird angepasst über den Schlüssel `help_content_imprint
 
 {% highlight xml %}
 <tu tuid="help_content_imprint">
-<tuv xml:lang="en">
-<seg>imprint.en.txt</seg>
-</tuv>
-<tuv xml:lang="de">
-<seg>imprint.de.txt</seg>
-</tuv>
+  <tuv xml:lang="en">
+    <seg>imprint.en.txt</seg>
+  </tuv>
+  <tuv xml:lang="de">
+    <seg>imprint.de.txt</seg>
+  </tuv>
 </tu>
 {% endhighlight %}
 
-(Siehe auch Kapitel "FAQ-Seite" 97 "3. Inhalt eines Eintrags (Sektionseintrag) ändern")
+* [Inhalt eines Eintrags (Sektionseintrag) ändern](faq.html#inhalt-eines-eintrags-sektionseintrag-ndern)
+{: class="navlist" }
 
-<p class="note">
-Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in Kapitel Übersetzungsressourcen 65
-beschrieben.
+<p class="note" markdown="1">
+Die Bearbeitung von [Übersetzungsressourcen](translations.html) sowie statischer Seiten ist seit Version 4.4 über
+die Opus4-Oberfläche möglich.
 </p>

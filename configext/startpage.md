@@ -5,13 +5,14 @@ weight: 90
 
 # Startseite anpassen
 
-Zum Bearbeiten der Startseite muss die Datei opus4/modules/home/language_custom/
-home_custom.tmx angelegt werden (einmalig) und es müssen folgende Änderungen vorgenommen
+Zum Bearbeiten der Startseite muss die Datei
+`opus4/modules/home/language_custom/home_custom.tmx`
+angelegt werden (einmalig) und es müssen folgende Änderungen vorgenommen
 werden.
 
 ## Reitertitel
 
-Zum Ändern des Reitertitels muss der Text für den Schlüssel **home_index_index_pagetitle** geändert werden:
+Zum Ändern des Reitertitels muss der Text für den Schlüssel `home_index_index_pagetitle` geändert werden:
 
 {% highlight xml %}
 <tu tuid="home_index_index_pagetitle">
@@ -26,7 +27,7 @@ Zum Ändern des Reitertitels muss der Text für den Schlüssel **home_index_inde
 
 ## Seitentitel
 
-Zum Ändern des Seitentitels muss der Text für den Schlüssel **home_index_index_title** geändert werden:
+Zum Ändern des Seitentitels muss der Text für den Schlüssel `home_index_index_title` geändert werden:
 
 {% highlight xml %}
 <tu tuid="home_index_index_title">
@@ -43,7 +44,7 @@ Zum Ändern des Seitentitels muss der Text für den Schlüssel **home_index_inde
 
 Für den Inhalt der Startseite stehen zwei Spalten zur Verfügung.
 
-Zum Ändern des Inhalts der linken Spalte muss der Text für den Schlüssel **home_index_index_left** geändert werden:
+Zum Ändern des Inhalts der linken Spalte muss der Text für den Schlüssel `home_index_index_left` geändert werden:
 
 {% highlight xml %}
 <tu tuid="home_index_index_welcome">
@@ -56,7 +57,7 @@ Zum Ändern des Inhalts der linken Spalte muss der Text für den Schlüssel **ho
 </tu>
 {% endhighlight %}
 
-Zum Ändern des Inhalts der rechten Spalte muss der Text für den Schlüssel **home_index_index_right** geändert werden:
+Zum Ändern des Inhalts der rechten Spalte muss der Text für den Schlüssel `home_index_index_right` geändert werden:
 
 {% highlight xml %}
 <tu tuid="home_index_index_instructions">
@@ -70,6 +71,6 @@ Zum Ändern des Inhalts der rechten Spalte muss der Text für den Schlüssel **h
 {% endhighlight %}
 
 <p class="info" markdown="1">
-Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über die Opus4-Oberfläche
-möglich. Näheres dazu ist in Kapitel Übersetzungsressourcen 65 beschrieben.
+Die Bearbeitung von [Übersetzungsressourcen](translations.html) sowie statischer Seiten ist seit Version 4.4
+über die Opus4-Oberfläche möglich.
 </p>
