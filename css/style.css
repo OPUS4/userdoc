@@ -126,7 +126,8 @@ body {
 }
 
 #content h4 {
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
 #content table {
