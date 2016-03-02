@@ -25,3 +25,6 @@ OPUS4 erfüllt die grundsätzlichen technischen Anforderungen des Zertifikats. D
 nicht nur rein technische Aspekte berücksichtigt werden, sondern auch ggf. von der betreibenden Institution bestimmte
 Workflows geschaffen werden müssen, enthält dieses Kapitel Hinweise auf Anpassungs- bzw. Konfigurationsmöglichkeiten
 in OPUS4 im Hinblick auf das DINI-Zertifikat.
+
+* [Richtlinien für die OAI-Schnittstelle](../config/dinioai.html)
+{: class="navlist" }
