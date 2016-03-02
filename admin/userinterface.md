@@ -5,11 +5,16 @@ weight: 90
 
 # Oberflächenanpassungen
 
+<p class="note">
+Die Funktionen um Inhalte von statischen Seiten und der FAQ-Seite anzupassen, sowie die Funktionen um Übersetzungen zu
+editieren sind noch sehr rudimentär. Ein Ausbau ist in der weiteren Entwicklung geplant.
+</p>
+
 Bisher ist diese Funktionalität erst prototypisch umgesetzt. Insbesondere die Bearbeitung von
 Übersetzungsressourcen setzt Kenntnisse darüber voraus, wie Übersetzungsressourcen im
 Dateisystem abgelegt werden. Vor der Benutzung wird daher empfohlen, sich mit dem Konzept der
-Übersetzungsressourcen, wie im Kapitel Übersetzungsressourcen 65 beschrieben, vertraut zu
-machen.
+Übersetzungsressourcen, wie im Abschnitt [Übersetzungsressourcen][TRANSLATIONS]
+beschrieben, vertraut zu machen.
 
 Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über die
 Opus4-Oberfläche möglich. In der Administration gibt es unter dem Punkt "Oberflächenanpassungen"
@@ -20,7 +25,7 @@ vier Einstiegspunkte:
 3. Statische Seiten (Hauptseite, Kontaktinformationen, Impressum)
 4. Übersetzungen (Feldnamen, Feldüberschriften, Feldhilfen)
 
-Im Kapitel Übersetzungsressourcen 65 ist beschrieben, wie die Bearbeitung über die Oberfläche
+Im Kapitel [Übersetzungsressourcen][TRANSLATIONS] ist beschrieben, wie die Bearbeitung über die Oberfläche
 aktiviert werden kann. Die folgenden Seiten widmen sich den vier genannten Themen.
 
 ## Benutzerdefinierte Felder (EnrichmentKeys)
@@ -31,17 +36,20 @@ werden die benutzerdefinierten Felder zunächst in der Administration (Administr
 Oberflächenanpassungen > Benutzerdefinierte Felder (Enrichments)) angelegt, indem nach einem
 Klick auf "Neuer EnrichmentKey" der gewünschte Feldname eingetragen wird (z.B. "Lom_Wert")."
 Das so angelegte benutzerdefinierte Feld kann nun in den gewünschten Dokumenttypen verwendet
-werden. Wie diese Felder in den Dokumenttyp aufgenommen werden, ist in den Kapiteln Einfache
-Textfelder neu anlegen 75 bzw. Select-Felder neu anlegen 77 beschrieben.
+werden. Wie diese Felder in den Dokumenttyp aufgenommen werden ist in der Konfiguration
+beschrieben.
+
+* [Einfache Textfelder neu anlegen](../configext/fields.html#einfache-textfelder-neu-anlegen)
+* [Select-Felder neu anlegen](../configext/fields.html#select-felder-neu-anlegen)
 
 Es werden ab der Version 4.2 auch einige EnrichmentKeys mitausgeliefert:
 
 Die folgenden Felder sind nur systemintern von Bedeutung und können daher ignoriert werden:
 
-submitter.user_id
-reviewer.user_id
-review.rejected_by
-review.accepted_by
+    submitter.user_id
+    reviewer.user_id
+    review.rejected_by
+    review.accepted_by
 
 Darüber hinaus werden bei der Migration von OPUS3 auf OPUS4 bereits benutzerdefinierte Felder
 angelegt, die bestimmte individuelle Inhalte aus OPUS3 erfassen:
@@ -63,7 +71,7 @@ werden.
 ## FAQ-Seite
 
 Für die Bearbeitung der Hilfeseite (FAQ) steht ein Formular zur Verfügung. Die Konfiguration der
-Hilfeseite findet weiter wie im Kapitel FAQ-Seite 97 beschrieben statt, d.h. das Anlegen oder
+Hilfeseite findet weiter wie im Kapitel [FAQ-Seite](../configext/faq.html) beschrieben statt, d.h. das Anlegen oder
 Umstrukturieren von Abschnitten ist über die Oberfläche bisher nicht möglich.
 
 ## Statische Seiten
@@ -81,7 +89,7 @@ und können nach den Tabellenspalten sortiert werden.
 
 Zu jedem Eintrag wird ein Link angeboten, der auf eine Bearbeitungsseite für den
 Übersetzungsschlüssel führt. Liegt der Inhalt in einer nicht zu bearbeitenden Datei (also im
-Unterverzeichnis " language "), so werden die Inhalte für diesen Schlüssel für die Bearbeitung
-übernommen, aber in der zu bearbeitenden Datei (im Verzeichnis " language_custom ") gespeichert.
+Unterverzeichnis `language`), so werden die Inhalte für diesen Schlüssel für die Bearbeitung
+übernommen, aber in der zu bearbeitenden Datei (im Verzeichnis `language_custom`) gespeichert.
 
-
+[TRANSLATIONS]: ../configext/translations.html

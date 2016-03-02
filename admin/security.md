@@ -102,41 +102,41 @@ Soll der Benutzer neben dem Zugriff auf einzelne im Modul "setup" enthaltene Fun
 Zugriff auf das Modul "admin" erhalten, so müssen dem Benutzer dafür zwei getrennte Rollen
 zugewiesen werden!
 
-Beispiel 1: Nutzerrolle anlegen, die Dokumente nur bearbeiten, aber nicht
+**Beispiel 1:** Nutzerrolle anlegen, die Dokumente nur bearbeiten, aber nicht
 freischalten darf
 
-Die Rolle wird zunächst mit dem gewünschten Namen wie oben beschrieben angelegt. Dann wird ihr
-Zugriff auf das Modul "admin" und auf den Bereich der Administration "Dokumente verwalten"
-gegeben:
+  Die Rolle wird zunächst mit dem gewünschten Namen wie oben beschrieben angelegt. Dann wird ihr
+  Zugriff auf das Modul "admin" und auf den Bereich der Administration "Dokumente verwalten"
+  gegeben:
 
-Nun können noch die Zustandsänderungen festgelegt werden, die die Rolle für Dokumente
-durchführen kann, z.B. Dokumente überführen aus dem Zustand "unpublished" in den Zustand "in
-Bearbeitung", aus dem Zustand "in Bearbeitung" in den Zustand "geprüft" und ggf. aus diesem
-wieder zurück in "in Bearbeitung":
+  Nun können noch die Zustandsänderungen festgelegt werden, die die Rolle für Dokumente
+  durchführen kann, z.B. Dokumente überführen aus dem Zustand "unpublished" in den Zustand "in
+  Bearbeitung", aus dem Zustand "in Bearbeitung" in den Zustand "geprüft" und ggf. aus diesem
+  wieder zurück in "in Bearbeitung":
 
-Abschließend wird die Rolle einem bestehenden oder neuen Nutzerkonto zugewiesen 158 . Nach den
-Änderungen zeigt das Menü für die Administration nun nur noch die Funktionen an, auf die die Rolle
-Zugriff hat, alle anderen Funktionen sind ausgegraut:
+  Abschließend wird die Rolle einem bestehenden oder neuen Nutzerkonto zugewiesen 158 . Nach den
+  Änderungen zeigt das Menü für die Administration nun nur noch die Funktionen an, auf die die Rolle
+  Zugriff hat, alle anderen Funktionen sind ausgegraut:
 
-Der Link "OAI Link anzeigen" wird immer angezeigt, da es sich nicht um einen geschützten
-Bereich handelt.
+  Der Link "OAI Link anzeigen" wird immer angezeigt, da es sich nicht um einen geschützten
+  Bereich handelt.
 
-Beispiel 2: Nutzerrolle anlegen, die Dokumente nur freischalten, aber nicht
+**Beispiel 2:** Nutzerrolle anlegen, die Dokumente nur freischalten, aber nicht
 bearbeiten darf
 
-Die Rolle wird zunächst mit dem gewünschten Namen wie oben beschrieben angelegt. Dann wird ihr
-Zugriff auf das Modul "review" gegeben. Abschließend wird die Rolle einem bestehenden oder neuen
-Nutzerkonto zugewiesen 158 .
+  Die Rolle wird zunächst mit dem gewünschten Namen wie oben beschrieben angelegt. Dann wird ihr
+  Zugriff auf das Modul "review" gegeben. Abschließend wird die Rolle einem bestehenden oder neuen
+  Nutzerkonto zugewiesen 158.
 
-Beispiel 3: Nutzerrolle anlegen, die Dokumente verwalten und neue Sammlungen,
+**Beispiel 3:** Nutzerrolle anlegen, die Dokumente verwalten und neue Sammlungen,
 Schriftenreihen und Lizenzen anlegen darf
 
-Die Rolle wird zunächst mit dem gewünschten Namen wie oben beschrieben angelegt. Dann wird ihr
-Zugriff auf das Modul "admin" und auf die Bereiche der Administration "Dokumente verwalten",
-"Lizenzen verwalten", "Sammlungen verwalten", "Schriftenreihen verwalten" und "Sprachen verwalten"
-gegeben. Nun können noch die Zustandsänderungen festgelegt werden, die die Rolle für Dokumente
-durchführen kann. Abschließend wird die Rolle einem bestehenden oder neuen Nutzerkonto
-zugewiesen 158 .
+  Die Rolle wird zunächst mit dem gewünschten Namen wie oben beschrieben angelegt. Dann wird ihr
+  Zugriff auf das Modul "admin" und auf die Bereiche der Administration "Dokumente verwalten",
+  "Lizenzen verwalten", "Sammlungen verwalten", "Schriftenreihen verwalten" und "Sprachen verwalten"
+  gegeben. Nun können noch die Zustandsänderungen festgelegt werden, die die Rolle für Dokumente
+  durchführen kann. Abschließend wird die Rolle einem bestehenden oder neuen Nutzerkonto
+  zugewiesen 158 .
 
 ## IP-Adressbereiche
 
