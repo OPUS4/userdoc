@@ -15,7 +15,7 @@ Im Dateimanager werden die zu einem Dokument hochgeladenen Dateien angezeigt und
 die Möglichkeit, an dieser Stelle (zusätzlich oder auch nachträglich) Dateien hochzuladen und zu
 löschen.
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateimanager.png){:width="640px"}
 
 Auf der Hauptseite werden alle Dateien für das Dokument angezeigt. Dort können alle Dateien und
 die jeweils dafür benötigten Einstellungen direkt bearbeitet und abgespeichert werden. Nach dem
@@ -25,7 +25,7 @@ Metadatenübersicht des einzelnen Dokuments angezeigt.
 Darüber hinaus können Informationen zu den Dateien im Bereich "Kommentar" ergänzt und Dateien
 für die Anzeige umbenannt werden ("Anzeigename"):
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateimanager_Detail_Kommentar.png){:width="640px"}
 
 Ein Klick auf den Namen der Datei öffnet diese (z.B. um sie abschließend vor dem Freischalten des
 Dokuments zu prüfen).
@@ -35,13 +35,13 @@ Dokuments zu prüfen).
 Zu jeder Datei müssen zusätzlich die Nutzerrollen (vgl. Kapitel Nutzerrollen 160 zur Anlage und
 Rechtevergabe von Nutzerrollen) angeklickt werden, die diese Datei herunterladen dürfen:
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateimanager_Detail_Zugriffsrechte.png){:width="480px"}
 
 Wird an dieser Stelle nur bestimmten Rollen der Zugriff auf die Datei erlaubt (z.B. in Verbindung mit
 einem IP-Bereich, siehe Kapitel IP Adressbereiche 164 ), so wird nicht-berechtigten Nutzern die Datei
 in der Frontdoor ausgegraut angezeigt:
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateien_Nutzerrollen2.png){:width="320px"}
 
 Soll die Datei gar nicht angezeigt werden, so kann die Option "Datei in Frontdoor anzeigen"
 abgewählt werden. Damit wird die Datei weder in der Frontdoor angezeigt noch kann sie über einen
@@ -49,7 +49,7 @@ direkten Link geladen werden (Ausnahme: Administrator und Dokumentenadministrato
 weiterhin die Datei über einen direkten Link laden). Soll die Datei nicht über die OAI-Schnittstelle
 abrufbar sein (Harvesting), muss das Häkchen bei "Datei in OAI anzeigen" entfernt werden:
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateimanager_Detail_Sichtbarkeit.png){:width="640px"}
 
 Über den "Hinzufügen" Button kommt man zu einem Formular, das dem Hochladen von Dateien
 dient. Nach dem Hochladen landet man wieder auf der Hauptseite des Dateimanagers.
@@ -59,6 +59,8 @@ Die maximale Größe einer Datei, die über den Dateimanager im Admin-Bereich ho
 werden kann, ergibt sich aus den Parametern post_max_size und upload_max_filesize in der
 php.ini (Vgl. Kapitel 8.5 93 ).
 </p>
+
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateimanager_Formular_Hinzufuegen.png){:width="640px"}
 
 ## Hinzufügen großer Dateien
 
@@ -76,6 +78,8 @@ Im Dateibrowser werden alle im Ordner /incoming befindlichen Dateien angezeigt u
 ausgewählt und hinzugefügt werden:
 
 <!-- TODO image -->
+
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateien_Dateienimport_Detail.png){:width="640px"}
 
 <p class="warning">
 Die Dateien müssen direkt in /incoming liegen, versteckte Dateien, Links und
