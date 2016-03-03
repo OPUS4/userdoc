@@ -72,12 +72,12 @@ die Dateien dem entsprechenden Dokument zuzuordnen, ruft man den Dateimanager au
 Die dort abgebildete Funktion "Importieren" ruft den Dateibrowser auf, mit dem eine auf dem Server
 gespeicherte Datei zum Dokument hinzugefügt werden kann.
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateien_Dateienimport.png){:width="640px"}
 
 Im Dateibrowser werden alle im Ordner /incoming befindlichen Dateien angezeigt und können
 ausgewählt und hinzugefügt werden:
 
-<!-- TODO image -->
+![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateien_Dateienimport_Detail2.png){:width="640px"}
 
 ![Dateimanager](../img/admin/SC_Admin_Dokumente_Dateien_Dateienimport_Detail.png){:width="640px"}
 
