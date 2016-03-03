@@ -5,7 +5,7 @@ weight: 80
 
 # Administration
 
-![Menü](../img/admin/menu.png){:width="640px"}
+![Menü](../img/admin/sc_admin_menu.jpg){:width="640px"}
 
 Der Bereich ist nur angemeldeten Nutzern mti entsprechenden Rechten zugänglich. Im folgenden werden die einzelnen
 administrativen Funktionen genauer beschrieben.
