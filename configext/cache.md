@@ -8,7 +8,7 @@ Zur Verbesserung der Performanz wurde in Opus 4.4 ein Caching-Mechanismus eingef
 Dokumente im Opus-XML-Format zwischenspeichert und so schneller zur Verfügung stellen kann.
 
 Wenn ein Dokument bearbeitet und gespeichert wird, dann wird der Cache für dieses Dokument
-automatisch aktualisiert, sodass die folgenden Zugriffe auf das Dokument deutlich beschleunigt
+automatisch aktualisiert, so dass die folgenden Zugriffe auf das Dokument deutlich beschleunigt
 werden.
 
 Aufgrund des in Opus4 verwendeten Datenmodells findet die automatische Aktualisierung allerdings
