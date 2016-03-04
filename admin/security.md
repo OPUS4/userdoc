@@ -9,7 +9,7 @@ Im Bereich Zugriffskontrolle können Nutzerkonten eingerichtet, Nutzerrollen def
 IP-Adressbereiche festgelegt werden. Jedem Konto bzw. jedem IP-Adressbereich können eine oder
 mehrere Rollen zugewiesen werden. Den Rollen können verschiedene Rechte zugewiesen werden.
 Auf diese Art und Weise können unterschiedliche Rollen für verschiedene Nutzergruppen
-definiert werden, um z.B. den Zugriff auf einzelen Administrationsfunktionen einzuschränken.
+definiert werden, um z.B. den Zugriff auf einzelne Administrationsfunktionen einzuschränken.
 
 ## Nutzerkonten
 
