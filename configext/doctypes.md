@@ -68,12 +68,12 @@ Das Attribut `formelement` gibt an, welches HTML-Formelement zur Darstellung ben
 Folgende Werte sind möglich:
 
 | Werte für formelement | Bedeutung                         |
-|:----------------------+:----------------------------------|
+|-----------------------+-----------------------------------|
 | text, Text            | einzeiliges Eingabefeld           |
 | textarea, Textarea    | mehrzeiliges größeres Eingabefeld |
 | select, Select        | Auswahlfeld                       |
 | checkbox, Checkbox    | Ankreuzfeld                       |
-/-----------------------+-----------------------------------/
+
 
 ### Das Attribut datatype
 
