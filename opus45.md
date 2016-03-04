@@ -8,7 +8,7 @@ weight: 5
 ## Git
 
 Die Entwicklung von OPUS 4 ist zu [GitHub][GITHUB] gewechselt. Durch diesen Wechsel wird die Zusammenarbeit mit
-externen Entwicklern vereinfacht. De Wechsel zu Git bietet auch neue Möglichkeiten für Installation und Update
+externen Entwicklern vereinfacht. Der Wechsel zu Git bietet auch neue Möglichkeiten für Installation und Update
 von OPUS 4 Repositorien.
 
 
