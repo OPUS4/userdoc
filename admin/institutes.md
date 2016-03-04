@@ -9,7 +9,7 @@ Für die Ablieferung der Dokumente an die Deutsche Nationalbibliothek (DNB) im R
 [Netzpublikationen](../introduction.html#netzpublikationen) über XMetaDissPlus ist die
 Angabe einer verbreitenden Stelle für jedes Dokument obligatorisch.
 
-In diesem Bereich hier können Institute verwaltet werden, die al Vergabeinstitution
+In diesem Bereich hier können Institute verwaltet werden, die als Vergabeinstitution
 und/oder als verbreitende Stelle für Dokumente im Repositorium verwendet werden können.
 
 Die verbreitende Stelle ist in der Regel der Betreiber des Dokumentenservers (also z.B.
@@ -18,7 +18,7 @@ Es kann auch weitere verbreitende Stellen geben, z.B. einen Universitätsverlag.
 verbreitende Stelle muss das Feld **IsPublisher** ausgewählt werden.
 
 Für Hochschulschriften ist zusätzlich die Angabe einer Vergabeinstitution, die den
-akademischen Grad verleiht, obligatorisch. Für Institute die für diese Rolle
+akademischen Grad verleiht, obligatorisch. Für Institute, die für diese Rolle
 auswählbar sein sollen, muß das Feld **IsGrantor** aktiviert werden.
 
 Für Institutionen stehen folgende Felder (***Pflichtfeld**) zur Verfügung.
