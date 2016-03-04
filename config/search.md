@@ -80,8 +80,9 @@ notwendig:
 * Wenn der Schlüssel searchengine.solr.facets noch nicht vorhanden ist diesen Schlüssel aus
   der Datei `$BASEDIR/application/configs/application.ini` in die `config.ini` übernehmen
   und `year` in `year_inverted` ändern.
-* In beiden Fällen zusätzlich den Schlüssel `searchengine.solr.sortcrit.year_inverted` auf
-  den Wert `lexi` setzen:
+
+Außerdem muss noch der Schlüssel `searchengine.solr.sortcrit.year_inverted` auf
+  den Wert `lexi` gesetzt werden damit die Facette anhand der Jahreszahlen sortiert wird.
 
 {% highlight ini %}
 searchengine.solr.sortcrit.year_inverted = lexi
