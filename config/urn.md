@@ -25,7 +25,7 @@ Attribut `VisibleInOai` auf `1` gesetzt ist.
 </p>
 
 Um zu prüfen, ob in einer früheren OPUS-Version URNs für Dokumente ohne sichtbaren Dateien vergeben wurden, kann
-folgendes Script gebutzt werden:
+folgendes Script genutzt werden:
 
 {% highlight bash %}
 $ opus4/scripts/
