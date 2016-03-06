@@ -11,10 +11,11 @@ Dokumenttypen einen XML-Editor.
 
 Folgende Änderungen sind möglich:
 
-1. Reihenfolge der angezeigten Felder eines Dokumenttyps ändern
-2. Felder zu einem Dokumenttyp hinzufügen/entfernen
-3. Dokumenttypen umbenennen
-4. Neuen Dokumenttyp anlegen
+* [Reihenfolge der angezeigten Felder ändern](#reihenfolge-der-angezeigten-felder-ndern)
+* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufgenentfernen)
+* [Dokumenttypen umbenennen](#dokumenttypen-umbenennen)
+* [Neuen Dokumenttyp anlegen](#neuen-dokumenttyp-anlegen)
+{: class="navlist" }
 
 In den folgenden beiden Grundlagenkapiteln
 [Grundlage: XML-Dokumenttypdefinitionen](#grundlage-xml-dokumenttypdefinition)
@@ -42,8 +43,7 @@ Das Element `field` besitzt die Attribute `name`, `formelement`, `required`, `da
 müssen deklariert werden, z.B.:
 
 {% highlight xml %}
-<field name="PersonAuthor" formelement="text" datatype="Person" required="no"
-  multiplicity="4"/>
+<field name="PersonAuthor" formelement="text" datatype="Person" required="no" multiplicity="4"/>
 {% endhighlight %}
 
 ### Das Attribut name
@@ -141,8 +141,7 @@ als erstes Unterelement angegeben werden.
 Beispiel:
 
 {% highlight xml %}
-<field name="PersonAuthor" formelement="text" datatype="Person" required="no"
-       multiplicity="4">
+<field name="PersonAuthor" formelement="text" datatype="Person" required="no" multiplicity="4">
     <required-if-fulltext/>
 </field>
 {% endhighlight %}
@@ -163,11 +162,9 @@ verzichtet werden, da ein jedes `subfield` pro Feld nur einmal vorkommen darf.
 Beispiel:
 
 {% highlight xml %}
-<field name="PersonAuthor" formelement="text" datatype="Person" required="no"
-       multiplicity="4">
+<field name="PersonAuthor" formelement="text" datatype="Person" required="no" multiplicity="4">
     <required-if-fulltext/>
-    <subfield name="AcademicTitle" formelement="text" datatype="Text"
-              required="no"/>
+    <subfield name="AcademicTitle" formelement="text" datatype="Text" required="no"/>
 </field>
 {% endhighlight %}
 
@@ -187,11 +184,9 @@ angezeigt wird. Das Element `value` hat drei mögliche Attribute.
 Beispiel 1: Vorbelegung des akademischen Titels:
 
 {% highlight xml %}
-<field name="PersonAuthor" formelement="text" datatype="Person" required="no"
-       multiplicity="4">
+<field name="PersonAuthor" formelement="text" datatype="Person" required="no" multiplicity="4">
     <required-if-fulltext/>
-    <subfield name="AcademicTitle" formelement="text" datatype="Text"
-              required="no"/>
+    <subfield name="AcademicTitle" formelement="text" datatype="Text" required="no"/>
     <default value="Dr." edit="yes" public="yes" />
 </field>
 {% endhighlight %}
@@ -207,18 +202,15 @@ Beispiel 2: Vorbelegung der E-Mail-Adresse:
 Beispiel 3: Vorbelegung von Select-Feldern
 
 {% highlight xml %}
-<field name="ThesisGrantor" required="yes" formelement="Select"
-       datatype="ThesisGrantor" multiplicity="1">
+<field name="ThesisGrantor" required="yes" formelement="Select" datatype="ThesisGrantor" multiplicity="1">
     <default value="1" edit="no" public="yes" />
 </field>
 
-<field name="ThesisPublisher" required="yes" formelement="Select"
-       datatype="ThesisPublisher" multiplicity="1">
+<field name="ThesisPublisher" required="yes" formelement="Select" datatype="ThesisPublisher" multiplicity="1">
     <default value="2" edit="no" public="yes" />
 </field>
 
-<field name="Licence" required="yes" formelement="Select" datatype="Licence"
-       multiplicity="1">
+<field name="Licence" required="yes" formelement="Select" datatype="Licence" multiplicity="1">
     <default value="3" edit="no" public="yes" />
 </field>
 {% endhighlight %}
@@ -242,8 +234,7 @@ noch direkt referenziert werden. Dies geschieht mit dem Attribut `for="FirstName
 `for="LastName`:
 
 {% highlight xml %}
-<field name="PersonSubmitter" required="yes" multiplicity="1"
-       formelement="text" datatype="Person">
+<field name="PersonSubmitter" required="yes" multiplicity="1" formelement="text" datatype="Person">
     <default for="FirstName" value="Hans" edit="yes" public="yes"/>
     <default for="LastName" value="Hansmann" edit="yes" public="yes"/>
 </field>
@@ -256,8 +247,7 @@ automatisch mit erstellt. Dieses Feld kann wie folgt mit einem Defaultwert beleg
 Attribut `value` noch das Attribut `for="Language"` vorangestellt wird:
 
 {% highlight xml %}
-<field name="TitleMain" required="no" formelement="text"
-       datatype="Title" multiplicity="4">
+<field name="TitleMain" required="no" formelement="text" datatype="Title" multiplicity="4">
     <default for="Language" value="deu" edit="no" public="yes"/>
 </field>
 {% endhighlight %}
@@ -271,8 +261,7 @@ erhalten ist die Definition entsprechend zu erweitern und das Attribut `required
 Beispiel: Vorname als Pflichtfeld
 
 {% highlight xml %}
-<field name="PersonSubmitter" required="yes" formelement="Text"
-       datatype="Person" multiplicity="1">
+<field name="PersonSubmitter" required="yes" formelement="Text" datatype="Person" multiplicity="1">
     <subfield name="FirstName" required="yes" formelement="text" datatype="Text" />
 </field>
 {% endhighlight %}
@@ -323,8 +312,7 @@ benutzt standardmäßig die css-Klasse `form-textfield`, die entsprechend angepa
 Für den Fall, dass das Element keine Klasse benutzt, gibt es folgende Variante:
 
 {% highlight php %}
-<?= $this->element('button_label_abort', "class='form-button submit-button'",
-    "Submit", "send"); ?>
+<?= $this->element('button_label_abort', "class='form-button submit-button'", "Submit", "send"); ?>
 {% endhighlight %}
 
 Hierbei steht der Optionswert für den Button an zweiter Stelle. Damit wird für den Button jetzt die
@@ -368,7 +356,7 @@ Feldes, Hilfetext) angepasst werden (siehe auch [Leitlinien](../configext/polici
 * [Felder umbenennen](fields.html#felder-umbenennen)
 {: class="navlist" }
 
-## Reihenfolge der angezeigten Felder eines Dokumenttyps ändern
+## Reihenfolge der angezeigten Felder ändern
 
 Die Reihenfolge der Felder im Veröffentlichungsformular kann verändert werden, indem im
 entsprechenden Template im Verzeichnis
@@ -407,16 +395,14 @@ Die Datei `$BASEDIR/application/configs/doctypes/article.xml` mit einem Editor (
 Notepad++) öffnen und die Zeile
 
 {% highlight xml %}
-<field name="IdentifierUrl" required="no" formelement="Text"
-       datatype="Identifier" multiplicity="1"/>
+<field name="IdentifierUrl" required="no" formelement="Text" datatype="Identifier" multiplicity="1"/>
 {% endhighlight %}
 
 eintragen:
 
 {% highlight xml %}
 ...
-<field name="IdentifierUrl" required="no" formelement="Text"
-       datatype="Identifier" multiplicity="1"/>
+<field name="IdentifierUrl" required="no" formelement="Text" datatype="Identifier" multiplicity="1"/>
 ...
 {% endhighlight %}
 
