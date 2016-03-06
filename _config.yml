@@ -34,6 +34,11 @@ defaults:
       path: "configext"
     values:
       sort: "title"
+  -
+    scope:
+      path: "installation"
+    values:
+      sort: "title"
 
 gems:
   - jekyll-sitemap
