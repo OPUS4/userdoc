@@ -134,7 +134,7 @@ Dafür sind folgende Schreibrechte erforderlich:
 
 Dabei ist `<Seitenname>` jeweils durch `home`, `contact` oder `imprint` zu ersetzen.
 
-<p class="warning">
+<p class="warning" markdown="1">
 Bei Änderungen an den Übersetzungsschlüsseln werden die geänderten Übersetzungen in den
 Dateien `$BASEDIR/modules/home/language_custom/<Seitenname>.tmx` gespeichert.
 Sind in diesem Verzeichnis bereits anders benannte Dateien angelegt, die die gleichen Schlüssel
