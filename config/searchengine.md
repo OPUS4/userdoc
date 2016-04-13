@@ -27,4 +27,50 @@ searchengine.extract.port =
 searchengine.extract.app =
 {% endhighlight %}
 
+<p class="warning" markdown="1">
+Die alten Konfigurationsparameter funktionierten weiterhin, so daß existierdene `config.ini` Dateien auch mit
+OPUS 4.5 verwendet werden können. Die Kompatiblität zu den alten Parametern könnte in Zukunft abgeschaltet werden.
+Bei der Installation einer neuen Instanz werden die neuen Parameter verwendet.
+</p>
+
+## Neue Konfigurationsparameter
+
+Die folgenden Parameter ersetzen die alten bekannten Parameter beschrieben oben. Der Service **default** setzt
+dabei die Parameter für alle Verbindungen, sofern nichts für die anderen Services angegeben ist. Der Service
+**extract** wird definiert die Verbindung für die Extraktion von Volltexten.
+
+{% highlight ini %}
+; Default connection parameters for indexing and searching
+searchengine.solr.default.service.default.endpoint.localhost.host =
+searchengine.solr.default.service.default.endpoint.localhost.port =
+searchengine.solr.default.service.default.endpoint.localhost.path =
+
+; Connection parameters used for extraction (if different from default)
+searchengine.solr.default.service.extract.endpoint.localhost.host =
+searchengine.solr.default.service.extract.endpoint.localhost.port =
+searchengine.solr.default.service.extract.endpoint.localhost.path =
+{% endhighlight %}
+
+Die Verbindungen für die Suche bzw. die Indizierung können auch explizit gesetzt werden.
+
+{% highlight ini %}
+searchengine.solr.default.service.index.endpoint.localhost.host =
+searchengine.solr.default.service.index.endpoint.localhost.port =
+searchengine.solr.default.service.index.endpoint.localhost.path =
+
+searchengine.solr.default.service.search.endpoint.localhost.host =
+searchengine.solr.default.service.search.endpoint.localhost.port =
+searchengine.solr.default.service.search.endpoint.localhost.path =
+{% endhighlight %}
+
+### Unterstützte Services
+
+|Service | Beschreibung |
+|--------|------|
+| default | Defaultverbindung für alle Services |
+| index | Verbindung für Indizierung |
+| extract | Verbindung für die Extraktion von Volltexten |
+| search | Verbindung für die Suchefunktionen |
+
+
 
