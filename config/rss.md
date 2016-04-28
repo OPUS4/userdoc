@@ -12,7 +12,7 @@ in der `config.ini` gesetzt werden.
 | rss.default.feedTitle | "%4$s" - Volle URL, z.B. "http://opus4.kobv.de/opus4-zib" |
 | rss.default.feedDescription | "OPUS documents" |
 
-Für den Feed-Title kann ein beliebiger String angegeben werden. Dabei ist es möglich die folgenden view Platzhalter
+Für den Feed-Title kann ein beliebiger String angegeben werden. Dabei ist es möglich die folgenden vier Platzhalter
 zu verwenden.
 
 | Platzhalter | Beschreibung |
