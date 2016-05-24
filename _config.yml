@@ -41,4 +41,5 @@ defaults:
       sort: "title"
 
 gems:
+  - jekyll-watch
   - jekyll-sitemap
