@@ -41,5 +41,5 @@ defaults:
       sort: "title"
 
 # TODO jekyll-sitemap causing problems on CI-System
-# gems:
-#   - jekyll-sitemap
+gems:
+  - jekyll-sitemap
