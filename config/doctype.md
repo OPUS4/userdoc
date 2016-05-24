@@ -43,6 +43,6 @@ näher erläutert.
 ; the values in your Apache or php settings are big enough.
 publish.maxfilesize = 10240000
 ; publish.filetypes.allowed defines which filetypes can be uploaded in publication form
-publish.filetypes.allowed = pdf,txt,html,htm
+publish.filetypes.allowed = pdf,txt,html,htm,jpg
 {% endhighlight %}
 
