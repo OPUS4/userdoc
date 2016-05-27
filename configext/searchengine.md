@@ -15,9 +15,9 @@ Titel immer am Ende der Suchergebnisse angezeigt, wenn nach Titel
 sortiert wird. 
 
 Um das zu ändern, so daß Dokumente ohne Titel am Anfang bzw. am Ende 
-angezeigt werden, je nach Sortierrichtung, muss für den Feldtypen 
-(fieldType) `alphaOnlySort` der Wert von `sortMissingLast` auf 
-`false` gesetzt werden. 
+angezeigt werden, je nach Sortierrichtung, muss im Schema für den 
+Feldtypen (fieldType) `alphaOnlySort` der Wert von `sortMissingLast` 
+auf `false` gesetzt werden. 
 
 {% highlight xml %}
 <fieldType name="alphaOnlySort" class="solr.TextField" 
