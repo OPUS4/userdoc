@@ -1,5 +1,5 @@
 ---
-title: Anzeige von Latex-Formeln
+title: Anzeige von Latex-Formeln X
 weight: 40
 ---
 
