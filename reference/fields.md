@@ -8,16 +8,16 @@ In den folgenden Tabellen sind alle Felder aufgeführt, die für Dokumente in OP
 den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind in unterschiedliche Bereiche geteilt.
 
 * [Allgemein](#allgemein)
+* [Datumsangaben](#datumsangaben)
 * [Identifier](#identifier)
 * [Personen](#personen)
 * [Klassifikationen](#klassifikationen)
+{: class="navlist" }
 
 ## Allgemein
 
 | Feld | Label | Beschreibung |
 |------+-----------------+--------------|
-| CompletedDate | Veröffentlichungsdatum (online) | Standarddatum in jedem Dokumenttyp, wird per default mit dem aktuellen Datum beim Einstellen des Dokuments belegt |
-| CompletedYear | Jahr der Fertigstellung | |
 | ContributingCorporation | Beteiligte Körperschaft | Name der Organisation, die einen bedeutsamen intellektuellen Beitrag zum Dokument geleistet hat |
 | CreatingCorporation | Urhebende Körperschaft | Name der Organisation, die den intellektuellen Inhalt des Dokuments verantwortet (bibliographische Angabe) |
 | Edition | Auflage | z.B. Auflage eines Buches (bibliographisches Feld) |
@@ -28,13 +28,9 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 | PageFirst | Erste Seite | Nummer der ersten Textseite |
 | PageLast | Letzte Seite | Nummer der letzten Textseite |
 | PageNumber | Seitenzahl |Anzahl der Seiten des Dokuments |
-| PublishedDate | Datum der Erstveröffentlichung | kommt zum Einsatz, wenn das Dokument bereits veröffentlicht wurde (z.B. in einem Verlag); bibliographisches Feld |
-| PublishedYear | Jahr der Erstveröffentlichung | kommt zum Einsatz, wenn das Dokument bereits veröffentlicht wurde (z.B. in einem Verlag); bibliographisches Feld |
 | PublisherName | Verlag | Name des Verlags;bibliographisches Feld |
 | PublisherPlace | Verlagsort | Ort des Verlags; bibliographisches Feld |
 | Series | Schriftenreihen | Browsingfeld zur Auswahl der verfügbaren Schriftenreihen |
-| ThesisDateAccepted | Datum der Annahme der Abschlussarbeit | Datum, an dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde; i.d.R. das Datum der mündlichen Prüfung |
-| ThesisYearAccepted | Jahr der Annahme der Abschlussarbeit | Jahr, in dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde; i.d.R. das Jahr der mündlichen Prüfung |
 | ThesisGrantor | Titel verleihende Institution | der Inhalt dieses Feldes wird über die Institute (Verbreitende Stelle) im Administrationsbereich verwaltet. |
 | ThesisPublisher | Veröffentlichende Institution | der Inhalt dieses Feldes wird über die Institute (Verbreitende Stelle) im Administrationsbereich verwaltet. |
 | TitleAbstract | Abstract / Kurzfassung | Eine Zusammenfassung der Arbeit
@@ -44,6 +40,18 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 | TitleSub | Untertitel | Untertitel (Zusatz zum Sachtitel) des Dokuments oder des Objekts |
 | Type | Dokumenttyp | |
 | Volume | Band | Band, in dem bspw. ein Artikel erschienen ist; bibliographisches Feld |
+
+## Datumsangaben
+
+| Feld | Label | Beschreibung |
+|------+-----------------+--------------|
+| CompletedDate | Veröffentlichungsdatum (online) | Standarddatum in jedem Dokumenttyp, wird per default mit dem aktuellen Datum beim Einstellen des Dokuments belegt |
+| CompletedYear | Jahr der Fertigstellung | |
+| PublishedDate | Datum der Erstveröffentlichung | kommt zum Einsatz, wenn das Dokument bereits veröffentlicht wurde (z.B. in einem Verlag); bibliographisches Feld |
+| PublishedYear | Jahr der Erstveröffentlichung | kommt zum Einsatz, wenn das Dokument bereits veröffentlicht wurde (z.B. in einem Verlag); bibliographisches Feld |
+| ThesisDateAccepted | Datum der Annahme der Abschlussarbeit | Datum, an dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde; i.d.R. das Datum der mündlichen Prüfung |
+| ThesisYearAccepted | Jahr der Annahme der Abschlussarbeit | Jahr, in dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde; i.d.R. das Jahr der mündlichen Prüfung |
+| EmbargoDate| Embargo Datum | Datum an dem das Embargo des Dokuments (Volltext) durch den Verlag endet |
 
 ## Identifier
 
