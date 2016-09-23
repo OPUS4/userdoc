@@ -41,7 +41,7 @@ Das lokale Repository ist eine vollständige Kopie. Das heißt die bisherigen
 
 ## Installationsskript ausführen
 
-Im 'bin'-Verzeichnis liegt ein Installationsskript mit dem die nächsten Schritte
+Im `bin`-Verzeichnis liegt ein Installationsskript mit dem die nächsten Schritte
 durchgeführt werden können.
 
     $ sudo bin/install.sh
@@ -50,6 +50,26 @@ Während der Installation werden einige Informationen abgefragt. Optional wird e
 Apache Solr Server installiert. Falls aber Solr bereits vorhanden ist können auch
 einfach nur die entsprechenden Verbinungsparameter angegeben werden. Das Skript
 erzeugt dann die notwendigen Konfigurationsdateien für OPUS 4.
+
+## Webserver neustarten
+ 
+Nach der Installation muss zum Schluss der Webserver neu gestartet 
+werden. Das Installationsskript fordert dazu auf bzw. kann den Neustart
+auch direkt ausführen.
+ 
+Unter Ubuntu kann der Webserver mit folgendem Kommando neu gestartet 
+werden.
+
+    $ sudo service apache2 restart
+    
+Anschließend sollte OPUS 4 lokal unter folgender URL verfügbar sein.
+
+    http://localhost/opus4
+
+Die URL kann anders sein, wenn während der Installation die 
+Standardwerte modifiziert wurden.
+
+
 
 
 
