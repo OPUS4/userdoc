@@ -1,5 +1,5 @@
 ---
-title: Solr Schema
+title: Solr-Schema
 --- 
 
 # Solr-Schema
