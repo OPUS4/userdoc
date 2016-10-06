@@ -45,13 +45,23 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 
 | Feld | Label | Beschreibung |
 |------+-----------------+--------------|
-| CompletedDate | Veröffentlichungsdatum (online) | Standarddatum in jedem Dokumenttyp, wird per default mit dem aktuellen Datum beim Einstellen des Dokuments belegt |
-| CompletedYear | Jahr der Fertigstellung | |
-| PublishedDate | Datum der Erstveröffentlichung | kommt zum Einsatz, wenn das Dokument bereits veröffentlicht wurde (z.B. in einem Verlag); bibliographisches Feld |
-| PublishedYear | Jahr der Erstveröffentlichung | kommt zum Einsatz, wenn das Dokument bereits veröffentlicht wurde (z.B. in einem Verlag); bibliographisches Feld |
-| ThesisDateAccepted | Datum der Annahme der Abschlussarbeit | Datum, an dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde; i.d.R. das Datum der mündlichen Prüfung |
-| ThesisYearAccepted | Jahr der Annahme der Abschlussarbeit | Jahr, in dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde; i.d.R. das Jahr der mündlichen Prüfung |
-| EmbargoDate| Embargo Datum | Datum an dem das Embargo des Dokuments (Volltext) durch den Verlag endet |
+| CompletedDate | Datum der Veröffentlichung (online) | Standarddatum in jedem Dokumenttyp, wird per default mit dem aktuellen Datum beim Einstellen des Dokuments belegt; Datum, ab wann wann das Dokument frühestens im Repository freigeschaltet werden darf |
+| CompletedYear | Jahr der Fertigstellung | Datumsfeld für die Angabe zum Erstellungsjahr oder Erscheinungsjahr; ursprünglich aus OPUS3 als Jahresangabe zum Erscheinungsjahr |
+| PublishedDate | Datum der Erstveröffentlichung | Datum, an dem die Publikation bereits veröffentlicht wurde (z.B. in einem Verlag) oder die Publikation als Erstveröffentlichung im Repository erscheint |
+| PublishedYear | Jahr der Erstveröffentlichung | Jahr, in dem die Publikation bereits veröffentlicht wurde (z.B. in einem Verlag) oder die Publikation als Erstveröffentlichung im Repository erscheint |
+| EmbargoDate| Embargo-Datum | Datum, an dem das Embargo der Publikation (Volltext) durch den Verlag endet und der Zugriff auf den Volltext in dem Repository frühestens möglich ist |
+| ThesisDateAccepted | Datum der Abschlussprüfung | Datum, an dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde (i.d.R. das Datum der mündlichen Prüfung) |
+| ThesisYearAccepted | Jahr der Abschlussprüfung | Jahr, in dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde (i.d.R. das Jahr der mündlichen Prüfung) |
+
+Die Jahresangabe im Feld "Datum der Erstveröffentlichung" (PublishedDate) wird in der Standardumgebung von OPUS 4 für die Generierung der Facette "Erscheinungsjahr", 
+für die "Jahresangabe" bei der erweiteren Suche sowie für die "Sortierreihenfolge nach Jahr" in der einfachen Suche herangezogen. Wenn dieses Datumsfeld nicht gefüllt 
+ist, wird das Feld "Jahr der Erstveröffentlichung" (PublishedYear) verwendet. Alternativ dazu besteht die Möglichkeit, die Indexierung der Jahresfacette individuell 
+zu konfigurieren und dafür z.B. das Datumsfeld "Jahr der Fertigstellung"  (CompletedDate) zu verwenden. Eines dieser Datumsfelder sollte demnach in allen Dokumenten 
+gesetzt sein.
+
+Für die Ablieferung von Abschlussarbeiten erwartet die DNB eine Angabe, an dem die Abschlussarbeit im Sinne der Prüfungsordnung angenommen wurde. Vorzugsweise wird hier 
+das Datum im Feld "Datum der Abschlussprüfung" (ThesisDateAccepted) verwendet. Ist dieses nicht bekannt, wird auch das Jahr im Feld "Jahr der Abschlussprüfung" 
+(ThesisYearAccepted) akzeptiert.
 
 ## Identifier
 
