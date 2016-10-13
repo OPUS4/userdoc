@@ -38,14 +38,30 @@ berücksichtigt, um die Grundlage für eine standardisierte Ablieferung an die D
 
 ### URN-Vergabe
 
-URN steht für Uniform Resource Name und ist ein Identifikator für digitale Objekte. Der in OPUS4 generierte URN bezieht
-sich auf die Expression "Frontdoor" (also die bibliographische Beschreibung des Dokuments) und nicht auf die (einzelnen)
-Dateien. URNs können in OPUS4 automatisch vergeben werden ([URN Einstellungen](config/urn.html)). URNs bilden die
-Grundlage für die
-Ablieferung der Dokumente an die Deutsche Nationalbibliothek über die xepicur-Schnittstelle, die in OPUS4 standardmäßig
-integriert ist. Für weitere Informationen zu URNs konsultieren Sie bitte
-[Persistent Identifier][PERSISTENTID]
-bzw. [nestor Handbuch][NESTOR].
+URN steht für Uniform Resource Name und ist ein Uniform Resource Identifier (URI), der als dauerhafter Bezeichner für eine Online-Ressource dient.
+Die digitale Publikation ist über die URN weltweit identifizierbar und damit zuverlässig zitierbar.
+
+Der URN-Service ist ein kostenloser Dienst der Deutschen Nationalbibliothek. Die DNB verwaltet URNs aus dem Namensraum "urn:nbn:de" und bietet einen URN-Resolving-Dienst für Deutschland und die Schweiz an.
+Für die Vergabe eines URN in OPUS 4 ist es erforderlich, dass für das Repository ein eigener URN-Namensraum zur Verfügung steht.
+Die Beantragung des URN-Namensraum erfolgt durch den Repositorybetreiber bei der DNB. Damit verpflichtet er sich, die Regeln dafür anzuerkennen und einzuhalten.
+Siehe [URN-Policy][URNPOLICY] für die Vergabe von URNs im Namensraum urn:nbn:de (Version 1.0, Stand: 29. November 2012)
+
+Ein in OPUS 4 generierter URN bezieht sich auf die Expression “Frontdoor” (also die bibliographische Beschreibung des Dokuments) und nicht auf die (einzelnen) Dateien.
+URNs können in OPUS 4 automatisch vergeben werden ([URN Parameter](config/urn.html)). Sie bilden die Grundlage für die Ablieferung der Dokumente an die Deutsche Nationalbibliothek über die OAI-Schnittstelle.
+
+<p class="info">
+Das Löschen einer urn:nbn:de ist nicht erlaubt. Wenn Dokumente mit URN  von der Veröffentlichung zurückgezogen werden, 
+muss die URN auf eine Ersatzseite mit entsprechenden Informationen verweisen und der URN - Service der Deutschen Nationalbibliothek
+kontaktiert werden, um gegebenenfalls Weiterleitungen einzurichten.
+</p>
+
+<p class="info">
+Sobald sich ein Objekt, für das eine urn:nbn:de vergeben wurde, auch nur geringfügig ändert, muss es eine neue URN erhalten. 
+</p>
+
+
+Für weitere Informationen zu URNs konsultieren Sie bitte die Richtlinien zu [Persistent Identifier][PERSISTENTID].
+
 
 ### Zeichenkodierung
 
@@ -79,3 +95,4 @@ Selbstverständlich kann man die Dokumente auch noch zusätzlich nach anderen As
 [NESTOR]: http://nestor.sub.uni-goettingen.de/handbuch/artikel/nestor_handbuch_artikel_336.pdf
 [DOCTYPES]: documenttypes/index.html
 [EXPORT]: features/export.html
+[URNPOLICY]: http://nbn-resolving.de/urn:nbn:de:101-2012121200
