@@ -1,14 +1,18 @@
 ---
-title: Indexieren durch Crawler verhindern
+title: Indexieren durch Webcrawler
 ---
-
-# Indexieren durch Crawler verhindern
+# Indexieren durch Webcrawler
 
 Das OPUS-Modul `crawlers` erleichtert Suchmaschinen die Indexierung, indem es sogenannte
-Deeplink s auf die Frontdoors der veröffentlichten Dokumente auflistet. Aber auch wenn das Modul
-nicht freigeschaltet ist, können Suchmaschinen durchaus Inhalte indexieren, z.B. wenn sie über das
-Browsing auf die Frontdoors gelangen. Das Anlegen einer `robots.txt`-Datei schützt nicht in jedem Fall
-davor, dass alle Suchmaschinen-Crawler die Indexierung unterlassen, da es lediglich ein Hinweis
+Deeplinks auf die Frontdoors der veröffentlichten Dokumente auflistet. Das ist u.a. für die 
+Sichtbarkeit in Google Scholar hilfreich. Der Nutzerrolle `guest` wird im Standard der 
+Zugriff auf das  Modul `crawlers` gewährt ([Zugriffskontrolle](../admin/security.html)).
+
+## Indexieren durch Webcrawler verhindern
+
+Aber auch wenn das Modul `crawlers` nicht freigeschaltet ist, können Suchmaschinen durchaus Inhalte indexieren, 
+z.B. wenn sie über das Browsing auf die Frontdoors gelangen. Das Anlegen einer `robots.txt`-Datei schützt nicht in 
+jedem Fall davor, dass alle Suchmaschinen-Crawler die Indexierung unterlassen, da es lediglich ein Hinweis
 oder eine Bitte ist, dies zu unterlassen.
 
 <p class="note">
