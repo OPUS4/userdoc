@@ -37,8 +37,8 @@ werden können, werden sie auf der Konsole abgefragt.
 ### Datenbankschema aktualisieren
 
 Für die Aktualisierung der Datenbank wird das folgende SQL Skript auf
-die Datenbank angewendet. Die Datenbank muss auf dem Stand von OPUS 4.4.5 
-sein.
+die Datenbank angewendet. Die Datenbank muss vorher auf dem Stand von 
+OPUS 4.4.5 sein.
 
     db/schema/update/update-4.5.sql
 
