@@ -31,7 +31,7 @@ Dort sind aber unter Umständen andere Kommandos bzw. zusätzliche Installations
 
 OPUS 4 funktioniert im allgemeinen auch mit älteren PHP Versionen ab 5.3 (mit "Multibyte-String"-Unterstützung). Es
 wird aber empfohlen eine möglichst aktuelle Version von PHP zu verwenden, die immer noch gewartet und mit
-Sicherheitsupdates versorgt wird.
+Sicherheitsupdates versorgt wird. OPUS 4 funktioniert mit PHP 7. 
 
 ### PHP Pakete installieren
 
@@ -42,19 +42,33 @@ mit folgendem Kommando installiert werden.
 
 Das Kommando muss mit folgenden Paketen aufgerufen werden.
 
-* `php5`
-* `php5-cli`
-* `php5-common`
-* `php5-curl`
-* `php5-dev`
-* `php5-gd`
-* `php5-mcrypt`
-* `php5-mysql`
-* `php5-xsl`
-* `php-log`
-* `libapache2-mod-php5`
-^
-    $ sudo apt-get install php5
+|---|---|
+| Paket | Hinweis |
+|---|---|
+| `php` | |
+| `php-cli` | |
+| `php-common` | |
+| `php-curl` | |
+| `php-gd` | |
+| `php-mbstring` | |
+| `php-mcrypt` | |
+| `php-mysql` | |
+| `php-xsl` | |
+| `php-log` | |
+| `libapache2-mod-php` | |
+|------|
+| Für die Entwicklung: |
+|------|
+| `php-dev` | |
+|---|---|
+
+<p class="note" markdown="1">
+Die Namen der Pakete sind manchmal mit einer Versionsnummer versehen, 
+z.B. `php7.0-xsl`. Unter Ubuntu 16 lässt sich z.B. PHP 7 oder PHP 5 
+verwenden.
+</p>
+
+    $ sudo apt-get install php
 
 <p class="warning" markdown="1">
 Damit OPUS 4 fehlerfrei funktioniert, muss der Parameter

@@ -9,30 +9,42 @@ ausgeführt werden kann müssen die [Voraussetzungen](requirements.html)
 für OPUS 4 auf dem System erfüllt sein.
 
 Das Skript kann mit `sudo` oder ohne ausgeführt werden. Einige Schritte
-der Installation sind nur mit `sudo` möglich.
+der Installation sind nur mit `sudo` möglich. 
 
 |---|
 | # | Schritt | Optional | `sudo` |
-|----|
-| 1 | Pfad für OPUS 4 im Webserver (opus4) |
-| 2 | Composer |
-| 3 | Apache2 Site Konfiguration |
-| 4 | Apache2 Link | X | X |
-| 5 | Datenbank | X | X |
-| 6 | Erzeugen der Konfigurationsdateien |
-| 7 | Workspace |
-| 8 | Admin Passwort setzen |
-| 9 | Solr installieren | X | X |
+|---|
+| 1 | [Serverpfad](#serverpfad) (/opus4) | | |
+| 2 | [Composer](#composer-dependencies) | | |
+| 3 | [Apache2 Site Konfiguration](#webserver-apache2) |
+|   | [Apache2 Link](#apache2-site-link-anlegen) | X | X |
+| 4 | [Datenbank](#datenbank) | X | X |
+| 5 | [Konfigurationsdateien erzeugen](#konfigurationsdateien) | | |
+| 6 | [Workspace-Verzeichnisse anlegen](#workspace-verzeichnisse-anlegen) | | |
+| 7 | [Dateirechte setzen](#dateirechte-setzen) | | X |
+| 8 | [Admin Passwort setzen](#admin-passwort-setzen) | | |
+| 9 | [Solr installieren](#apache-solr-installieren) | X | X |
 | 10 | Solr Konfiguration eintragen | | |
-| 11 | Testdaten importieren | X ||
-| 12 | Dateirechte setzen | | |
-| 13 | Apache2 restart | | |
+| 11 | [Testdaten importieren](#testdaten-importieren) | X | |
+| 12 | [Apache2 Neustart](#apache2-neustart) | X | X |
 
-## Optionen
+Wenn das Skript ohne `sudo` ausgeführt wird, kann es immer noch dafür 
+verwendet werden, die notwendigen Konfigurationsdateien mit den Daten
+Verbindungsinformationen für eine bestehende Datenbank und einen Solr
+Index zu erzeugen.
+ 
+Viele der Installationsschritte sind in einzelnen Dateien implementiert,
+die auch gezielt einzeln ausgeführt werden können.
+
+Die Installation wird folgendermaßen aufgerufen: 
+
+    $ sudo bin/install.sh
+
+## Parameter
 
 ## Schritte
 
-### 1. Pfad für OPUS 4
+### 1. Serverpfad
 
 Als erstes wird nach dem Pfad für die OPUS 4 Applikation auf dem 
 Webserver gefragt.
@@ -117,4 +129,38 @@ OPUS 4 angelegt.
     application/configs/config.ini
     application/configs/console.ini
     
+### 6. Workspace-Verzeichnisse anlegen
+
+### 7. Dateirechte setzen
+
+### 8. Admin Passwort setzen
+
+### 9. Apache Solr installieren
+
+### 10. Solr Konfiguration eintragen
     
+### 11. Testdaten importieren
+    
+Für Testinstanz können einige Beispieldokumente installiert werden.
+Diese sind auch notwendig, wenn die Unit Tests ausgeführt werden
+sollen.
+    
+    Import test data? [Y]
+           
+Wenn die Testdaten installiert werden sollen, wird eine zusätzliche 
+Konfigurationsdatei angelegt.
+ 
+    tests/config.ini
+    
+Dann werden die Workspace-Verzeichnisse unterhalb 
+    
+    tests/workspace
+    
+angelegt und die Testdokumente zu OPUS hinzugefügt.
+    
+### 12. Apache2 Neustart
+    
+Wird das Skript mit `sudo` ausgeführt, wird am Ende gefragt, ob Apache2
+neu gestartet werden soll, damit OPUS 4 aktiviert wird. 
+ 
+    $ sudo service apache2 restart
