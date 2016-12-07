@@ -24,7 +24,7 @@ der Installation sind nur mit `sudo` möglich.
 | 7 | [Dateirechte setzen](#dateirechte-setzen) | | X |
 | 8 | [Admin Passwort setzen](#admin-passwort-setzen) | | |
 | 9 | [Solr installieren](#apache-solr-installieren) | X | X |
-| 10 | Solr Konfiguration eintragen | | |
+| 10 | [Solr Konfiguration eintragen](#solr-konfiguration-eintragen) | | |
 | 11 | [Testdaten importieren](#testdaten-importieren) | X | |
 | 12 | [Apache2 Neustart](#apache2-neustart) | X | X |
 
@@ -99,17 +99,29 @@ neu gestartet.
 
 ### 4. Datenbank
 
-Name
-Admin Account Name + Passwort
-User Account Name + Passwort
-Host + Port
+Folgende Informationen werden für die Konfiguration der Datenbank 
+abgefragt.
 
-Die Zugriffsinformationen werden in die Konfigurationsdateien
+* Name der Datenbank
+* Name des OPUS 4 Admin Accounts
+* Passwort für OPUS 4 Admin
+* Name des OPUS 4 User Accounts
+* Passwort für OPUS 4 User
+* Hostname für MySQL Server
+* Port für MySQL Server
+
+Diese Informationen werden in die Konfigurationsdateien
 
     application/configs/config.ini
     application/configs/console.ini
     
-eingetragen. Der Adminaccount ist nur durch die `console.ini` verfügbar,
+eingetragen.
+ 
+Der OPUS 4 Admin Account wird für das Erstellen und Updaten der
+Datenbank verwendet. Der OPUS 4 User Account ist für den normalen 
+Zugriff über die Weboberfläche und hat nur eigeschränkte Rechte.
+
+Der Adminaccount ist nur durch die `console.ini` verfügbar,
 die von den OPUS 4 Skripten verwendet wird, die mit direktem Zugriff auf
 das Hostsystem ausgeführt werden können, z.B. um ein Update durchzuführen.
 
@@ -131,13 +143,63 @@ OPUS 4 angelegt.
     
 ### 6. Workspace-Verzeichnisse anlegen
 
+Das Skript `bin/prepare-workspace.sh` legt die für den Betrieb von OPUS
+notwendigen Verzeichnisse an.
+
+|-------------+--------------|
+| Verzeichnis | Beschreibung |
+|-------------+--------------|
+| files | Volltexte usw. der Dokumente |
+| incoming | Datei für den Import |
+| log | Logdateien |
+| cache | Temporäre Dateien für die Beschleunigung von Operationen |
+| export | Verzeichnisse für Exportfunktionen in Skripten |
+| tmp | Temporäre Dateien |
+| tmp/resumption | Temporäre Dateien für OAI Schnittstelle |
+|---+---|
+
+Die Verzeichnisse befinden sich alle unterhalb von `$BASEDIR/workspace`.
+
 ### 7. Dateirechte setzen
+
+Das Skript `bin/set-file-permissions.sh` muss mit `sudo` ausgeführt 
+werden und setzt die Rechte für die OPUS 4 Dateien und Verzeichnisse.
+Zum einen muss auf diese Dateien auf der Konsole zugegriffen werden.
+Zum anderen muss der Webserver die Dateien lesen und in manche, wie zum
+Beispiel `opus.log` schreiben können.
 
 ### 8. Admin Passwort setzen
 
+In OPUS gibt es einen festen Administrator Account. An dieser Stelle 
+der Installation muss ein Passwort für diesen Account festgelegt werden.
+
+    Please enter password for OPUS 'admin' account:
+
+Mit diesem Account kann auf sämtliche Funktionen der Administration
+zugegriffen werden.
+
 ### 9. Apache Solr installieren
 
+Die Installation von Apache Solr ist optional. Insbesondere im Hosting
+läuft der Solr Server manchmal auf einem anderen System. In diesem Fall
+müssen nur die Verbindunginformationen eingegeben werden, damit diese
+in die Konfigurationsdateien eingetragen werden können.
+
 ### 10. Solr Konfiguration eintragen
+
+Es werden folgende Informationen abgefragt.
+
+* Port für Solr Server
+* Hostname für Solr Server
+* Name des Solr Core (/opus4)
+
+Optional kann eine weitere Verbindung definiert werden, wenn die 
+Extraktion der Volltexte einen anderen Solr Core bzw. Server verwenden
+soll.
+
+Diese Informationen werden dann in die Konfigurationsdatei eingetragen.
+
+    application/configs/config.ini
     
 ### 11. Testdaten importieren
     
