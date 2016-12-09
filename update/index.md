@@ -8,14 +8,10 @@ weight: 35
 Für die Git-Version von OPUS (ab 4.5) gibt s keinen Tarball mehr und keine Update-Skript, daß die Dateien von OPUS
 aktualisiert. Für die meisten Updates werden mit Hilfe von Git-Kommandos ausgeführt werden.
 
+* [OPUS 4.5 Update](update45.html)
 * [Update von 4.4.5 auf Git-Version](from445.html)
 * [Migration von OPUS 3](../migration.html)
 {: class="navlist" }
-
-<p class="note">
-Version 4.5 verwendet das gleiche Datenbankschema wie OPUS 4.4.5, daher ist der Umstieg relativ einfach. In späteren
-Version wird sich das Schema ändern und es wird Skripte geben, um die notwendigen Aktualisierungen durchzuführen.
-</p>
 
 ## Update von OPUS 4 Version vor 4.4.5
 

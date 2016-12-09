@@ -2,7 +2,7 @@
 title: Konfiguration der Suchoberfläche
 ---
 
-# Konfiguration der Suchoberfläche
+# Konfiguration der Suchoberfläche 
 
 Zum Bearbeiten der Texte und Ausgabebezeichnungen für die Suchoberfläche, die Ergebnisseite und
 die Facetten muss die Datei

@@ -62,15 +62,14 @@ eingesehen werden. Da es all diese Felder jeweils nur einmal geben kann, entfäl
 hinzufügen".
 
 "Sprache" und "Dokumentart" sind Pflichtfelder und werden hier immer aufgeführt. Sie können über
-die Dropdownmenüs geändert werden. Falls "Datum der Erstveröffentlichung", "Jahr der
-Erstveröffentlichung", "Datum der Veröffentlichung (online)" oder "Jahr der Fertigstellung" nicht belegt
-sein sollten, werden sie in der Übersicht auch nicht angezeigt. Durch Klick auf die Eingabefelder
-lassen sie sich auch nachträglich befüllen.
+die Dropdownmenüs geändert werden. Wenn "Datum der Erstveröffentlichung", "Jahr der
+Erstveröffentlichung", "Datum der Veröffentlichung (online)", "Jahr der Fertigstellung" oder "Embargo-Datum" nicht belegt
+sind, werden sie in der Übersicht nicht angezeigt. Durch Klick auf die Eingabefelder lassen sie sich nachträglich befüllen.
 
 ![Image](../img/admin/SC_Admin_Dokumente_Metadatenformular_Allgemeines_Bearbeitungsmodus.png){:width="640px"}
 
 <p class="note">
-Die Felder "Datum der Freischaltung" und "Datum der letzten Änderung (Server)" - angeordnet in
+Die Felder "Freigeschaltet" (ServerDatePublished) und "Letzte Änderung" (ServerDateModified) - angeordnet in
 der Übersicht des Metadatenformulars - sind interne Felder und können nicht verändert werden.
 </p>
 
