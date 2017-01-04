@@ -51,3 +51,17 @@ Die Dokumente im RSS-Feed werden nach dem Feld `server_date_published` absteigen
 Es werden immer 25 Einträge ausgegeben.
 Es können auch RSS-Feeds auf Suchanfragen abonniert werden, die aktuell noch keine Treffer liefern.
 </p>
+
+## OpenSearch
+
+Die Suchseiten von OPUS unterstützen OpenSearch. Das heißt es ist eine
+Beschreibung verlinkt, die es Browsern ermöglicht OPUS als Suchmaschine 
+zu erkennen. In Firefox zum Beispiel lässt sich so ein Repositorium zu 
+den bekannten Suchmaschinen hinzufügen und kann dann direkt vom 
+Suchfeld des Browsers aus durchsucht werden.
+
+<p class="note" markdown="1">
+In den Browsern Chrome und Chromium funktioniert dies nur, wenn die 
+Suchseite direkt über eine Domain ohne weiteren Pfad aufgerufen werden
+kann. Also zum Beispiel: ´https://myrepo.org/´ und **nicht** ´https://mydomain.org/myrepo´.
+</p>
