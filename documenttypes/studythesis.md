@@ -21,10 +21,13 @@ Standardfelder im Dokumenttyp Studienarbeit:
 * **Licence**
 * Note
 * PageNumber
+* PersonAdvisor
 * **PersonAuthor**
 * **PersonSubmitter**
 * PlaceOfBirth *(Subfield in Verbindung mit Personen)*
 * Series
+* SubjectDDC
+* SubjectUncontrolled
 * **ThesisPublisher**
 * **TitleAbstract** *(wenn Volltext vhd.)*
 * **TitleMain**

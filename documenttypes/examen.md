@@ -33,6 +33,7 @@ Standardfelder im Dokumenttyp Examensarbeit:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisDateAccepted**

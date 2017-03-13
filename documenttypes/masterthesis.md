@@ -33,6 +33,7 @@ Standardfelder im Dokumenttyp Masterarbeit:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisDateAccepted**

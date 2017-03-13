@@ -30,6 +30,7 @@ Standardfelder im Dokumenttyp Ton:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectUncontrolled
 * **ThesisPublisher**
 * **TitleAbstract** *(wenn Volltext vhd.)*

@@ -25,6 +25,7 @@ Standardfelder im Dokumenttyp Arbeitspapier:
 * **PersonSubmitter**
 * PlaceOfBirth *(Subfield in Verbindung mit Personen)*
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**

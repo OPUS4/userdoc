@@ -28,6 +28,7 @@ Standardfelder im Dokumenttyp (wissenschaftlicher) Artikel:
 * PlaceOfBirth *(Subfield in Verbindung mit Personen)*
 * PublishedDate
 * Series
+* SubjectDDC
 * SubjectUncontrolled
 * **ThesisPublisher**
 * **TitleAbstract** *(wenn Volltext vhd.)*

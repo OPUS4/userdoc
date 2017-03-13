@@ -31,6 +31,7 @@ Standardfelder im Dokumenttyp Bachelorarbeit:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectUncontrolled
 * **ThesisDateAccepted**
 * **ThesisGrantor**

@@ -30,6 +30,7 @@ Standardfelder im Dokumenttyp Periodikum:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**
