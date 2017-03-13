@@ -34,6 +34,7 @@ Standardfelder im Dokumenttyp Bewegte Bilder:
 * PersonTranslator
 * PlaceOfBirth *(Subfield in Verbindung mit Personen)*
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**

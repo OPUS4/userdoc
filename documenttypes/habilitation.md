@@ -35,6 +35,7 @@ Standardfelder im Dokumenttyp Habilitation:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisDateAccepted**

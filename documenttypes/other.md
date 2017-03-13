@@ -32,6 +32,7 @@ Standardfelder im Dokumenttyp Sonstiges:
 * PlaceOfBirth *(Subfield in Verbindung mit Personen)*
 * PublishedDate
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**

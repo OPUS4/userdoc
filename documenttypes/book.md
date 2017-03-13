@@ -28,6 +28,7 @@ Standardfelder im Dokumenttyp Buch (Monographie):
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**

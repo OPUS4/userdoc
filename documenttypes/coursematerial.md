@@ -26,6 +26,7 @@ Standardfelder im Dokumenttyp Lehrmaterial:
 * **PersonSubmitter**
 * PlaceOfBirth *(Subfield in Verbindung mit Personen)*
 * Series
+* SubjectDDC
 * SubjectUncontrolled
 * **ThesisPublisher**
 * **TitleAbstract** *(wenn Volltext vhd.)*

@@ -32,6 +32,7 @@ Standardfelder im Dokumenttyp Diplomarbeit:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisDateAccepted**
