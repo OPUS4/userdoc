@@ -31,6 +31,7 @@ Standardfelder im Dokumenttyp Dissertation:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectUncontrolled
 * **ThesisDateAccepted**
 * **ThesisGrantor**
