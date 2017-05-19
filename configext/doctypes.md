@@ -131,6 +131,29 @@ diesen Feldern eine multiplicity von 1 zwingend notwendig ist:
 * PublisherPlace
 * Volume
 
+### Das Unterelement default
+
+Das Element `default` kann verwendet werden um verschiedene grundlegende Eigenschaften eines
+Feldes zu konfigurieren.
+
+{% highlight xml %}
+<field name="CompletedDate" required="yes" formelement="Text" datatype="Date" multiplicity="1">
+    <default value="today" edit="yes" public="yes" />
+</field>
+{% endhighlight %}
+
+Es werden folgende Attribute unterstützt.
+
+| Attribut | Bedeutung | |
+|--------------------+----+-------|
+| for | CURRENTLY NOT USED | |
+| value | Defaultwert für das Feld. | |
+| edit | Editierbarkeit |yes\|no |
+| public | Sichtbarkeit im Formular | yes\|no |
+
+Diese Funktionalität kann z.B. dafür verwendet werden Felder mit Defaultwerten zu belegen, die
+bei der Eingabe nicht editiert werden können.
+
 ### Das Unterelement required-if-fulltext
 
 Das Element `required-if-fulltext` ist ein optionales Unterelement des Elements `field`. Es kann
