@@ -29,6 +29,11 @@ body {
     font-weight: bold;
 }
 
+#header .title a {
+    color: black;
+    text-decoration: none;
+}
+
 .container {
     margin: 0px;
     padding: 0px;
