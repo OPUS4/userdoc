@@ -48,9 +48,9 @@ Bei der  Installation von OPUS wird das Standard-Logo „OPUS“ ausgeliefert.
 In der Datei `$BASEDIR/public/layouts/mylayout/common.phtml` ist das Logo definiert.
 
 {% highlight php %}
- <h1 id="logo">
-        <a href="<?= $this->optionUrl('logoLink') ?>" title="<?= $this->translate('logo_title') ?>"></a>
- </h1>
+<h1 id="logo">
+    <a href="<?= $this->optionUrl('logoLink') ?>" title="<?= $this->translate('logo_title') ?>"></a>
+</h1>
 {% endhighlight %}
 
 
@@ -83,13 +83,13 @@ logoLink = https://www.domain-individuell.de/
 
 {% highlight php %}
 <tu tuid="logo_title">
-          <tuv xml:lang="en">
-            <seg>Individueller Titel</seg>
-          </tuv>
-          <tuv xml:lang="de">
-            <seg>Individueller Titel</seg>
-          </tuv>
-        </tu>
+    <tuv xml:lang="en">
+        <seg>Individueller Titel</seg>
+    </tuv>
+    <tuv xml:lang="de">
+        <seg>Individueller Titel</seg>
+    </tuv>
+</tu>
 
 {% endhighlight %}
 
@@ -125,21 +125,21 @@ logoLink2 = https://www.domain-individuell-2.de/
 
 {% highlight php %}
 <tu tuid="logo_title">
-          <tuv xml:lang="en">
-            <seg>Individueller Titel-1</seg>
-          </tuv>
-          <tuv xml:lang="de">
-            <seg>Individueller Titel-1</seg>
-          </tuv>
+    <tuv xml:lang="en">
+        <seg>Individueller Titel-1</seg>
+    </tuv>
+    <tuv xml:lang="de">
+        <seg>Individueller Titel-1</seg>
+    </tuv>
 </tu>
 
 <tu tuid="logo2_title">
-          <tuv xml:lang="en">
-            <seg>Individueller Titel-2</seg>
-          </tuv>
-          <tuv xml:lang="de">
-            <seg>Individueller Titel-2</seg>
-          </tuv>
+    <tuv xml:lang="en">
+        <seg>Individueller Titel-2</seg>
+    </tuv>
+    <tuv xml:lang="de">
+        <seg>Individueller Titel-2</seg>
+    </tuv>
 </tu>
 
 {% endhighlight %}
@@ -150,6 +150,6 @@ logoLink2 = https://www.domain-individuell-2.de/
 {% highlight php %}
 <h1 id="logo">
     <a href="<?= $this->optionUrl('logoLink') ?>" title="<?= $this->translate('logo_title') ?>"</a>
-   <a class="logo2" href="<?= $this->optionUrl('logoLink2') ?>" title="<?= $this-> translate('logo2_title') ?>"</a>	
-    </h1>
+    <a class="logo2" href="<?= $this->optionUrl('logoLink2') ?>" title="<?= $this-> translate('logo2_title') ?>"</a>	
+</h1>
 {% endhighlight %}
