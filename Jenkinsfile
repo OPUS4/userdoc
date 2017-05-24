@@ -6,6 +6,8 @@ pipeline {
     stages {
         stage('build') {
             steps{
+                sh 'pwd'
+
                 // install required bundles
                 sh 'bundle install'
 
