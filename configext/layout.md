@@ -7,9 +7,37 @@ weight: 10
 
 # Layout
 
-OPUS4 liefert ein Standard-Layout `$BASEDIR/public/layouts/opus4` mit aus. Dieses sollte nicht verändert werden,
-da diese Änderungen bei Updates überschrieben werden. Um ein eigenes Layout (im Folgenden mylayout genannt) zu
-erstellen, müssen die folgenden Schritte vollzogen werden.
+OPUS 4 enthält ein Standard-Layout in `$BASEDIR/public/layouts/opus4`.
+
+Kleine Anpassungen können direkt in diesem Layout vorgenommen werden.
+Das hat den Vorteil, dass Git bei einem Update erkennen kann, ob lokale
+Änderungen im Konflikt mit der zentralen Version stehen. Diese können
+dann gezielt aufgelöst werden, mit den Tools die für Git zur Verfügung
+stehen (z.B. `melt`). Änderungen in der neuen Version, die keinen 
+Konflikt verursachen werden automatisch übernommen. 
+ 
+## CSS anpassen 
+ 
+Anpassungen am verwendeten CSS können in folgender Datei vorgenommen
+werden.
+ 
+    $BASEDIR/public/layouts/mylayout/css/custom.css
+    
+### Farbe von Export Links in Frontdoor
+    
+In der Frontdoor werden Exportlinks für Formate wie BibTeX und RIS 
+angezeigt. Diese haben alle die gleiche Farbe. Mit folgendem CSS kann
+das Aussehen dieser Links beeinflusst und zum Beispiel jedem eine eigene 
+Farbe zugewiesen werden.
+
+    #export a.export.bibtex {
+        background: darkorange;
+    }
+  
+## Eigenes Layout verwenden
+ 
+Um ein eigenes Layout zu erstellen (im Folgenden `mylayout` genannt), 
+müssen die folgenden Schritte vollzogen werden.
 
 1\. Es muss ein Layoutverzeichnis durch Kopieren des mitgelieferten Standardlayouts erstellt werden:
 
