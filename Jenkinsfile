@@ -5,7 +5,7 @@ pipeline {
 
     stages {
         stage('build') {
-            steps{
+            steps {
                 sh 'pwd'
 
                 // install required bundles
@@ -13,6 +13,12 @@ pipeline {
 
                 // build documentation
                 sh 'bundle exec jekyll build'
+            }
+        }
+
+        stage('publish') {
+            steps {
+                archiveArtifacts artifacts: '_site/*'
             }
         }
     }
