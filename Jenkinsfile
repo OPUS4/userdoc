@@ -6,7 +6,11 @@ pipeline {
     stages {
         stage('build') {
             steps{
-                sh 'pwd'
+                // install required bundles
+                sh 'bundle install'
+
+                // build documentation
+                sh 'bundle exec jekyll build --config _config.yml,_localconfig.yml'
             }
         }
     }
