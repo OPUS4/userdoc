@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('prepare') {
             steps {
-                writeFile([file: '_localconfig.yml', text: "baseurl: \"/jenkins/job/${env.JOB_NAME}/job/${env.BRANCH_NAME}/OPUS_4_Handbuch\""])
+                writeFile([file: '_localconfig.yml', text: "baseurl: \"/jenkins/job/opus4userdoc/job/${env.BRANCH_NAME}/OPUS_4_Handbuch\""])
             }
         }
 
