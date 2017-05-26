@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('prepare') {
             steps {
-                writeFile([file: '_config-ci.yml', text: '/jenkins/job/opus4userdoc/job/4.6/OPUS_4_Handbuch'])
+                writeFile([file: '_localconfig.yml', text: '/jenkins/job/opus4userdoc/job/4.6/OPUS_4_Handbuch'])
             }
         }
 
@@ -18,7 +18,7 @@ pipeline {
                 sh 'bundle install'
 
                 // build documentation
-                sh 'bundle exec jekyll build --config _config.yml,_config-ci.yml'
+                sh 'bundle exec jekyll build --config _config.yml,_localconfig.yml'
             }
         }
 
