@@ -18,7 +18,7 @@ pipeline {
                 sh 'bundle install'
 
                 // build documentation
-                sh 'bundle exec jekyll build --config _config.yml,_localconfig.yml'
+                sh 'bundle exec jekyll build --config _config.yml'
             }
         }
 
