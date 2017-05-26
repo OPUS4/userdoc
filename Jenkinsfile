@@ -18,7 +18,7 @@ pipeline {
 
         stage('publish') {
             steps {
-                archiveArtifacts artifacts: '_site/*'
+                archiveArtifacts artifacts: '_site/**'
             }
         }
     }
