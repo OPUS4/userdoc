@@ -24,8 +24,8 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
-                    reportDir: 'userdoc',
-                    reportFiles: '_site/**',
+                    reportDir: '_site/',
+                    reportFiles: '**',
                     reportName: 'OPUS 4 Handbuch'
                 ])
             }
