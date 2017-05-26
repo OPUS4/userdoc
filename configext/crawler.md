@@ -1,12 +1,33 @@
 ---
-title: Indexieren durch Webcrawler
+title: Indexieren durch Suchmachinen
 ---
-# Indexieren durch Webcrawler
+
+# Indexieren durch Suchmaschinen (Webcrawler)
 
 Das OPUS-Modul `crawlers` erleichtert Suchmaschinen die Indexierung, indem es sogenannte
 Deeplinks auf die Frontdoors der veröffentlichten Dokumente auflistet. Das ist u.a. für die 
 Sichtbarkeit in Google Scholar hilfreich. Der Nutzerrolle `guest` wird im Standard der 
 Zugriff auf das  Modul `crawlers` gewährt ([Zugriffskontrolle](../admin/security.html)).
+
+## robots.txt
+
+Suchmaschinen sollten normalerweise nur die Module __frontdoor__ und
+__crawlers__ besuchen. Über __crawlers__ stehen Links zu allen Dokumenten zu Verfügung. In
+der Frontdoor finden sich die öffentlichen Metadaten zu den Dokumenten. Mit einer `robots.txt`
+Datei im Root-Verzeichnis des Webservers kann das gesteuert werden. Die Datei könnte wie folgt
+aussehen, wobei `/opus4` für die jeweilige URL des Repositories angepasst werden muss.
+
+    disallow: /opus4
+    allow: /opus4/frontdoor
+    allow: /opus4/crawlers
+    
+Mit folgender Regel kann auch noch der Zugriff auf die Volltextdateien erlaubt werden.
+
+    allow: /opus4/files
+        
+Die Datei `robots.txt` liegt häufig nicht im OPUS 4 Verzeichnis, da sie für einen Server
+bzw. eine Subdomain nur einmal angelegt werden kann. Werden mehrere Repositorien gehostet
+enthält die Datei dann mehrere unterschiedliche Einträge.
 
 ## Indexieren durch Webcrawler verhindern
 
