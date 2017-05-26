@@ -25,7 +25,7 @@ pipeline {
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: '_site/',
-                    reportFiles: '**',
+                    reportFiles: 'index.html',
                     reportName: 'OPUS 4 Handbuch'
                 ])
             }
