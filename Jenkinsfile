@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('prepare') {
             steps {
-                writeFile([file: '_config-ci.yml', test: '/jenkins/job/OPUS%204%20User%20Documentation/job/4.6/OPUS_4_Handbuch'])
+                writeFile([file: '_config-ci.yml', text: '/jenkins/job/OPUS%204%20User%20Documentation/job/4.6/OPUS_4_Handbuch'])
             }
         }
 
