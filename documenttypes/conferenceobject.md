@@ -38,6 +38,7 @@ Standardfelder im Dokumenttyp Konferenzveröffentlichung:
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectUncontrolled
 * **ThesisPublisher**
 * **TitleAbstract** *(wenn Volltext vhd.)*

@@ -26,6 +26,7 @@ Standardfelder im Dokumenttyp Ausgabe (Heft) zu einer Zeitschrift:
 * PublisherName
 * PublisherPlace
 * **Series**
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**

@@ -29,6 +29,7 @@ Standardfelder im Dokumenttyp Teil eines Buches (Kapitel):
 * PublisherName
 * PublisherPlace
 * Series
+* SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher**

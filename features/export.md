@@ -5,16 +5,39 @@ weight: 50
 
 # Export
 
-Mit OPUS Version 4.4.4 gibt es nun die Möglichkeit, einen Button für den Export nach XML auf der Frontdoor und auf den
-Ergebnisseiten der Suche anzuzeigen. Dieser Button wird über Parameter in der `config.ini` aktiviert, wie in
+Es gibt in OPUS die folgenden Möglichkeiten, Metadaten zu exportieren:
+
+1. Export über Ergebnislisten von Suche und Browsen im BibTeX-, CSV-, RIS- und XML-Format
+2. Export über die Frontdoor im BibTeX-, RIS- und XML-Format
+
+<p class="note" markdown="1">
+In der Standardauslieferung ist der Zugriff auf das Modul nur für Administratoren erlaubt. Soll der Zugriff weiteren Personen
+erlaubt sein, muss die ihnen zugewiesene Rolle das Recht erhalten, auf das Modul `export` zuzugreifen. Die
+Einstellungen der [Zugriffskontrolle](../admin/security.html) können in der Administration vorgenommen werden.
+</p>
+
+Seit OPUS Version 4.4.4 gibt es die Möglichkeit, einen Button für den Export nach XML auf der Frontdoor und auf den
+Ergebnisseiten von Suche und Browsen anzuzeigen. Dieser Button wird über Parameter in der `config.ini` aktiviert, wie in
 [Export Einstellungen](../config/export.html) beschrieben, und steht dann für den Administrator und für alle
 Nutzerrollen mit dem Recht `export` zur Verfügung.
 
-<p class="note" markdown="1">
-In der Standardauslieferung ist der Zugriff auf das Modul nur für Admins erlaubt. Soll der Zugriff weiteren Personen
-erlaubt sein, muss die ihnen zugewiesene Rolle das Recht erhalten, auf das Modul "export" zuzugreifen. Die
-Einstellungen der [Zugriffskontrolle](../admin/security.html) können in der Administration vorgenommen werden.
-</p>
+## Export über Ergebnislisten von Suche und Browsen
+
+Für die Ergebnislisten von Suche und Browsen kann in der Oberfläche ausgewählt werden, wie viele Dokumente auf einer Seite 
+angezeigt werden (10 = default, 20, 50, 100). Im Standard ist der Export für normale Nutzer auf 100 Dokumente und für eingeloggte 
+Nutzer auf 500 Dokumente begrenzt (dafür ist der Rows-Parameter in der URL anzupassen). Um diese Standardwerte zu ändern, 
+können die folgenden Parameter von der `$BASEDIR/application/configs/application.ini` in die `config.ini` übernommen und angepasst werden:
+
+{% highlight ini %}
+; PLUGINS
+plugins.export.default.maxDocumentsGuest = 100
+plugins.export.default.maxDocumentsUser = 500
+{% endhighlight %}
+
+Der angemeldete Administrator kann für eine unbegrenzte Anzahl von Dokumenten Metadaten exportieren. Dafür ist der Rows-Parameter 
+in der URL anzupassen.
+
+## Export im XML-Format
 
 Standardmäßig wird die Datei
 
@@ -33,7 +56,7 @@ Vom Autor werden nur Vor- und Nachname und von ThesisPublisher und ThesisGrantor
 
 Die bisherige Export-Funktion über eine URL bleibt bestehen, wie nachfolgend beschrieben.
 
-## Export durch GET-Parameter
+### Export durch GET-Parameter
 
 Jede URL in Suche oder Browsing, aber auch die Frontdoor-URL, kann als Eingabe für den Export von Dokumenten dienen.
 
