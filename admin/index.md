@@ -7,7 +7,7 @@ weight: 80
 
 ![Menü](../img/admin/sc_admin_menu.jpg){:width="640px"}
 
-Der Bereich ist nur angemeldeten Nutzern mti entsprechenden Rechten zugänglich. Im folgenden werden die einzelnen
+Der Bereich ist nur angemeldeten Nutzern mit entsprechenden Rechten zugänglich. Im folgenden werden die einzelnen
 administrativen Funktionen genauer beschrieben.
 
 ## Dokumente
