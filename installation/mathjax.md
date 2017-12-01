@@ -15,12 +15,17 @@ Mit dem folgenden Kommando lässt sich MathJax automatisch von [Packagist.org][P
 im Verzeichnis `$BASEDIR/vendor` installieren.
 
     composer require "mathjax/mathjax: 2.6.1"
+    
+oder auch nur
+
+    composer require mathjax/mathjax    
 
 Die MathJax Dateien befinden sind anschließend unter `$BASEDIR/vendor/mathjax/mathjax`. Damit sie in OPUS verwendet
 werden können muss noch manuell eine Verknüpfung für MathJax im Javascript (`js`) Verzeichnis von OPUS angelegt werden.
 Dazu wechselt man in das Verzeichnis `$BASEDIR/public/js` (muss gegebenenfalls angelegt werden) und führt folgendes
 Kommando aus (Linux).
 
+    cd public/js
     ln -sv ../../vendor/mathjax/mathjax MathJax
 
 Die MathJax Dateien sind nun im Javascript Verzeichnis von OPUS 4 verfügbar und der [Support für Latex][LATEX] kann
