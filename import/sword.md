@@ -20,19 +20,15 @@ verarbeiten zu können, zum Beispiel Verknüpfungen mit Klassifikationssystem us
 
 Das SWORD Service Dokument kann unter der URL
 
-```
-https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/servicedocument
-```
+
+    https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/servicedocument
 
 abgerufen werden.
 
-<p class="waring">
+<p class="warning" markdown="1">
 Das voreingestellte SWORD Service Dokument enthält (unter `<collection href="...">` eine 
 falsche Deposit Adresse.  Die korrekte Angabe, die in `href="..."` stehen sollte, lautet:
-
-```
-https://user@password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit
-```
+`https://user@password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit`
 </p>
 
 
@@ -81,7 +77,7 @@ Ein Beispiel für ein BASH Skript, das eine ZIP Datei, die genau *eine* XML Meta
 Datei im NISO JATS Format enthält, in eine ZIP Datei mit einer OPUS4 Import-XML umwandelt
 und als Request (via `curl`) an die SWORD Schnittstelle einer OPUS4 Instanz schickt:
 
-<p class="info">
+<p class="info" markdown="1">
 Die Umwandlung des NISO JATS Formats in das benötigte OPUS 4 Format durchführen zu 
 können, werden weitere Dateien benötigt! 
 
