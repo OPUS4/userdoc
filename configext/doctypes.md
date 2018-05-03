@@ -18,7 +18,7 @@ Wir empfehlen Ihnen zur Erstellung und Validierung der Dokumenttypen einen XML-E
 Folgende Änderungen sind möglich:
 
 * [Reihenfolge der angezeigten Felder ändern](#reihenfolge-der-angezeigten-felder-ändern)
-* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufügen/entfernen)
+* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufügenentfernen)
 * [Dokumenttypen umbenennen](#dokumenttypen-umbenennen)
 * [Neuen Dokumenttyp anlegen](#neuen-dokumenttyp-anlegen)
 {: class="navlist" }
