@@ -15,7 +15,7 @@ administrativen Funktionen genauer beschrieben.
 Der Bereich ist das Herzstück der Administration. Unter diesem Punkt können sowohl die Metadaten
 der einzelnen Dokumente bearbeitet, als auch die Zuweisungen zu Sammlungen, Klassifikationen,
 Lizenzen und Schriftenreihen vorgenommen und verändert werden. Darüber hinaus kann hier der
-Dokumentstatus geändert und die Dateien (Volltexte) verwaltet werden.
+[Dokumentenstatus](/userdoc/features/workflow.html) geändert und die Dateien (Volltexte) verwaltet werden.
 
 * [Mehr](documents.html)
 {: class="navlist" }
