@@ -4,3 +4,6 @@ Gemfile.lock
 /nbproject/private/
 *.iml
 .jekyll-metadata
+vendor
+.ruby-version
+.bundle
