@@ -15,31 +15,40 @@ befinden kann:
 * restricted (Geschützt)
 * deleted (Gelöscht)
 
+Der Status eines Dokuments kann im  oberen Bereich der Metadatenübersicht verändert werden.
+
 Werden Dokumente neu in OPUS4 eingebracht, bekommen sie zunächst den Status "unpublished".
 Für die interne Bearbeitung der Metadaten und Dateien können Dokumente in die Zustände
 "inprogress" und "audited" gesetzt werden. Beim Freischalten erhält das Dokument den Zustand
 "published". In diesem Zustand ist es für die Öffentlichkeit sicht-, such- und exportierbar. Der
 Zustand "restricted" kann für Dokumente genutzt werden, die bereits in OPUS4 eingebracht und
 fertig bearbeitet wurden, aber (z.B. aus urheberrechtlichen Gründen) noch nicht sichtbar sein sollen.
-Werden Dokumente gelöscht, bekommen sie den Status "deleted", bleiben aber zunächst in der
-Datenbank erhalten und sind nur noch für angemeldete Benutzer mit den entsprechenden Rechten
-sichtbar. Aus dem Zustand "deleted" können Dokumente, falls sie versehentlich gelöscht wurden,
-"gerettet" oder nach Prüfung endgültig gelöscht werden.
-
-Der Status eines Dokuments kann im  oberen Bereich der Metadatenübersicht verändert werden.
-
-<p class="warning">
-Dokumente sollten nur aus triftigen Gründen gelöscht werden. Nach dem Löschen erhalten sie
-den Status "deleted". Wird das gelöschte Dokument von außerhalb (Lesezeichen, OAI-
-Schnittstelle) aufgerufen, erscheint ein Hinweis, dass das Dokument mit der gewünschten ID
-gelöscht wurde.
-</p>
 
 <p class="note">
 Wird der Status der Dokumente über das oben beschriebene Dropdownmenü im
 Metadatenformular geändert muss man noch einmal bestätigen, dass man den Status wirklich
 ändern möchte. Das Abschalten der Bestätigungsseite ist möglich, siehe Notification Settings.
 </p>
+
+
+## Löschen von unveröffentlichten Dokumenten
+
+Werden Dokumente gelöscht, bekommen sie den Status "deleted", bleiben aber zunächst in der
+Datenbank erhalten und sind nur noch für angemeldete Benutzer mit den entsprechenden Rechten
+sichtbar. Aus dem Zustand "deleted" können Dokumente, falls sie versehentlich gelöscht wurden,
+"gerettet" oder nach Prüfung endgültig gelöscht werden.
+
+## Löschen von veröffentlichten Dokumenten
+
+<p class="warning">
+Das Löschen von bereits veröffentlichten Dokumenten darf nur in Ausnahmefällen erfolgen und soll
+ unter der persistenten URL des ursprünglichen Dokumentes angezeigt werden.
+Nach dem Löschen erhalten die Dokumente den Status "deleted". Wird das gelöschte Dokument von außerhalb (Lesezeichen, OAI-
+Schnittstelle) aufgerufen, erscheint ein Hinweis, dass das Dokument mit der gewünschten ID
+gelöscht wurde.
+</p>
+
+Siehe dazu weitere Hinweise unter Abschnitt [Datenschutz/Löschen von Dokumenten](/userdoc/datasecure)
 
 ## Beziehung der Stati untereinander
 

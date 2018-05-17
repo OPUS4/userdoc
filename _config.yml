@@ -40,5 +40,5 @@ defaults:
     values:
       sort: "title"
 
-gems:
+plugins:
   - jekyll-sitemap

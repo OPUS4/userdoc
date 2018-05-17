@@ -109,6 +109,17 @@ geachtet werden, dass die URN aus dem eigenen Namensraum kommt.
 | PersonTranslator | Übersetzer | der Übersetzer eines Werkes |
 | PersonOther | Sonstige beteiligte Personen | Weitere Personen, die nicht den anderen Rollen entsprechen |
 
+### Unterfelder zu Personen
+* Nachname
+* Vorname
+* Akademischer Grad
+* E-Mail
+* Geburtsort
+* Geburtsdatum
+* GNDID
+* ORCID
+* Interne ID
+
 ## Klassifikationen
 
 | Feld | Label | Beschreibung |
