@@ -24,6 +24,7 @@ Bevor OPUS 4 installiert werden kann müssen einige Voraussetzungen
 erfüllt sein.
 
 * [Git](requirements.html#git-installieren)
+* [cURL](requirements.html#curl-installieren)
 * [PHP](requirements.html#php-pakete-installieren)
 * [Java](requirements.html#java-runtime) 
 * [Apache 2](apache.html)
@@ -62,7 +63,6 @@ erzeugt dann die notwendigen Konfigurationsdateien für OPUS 4.
 
 * [Installationsskript](installscript.html)
 {: class="navlist" } 
-
 
 ## Webserver neustarten
  

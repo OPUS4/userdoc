@@ -25,6 +25,7 @@ Dort sind aber unter Umständen andere Kommandos bzw. zusätzliche Installations
 * [MySQL](https://www.mysql.com/) (mindestens Version 5.1)
 * [PHP](http://php.net/) 5.5 (oder neuer)
 * [Git](https://git-scm.com/)
+* [cURL](https://curl.haxx.se/)
 * [Solr][SOLR] 5.x
 * [Java Runtime](#java-runtime) (mindestens 1.6)
 * [Mailserver](#mailserver)
@@ -89,6 +90,15 @@ folgendem Kommando installiert werden.
 
 {% highlight bash %}
 $ sudo apt-get install git
+{% endhighlight %}
+
+### cURL installieren
+
+cURL wird unter anderem für die Installation zum Abruf verschiedener Pakete, wie z.b. composer.phar verwendet. Es kann unter Ubuntu mit
+folgendem Kommando installiert werden.
+
+{% highlight bash %}
+$ sudo apt-get install curl
 {% endhighlight %}
 
 ### Java Runtime

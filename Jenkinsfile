@@ -24,8 +24,6 @@ pipeline {
 
         stage('publish') {
             steps {
-                archiveArtifacts artifacts: '_site/**'
-
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
