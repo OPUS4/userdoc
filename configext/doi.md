@@ -13,6 +13,8 @@ ${prefix}/${localPrefix}-${suffix}
 
 Der vordere Teil bis zum Schrägstrich entspricht dem von der TIB zugeteilten **DOI-Präfix**. Der Teil nach dem Schrägstrich kann von der Institution frei vergeben werden. Sind innerhalb einer Institution mehrere Anwendungen im Einsatz, die DOIs vergeben und registrieren sollen, so bietet sich die Verwendung eines **lokalen DOI-Präfix** an, z.B. `opus4` für das OPUS4-Repositorium und `anothersystem` für ein anderes System der Institution, das ebenfalls DOIs vergibt und registriert. Dies stellt sicher, dass die innerhalb der Institution vergebenen DOIs eindeutig sind und es zu keinen Kollisionen zwischen DOIs, die von unterschiedlichen Anwendungen erzeugt werden, kommt. Das **DOI-Suffix** kann beliebig gesetzt werden. Auch hierbei muss sichergestellt werden, dass die erzeugten DOIs (innerhalb der Anwenfung) eindeutig sind. Im Kontext von OPUS4 wird als Suffix standardmäßig die ID des zugeordneten OPUS-Dokuments verwendet, also eine natürliche Zahl.
 
+**Wichtiger Hinweis:** Die Generierung bzw. Registrierung von DOIs in OPUS4 ist nicht an das Vorhandensein von Dateien gebunden. Es können somit auch DOIs für Dokumente generiert und registriert werden, für die lediglich Metadaten erfasst wurden.
+
 # Konfiguration
 
 Vor OPUS 4.6.2 gab es keinen eingebauten DOI-Support, so dass die Funktionen zur **DOI-Generierung** und **DOI-Registrierung** standardmäßig in der Konfiguration deaktiviert sind und vor der Verwendung zuerst aktiviert werden müssen.
@@ -27,7 +29,7 @@ Die Konfigurationseinstellung `doi.autoCreate` kann für einzelne Dokumente übe
 
 Neben der erwähnten Checkbox steht im Metadatenformular im Bereich *DOI* ein Button mit der Beschriftung *Generieren* zur Verfügung. Dieser Button wird nur angezeigt, wenn noch keine DOI mit dem Dokument verknüpft ist. Durch das Drücken des Buttons kann sofort eine DOI erzeugt werden (auch wenn das Dokument noch nicht freigeschaltet wurde). Diese DOI kann z.B. genutzt werden, um sie bereits in der Publikation im PDF-Volltext anzugeben.
 
-Besitzt ein Dokument mehr als eine DOI (dieser Zustand war vor der Einführung des DOI-Supports in OPUS4 erlaubt), so wird im Metadatenformular für die zweite bis *n*-te DOI jeweils ein Entfernen-Button angeboten.
+Besitzt ein Dokument mehr als eine DOI (dieser Zustand war vor der Einführung des DOI-Supports in OPUS4 erlaubt), so wird im Metadatenformular für die zweite bis *n*-te DOI jeweils ein Entfernen-Button angeboten. Das Ändern einer DOI (entweder durch Drücken des Generieren-Buttons oder durch das händische Eintragen einer DOI in das entsprechende Formularfeld) wird nur zugelassen, wenn das Dokument keine DOI besitzt.
 
 Zum Aktivieren der DOI-Registrierung muss die Konfigurationseinstellung
 ```
