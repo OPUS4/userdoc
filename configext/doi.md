@@ -25,6 +25,10 @@ auf den Wert `1` oder `true` gesetzt werden. In diesem Fall generiert OPUS beim 
 
 Die Konfigurationseinstellung `doi.autoCreate` kann für einzelne Dokumente überschrieben werden. Dazu existiert im Metadatenformular des Dokuments innerhalb des Administrationsbereichs eine entsprechende Checkbox im Abschnitt *Identifikatoren*. Durch das Setzen der Checkbox *DOI beim Veröffentlichen generieren* kann die automatische Generierung einer DOI beim Freischalten des Dokuments erzwungen werden, auch wenn `doi.autoCreate` in der globalen Konfiguration deaktiviert ist. Umgekehrt kann durch das Deaktivieren der Checkbox *DOI beim Veröffentlichen generieren* die automatische Generierung einer DOI beim Freischalten des Dokuments verhindert werden, obwohl `doi.autoCreate` in der globalen Konfiguration aktiviert wurde. Der Zustand der Checkbox *DOI beim Veröffentlichen generieren* wird intern in einem speziellen OPUS-Enrichment `opus.doi.autoCreate` gespeichert (Wertemenge `true` oder `false`). Dieses Enrichment wird im Abschnitt *Enrichments* im Metadatenformular nicht angezeigt.
 
+Neben der erwähnten Checkbox steht im Metadatenformular im Bereich *DOI* ein Button mit der Beschriftung *Generieren* zur Verfügung. Dieser Button wird nur angezeigt, wenn noch keine DOI mit dem Dokument verknüpft ist. Durch das Drücken des Buttons kann sofort eine DOI erzeugt werden (auch wenn das Dokument noch nicht freigeschaltet wurde). Diese DOI kann z.B. genutzt werden, um sie bereits in der Publikation im PDF-Volltext anzugeben.
+
+Besitzt ein Dokument mehr als eine DOI (dieser Zustand war vor der Einführung des DOI-Supports in OPUS4 erlaubt), so wird im Metadatenformular für die zweite bis *n*-te DOI jeweils ein Entfernen-Button angeboten.
+
 Zum Aktivieren der DOI-Registrierung muss die Konfigurationseinstellung
 ```
 doi.registerAtPublish
