@@ -110,13 +110,13 @@ Des Weiteren bietet die Übersichtsseite den Start von *Bulk*-Operationen an: so
 
 # Bemerkungen zum Logging
 
-Für das Logging von DOI-relevanten Aktionen wird eine separate Logdatei verwendet, das im OPUS4-Instanzverzeichnis unter `workspace/log/opus-doi.log` gespeichert wird.
+Für das Logging von DOI-relevanten Aktionen wird eine separate Logdatei verwendet, die im OPUS4-Instanzverzeichnis unter `workspace/log/opus-doi.log` gespeichert wird.
 
 In dieser Logdatei werden u.a. folgende Aktionen vermerkt:
 
+* Fehler bei der Generierung von neuen lokalen DOIs
 * Erfolg bzw. Fehler bei der Registrierung von lokalen DOIs
 * Erfolg bzw. Fehler bei der Prüfung des Registrierungsstatus von DOIs
-* Fehler bei der Generierung von neuen lokalen DOIs
 * Fehler bei der Änderung der URL der Landing-Page einer bereits registrierten DOI
 * Fehler beim Deaktivieren von registrierten DOIs
 
