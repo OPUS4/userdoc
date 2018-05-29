@@ -69,4 +69,21 @@ Folgende Konfigurationsparameter bestimmen das Verhalten der E-Mail-Benachrichti
 | `doi.notificationEmailEnabled` | false (true/1 oder false/0)                        | aktiviert bzw. deaktiviert das Verschicken von Benachrichtigungen für (fehlgeschlagene) DOI-Registrierungen |
 | `doi.notificationEmail[]` | *leer*                                                  | E-Mail-Adresse(n) für Notifikationsnachrichten für registrierte DOIs (Array); pro E-Mailadresse eine Konfigurationszeile angeben! |
 
+# Automatisierung von Prozessen im Zusammenhang mit der DOI-Registrierung
+
+## Registrierung von lokalen DOIs
+
+Das Script `scripts/cron/cron-register-local-dois.php` sucht in der Datenbank nach OPUS-Dokumenten im ServerState **published**, die lokale DOIs besitzen, die noch nicht bei DataCite registiert wurden. Nicht registrierte Identifikatoren vom Typ `doi` sind am Statuswert `null` in der Tabelle `document_identifiers` erkennbar. Für die ermittelten DOIs versucht das Script die Registrierung bei DataCite.
+ 
+## Prüfung des Registrierungsstatus von lokalen DOIs
+
+Das Script `scripts/cron/cron-verify-local-dois.php` sucht in der Datenbank nach OPUS-Dokumenten, die lokale DOIs im Status `registered` besitzen und verifiziert diese DOIs bei DataCite. Die Verifikation ist erforderlich, weil nach der Registrierung einer DOI bei DataCite bis zu 24-72 Stunden vergehen können, bis die DOI tatsächlich auflösbar ist. Eine DOI im Zustand `registered` wird erst dann in OPUS auf den Status `verified` gesetzt, wenn sie über das Handle-System tatsächlich auflösbar ist.
+
+Über die Variable `delayInHours` kann der Zeitraum angegeben werden, der nach der Registrierung einer lokalen DOI vergehen muss, bevor der Registrierungsstatus der DOI geprüft wird. Setze den Wert von `delayInHours` auf `null`, um alle registrierten DOIs unabhängig vom Registrierungszeitpunkt zu prüfen
+
+## Änderung der URL von Landing-Pages für lokale DOIs
+
+Mit dem Script `scripts/snippets/change-doi-landing-page-url.php` kann die im Handle-System hinterlegte URL der Landing-Page einer lokalen DOI geändert werden. Das Script erwartet dazu zwei Parameter: die lokale DOI und die neue URL der Landing-Page. Das Script prüft **nicht**, ob die URL der Landing-Page korrekt ist bzw. tatsächlich zum Dokument mit der angegebenen DOI gehört.
+
+Das Script wird über die OPUS Console `scripts/opus-console.php` gestartet.
 
