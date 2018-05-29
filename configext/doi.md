@@ -60,6 +60,10 @@ Es sind hierbei vier unterschiedliche Fälle zu betrachten:
 
 # Benachrichtigungen via E-Mail
 
+Im Rahmen der Registrierung von DOIs bzw. der Prüfung des Registrierungsstatus von DOI können vom OPUS-System E-Mail-Benachrichtigungen versendet werden. E-Mail-Benachrichtigungen werden grundsätzlich nur bei *Bulk*-Operationen (im `ReportController` des Moduls `admin`) sowie bei Operationen, die scriptgesteuert, z.B. über *Cronjobs*, gestartet wurden, ausgelöst. Die Benachrichtigung via E-Mail muss in der globalen Konfiguration aktiviert werden. Außerdem muss mindestens eine Empfänger-Adresse in der globalen Konfiguration angegeben werden. Der Versand an mehrere E-Mail-Empfänger wird unterstützt.
+
+Folgende Konfigurationsparameter bestimmen das Verhalten der E-Mail-Benachrichtigungsfunktion:
+
 | Name des Konfigurationsschlüssels | Standardwert und (optional) erlaubte Wertemenge | Beschreibung |
 | --------------------------------- |-------------------------------------------------|--------------|
 | `doi.notificationEmailEnabled` | false (true/1 oder false/0)                        | aktiviert bzw. deaktiviert das Verschicken von Benachrichtigungen für (fehlgeschlagene) DOI-Registrierungen |
