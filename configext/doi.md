@@ -102,4 +102,16 @@ Auf der Seite https://my-opus-instance.tld/opus4/admin/report/doi/ kann der Regi
 
 Des Weiteren bietet die Übersichtsseite den Start von *Bulk*-Operationen an: so können in einem Schritt alle noch nicht registrierten DOIs für freigeschalteten Dokumenten registriert werden. Ebenso können alle bereits registrierten DOIs in eine Schritt bezüglich ihres Registrierungsstatus geprüft werden.
 
+# Bemerkungen zum Logging
 
+Für das Logging von DOI-relevanten Aktionen wird eine separate Logdatei verwendet, das im OPUS4-Instanzverzeichnis unter `workspace/log/opus-doi.log` gespeichert wird.
+
+In dieser Logdatei werden u.a. folgende Aktionen vermerkt:
+
+* Erfolg bzw. Fehler bei der Registrierung von lokalen DOIs
+* Erfolg bzw. Fehler bei der Prüfung des Registrierungsstatus von DOIs
+* Fehler bei der Generierung von neuen lokalen DOIs
+* Fehler bei der Änderung der URL der Landing-Page einer bereits registrierten DOI
+* Fehler beim Deaktivieren von registrierten DOIs
+
+Die Lognachrichten werden zusätzlich in der generischen Applikationslogdatei `opus.log` erfasst.
