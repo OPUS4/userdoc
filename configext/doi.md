@@ -60,6 +60,8 @@ Es sind hierbei vier unterschiedliche Fälle zu betrachten:
 
 # Benachrichtigungen via E-Mail
 
+| Name des Konfigurationsschlüssels | Standardwert und (optional) erlaubte Wertemenge | Beschreibung |
+| --------------------------------- |-------------------------------------------------|--------------|
 | `doi.notificationEmailEnabled` | false (true/1 oder false/0)                        | aktiviert bzw. deaktiviert das Verschicken von Benachrichtigungen für (fehlgeschlagene) DOI-Registrierungen |
 | `doi.notificationEmail[]` | *leer*                                                  | E-Mail-Adresse(n) für Notifikationsnachrichten für registrierte DOIs (Array); pro E-Mailadresse eine Konfigurationszeile angeben! |
 
