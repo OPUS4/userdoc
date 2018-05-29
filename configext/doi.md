@@ -29,7 +29,9 @@ Zum Aktivieren der DOI-Registrierung muss die Konfigurationseinstellung
 ```
 doi.registerAtPublish
 ```
-auf den Wert `1` oder `true` gesetzt werden. In diesem Fall registriert OPUS beim Freischalten eines Dokuments die mit dem Dokument verknüpfte lokale DOI beim DOI-Provider, der in der Konfigurationsdatei angegeben wurde.
+auf den Wert `1` oder `true` gesetzt werden. In diesem Fall registriert OPUS beim Freischalten eines Dokuments die mit dem Dokument zu diesem Zeitpunkt verknüpfte **lokale DOI** beim DOI-Provider, der in der Konfigurationsdatei angegeben wurde.
+
+**Wichtiger Hinweis** OPUS registriert nur lokale DOIs beim DOI-Provider. Wird einem OPUS-Dokument eine "fremde" DOI zugewiesen (entweder bei der Eingabe im Publikationsformular oder im Metadatenformular innerhalb der Administration) so erfolgt für diese DOI **keine** Registrierung beim DOI-Provider. Die Bestimmung der Lokalität einer DOI wird durch die Funktion `isLocal`bereitgestellt, die jede DOI-Generator-Klasse in OPUS über das Interface `Opus_Doi_Generator_DoiGeneratorInterface` bereitstellen muss. Die Standardimplementierung der DOI-Generator-Klasse heißt `Opus_Doi_Generator_DefaultGenerator`. Diese Klasse betrachtet DOIs als lokal, wenn sie mit dem DOI-Präfix beginnen und danach mit Schrägstrich getrennt das (optional konfigurierbare) DOI-Präfix folgt.
 
 Die beiden Konfigurationseinstellungen können unabhängig voneinander aktiviert bzw. deaktiviert werden. Es sind hierbei vier unterschiedliche Fälle zu betrachten:
 
