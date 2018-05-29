@@ -73,7 +73,7 @@ Folgende Konfigurationsparameter bestimmen das Verhalten der E-Mail-Benachrichti
 
 ## Registrierung von lokalen DOIs
 
-Das Script `scripts/cron/cron-register-local-dois.php` sucht in der Datenbank nach OPUS-Dokumenten im ServerState **published**, die lokale DOIs besitzen, die noch nicht bei DataCite registiert wurden. Nicht registrierte Identifikatoren vom Typ `doi` sind am Statuswert `null` in der Tabelle `document_identifiers` erkennbar. Für die ermittelten DOIs versucht das Script die Registrierung bei DataCite.
+Das Script `scripts/cron/cron-register-local-dois.php` sucht in der Datenbank nach OPUS-Dokumenten im `serverState` **published**, die lokale DOIs besitzen, die noch nicht bei DataCite registiert wurden. Nicht registrierte Identifikatoren vom Typ `doi` sind am Statuswert `null` in der Tabelle `document_identifiers` erkennbar. Für die ermittelten DOIs versucht das Script die Registrierung bei DataCite.
  
 ## Prüfung des Registrierungsstatus von lokalen DOIs
 
@@ -86,4 +86,13 @@ Das Script `scripts/cron/cron-verify-local-dois.php` sucht in der Datenbank nach
 Mit dem Script `scripts/snippets/change-doi-landing-page-url.php` kann die im Handle-System hinterlegte URL der Landing-Page einer lokalen DOI geändert werden. Das Script erwartet dazu zwei Parameter: die lokale DOI und die neue URL der Landing-Page. Das Script prüft **nicht**, ob die URL der Landing-Page korrekt ist bzw. tatsächlich zum Dokument mit der angegebenen DOI gehört.
 
 Das Script wird über die OPUS Console `scripts/opus-console.php` gestartet.
+
+# Bemerkungen zum Update auf OPUS 4.6.2
+
+Im Rahmen des Updates wird das Script `scripts/update/006-Set-status-of-all-existing-DOIs.php` ausgeführt, das den Registrierungsstatus von allen (sowohl lokalen als auch fremden) DOIs auf den Wert `registered` setzt. Es werden hierbei allerdings nur OPUS-Dokumente betrachtet, die den `serverState` **published** besitzen.
+
+Außerdem stellt das Script fest, wenn es OPUS-Dokumente in der Datenbank gibt, die mehr als eine zugeordnete DOI besitzen. In den OPUS-Versionen vor 4.6.2 wurde dieser Umstand noch unterstützt. Ab der Version 4.6.2 kann ein OPUS-Dokument nur höchstens eine zugeordnete DOI besitzen. Werden OPUS-Dokumente detektiert, die mehr als eine DOI besitzen, so erscheint eine entsprechende Ausgabe:
+```
+document $SOME_ID has more than one DOI but only one DOI is expected: consider a cleanup
+```
 
