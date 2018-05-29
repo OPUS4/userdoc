@@ -44,4 +44,23 @@ Es sind hierbei vier unterschiedliche Fälle zu betrachten:
 | true             | false                   | es findet keine automatische Registrierung von lokalen DOIs statt; es erfolgt eine automatische Generierung von DOIs beim Veröffentlichen von Dokumenten, sofern der Nutzer die Checkbox "DOI-Autogenerierung" nicht explizit abgewählt hat (und das Dokument noch keine DOI besitzt) |
 | true             | true                    | es erfolgt eine automatische Registrierung von lokalen DOIs; es erfolgt eine automatische Generierung von DOIs beim Veröffentlichen von Dokumenten, sofern der Nutzer die Checkbox "DOI-Autogenerierung" nicht explizit abgewählt hat (und das Dokument noch keine DOI besitzt) |
 
+# Weitere Konfigurationseinstellungen
+
+| Name des Konfigurationsschlüssels | Standardwert und (optional) erlaubte Wertemenge | Beschreibung |
+| --------------------------------- |-------------------------------------------------|--------------|
+| `doi.prefix`                      | *leer*                                          | DOI-Präfix für die Generierung von DOIs bzw. zur Prüfung der Lokalität von DOIs |
+| `doi.localPrefix`                 | *leer*                                          | optional; lokales DOI-Präfix, das frei von der Institution gewählt werden kann |
+| `doi.suffixFormat`                | *leer*                                          | optional; kann von der DOI-Generierungsklasse ausgewertet werden, um das Format des DOI-Suffix vorzugeben (wird von der Standardimplementierung **nicht** ausgewertet) |
+| `doi.generatorClass`              | Opus_Doi_Generator_DefaultGenerator             | vollqualifizierter Name der DOI-Generierungsklasse |
+| `doi.registration.datacite.username` | *leer*                                       | Nutzername für DataCite Metadata Store (MDS) |
+| `doi.registration.datacite.password` | *leer*                                       | Passwort für DataCite Metadata Store (MDS) |
+| `doi.registration.datacite.serviceUrl` | https://mds.datacite.org                   | Service-URL für DataCite Metadata Store (MDS) |
+| `doi.registration.datacite.quota` | *leer*                                          | Quota für Zugriff auf DataCite Registrierungsserver (wird vorerst nicht ausgewertet) |
+
+
+# Benachrichtigungen via E-Mail
+
+| `doi.notificationEmailEnabled` | false (true/1 oder false/0)                        | aktiviert bzw. deaktiviert das Verschicken von Benachrichtigungen für (fehlgeschlagene) DOI-Registrierungen |
+| `doi.notificationEmail[]` | *leer*                                                  | E-Mail-Adresse(n) für Notifikationsnachrichten für registrierte DOIs (Array); pro E-Mailadresse eine Konfigurationszeile angeben! |
+
 
