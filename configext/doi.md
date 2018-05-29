@@ -96,3 +96,10 @@ Außerdem stellt das Script fest, wenn es OPUS-Dokumente in der Datenbank gibt, 
 document $SOME_ID has more than one DOI but only one DOI is expected: consider a cleanup
 ```
 
+# DOI-Übersichtsseite
+
+Auf der Seite https://my-opus-instance.tld/opus4/admin/report/doi/ kann der Registrierungsstatus für alle **lokalen** DOIs eingesehen werden. Für jede DOI kann in Abhängigkeit ihres Registrierungsstatus die Registrierung bzw. Prüfung einzeln ausgelöst werden. Lokale DOIs von Dokumenten, die noch nicht freigeschaltet sind, werden ebenfalls aufgelistet.
+
+Des Weiteren bietet die Übersichtsseite den Start von *Bulk*-Operationen an: so können in einem Schritt alle noch nicht registrierten DOIs für freigeschalteten Dokumenten registriert werden. Ebenso können alle bereits registrierten DOIs in eine Schritt bezüglich ihres Registrierungsstatus geprüft werden.
+
+
