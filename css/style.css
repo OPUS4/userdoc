@@ -51,6 +51,14 @@ body {
     padding: 1em 1em;
     vertical-align: top;
 }
+#search-engine {
+    margin-right: 0;
+    padding: 0;
+    width: 258px;
+    height: 40px;
+    overflow:hidden;
+    frameborder="0"
+}
 
 #navigation .title {
     text-align: center;
