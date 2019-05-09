@@ -53,12 +53,13 @@ body {
 }
 
 #searchBox {
-    margin-right: 0;
-    padding: 0;
-    width: 258px;
-    height: 35px;
-    overflow:hidden;
-    frameborder:"0"
+    margin-bottom: 0.5em;
+}
+
+#searchBox iframe {
+    height: 40px;
+    overflow: hidden;
+    display: block;
 }
 
 #navigation .title {
