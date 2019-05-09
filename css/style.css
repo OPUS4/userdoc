@@ -52,6 +52,15 @@ body {
     vertical-align: top;
 }
 
+#searchBox {
+    margin-right: 0;
+    padding: 0;
+    width: 258px;
+    height: 35px;
+    overflow:hidden;
+    frameborder:"0"
+}
+
 #navigation .title {
     text-align: center;
     font-size: 1.2em;
