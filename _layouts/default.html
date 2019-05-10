@@ -1,7 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
 
 <head>
-    <title>OPUS 4 Handbuch</title>
+    <title>{% if page.title %}{% if page.type == "category" %}Category: {% endif %}{{ page.title }}
+       {{ site.siteName }}{% else %}{{ site.homeMetaTitle }}{% endif %}</title>
     <meta http-equiv="Content-Language" content="de" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css" />
