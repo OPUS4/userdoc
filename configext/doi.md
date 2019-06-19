@@ -127,7 +127,7 @@ In dieser Logdatei werden u.a. folgende Aktionen vermerkt:
 
 Die Lognachrichten werden zusätzlich in der generischen Applikationslogdatei `opus.log` erfasst.
 
-## DataCite-XML Export für einzelne Dokument
+## DataCite-XML Export für einzelne Dokumente
 
 Als angemeldeter Benutzer mit Administratorrechten kann für jedes Dokument (referenziert durch
 seine Dokument-ID `$DOCID`) durch Aufruf der URL
