@@ -132,7 +132,7 @@ Die Lognachrichten werden zusätzlich in der generischen Applikationslogdatei `o
 Als angemeldeter Benutzer mit Administratorrechten kann für jedes Dokument (referenziert durch
 seine Dokument-ID `$DOCID`) durch Aufruf der URL
 
-https://my-opus-instance.tld/opus4/export/index/datacite/docId/$DOCID
+https://example.org/export/index/datacite/docId/$DOCID
 
 das für die DOI-Registrierung generierte DataCite-XML abgerufen werden. 
 
@@ -143,7 +143,7 @@ Dokument fehlen, so wird anstatt der XML-Ausgabe eine HTML-Statusseite ausgegebe
 auf der die einzelnen Fehler aufgelistet werden. Soll in diesem Fall dennoch das
 DataCite-XML ausgegeben werden, so muss die Export-URL erweitert werden zu
 
-https://my-opus-instance.tld/opus4/export/index/datacite/docId/$DOCID/validate/no
+https://example.org/export/index/datacite/docId/$DOCID/validate/no
 
 In diesem Fall wird die Prüfung der Validität des generierten XML gegen das von
 DataCite vorgegebene XML-Schema ausgesetzt.
