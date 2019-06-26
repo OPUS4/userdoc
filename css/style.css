@@ -52,6 +52,16 @@ body {
     vertical-align: top;
 }
 
+#searchBox {
+    margin-bottom: 0.5em;
+}
+
+#searchBox iframe {
+    height: 40px;
+    overflow: hidden;
+    display: block;
+}
+
 #navigation .title {
     text-align: center;
     font-size: 1.2em;

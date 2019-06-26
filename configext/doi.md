@@ -126,3 +126,30 @@ In dieser Logdatei werden u.a. folgende Aktionen vermerkt:
 * Fehler beim Deaktivieren von registrierten DOIs
 
 Die Lognachrichten werden zusätzlich in der generischen Applikationslogdatei `opus.log` erfasst.
+
+## DataCite-XML Export für einzelne Dokumente
+
+Als angemeldeter Benutzer mit Administratorrechten kann für jedes Dokument (referenziert durch
+seine Dokument-ID `$DOCID`) durch Aufruf der URL
+
+https://example.org/export/index/datacite/docId/$DOCID
+
+das für die DOI-Registrierung generierte DataCite-XML abgerufen werden. 
+
+## Auflistung von Fehlern im DataCite-XML Export für einzelne Dokumente
+
+Treten bei der XML-Generierung Fehler auf, z.B. weil erforderliche Pflichtfelder im
+Dokument fehlen, so wird anstatt der XML-Ausgabe eine HTML-Statusseite ausgegeben,
+auf der die einzelnen Fehler aufgelistet werden. Soll in diesem Fall dennoch das
+DataCite-XML ausgegeben werden, so muss die Export-URL erweitert werden zu
+
+https://example.org/export/index/datacite/docId/$DOCID/validate/no
+
+In diesem Fall wird die Prüfung der Validität des generierten XML gegen das von
+DataCite vorgegebene XML-Schema ausgesetzt.
+
+Am Ende der HTML-Statusseite wird zudem ein Link angeboten, der den Export des
+(invaliden) DataCite-XML ermöglicht. Befindet sich das betreffende OPUS-Dokument
+nicht im Zustand `published` (weil es z.B. noch nicht freigeschaltet oder zurückgezogen
+wurde), so erscheint ein Hinweis, dass die manuelle Registrierung der DOI auf Basis
+des generierten XML-Exports nicht empfohlen wird.
