@@ -51,11 +51,12 @@ Das Kommando muss mit folgenden Paketen aufgerufen werden.
 | `php-common` | |
 | `php-curl` | |
 | `php-gd` | |
+| `php-log` | |
 | `php-mbstring` | |
 | `php-mcrypt` | |
 | `php-mysql` | |
 | `php-xsl` | |
-| `php-log` | |
+| `php-zip` | |
 | `libapache2-mod-php` | |
 |------|
 | Für die Entwicklung: |
