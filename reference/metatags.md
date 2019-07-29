@@ -22,4 +22,4 @@ Alle Dokumenttypen, die keinem der 6 Konfigurationsschlüssel zugeordnet sind, w
 
 Legt man neue Dokumenttypen an, sollte man die Zuordnung zu einer der Dokumentkategorien prüfen und in der `config.ini` zuweisen, um eine optimale Ausgabe der Daten und damit auch bessere Indexierung zu erreichen.
 
-[^1]: Arlitsch, Kenning and O’Brien, Patrick S.: Invisible institutional repositories : addressing the low indexing ratios of IRs in Google. In: Library Hi Tech, Vol. 30 (2012), No. 1, pp. 60-81. https://doi.org/10.1108/07378831211213210
+[^1]: Arlitsch, Kenning and O’Brien, Patrick S.: Invisible institutional repositories : addressing the low indexing ratios of IRs in Google. In: Library Hi Tech, Vol. 30 (2012), No. 1, pp. 60-81. (https://doi.org/10.1108/07378831211213210)
