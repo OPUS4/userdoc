@@ -22,7 +22,36 @@ Alle Dokumenttypen, die keinem der 6 Konfigurationsschlüssel zugeordnet sind, w
 
 Legt man neue Dokumenttypen an, sollte man die Zuordnung zu einer der Dokumentkategorien prüfen und in der `config.ini` zuweisen, um eine optimale Ausgabe der Daten und damit auch bessere Indexierung zu erreichen.
 
-
+| | Metadatum | OPUS-Feld | Dublin Core | Highwire Press Tag | | | | | | | | Anmerkungen |
+|:--|:--------|:----------|:------------|:-----------------|:-|:-|:-|:-|:-|:-|:-|:-------|
+| Meta-Tag-Dokumentkategorie | | | | | book | bookpart | conference_paper | journal_paper | thesis | working_paper | *Sonstige* | |
+| OPUS-Dokumenttypen | | | | | book (Buch) | bookPart (Teil eines Buchs/Kapitel) | conferenceObject (Konferenzveröffentlichung) | article (Wissenschaftl. Artikel)  contributionToPeriodical (Beitrag zu nichtwissenschaft. Zeitschrift)  periodicalPart (Ausgabe/Heft zu einer Zeitschrift)  preprint (Preprint) | bachelorthesis (Bachelorarbeit) diplom (Diplomarbeit) doctoralthesis (Dissertation) examen (Examensarbeit) habilitation (Habilitation) magister (Magisterarbeit) masterthesis (Masterarbeit) studythesis (Studienarbeit) | workingPaper (Arbeitspapier) | courseMaterial (Lehrmaterial) image (Bild) lecture (Vorlesung) movingImage (Bewegte Bilder), other (Sonstiges) periodical (Periodikum/Zeitschrift) review (Rezension) report (Bericht) sound (Ton) | 
+|-----
+| | Autor | PersonAuthor | DC.creator | citation_author | X | X | X | X | X | X | X | |
+| | Erscheinungsdatum | Je nachdem, was vorhanden ist (case):    DatePublished    YearPublished  | DC.date | citation_date | X | X | X | X | X | X | X | |
+| | Erscheinungsdatum | Je nachdem, was vorhanden ist (case):    DatePublished    YearPublished  | DC.issued | citation_publication_date | X | X | X | X | X | X | X | | 
+| | Titel | TitleMain : TitleSub | DC.title | citation_title | X | X | X | X | X | X | X | |
+| | Verlag | PublisherName | DC.publisher | citation_publisher | X | X | X | X | X | X | X | |
+| | Titel der Zeitschrift | TitleParent | DC.relation.ispartof | citation_journal_title | | | | X | | | | |
+| | Bandzählung | Volume | DC.citation.volume | citation_volume | | | X | X | | X | | |
+| | Heftnummer | Issue | DC.citation.issue | citation_issue | | | X | X | | X | | |
+| | Erste Seite | PageFirst | DC.citation.spage | citation_firstpage | | X | X | X | | | | |
+| | Letzte Seite | PageLast | DC.citation.epage | citation_lastpage | | X | X | X | | | | |
+| | DOI | IdentifierDoi | DC.identifier | citation_doi | X | X | X | X | X | X | X | |
+| | ISSN | IdentifierIssn | DC.identifier | citation_issn | | | X | X | | X | X | |
+| | ISBN | IdentifierIsbn | DC.identifier | citation_isbn | X | X | X | X | X | X | X | |
+| 13 | Schlagwörter | | DC.subject | citation_keywords | X | X | X | X | X | X | X | |
+| | | ThesisPublisher | DC.publisher | citation_dissertation_institution | | | | | X | | | |
+| | Art der Hochschulschrift | *Dokumenttyp* | *n/a* | citation_dissertation_name | | | | | X | | | Konkretisierung der Abschlussarbeit und/oder des akademischen Grades (z.B. PhD, MS) |
+| | | Je nachdem, was vorhanden ist (case):    CreatingCorporation    ContributingCorporation    Publisher | DC.publisher | citation_technical_report_institution | | | | | | X | | |
+| | Sprache | Language | DC.language | citation_language | X | X | X | X | X | X | X | |
+| | | TitleParent | DC.relation.ispartof | citation_conference_title | | | X | | | | | |
+| | Titel des Buchs | TitleParent | DC.relation.ispartof | citation_inbook_title | X | X | | | | | | |
+| | Frontdoor-URL | *frontdoorUrl* | DC.identifier | citation_abstract_html_url | X | X | X | X | X | X | X | | 
+| | URL zur Volltextdatei | *fileUrl* | DC.identifier | citation_pdf_url | X | X | X | X | X | X | X | |
+| | Abstract | TitleAbstract | DC.description | *n/a* | X | X | X | X | X | X | X | Kein Mapping in Higwire Press Tags, da kein entsprechendes Element vorhanden |
+| | URN | IdentifierUrn | DC.identifier | *n/a* | X | X | X | X | X | X | X | Kein Mapping in Higwire Press Tags, da kein entsprechendes Element vorhanden |
+| | Lizenzangabe | *LinkLicence* | DC.rights | *n/a* | X | X | X | X | X | X | X | Kein Mapping in Higwire Press Tags, da kein entsprechendes Element vorhanden |
 
 
 ----
