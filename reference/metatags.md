@@ -62,7 +62,7 @@ Legt man neue Dokumenttypen an, sollte man deren Zuordnung zu einer der Dokument
 | | Abstract | TitleAbstract | DC.description | *n/a* | X | X | X | X | X | X | X | Kein Mapping in Higwire Press Tags, da kein entsprechendes Element vorhanden |
 | | URN | IdentifierUrn | DC.identifier | *n/a* | X | X | X | X | X | X | X | Kein Mapping in Higwire Press Tags, da kein entsprechendes Element vorhanden |
 | | Lizenzangabe | *LinkLicence* | DC.rights | *n/a* | X | X | X | X | X | X | X | Kein Mapping in Higwire Press Tags, da kein entsprechendes Element vorhanden |
-{: class="bigtable" }
+{: class="bigtable metatags" }
 ----
 [^1]: Arlitsch, Kenning and O’Brien, Patrick S.: Invisible institutional repositories : addressing the low indexing ratios of IRs in Google. In: Library Hi Tech, Vol. 30 (2012), No. 1, pp. 60-81. [https://doi.org/10.1108/07378831211213210](https://doi.org/10.1108/07378831211213210)
 

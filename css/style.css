@@ -190,19 +190,19 @@ body {
     vertical-align: top;
 }
 
-#content table.bigtable tbody:first-of-type tr:nth-child(2) td {
+#content table.metatags tbody:first-of-type tr:nth-child(2) td {
     padding-left: 1.5em;
 }
 
-#content table.bigtable tbody:first-of-type tr:nth-child(2) td strong {
+#content table.metatags tbody:first-of-type tr:nth-child(2) td strong {
     margin-left: -0.5em;
 }
 
-#content table.bigtable tbody:first-of-type tr:nth-child(2) td:first-child {
+#content table.metatags tbody:first-of-type tr:nth-child(2) td:first-child {
     padding-left: 1em;
 }
 
-#content table.bigtable tbody:first-of-type tr:nth-child(2) td:first-child strong {
+#content table.metatags tbody:first-of-type tr:nth-child(2) td:first-child strong {
     margin-left: 0em;
 }
 
