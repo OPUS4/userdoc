@@ -198,6 +198,15 @@ body {
     margin-left: -0.5em;
 }
 
+#content table.bigtable tbody:first-of-type tr:nth-child(2) td:first-child {
+    padding-left: 1em;
+}
+
+#content table.bigtable tbody:first-of-type tr:nth-child(2) td:first-child strong {
+    margin-left: 0em;
+}
+
+
 #footer {
     border-top: 1px solid #26517c;
     padding-top: 0.5em;
