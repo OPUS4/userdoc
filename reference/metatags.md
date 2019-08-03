@@ -19,19 +19,24 @@ spezifiziert, um eine bestmögliche Indexierung in den aggregierenden Diensten z
 
 Die Zuordnung der Dokumenttypen erfolgt in der `application.ini` über diese Konfigurationsschlüssel:
 ~~~~
-metatags.mapping.book[]
-metatags.mapping.book_part[]
-metatags.mapping.conference_paper[]
-metatags.mapping.journal_paper[]
-metatags.mapping.thesis[]
-metatags.mapping.working_paper[]
+metatags.defaultMapping.book[]
+metatags.defaultMapping.book_part[]
+metatags.defaultMapping.conference_paper[]
+metatags.defaultMapping.journal_paper[]
+metatags.defaultMapping.thesis[]
+metatags.defaultMapping.working_paper[]
 ~~~~
 Alle Dokumenttypen, die keinem der 6 Konfigurationsschlüssel zugeordnet sind, werden als Sonstige behandelt und mit 
 einem allgemeinen Standard-Set an Metadaten dargestellt.
 
 Legt man neue Dokumenttypen an, sollte man deren Zuordnung zu einer der Dokumentkategorien prüfen und in der 
-`config.ini` konfigurieren, um eine optimale Ausgabe der Daten und somit bessere Indexierung zu erreichen.
+`config.ini` mit dem Präfix `metatags.mapping.` konfigurieren, um eine optimale Ausgabe der Daten und somit 
+bessere Indexierung zu erreichen. 
 
+    metatags.mapping.thesis[] = CustomThesisType
+    
+Damit wird dem Typ `CustomThesisType` der Typ `thesis` für die Meta-Tags zugeordnet.    
+    
 | | Metadatum | OPUS-Feld | Dublin Core | Highwire Press Tag | | | | | | | | Anmerkungen |
 |:--|:--------|:----------|:------------|:-----------------|:-|:-|:-|:-|:-|:-|:-|:-------|
 | **Meta-Tag-Dokument&shy;kategorie** | | | | | book | bookpart | conference_paper | journal_paper | thesis | working_paper | *Sonstige* | |
