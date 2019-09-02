@@ -178,7 +178,7 @@ ${curl} --verbose --header "Content-Type: application/zip" --header "Content-Dis
 
 ## Eingebettete XSLT-Skripte
 
-Das folgende XSLT-Skript wandelt das NISO JATS-Format in das OPUS 4-Paketformat um:
+Das folgende XSLT-Skript wandelt das NISO JATS-Format in das OPUS 4-Importformat um:
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
