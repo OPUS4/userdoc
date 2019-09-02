@@ -47,7 +47,7 @@ die Metadaten für ein oder mehrere Dokumente enthalten.
 
 ### Volltexte
 
-In den Metadaten müssen die Dokumente mit den Dateien über das *<files*>-Element
+In den Metadaten müssen die Dokumente mit den Dateien über das `<files>`-Element
 explizit verknüpft werden. Es findet keine automatische Zuordnung anhand der
 Namen statt. 
 
@@ -60,7 +60,7 @@ Namen statt.
 
 Enthält die Datei `opus.xml` nur die Metadaten für ein einziges Dokument, werden 
 automatisch alle anderen Dateien diesem Dokument hinzugefügt, unabhängig davon, 
-ob sie im `files`-Element deklariert wurden.
+ob sie im `<files>`-Element deklariert wurden.
 
 ### Unterverzeichnisse 
 
@@ -82,7 +82,7 @@ nicht, das Verzeichnis mit den Dateien für ein Dokument anzugeben.
 
 ``` xml
 <files>
-    <!-- Datei wird mit Namen 'article.pdf' hinzufügen -->
+    <!-- Datei wird unter dem Namen 'article.pdf' importiert -->
     <file path="doc1/article.pdf" />
 </files>
 ```
@@ -91,7 +91,7 @@ oder
 
 ``` xml
 <files basedir="doc1">
-    <!-- Datei wird mit Namen 'article.pdf' hinzufügen -->
+    <!-- Datei wird unter dem Namen 'article.pdf' importiert -->
     <file path="article.pdf" />
 </files>
 ```
@@ -100,7 +100,7 @@ oder
 
 ``` xml
 <files>
-    <!-- Datei wird mit Namen 'article-original.doc' hinzufügen -->
+    <!-- Datei wird unter dem Namen 'article-original.doc' importiert -->
     <file path="doc1/article.doc" name="article-original.doc" />
 </files>
 ```
@@ -126,7 +126,7 @@ feststellen. Es kann unter der URL
 
 aufgerufen werden. 
 
-Auf eine korrekte Konfiguration weist insbesondere das *href*-Attribut im
+Auf eine korrekte Konfiguration weist insbesondere das `href`-Attribut im
 Collection-Tag mit der URL der Sammlung hin:
 
 ``` xml
@@ -139,8 +139,8 @@ Collection-Tag mit der URL der Sammlung hin:
             …
 ```
 
-Ist die Konfiguration falsch, fehlen das *href*-Attribut sowie das folgende 
-*<atom:title>*-Tag:
+Ist die Konfiguration falsch, fehlen das `href`-Attribut sowie das folgende 
+`<atom:title>`-Tag:
 
 ``` xml
 <service>
@@ -168,4 +168,4 @@ nach außen geöffnet ist und Externe Inhalte in das Repositorium einbringen.
 ## Beispiel-Skripte
 
 Ein Beispiel für ein Bash-Skript mit eingebetteten XSLT-Skripten für das Format NISO
-JATS findet sich [hier](nisojats.html).
+JATS findet sich [hier](jats.html).
