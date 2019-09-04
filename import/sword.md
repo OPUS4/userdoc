@@ -106,7 +106,7 @@ oder
 ```
 
 
-## Zugriff / SWORD-Account
+## Zugriffssteuerung
 
 Man benötigt einen Nutzer in OPUS, der berechtigt ist, auf das Modul "sword" 
 zuzugreifen. Aus Sicherheitsgründen sollte man ein separates Nutzerkonto anlegen,
@@ -195,11 +195,15 @@ Beim Aufruf von cURL sind mindestens diese Parameter anzugeben:
 
 Darüber hinaus empfiehlt es sich, auch den Parameter `--verbose` zu setzen, um aussagekräftigere Rückmeldungen der Schnittstelle in der Kommandozeile und im Logfile zu erhalten. Die Protokollierung erfolgt im Standard-OPUS-Logfile.
 
+Die Syntax lautet:
+
 `curl --verbose --header "Content-Type: [MIME-Type]" --data-binary "@[Pfad zur Paket-Datei]" -u "[Username]:[Passwort]" "https:// [OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit"`
+
+Also z.B.:
 
 `curl --verbose --header "Content-Type: application/zip" --data-binary "@/verzeichnis/sword-import-paket.zip" -u "username:passwort" "https://meinbeipielserver.de/opus-instanz/sword/deposit"`
 
-Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully. n documents were imported.`.
+Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully.` *N* `documents were imported.`
 
 
 ## Beispiel-Skripte für NISO JATS
