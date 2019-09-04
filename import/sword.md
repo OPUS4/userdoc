@@ -106,6 +106,27 @@ oder
 ```
 
 
+## Zugriff / SWORD-Account
+
+Man benötigt einen Nutzer in OPUS, der berechtigt ist, auf das Modul "sword" 
+zuzugreifen. Aus Sicherheitsgründen sollte man ein separates Nutzerkonto anlegen,
+das nur Zugriff auf das SWORD-Modul hat. Username und Passwort dieses Accounts 
+werden dann für das Login gebraucht. Der Zugriff auf die SWORD-Schnittstelle erfolgt
+über HTTP Basic Authentication, d.h. konkret, dass man Username und Passwort auch
+an Externe geben können muss, wenn Datenlieferanten wie z.B. das
+[DeepGreen-Projekt](https://deepgreen.kobv.de) Dokumente nach OPUS importieren
+sollen.
+
+Es ist es sinnvoll, für jeden Datenlieferanten einen eigenen Account einzurichten.
+Dies ist nicht nur sicherer, sondern erleichtert es später auch festzustellen, woher
+ein Dokument gekommen ist. 
+
+<p class="warning">
+Der Verbindung zum Server sollte über HTTPS erfolgen, damit der Nutzername und das 
+Passwort nicht unverschlüsselt übertragen werden. 
+</p> 
+
+
 ## Konfiguration
 
 Die importierten Dokumente werden mit einer konfigurierbaren Sammlung verknüpft, um sie 
@@ -120,14 +141,15 @@ CollectionRole "Import" umgestellt werden. Es ist die *Nummer* der gewünschten
 Sammlung anzugeben (nicht der Name).
 
 Ob die Konfiguration der Sammlung richtig ist, lässt sich im SWORD-Servicedokument
-feststellen. Es kann unter der URL
+feststellen. Es kann mit dem Login des SWORD-Accounts (s. vorherigen Abschnitt) unter
+der URL
 
     https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/servicedocument
 
 aufgerufen werden. 
 
 Auf eine korrekte Konfiguration weist insbesondere das `href`-Attribut im
-Collection-Tag mit der URL der Sammlung hin:
+Collection-Tag mit der URL der Sammlung[^1] hin:
 
 ``` xml
 <service>
@@ -138,6 +160,8 @@ Collection-Tag mit der URL der Sammlung hin:
             <atom:title>sword</atom:title>
             …
 ```
+*[^1]: Bitte beachten Sie, dass dies nicht die Deposit-Adresse ist. Diese lautet in OPUS 4:  
+    `https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit`*
 
 Ist die Konfiguration falsch, fehlen das `href`-Attribut sowie das folgende 
 `<atom:title>`-Tag:
@@ -151,21 +175,33 @@ Ist die Konfiguration falsch, fehlen das `href`-Attribut sowie das folgende
             …
 ```
     
-Die Angabe der Sammlung unter `<collection href="...">` ist insofern falsch, als dass
-hier gemäß SWORD-Spezifikation eigentlich die Deposit-Adresse stehen müsse. In 
-OPUS 4 ist die Deposit-URL:
-`https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit`
-
-Die weiteren Parameter zur SWORD-Schnittstelle in den Konfigurationsdateien sind weniger
-relevant. Sie dienen überwiegend dazu, beschreibende Angaben zu machen, die dann z.B.
-im Servicedokument angezeigt werden. Diese Angaben sind hilfreich, wenn die Schnittstelle
-nach außen geöffnet ist und Externe Inhalte in das Repositorium einbringen.
+Die weiteren Parameter zur SWORD-Schnittstelle in den Konfigurationsdateien dienen
+überwiegend dazu, beschreibende Angaben zu machen, die dann z.B.im Servicedokument
+angezeigt werden. Diese Angaben können hilfreich sein, um externen Datenlieferanten
+Informationen zur Konfiguration der Schnittstelle mitzuteilen. Die Bedeutung
+der beschreibenden Angaben ist in der Spezifikation von SWORD 1.3 erläutert
+(s. Link oben auf dieser Seite).
 
 
+## SWORD-Import mit cURL
+
+Es gibt keinen Standard-Client für den Zugriff auf die SWORD-Schnittstelle. Ohne zusätzlichen Aufwand lässt sie sich auf Kommandozeilenebene mit dem Tool cURL ansprechen, das sowohl unter Linux als auch Windows 10 standardmäßig vorhanden ist. Auch andere Tools wie z.B. die API-Entwicklungsplattform Postman eignen sich gut.
+ 
+Beim Aufruf von cURL sind mindestens diese Parameter anzugeben:
+* MIME-Type der zu importierenden Paket-Datei (`application/tar` oder `application/zip`)
+* Pfad zur Paket-Datei (mit führendem `@`-Zeichen)
+* Username und Passwort des SWORD-Accounts in OPUS
+* Deposit-URL der SWORD-Schnittstelle
+
+Darüber hinaus empfiehlt es sich, auch den Parameter `--verbose` zu setzen, um aussagekräftigere Rückmeldungen der Schnittstelle in der Kommandozeile und im Logfile zu erhalten. Die Protokollierung erfolgt im Standard-OPUS-Logfile.
+
+`curl --verbose --header "Content-Type: [MIME-Type]" --data-binary "@[Pfad zur Paket-Datei]" -u "[Username]:[Passwort]" "https:// [OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit"`
+
+`curl --verbose --header "Content-Type: application/zip" --data-binary "@/verzeichnis/sword-import-paket.zip" -u "username:passwort" "https://meinbeipielserver.de/opus-instanz/sword/deposit"`
+
+Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully. n documents were imported.`.
 
 
+## Beispiel-Skripte für NISO JATS
 
-## Beispiel-Skripte
-
-Ein Beispiel für ein Bash-Skript mit eingebetteten XSLT-Skripten für das Format NISO
-JATS findet sich [hier](jats.html).
+Ein Beispiel für ein Bash-Skript mit eingebetteten XSLT-Skripten zur Konversion und zum Import von Daten für das Format NISO JATS findet sich [hier](jats.html).
