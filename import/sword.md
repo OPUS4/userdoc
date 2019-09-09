@@ -205,7 +205,7 @@ Also z.B.:
 
 Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully.` *N* `documents were imported.`
 
-In den über SWORD importieren Dokumente werden Informationen in folgenden Enrichment-Feldern abgelegt:
+In den über SWORD importierten Dokumenten werden Informationen in folgenden Enrichment-Feldern abgelegt:
 - opus.import.user : [user]
 - opus.import.date : [import date]
 - opus.import.file : [name of package]
