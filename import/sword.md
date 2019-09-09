@@ -209,7 +209,8 @@ In den über SWORD importierten Dokumenten werden Informationen in folgenden Enr
 - opus.import.user : [user]
 - opus.import.date : [import date]
 - opus.import.file : [name of package]
-Es ist darauf zu achten, dass diese EnrichmentKeys existieren!
+
+Es ist darauf zu achten, dass diese EnrichmentKeys existieren.
 
 
 ## Beispiel-Skripte für NISO JATS
