@@ -136,7 +136,7 @@ automatisch angelegt. Die Sammlung ist in der `application.ini` über den Parame
 
 sword.collection.default.number = 'import'
 
-definiert und kann in der `configuration.ini` auf eine andere Sammlung innerhalb der 
+definiert und kann in der `config.ini` auf eine andere Sammlung innerhalb der 
 CollectionRole "Import" umgestellt werden. Es ist die *Nummer* der gewünschten
 Sammlung anzugeben (nicht der Name).
 
@@ -204,6 +204,12 @@ Also z.B.:
 `curl --verbose --header "Content-Type: application/zip" --data-binary "@/verzeichnis/sword-import-paket.zip" -u "username:passwort" "https://meinbeipielserver.de/opus-instanz/sword/deposit"`
 
 Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully.` *N* `documents were imported.`
+
+In den über SWORD importieren Dokumente werden Informationen in folgenden Enrichment-Feldern abgelegt:
+- opus.import.user : [user]
+- opus.import.date : [import date]
+- opus.import.file : [name of package]
+Es ist darauf zu achten, dass diese EnrichmentKeys existieren!
 
 
 ## Beispiel-Skripte für NISO JATS
