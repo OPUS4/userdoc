@@ -4,15 +4,21 @@ title: Dokumenttypen
 
 # Dokumenttypen
 
-OPUS4 liefert standardmäßig 21 vordefinierte [Dokumenttypen](../documenttypes/index.html)
-(plus einen Beispiel-Dokumenttyp "Alle Felder") aus. Jeder Dokumenttyp besteht aus einer XML-
-Dokumenttypdefinition und einem Template. Wir empfehlen Ihnen zur Erstellung und Validierung der
-Dokumenttypen einen XML-Editor.
+OPUS4 liefert standardmäßig 21 vordefinierte [Dokumenttypen](../documenttypes/index.html) aus.
+Jeder Dokumenttyp besteht aus einer XML-Dokumenttypdefinition und einem Template.
+
+<p class="note" markdown="1">
+Im Verzeichnis `tests/resources/doctypes` sind weitere Dokumenttypen für Tests definiert,
+unter anderem der Typ "_all_", der die Verwendung sämtlicher Felder demonstriert.
+Diese Testtypen werden mit in die Konfiguration eingebunden, wenn OPUS 4 im _Testing Modus_ läuft.
+</p>
+
+Wir empfehlen Ihnen zur Erstellung und Validierung der Dokumenttypen einen XML-Editor.
 
 Folgende Änderungen sind möglich:
 
-* [Reihenfolge der angezeigten Felder ändern](#reihenfolge-der-angezeigten-felder-ndern)
-* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufgenentfernen)
+* [Reihenfolge der angezeigten Felder ändern](#reihenfolge-der-angezeigten-felder-ändern)
+* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufügenentfernen)
 * [Dokumenttypen umbenennen](#dokumenttypen-umbenennen)
 * [Neuen Dokumenttyp anlegen](#neuen-dokumenttyp-anlegen)
 {: class="navlist" }
@@ -20,7 +26,7 @@ Folgende Änderungen sind möglich:
 In den folgenden beiden Grundlagenkapiteln
 [Grundlage: XML-Dokumenttypdefinitionen](#grundlage-xml-dokumenttypdefinition)
 und
-["Grundlage: Templates](#grundlage-templates)
+[Grundlage: Templates](#grundlage-templates)
 werden zunächst der generelle Aufbau und die Bedeutung der
 Einträge in den XML-Dokumenttypdefinitionen und in den Templates näher erläutert.
 

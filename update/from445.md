@@ -15,6 +15,21 @@ anschließend die Anpassungen der alten Instanz auf die neue übertragen. Dafür
 [MELD][MELD] gut eingesetzt werden, um die die alten Dateien mit den neuen zu vergleichen und die Anpassungen zu
 übernehmen.
 
+Bei den Dokumenttypen hat sich die Referenz auf den xml-namespace geändert. Damit eigene oder angepasste Dokumenttypen 
+weiter verwendet werden können, muss in den entsprechenden Dateien der Namespace ausgetauscht werden.
+
+So ist z.B. in der Datei '$BASEDIR/application/configs/doctypes/article.xml'  
+{% highlight xml %}
+xmlns="http://schemas.opus.org/documenttype" 
+{% endhighlight %}
+
+zu ersetzen durch:
+
+{% highlight xml %}
+xmlns="http://www.opus-repository.org/schema/documenttype"
+{% endhighlight %}
+
+
 * [Installation von OPUS 4][INSTALL]
 {: class="navlist" }
 

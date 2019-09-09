@@ -22,7 +22,9 @@ Um diese Anforderung zu erfüllen, muss eine Sammlung "open_access" mit einem Sa
 
 Der Parameter OAISubset hat den Wert: "open_access", die Option "sichtbar" ist ausgewählt.
 
-Abschließend müssen nun die gewünschten Dokumente dem Sammlungseintrag (2. Ebene) zugeordnet werden.
+Abschließend müssen nun die gewünschten Dokumente dem Sammlungseintrag (2. Ebene) zugeordnet werden. 
+Die so zugeordneten Dokumente sind in den Ergebnislisten von [Suche](../features/search.html) und 
+[Browsing](../features/browsing.html) mit einem Open-Access-Logo gekennzeichnet.
 
 <p class="note">
 Die Konformität der OAI-Schnittstelle zum DINI-Zertifikat kann getestet werden.
