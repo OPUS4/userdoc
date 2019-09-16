@@ -26,8 +26,10 @@ metatags.defaultMapping.journal_paper[]
 metatags.defaultMapping.thesis[]
 metatags.defaultMapping.working_paper[]
 ~~~~
-Alle Dokumenttypen, die keinem der 6 Konfigurationsschlüssel zugeordnet sind, werden als Sonstige behandelt und mit 
+Alle Dokumenttypen, die keinem der sechs Konfigurationsschlüssel zugeordnet sind, werden als Sonstige behandelt und mit 
 einem allgemeinen Standard-Set an Metadaten dargestellt.
+
+## Mapping für eigene Dokumenttypen
 
 Legt man neue Dokumenttypen an, sollte man deren Zuordnung zu einer der Dokumentkategorien prüfen und in der 
 `config.ini` mit dem Präfix `metatags.mapping.` konfigurieren, um eine optimale Ausgabe der Daten und somit 
@@ -35,7 +37,9 @@ bessere Indexierung zu erreichen.
 
     metatags.mapping.thesis[] = CustomThesisType
     
-Damit wird dem Typ `CustomThesisType` der Typ `thesis` für die Meta-Tags zugeordnet.    
+Damit wird dem Typ `CustomThesisType` der Typ `thesis` für die Meta-Tags zugeordnet.
+
+## Generierte Meta-Tags für die Dokumentkategorien    
     
 | | Metadatum | OPUS-Feld | Dublin Core | Highwire Press Tag | | | | | | | | Anmerkungen |
 |:--|:--------|:----------|:------------|:-----------------|:-|:-|:-|:-|:-|:-|:-|:-------|
