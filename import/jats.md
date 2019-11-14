@@ -1,120 +1,184 @@
 ---
-title: OPUS 4 Pakete
+title: NISO JATS-Format
 ---
 
-# OPUS 4 Pakete
 
-OPUS 4 unterstützt den Import von Metadaten und Volltexten als **\*.zip** oder **\*.tar** 
-Paket.  Diese Pakete müssen die Datei `opus.xml` mit den Metadaten enthalten.
+# Beispiel-Skripte zur Verarbeitung von Metadaten im NISO JATS-Format
 
-    import.zip
-      |-opus.xml
-      |-document1.pdf
-      |-document1.doc
-      |-fulltext2.pdf
-      |-image3.png
+Hier finden Sie Beispiel-Skripte, um Metadaten, die im NISO JATS-Format vorliegen,
+nach OPUX-XML zu konvertieren, zu packen und an die SWORD-Schnittstelle zu senden. 
+
+Bei JATS handelt es sich um die Journal Article Tag Suite, eine gängige
+XML-Auszeichnungssprache für Artikelmetadaten, die z.B. von PubMed Central und Nature 
+verwendet wird. JATS ist in der Norm NISO Z39.96 standardisiert.
 
 
-## Metadaten
+## Bash-Skript
 
-Die Metadaten müssen dem Import Schema entsprechen.  Die Datei `opus.xml` kann die Metadaten 
-für mehrere Dokumente enthalten.
+Das folgende Bash-Skript wandelt eine ZIP-Datei, die genau *eine* XML-Metadaten-Datei
+im NISO JATS-Format enthält, in eine ZIP-Datei mit einer OPUS 4-Import-XML-Datei um und
+schickt sie als Request (via `curl`) an die SWORD-Schnittstelle einer OPUS 4-Instanz.
 
-<http://www.opus-repository.org/schema/opus-import.xsd>
+Das Bash-Skript verwendet für die Transformation NISO JATS ---> OPUS 4 zwei XSLT-Dateien, 
+die im selben Verzeichnis wie das Bash-Skript gespeichert sein sollten. Diese finden Sie
+auf dieser Seite im Anschluss an das Bash-Skript.
 
-OPUS 4 Import XML sieht wie folgt aus.
+``` bash
+#! /usr/bin/env bash
 
-``` xml
-<import>
-    <opusDocument language="deu" type="article">
-        <titlesMain>
-            <titleMain language="deu">Beispiel Titel</titleMain>
-        </titlesMain>
-        <persons>
-            <person role="author" firstName="Erika" lastName="Musterfrau">
-                <identifiers>
-                    <identifier type="orcid">0000:...</identifier>
-                </identifiers>
-            </person>
-        </persons>
-    </opusDocument>
-</import>
+function usage() {
+  echo
+  echo "usage: `basename $0` [-d] [-u user] [-p passwd] [-h host] [-i instance] {zip-file}"
+  echo
+  echo "   zip-file     : simple (i.e. flat hierarchy) .zip file with exactly"
+  echo "                  one .xml file and (possibly) multiple binary files"
+  echo
+  echo "   -u user      : sword user name allowed to do deposits [curr. '${user}']"
+  if [ -z "${pw}" ]; then
+    echo "   -p passwd    : sword password for sword user [curr. not set!]"
+  else
+    echo "   -p passwd    : sword password for sword user [curr. '***']"
+  fi
+  echo "   -h host      : opus4 host http address [curr. '${opus4_host}']"
+  echo "   -i instance  : opus4 instance (i.e. sword api root) [curr. '${opus4_instance}']"
+  echo "   -d           : debug switch; if given, no delivery at all(!) [curr. '${debug}']"
+  echo
+  echo " Currently using '${opus4_host}/${opus4_instance}/sword/deposit' as SWORD deposit point." 
+  echo
+  exit -1
+}
+
+debug="false"
+opus4_host="https://opus4mig.kobv.de"
+opus4_instance="opus4-fau"
+user="green"
+pw=""
+
+xmlstarlet=`which xmlstarlet`
+xml_pp=`which xml_pp`
+head=`which head`
+cat=`which cat`
+cut=`which cut`
+curl=`which curl`
+zip=`which zip`
+unzip=`which unzip`
+zipgrep=`which zipgrep`
+md5sum=`which md5sum`
+mktemp=`which mktemp`
+wc=`which wc`
+getopt=`which getopt`
+
+${getopt} --test >/dev/null
+if [ $? -ne 4 ]; then
+  echo "error: 'getopt --test' failed in this environment, stop."
+  exit 1
+fi
+
+parsed=`${getopt} --options dh:p:u:i: --longoptions debug,passwd:,user:,instance:,host: --name "$0" -- "$@"`
+if [ $? -ne 0 ]; then usage ; fi
+
+eval set -- "${parsed}"
+while true; do
+  case "$1" in
+      -d|--debug) debug="true" ; shift ;;
+       -u|--user) user="$2" ; shift 2 ;;
+     -p|--passwd) pw="$2" ; shift 2 ;;
+   -i|--instance) opus4_instance="$2"; shift 2 ;;
+       -h|--host) opus4_host="$2"; shift 2 ;;
+              --) shift ; break ;;
+               *) echo "Internal error!" ; exit 1 ;;
+  esac
+done
+
+if [ $# -ge 1 ]; then
+  zip_file="$1"
+else
+  usage
+fi
+
+if [ "${opus4_host#https://}" == "${opus4_host}" -a "${opus4_host#http://}" == "${opus4_host}" ]; then
+  opus4_host="${opus4_host##*:}"
+  opus4_host="${opus4_host#*/}"
+  opus4_host="https://${opus4_host}"
+fi
+
+if [ -z "${pw}" ]; then
+  read -p "[sword password] for ${user}: " -s pw
+  echo
+fi
+
+abs_xsl="./nlm_jats2opus_xml.xsl"
+abs_xsl_add="./add_files2opus_xml.xsl"
+pkg_fmt="https://datahub.deepgreen.org/FilesAndJATS"
+has_xml=`${zipgrep} "DOCTYPE article" ${zip_file} | ${wc} -l`
+
+if [ ${has_xml} -eq 1 ]; then
+  is_jrnl=`${zipgrep} "//NLM//DTD Journal " ${zip_file} | ${wc} -l`
+  is_jats=`${zipgrep} "//NLM//DTD JATS " ${zip_file} | ${wc} -l`
+  is_rsc=`${zipgrep} "//RSC//DTD RSC " ${zip_file} | ${wc} -l`
+  if [ ${is_jrnl} -eq 1 ]; then
+    abs_xsl="./Util/nlm_jats2opus_xml.xsl"
+    pkg_fmt="https://datahub.deepgreen.org/FilesAndJATS"
+  elif [ ${is_jats} -eq 1 ]; then
+    abs_xsl="./Util/nlm_jats2opus_xml.xsl"
+    pkg_fmt="https://datahub.deepgreen.org/FilesAndJATS"
+  elif [ ${is_rsc} -eq 1 ]; then
+    abs_xsl="./Util/rsc_rsc2opus_xml.xsl"
+    pkg_fmt="https://datahub.deepgreen.org/FilesAndRSC"
+  else
+    echo "error: no valid .xml (Journal or JATS or RSC) in zip archive found: stop."
+    exit -2
+  fi
+else
+  echo "error: no valid (or too many?!) .xml (Journal xor JATS xor RSC) in zip archive found: stop."
+  exit -3
+fi
+
+echo "`basename $0`: packaging format in zip archive found:"
+echo "`basename $0`: ${pkg_fmt}"
+
+tmp_dir=`${mktemp} -q -d`
+trap "rm -rf ${tmp_dir}" 0 2 3 15
+
+${unzip} -q ${zip_file} -d "${tmp_dir}/xfer"
+
+
+meta_xml="`ls -1 ${tmp_dir}/xfer/*.xml | ${head} -1`"
+${cat} ${meta_xml} | ${xmlstarlet} -q tr --omit-decl ${abs_xsl} | ${xml_pp} >"${tmp_dir}/opus.xml"
+for f in "${tmp_dir}"/xfer/*; do
+  [ "${f%.xml}" != "${f}" ] && continue
+  MD5=`${md5sum} --binary "${f}" | ${cut} -d" " -f1`
+  FL=`basename ${f}`
+  ${cat} "${tmp_dir}/opus.xml" | ${xmlstarlet} -q tr --omit-decl ${abs_xsl_add} -s md5="${MD5}" -s file="${FL}" | ${xml_pp} >"${tmp_dir}/tmp.xml"
+  mv "${tmp_dir}/tmp.xml" "${tmp_dir}/opus.xml"
+done
+rm -f ${meta_xml}
+## mv "${tmp_dir}/opus.xml" ${meta_xml}
+mv "${tmp_dir}/opus.xml" "${tmp_dir}/xfer/opus.xml"
+${zip} -j -r "${tmp_dir}/package.zip" "${tmp_dir}/xfer" 
+
+MD5=`${md5sum} --binary "${tmp_dir}/package.zip" | ${cut} -d" " -f1`
+echo "`basename $0`: md5sum: ${MD5}"
+
+if [ "${debug}" = "true" ]; then 
+  cp "${tmp_dir}/xfer/opus.xml" . 
+  cp "${tmp_dir}/package.zip" opus.zip
+  echo 
+  echo "Files 'opus.xml' and 'opus.zip' written to `pwd`"
+  echo
+  exit 1 
+fi
+
+## header="Content-Type: application/zip"
+
+echo
+echo ${curl} --verbose --header "Content-Type: application/zip" --header "Content-Disposition: filename=package.zip" --header "Content-MD5: ${MD5}" --data-binary "@${tmp_dir}/package.zip" -u "${user}:***" "${opus4_host}/${opus4_instance}/sword/deposit"
+${curl} --verbose --header "Content-Type: application/zip" --header "Content-Disposition: filename=package.zip" --header "Content-MD5: ${MD5}" --data-binary "@${tmp_dir}/package.zip" -u "${user}:${pw}" "${opus4_host}/${opus4_instance}/sword/deposit"
 ```
 
-<p class="note" markdown="1">
-Das Import XML wird noch weiter entwickelt, um die Verwendung zu vereinfachen. Es können 
-zum Beispiel bereits Verknüpfungen zu Sammlungen importiert werden, aber dafür ist die 
-interne Datenbank-ID der Sammlung notwendig.  Klassifikationen werden in OPUS 4 zum Beispiel 
-als Sammlungen verwaltet.  Um das Dokument mit einem Eintrag der DDC zu verknüpfen, benötigt 
-man eine Nummer wie **16728** und diese kann in jedem Repository unterschiedlich sein. 
-<br />
-Es ist geplant, für Klassifikationen allgemeinverständliche Angaben zu unterstützen, mit 
-denen dann zum Beispiel der Typ **DDC** und der Identifier **345** angegeben werden können. 
-</p>
+## Eingebettete XSLT-Skripte
 
-
-## Volltexte importieren
-
-In den Metadaten müssen die Dokumente mit den Dateien verknüpft werden.  Es findet keine 
-automatische Zuordnung anhand der Namen statt. 
-
-``` xml
-<files>
-    <file name="document1.pdf" />
-    <file name="document1.doc" />
-</files>
-```
-
-Enthält die Datei `opus.xml` nur die Metadaten für ein einziges Dokument, werden 
-automatisch alle anderen Dateien zu diesem Dokument hinzugefügt, unabhängig davon, 
-ob sie im `files`-Element deklariert wurden.
-
-Der Import unterstützt auch eine Paketstruktur, bei der die Dateien der Dokumente in 
-separaten Verzeichnissen gespeichert werden, um Konflikte durch identische Dateinamen 
-zu vermeiden.
-
-    import.tar
-      |-opus.xml
-      |-doc1
-      |   |-article.pdf
-      |   |-image.png
-      |-doc2
-          |-article.pdf
-          |-article.doc
-          
-In diesem Fall müssen die Dateien in den Metadaten explizit deklariert werden.  Es reicht 
-nicht, das Verzeichnis mit den Dateien für ein Dokument anzugeben.
-
-``` xml
-<files>
-    <!-- Datei wird mit Namen 'article.pdf' hinzufügen -->
-    <file path="doc1/article.pdf" />
-</files>
-```
-
-oder
-
-``` xml
-<files basedir="doc1">
-    <!-- Datei wird mit Namen 'article.pdf' hinzufügen -->
-    <file path="article.pdf" />
-</files>
-```
-
-oder
-
-``` xml
-<files>
-    <!-- Datei wird mit Namen 'article-original.doc' hinzufügen -->
-    <file path="doc1/article.doc" name="article-original.doc" />
-</files>
-```
-
-
-# Metadaten des NISO JATS Formats nach OPUS 4 Pakete wandeln
-
-Das folgende XSLT Skript wandeln das gängige NISO JATS Format für Artikelmetadaten 
-in das OPUS 4 Paketformat um:
+Das folgende XSLT-Skript wandelt das NISO JATS-Format in das OPUS 4-Importformat um:
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -324,9 +388,8 @@ in das OPUS 4 Paketformat um:
 </xsl:stylesheet>
 ```
 
-
-Weitere (Binär-)Dateien können danach mit diesem zusätzlichen XSLT Skript zu einem 
-OPUS 4 Paket hinzugefügt werden:
+Folgendes XSLT-Skript dient dazu, weitere (Binär-)Dateien zu einem OPUS 4-Paket
+hinzuzufügen:
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>

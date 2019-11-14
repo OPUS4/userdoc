@@ -2,66 +2,124 @@
 title: SWORD
 ---
 
+
 # SWORD 
 
-OPUS 4.6 implementiert die SWORD Schnittstelle in Version 1.3.  Die Details der Spezifikation 
-sind unter folgender Adresse verfügbar:
+SWORD (Simple Web-service Offering Repository Deposit) ist eine webbasierte
+Standard-Schnittstelle für Importe. OPUS 4.6 implementiert die SWORD-Schnittstelle in
+Version 1.3. Die Details der Spezifikation sind unter folgender Adresse verfügbar:
 
 <http://swordapp.org/sword-v1/>
 
+SWORD ist normalerweise darauf ausgelegt, mit jedem Request nur *ein* Dokument zu
+verarbeiten. Die Antworten der Schnittstelle beziehen sich gemäß der Spezifikation auf
+einzelne Dokumente. Die SWORD-Schnittstelle von OPUS 4 importiert darüber hinaus auch
+Pakete mit **mehreren** Dokumenten.  
+
 <p class="info">
-Es gibt momentan keine Pläne, den Funktionsumfang von SWORD 2 für OPUS 4 umzusetzen.  Die 
-Import Funktionen an sich werden weiter ausgebaut werden, um mehr Metadaten einfacher 
-verarbeiten zu können, zum Beispiel Verknüpfungen mit Klassifikationssystem usw.
+Es gibt momentan keine Pläne, den Funktionsumfang höherer SWORD-Versionen für OPUS 4
+umzusetzen. Die Import-Funktionen an sich werden weiter ausgebaut werden, um mehr
+Metadaten einfacher verarbeiten zu können, zum Beispiel Verknüpfungen mit
+Klassifikationssystemen usw.
 </p>
 
 
-## Schnittstelle
+## Datenstruktur und Pakete
 
-Das SWORD Service Dokument kann unter der URL
+OPUS 4 unterstützt den Import von Metadaten und Volltexten als **\*.zip**- oder
+**\*.tar**-Paket. Ein ZIP-/TAR-Paket kann die Metadaten und Dateien für mehr als 
+ein Dokument enthalten.
 
-
-    https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/servicedocument
-
-abgerufen werden.
-
-<p class="warning" markdown="1">
-Das voreingestellte SWORD Service Dokument enthält (unter `<collection href="...">` eine 
-falsche Deposit Adresse.  Die korrekte Angabe, die in `href="..."` stehen sollte, lautet:
-`https://user@password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit`
-</p>
+    import.zip
+      |-opus.xml
+      |-document1.pdf
+      |-document1.doc
+      |-fulltext2.pdf
+      |-image3.png
 
 
-## Besonderheiten
+### Metadaten
 
-Die SWORD Schnittstelle verarbeitet normalerweise mit jedem Request nur *ein* Dokument.  Die 
-Antworten der SWORD Schnittstelle sind gemäß der Spezifikation sind nur auf einzele Dokumente 
-ausgelegt.  Die SWORD Schnittstelle von OPUS 4 kann zusätzliche Pakete mit **mehreren** 
-Dokumenten verarbeiten.  Ein ZIP/TAR-Paket kann die Metadaten und Dateien für mehr als ein 
-Dokument enthalten. 
+Die Metadaten müssen in OPUS-XML gemäß dem Import-Schema vorliegen
+([s. Import](index.html)). Die Metadatendatei muss `opus.xml` heißen, ansonsten
+wird sie vom System nicht erkannt und der Import schlägt fehlt. `opus.xml` kann
+die Metadaten für ein oder mehrere Dokumente enthalten. 
+
+### Volltexte
+
+In den Metadaten müssen die Dokumente mit den Dateien über das `<files>`-Element
+explizit verknüpft werden. Es findet keine automatische Zuordnung anhand der
+Namen statt. 
+
+``` xml
+<files>
+    <file name="document1.pdf" />
+    <file name="document1.doc" />
+</files>
+```
+
+Enthält die Datei `opus.xml` nur die Metadaten für ein einziges Dokument, werden 
+automatisch alle anderen Dateien diesem Dokument hinzugefügt, unabhängig davon, 
+ob sie im `<files>`-Element deklariert wurden.
+
+### Unterverzeichnisse 
+
+Der Import unterstützt auch eine Paketstruktur, bei der die Dateien der Dokumente in 
+separaten Verzeichnissen gespeichert werden, um Konflikte durch identische Dateinamen 
+zu vermeiden.
+
+    import.tar
+      |-opus.xml
+      |-doc1
+      |   |-article.pdf
+      |   |-image.png
+      |-doc2
+          |-article.pdf
+          |-article.doc
+          
+In diesem Fall müssen die Dateien in den Metadaten explizit deklariert werden. Es reicht 
+nicht, das Verzeichnis mit den Dateien für ein Dokument anzugeben.
+
+``` xml
+<files>
+    <!-- Datei wird unter dem Namen 'article.pdf' importiert -->
+    <file path="doc1/article.pdf" />
+</files>
+```
+
+oder
+
+``` xml
+<files basedir="doc1">
+    <!-- Datei wird unter dem Namen 'article.pdf' importiert -->
+    <file path="article.pdf" />
+</files>
+```
+
+oder
+
+``` xml
+<files>
+    <!-- Datei wird unter dem Namen 'article-original.doc' importiert -->
+    <file path="doc1/article.doc" name="article-original.doc" />
+</files>
+```
 
 
-## Konfiguration
+## Zugriffssteuerung
 
-Die importierten Dokumente werden mit einer konfigurierbaren Sammlung verknüpft, um sie 
-zusätzliche zu markieren. Die Sammlung heißt normalerweise "Import" und ist Teil der 
-CollectionRole "Import".  Beide werden bei der Installation bzw. beim Update von OPUS 4 
-automatisch angelegt.
+Man benötigt einen Nutzer in OPUS, der berechtigt ist, auf das Modul "sword" 
+zuzugreifen. Aus Sicherheitsgründen sollte man ein separates Nutzerkonto anlegen,
+das nur Zugriff auf das SWORD-Modul hat. Username und Passwort dieses Accounts 
+werden dann für das Login gebraucht. Der Zugriff auf die SWORD-Schnittstelle erfolgt
+über HTTP Basic Authentication, d.h. konkret, dass man Username und Passwort auch
+an Externe geben können muss, wenn Datenlieferanten wie z.B. das
+[DeepGreen-Projekt](https://deepgreen.kobv.de) Dokumente nach OPUS importieren
+sollen.
 
-
-## Zugriff
-
-Für Zugriff auf das SWORD Modul muss sich der Client über HTTP Basic Authentication 
-identifizieren.  Dafür muss in der Administration ein Account angelegt werden, der 
-Zugriff auf das SWORD Modul hat.  Der Nutzername und das Passwort dieses Accounts 
-können dann für die Authentifizierung verwendet werden. 
-
-Es wird empfohlen, einen Account zu verwenden, der nur Zugriff auf das SWORD-Modul hat. 
-
-Außerdem macht es Sinn, für jede Datenquelle, zum Beispiel das 
-[DeepGreen Projekt](https://deepgreen.kobv.de), einen separaten Account 
-einzurichten.  So kann später leicht festgestellt werden, woher ein Dokument 
-gekommen ist. 
+Es ist es sinnvoll, für jeden Datenlieferanten einen eigenen Account einzurichten.
+Dies ist nicht nur sicherer, sondern erleichtert es später auch festzustellen, woher
+ein Dokument gekommen ist. 
 
 <p class="warning">
 Der Verbindung zum Server sollte über HTTPS erfolgen, damit der Nutzername und das 
@@ -69,179 +127,92 @@ Passwort nicht unverschlüsselt übertragen werden.
 </p> 
 
 
-## Beispiel Skript
+## Konfiguration
 
-Es gibt keinen Standard-Client für den Zugriff auf die SWORD Schnittstelle. 
+Die importierten Dokumente werden mit einer konfigurierbaren Sammlung verknüpft, um sie 
+zusätzlich zu markieren. Die Sammlung heißt normalerweise "Import" und ist Teil der 
+CollectionRole "Import". Beide werden bei der Installation bzw. beim Update von OPUS 4 
+automatisch angelegt. Die Sammlung ist in der `application.ini` über den Parameter
 
-Ein Beispiel für ein BASH Skript, das eine ZIP Datei, die genau *eine* XML Metadaten 
-Datei im NISO JATS Format enthält, in eine ZIP Datei mit einer OPUS4 Import-XML umwandelt
-und als Request (via `curl`) an die SWORD Schnittstelle einer OPUS4 Instanz schickt:
+sword.collection.default.number = 'import'
 
-<p class="info" markdown="1">
-Die Umwandlung des NISO JATS Formats in das benötigte OPUS 4 Format durchführen zu 
-können, werden weitere Dateien benötigt! 
+definiert und kann in der `config.ini` auf eine andere Sammlung innerhalb der 
+CollectionRole "Import" umgestellt werden. Es ist die *Nummer* der gewünschten
+Sammlung anzugeben (nicht der Name).
 
-Das BASH Skript verwendet für die Transformation NISO JATS ---> OPUS 4 zwei XSLT Dateien, 
-die im selben Verzeichnis wie das BASH Skript gespeichert sein sollten.  Zu finden 
-sind diese XSLT Dateien unter 
+Ob die Konfiguration der Sammlung richtig ist, lässt sich im SWORD-Servicedokument
+feststellen. Es kann mit dem Login des SWORD-Accounts (s. vorherigen Abschnitt) unter
+der URL
 
-* [OPUS 4 Pakete](packages.html)
-{: class="navlist" }
+    https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/servicedocument
 
-</p>
+aufgerufen werden. 
 
+Auf eine korrekte Konfiguration weist insbesondere das `href`-Attribut im
+Collection-Tag mit der URL der Sammlung[^1] hin:
 
-``` bash
-#! /usr/bin/env bash
-
-function usage() {
-  echo
-  echo "usage: `basename $0` [-d] [-u user] [-p passwd] [-h host] [-i instance] {zip-file}"
-  echo
-  echo "   zip-file     : simple (i.e. flat hierarchy) .zip file with exactly"
-  echo "                  one .xml file and (possibly) multiple binary files"
-  echo
-  echo "   -u user      : sword user name allowed to do deposits [curr. '${user}']"
-  if [ -z "${pw}" ]; then
-    echo "   -p passwd    : sword password for sword user [curr. not set!]"
-  else
-    echo "   -p passwd    : sword password for sword user [curr. '***']"
-  fi
-  echo "   -h host      : opus4 host http address [curr. '${opus4_host}']"
-  echo "   -i instance  : opus4 instance (i.e. sword api root) [curr. '${opus4_instance}']"
-  echo "   -d           : debug switch; if given, no delivery at all(!) [curr. '${debug}']"
-  echo
-  echo " Currently using '${opus4_host}/${opus4_instance}/sword/deposit' as SWORD deposit point." 
-  echo
-  exit -1
-}
-
-debug="false"
-opus4_host="https://opus4mig.kobv.de"
-opus4_instance="opus4-fau"
-user="green"
-pw=""
-
-xmlstarlet=`which xmlstarlet`
-xml_pp=`which xml_pp`
-head=`which head`
-cat=`which cat`
-cut=`which cut`
-curl=`which curl`
-zip=`which zip`
-unzip=`which unzip`
-zipgrep=`which zipgrep`
-md5sum=`which md5sum`
-mktemp=`which mktemp`
-wc=`which wc`
-getopt=`which getopt`
-
-${getopt} --test >/dev/null
-if [ $? -ne 4 ]; then
-  echo "error: 'getopt --test' failed in this environment, stop."
-  exit 1
-fi
-
-parsed=`${getopt} --options dh:p:u:i: --longoptions debug,passwd:,user:,instance:,host: --name "$0" -- "$@"`
-if [ $? -ne 0 ]; then usage ; fi
-
-eval set -- "${parsed}"
-while true; do
-  case "$1" in
-      -d|--debug) debug="true" ; shift ;;
-       -u|--user) user="$2" ; shift 2 ;;
-     -p|--passwd) pw="$2" ; shift 2 ;;
-   -i|--instance) opus4_instance="$2"; shift 2 ;;
-       -h|--host) opus4_host="$2"; shift 2 ;;
-              --) shift ; break ;;
-               *) echo "Internal error!" ; exit 1 ;;
-  esac
-done
-
-if [ $# -ge 1 ]; then
-  zip_file="$1"
-else
-  usage
-fi
-
-if [ "${opus4_host#https://}" == "${opus4_host}" -a "${opus4_host#http://}" == "${opus4_host}" ]; then
-  opus4_host="${opus4_host##*:}"
-  opus4_host="${opus4_host#*/}"
-  opus4_host="https://${opus4_host}"
-fi
-
-if [ -z "${pw}" ]; then
-  read -p "[sword password] for ${user}: " -s pw
-  echo
-fi
-
-abs_xsl="./nlm_jats2opus_xml.xsl"
-abs_xsl_add="./add_files2opus_xml.xsl"
-pkg_fmt="https://datahub.deepgreen.org/FilesAndJATS"
-has_xml=`${zipgrep} "DOCTYPE article" ${zip_file} | ${wc} -l`
-
-if [ ${has_xml} -eq 1 ]; then
-  is_jrnl=`${zipgrep} "//NLM//DTD Journal " ${zip_file} | ${wc} -l`
-  is_jats=`${zipgrep} "//NLM//DTD JATS " ${zip_file} | ${wc} -l`
-  is_rsc=`${zipgrep} "//RSC//DTD RSC " ${zip_file} | ${wc} -l`
-  if [ ${is_jrnl} -eq 1 ]; then
-    abs_xsl="./Util/nlm_jats2opus_xml.xsl"
-    pkg_fmt="https://datahub.deepgreen.org/FilesAndJATS"
-  elif [ ${is_jats} -eq 1 ]; then
-    abs_xsl="./Util/nlm_jats2opus_xml.xsl"
-    pkg_fmt="https://datahub.deepgreen.org/FilesAndJATS"
-  elif [ ${is_rsc} -eq 1 ]; then
-    abs_xsl="./Util/rsc_rsc2opus_xml.xsl"
-    pkg_fmt="https://datahub.deepgreen.org/FilesAndRSC"
-  else
-    echo "error: no valid .xml (Journal or JATS or RSC) in zip archive found: stop."
-    exit -2
-  fi
-else
-  echo "error: no valid (or too many?!) .xml (Journal xor JATS xor RSC) in zip archive found: stop."
-  exit -3
-fi
-
-echo "`basename $0`: packaging format in zip archive found:"
-echo "`basename $0`: ${pkg_fmt}"
-
-tmp_dir=`${mktemp} -q -d`
-trap "rm -rf ${tmp_dir}" 0 2 3 15
-
-${unzip} -q ${zip_file} -d "${tmp_dir}/xfer"
-
-
-meta_xml="`ls -1 ${tmp_dir}/xfer/*.xml | ${head} -1`"
-${cat} ${meta_xml} | ${xmlstarlet} -q tr --omit-decl ${abs_xsl} | ${xml_pp} >"${tmp_dir}/opus.xml"
-for f in "${tmp_dir}"/xfer/*; do
-  [ "${f%.xml}" != "${f}" ] && continue
-  MD5=`${md5sum} --binary "${f}" | ${cut} -d" " -f1`
-  FL=`basename ${f}`
-  ${cat} "${tmp_dir}/opus.xml" | ${xmlstarlet} -q tr --omit-decl ${abs_xsl_add} -s md5="${MD5}" -s file="${FL}" | ${xml_pp} >"${tmp_dir}/tmp.xml"
-  mv "${tmp_dir}/tmp.xml" "${tmp_dir}/opus.xml"
-done
-rm -f ${meta_xml}
-## mv "${tmp_dir}/opus.xml" ${meta_xml}
-mv "${tmp_dir}/opus.xml" "${tmp_dir}/xfer/opus.xml"
-${zip} -j -r "${tmp_dir}/package.zip" "${tmp_dir}/xfer" 
-
-MD5=`${md5sum} --binary "${tmp_dir}/package.zip" | ${cut} -d" " -f1`
-echo "`basename $0`: md5sum: ${MD5}"
-
-if [ "${debug}" = "true" ]; then 
-  cp "${tmp_dir}/xfer/opus.xml" . 
-  cp "${tmp_dir}/package.zip" opus.zip
-  echo 
-  echo "Files 'opus.xml' and 'opus.zip' written to `pwd`"
-  echo
-  exit 1 
-fi
-
-## header="Content-Type: application/zip"
-
-echo
-echo ${curl} --verbose --header "Content-Type: application/zip" --header "Content-Disposition: filename=package.zip" --header "Content-MD5: ${MD5}" --data-binary "@${tmp_dir}/package.zip" -u "${user}:***" "${opus4_host}/${opus4_instance}/sword/deposit"
-${curl} --verbose --header "Content-Type: application/zip" --header "Content-Disposition: filename=package.zip" --header "Content-MD5: ${MD5}" --data-binary "@${tmp_dir}/package.zip" -u "${user}:${pw}" "${opus4_host}/${opus4_instance}/sword/deposit"
+``` xml
+<service>
+    …
+    <workspace>
+        …
+        <collection href="https:// [OPUS4-Servername]/[OPUS4-Instanz]/sword/index/index/Import/[Collection-Nummer]">
+            <atom:title>sword</atom:title>
+            …
 ```
+*[^1]: Bitte beachten Sie, dass dies nicht die Deposit-Adresse ist. Diese lautet in OPUS 4:  
+    `https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit`*
+
+Ist die Konfiguration falsch, fehlen das `href`-Attribut sowie das folgende 
+`<atom:title>`-Tag:
+
+``` xml
+<service>
+    …
+    <workspace>
+        …
+        <collection>
+            …
+```
+    
+Die weiteren Parameter zur SWORD-Schnittstelle in den Konfigurationsdateien dienen
+überwiegend dazu, beschreibende Angaben zu machen, die dann z.B.im Servicedokument
+angezeigt werden. Diese Angaben können hilfreich sein, um externen Datenlieferanten
+Informationen zur Konfiguration der Schnittstelle mitzuteilen. Die Bedeutung
+der beschreibenden Angaben ist in der Spezifikation von SWORD 1.3 erläutert
+(s. Link oben auf dieser Seite).
 
 
+## SWORD-Import mit cURL
+
+Es gibt keinen Standard-Client für den Zugriff auf die SWORD-Schnittstelle. Ohne zusätzlichen Aufwand lässt sie sich auf Kommandozeilenebene mit dem Tool cURL ansprechen, das sowohl unter Linux als auch Windows 10 standardmäßig vorhanden ist. Auch andere Tools wie z.B. die API-Entwicklungsplattform Postman eignen sich gut.
+ 
+Beim Aufruf von cURL sind mindestens diese Parameter anzugeben:
+* MIME-Type der zu importierenden Paket-Datei (`application/tar` oder `application/zip`)
+* Pfad zur Paket-Datei (mit führendem `@`-Zeichen)
+* Username und Passwort des SWORD-Accounts in OPUS
+* Deposit-URL der SWORD-Schnittstelle
+
+Darüber hinaus empfiehlt es sich, auch den Parameter `--verbose` zu setzen, um aussagekräftigere Rückmeldungen der Schnittstelle in der Kommandozeile und im Logfile zu erhalten. Die Protokollierung erfolgt im Standard-OPUS-Logfile.
+
+Die Syntax lautet:
+
+`curl --verbose --header "Content-Type: [MIME-Type]" --data-binary "@[Pfad zur Paket-Datei]" -u "[Username]:[Passwort]" "https:// [OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit"`
+
+Also z.B.:
+
+`curl --verbose --header "Content-Type: application/zip" --data-binary "@/verzeichnis/sword-import-paket.zip" -u "username:passwort" "https://meinbeipielserver.de/opus-instanz/sword/deposit"`
+
+Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully.` *N* `documents were imported.`
+
+In den über SWORD importierten Dokumenten werden Informationen in folgenden Enrichment-Feldern abgelegt:
+- opus.import.user : [user]
+- opus.import.date : [import date]
+- opus.import.file : [name of package]
+
+Es ist darauf zu achten, dass diese EnrichmentKeys existieren.
+
+
+## Beispiel-Skripte für NISO JATS
+
+Ein Beispiel für ein Bash-Skript mit eingebetteten XSLT-Skripten zur Konversion und zum Import von Daten für das Format NISO JATS findet sich [hier](jats.html).
