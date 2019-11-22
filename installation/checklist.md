@@ -10,8 +10,8 @@ wurden:
 
 ## Individualisierung der Oberfläche:
 
-* [Layout](layout.html) anpassen
-* [Startseite](startpage.html) anpassen
+* [Layout](../configext/layout.html) anpassen
+* [Startseite](../configext/startpage.html) anpassen
 * [Dokumenttypen](../config/doctype.html) wählen
 * [FAQ-Seite](../configext/faq.html) anpassen
 
