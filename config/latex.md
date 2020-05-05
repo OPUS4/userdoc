@@ -9,7 +9,10 @@ Latex-Formeln können in OPUS gerendert werden. Um das zu ermöglichen muss [Mat
 MathJax ist eine browserübergreifende, auf JavaScript basierende Bibliothek, die mathematische Formeln
 und Gleichungen in Webbrowsern, die LaTeX und MathML Markup beinhalten, grafisch darstellt. Sie wird
 als freie Software (Open-Source) unter Apache-Lizenz veröffentlicht.
-
+<p class="note">
+Für eine korrekte Anzeige des mathematischen Ausdrucks verwenden Sie bitte keine führenden Dollarzeichen "$" in der LaTeX-Formel. 
+</p>
+Weitere Informationen siehe MathJax-Dokumentation: [MathJax][MATHJAX]
 * [MathJax installieren](../installation/mathjax.html)
 {: class="navlist" }
 
