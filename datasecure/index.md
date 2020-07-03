@@ -1,6 +1,6 @@
 ---
 title: Datenschutz
-weight: 65
+weight: 120
 ---
 
 # Hinweise zum Datenschutz

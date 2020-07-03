@@ -1,6 +1,6 @@
 ---
 title: Migration von OPUS 3
-weight: 10
+weight: 100
 --- 
 
 # Migration von OPUS 3

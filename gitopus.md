@@ -1,6 +1,6 @@
 ---
 title: OPUS mit Git
-weight: 8
+weight: 90
 ---
 
 # OPUS mit Git
