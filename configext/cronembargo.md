@@ -9,9 +9,9 @@ nichts. Das Datum wird beim Zugriff auf Dateien für die Bestimmung der Berechti
  
 Damit ein Dokument, bei dem das Embargo abgelaufen ist, z.B. beim Harvesting durch die DNB auftaucht,
 muss ServerDateModified des Dokuments aktualisiert werden. Beim Harvesting werden in der Regel alle die
-Dokumente abgeholt die sich seit der letzten Abfrage verändert haben.
+Dokumente abgeholt, die sich seit der letzten Abfrage verändert haben.
 
-Für die notwendige Aktualisierung der Dokumente gibt es ein Script, das mit Hilfe von Cron, z.B. einmal
+Für die notwendige Aktualisierung der Dokumente gibt es ein Script, das mithilfe von Cron, z.B. einmal
 jede Nacht ausgeführt werden kann.
 
     $BASEDIR/scripts/cron/cron-embargo-update.php
