@@ -1,13 +1,15 @@
 ---
 title: Felder
+weight: 70
 ---
 
 # Felder
 
-OPUS4 liefert standardmäßig bereits über [50 Felder](../reference/fields.html) aus, die in den Dokumenttypen
-zur Erfassung von Metadaten verwendet werden können. Darüber hinaus können neue Felder definiert
-werden, um lokale oder sehr spezifische Sachverhalte abzuspeichern (z.B. eine lokale ID). Es gibt
-grundsätzlich zwei verschiedene [Ausprägungen von Feldern](../reference/templatefields.html):
+OPUS4 liefert standardmäßig bereits über [50 Felder](../reference/fields.html) aus, die in den 
+Dokumenttypen zur Erfassung von Metadaten verwendet werden können. Darüber hinaus können neue 
+Felder definiert werden, um lokale oder sehr spezifische Sachverhalte abzuspeichern (z.B. eine 
+lokale ID). Es gibt grundsätzlich zwei verschiedene 
+[Ausprägungen von Feldern](../reference/templatefields.html):
 
 * einfache Felder (dürfen pro Dokument nur einmal vorhanden sein)
 * Gruppenfelder (bestehen entweder aus mehr als einem Feld (siehe z.B. Title + Sprache) oder
@@ -16,46 +18,40 @@ grundsätzlich zwei verschiedene [Ausprägungen von Feldern](../reference/templa
 Da auch bei den Bezeichnungen der Felder (z.B. auf der Frontdoor oder im Veröffentlichungsformular)
 Übersetzungsressourcen zum Einsatz kommen, besteht die Möglichkeit vorhandene Felder umzubenennen.
 
-<p class="info" markdown="1">
-Die Bearbeitung von [Übersetzungsressourcen][TRANSLATIONS] sowie statischer Seiten ist seit
-Version 4.4 über die Opus4-Oberfläche möglich.
-</p>
-
 ## Vorbereitung
-
 
 Um lokale Anpassungen an den Bezeichnung von vorhandenen oder neuen Feldern vorzunehmen, ist
 es dringend empfehlenswert, sich lokale Sprachdateien in den entsprechenden Modulen anzulegen
 und nicht die ausgelieferten zu verändern. Der Vorteil bei lokalen Sprachdateien liegt darin, dass
 diese bei Updates erhalten bleiben.
 
-Bitte also die folgenden Sprachdateien einmalig im Verzeichnis
-`$BASEDIR/modules/publish/language_custom/` anlegen oder die mitgelieferte
-`example.tmx.template` wie im Kapitel [Übersetzungsressourcen][TRANSLATIONS] beschrieben modifizieren:
+Die Standardübersetzungen sind in folgenden Dateien definiert. 
 
-    my_field_header.tmx
-    my_field_hints.tmx
-    my_fieldnames.tmx
+    modules/publish/language/field_header.tmx
+    modules/publish/language/field_hints.tmx
+    modules/publish/language/fieldnames.tmx
+    modules/default/language/fieldnames.tmx
+    
+Anpassungen können in der [Übersetzungsverwaltung][TRANSLATIONS] vorgenommen werden. Die lokalen 
+Änderungen werden in der Datenbank gespeichert. Die TMX-Dateien sollten nicht editiert werden, das
+dies später Updates schwieriger machen kann. 
 
-Damit die geänderten Felder auch im Administrationsbereich korrekt angezeigt werden, muss
-folgende Datei im Verzeichnis `$BASEDIR/modules/default/language_custom/` angelegt
-werden:
+Die Schlüssel für Feldnamen haben in den meisten Fällen keinen Prefix, Hinweise beginnen mit `hint_`. 
 
-    my_fieldnames.tmx
+| Übersetzungen für | Präfix | Beispiel |
+|-----------+--------------|
+| Feldnamen | - | `CompletedYear` |
+| Hinweise | `hint_` | `hint_CompletedYear` |
+| Überschriften | `header_` | `header_CompletedYear` |
+| Gruppen | `group` | `groupPersonAuthor` |
+| Buttons | `button_label_` | `button_label_add_one_morePersonAuthor` |
 
-Sollen auch Gruppenfelder verändert bzw. neu angelegt werden, muss zusätzlich folgende Datei im
-Verzeichnis `$BASEDIR/modules/publish/language_custom/` angelegt werden:
+## Gruppenfelder
 
-    my_buttons.tmx
-
-Es ist vollkommen unerheblich, wie die Dateien heißen. Wichtig ist nur der Ablageort
-
-    $BASEDIR/modules/(modulname)/language_custom/
-
-Darüber hinaus ist es essentiell,
-dass die `.tmx`-Dateien in `UTF-8` codiert sind (um dies sicherzustellen, eignet sich z.B. der Open-
-Source-Editor Notepad++, bei dem vor der Bearbeitung einer Datei die Kodierung auf `UTF-8`
-umgestellt werden kann.
+Die Übersetzungen für Gruppenfelder fangen mit dem Präfix `button_label_` im Publish-Modul. Mit
+Hilfe der [Übersetzungsverwaltung][TRANSLATIONS] können sie editiert oder neue Schlüssel 
+hinzugefügt werden. Die Standardübersetzungen befinden sich in `buttons.tmx` Datei im 
+Publish-Modul.
 
 ## Felder umbenennen
 
@@ -67,154 +63,47 @@ Bei jedem Feld können die Übersetzungen an drei Stellen geändert werden, näm
 
 ![Fields](../img/admin/SC_Felder_umbenennen.jpg){:width="640px"}
 
-Im Folgenden werden die Änderungen am Bsp. des Feldes Note verdeutlicht.
+Im Folgenden werden die Änderungen am Bsp. des Feldes __Note__ verdeutlicht.
 
 ### 1. Titel / Überschrift des Feldes ändern
 
-Um den Titel des Feldes Note zu ändern, wird der Schlüssel `header_note` aus der Sprachdatei
-`$BASEDIR/modules/publish/language/field_header.tmx` in die Sprachdatei
-`$BASEDIR/modules/publish/language_custom/my_field_header.tmx` kopiert und wie
-folgt angepasst:
-
-Defaultwerte für Schlüssel vor der Anpassung:
-
-{% highlight xml %}
-<tu tuid="header_Note">
-  <tuv xml:lang="en">
-    <seg>Room for notices</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Platz für Notizen</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-Angepasste Überseztungen für die Schlüssel
-
-{% highlight xml %}
-<tu tuid="header_Note">
-  <tuv xml:lang="en">
-    <seg>If you want to tell us something...</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Wenn Sie uns etwas mitteilen möchten...</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
+Um den Titel des Feldes __Note__ zu ändern, muss der Schlüssel `header_Note`  angepasst werden.
 
 Bei Gruppenfeldern (z.B. Personen) muss für die Überschrift der Schlüssel `group<Feld>` geändert
 werden.
 
 ### 2. Hilfetext des Feldes ändern
 
-Um den Hilfetext des Feldes Note zu ändern, wird der Schlüssel `hint_note` aus der Sprachdatei
-`$BASEDIR/modules/publish/language/field_hints.tmx` in die Sprachdatei
-`$BASEDIR/modules/publish/language_custom/my_field_hints.tmx` kopiert und wie folgt
-angepasst:
-
-Defaultwerte für Schlüssel vor der Anpassung:
-
-{% highlight xml %}
-<tu tuid="hint_Note">
-  <tuv xml:lang="en">
-    <seg>Room for a notification ...</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Raum für Notizen und Benachrichtigungen ...</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-Angepasste Übersetzungen für die Schlüssel
-
-{% highlight xml %}
-<tu tuid="hint_Note">
-  <tuv xml:lang="en">
-    <seg>Please type something here ...</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Bitte schreiben Sie hier etwas ...</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
+Um den Hilfetext des Feldes __Note__ zu ändern, muss der Schlüssel `hint_note` editiert werden.
 
 Bei Gruppenfeldern (z.B. Personen) muss entsprechend der Schlüssel `hint_group<Feld>` geändert
 werden.
 
-<p class="warning">
+<p class="info">
 Die hier eingetragenen Hilfetexte werden gleichzeitig als Mous-Over-Texte der entsprechenden
 Eingabefelder angezeigt.
 </p>
 
 ### 3. Namen / Bezeichnung des Feldes ändern
 
-Um den Namen bzw. die Bezeichnung des Feldes Note zu ändern, wird der Schlüssel `note` aus der
-Sprachdatei `$BASEDIR/modules/publish/language/fieldnames.tmx` in die Sprachdatei
-`$BASEDIR/modules/publish/language_custom/my_fieldnames.tmx` kopiert und wie folgt
-angepasst:
-
-Ursprüngliche Bezeichnungen
-
-{% highlight xml %}
-<tu tuid="Note">
-  <tuv xml:lang="en">
-    <seg>Note</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Bemerkung</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-Angepasste Bezeichnungen
-
-{% highlight xml %}
-<tu tuid="Note">
-  <tuv xml:lang="en">
-    <seg>Notice</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Mitteilung</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-<p class="warning" markdown="1">
-Damit die geänderten Bezeichnungen der Felder auch im Administrationsbereich korrekt
-angezeigt werden, müssen die Schlüssel zusätzlich aus der Sprachdatei
-`$BASEDIR/modules/default/language/fieldnames.tmx` in die Sprachdatei
-`$BASEDIR/modules/default/language_custom/my_fieldnames.tmx` kopiert und
-entsprechend angepasst werden.
-</p>
+Um den Namen bzw. die Bezeichnung des Feldes __Note__ zu ändern, muss der Schlüssel `Note` 
+angepasst werden. Übersetzungsschlüssel für Felder von Dokumenten haben in der Regel keinen 
+Präfix. 
 
 ### Beschriftung der Buttons bei Gruppenfeldern
 
 Wurde die Bezeichnung eines Feldes geändert, ist es sinnvoll, auch die Beschriftung der
-dazugehörigen Buttons anzupassen. Hierfür müssen die entsprechenden beiden Schlüssel aus der
-Sprachdatei `$BASEDIR/modules/publish/language/buttons.tmx` in die Sprachdatei
-`$BASEDIR/modules/publish/language_custom/my_buttons.tmx` kopiert und wie folgt
+dazugehörigen Buttons anzupassen. Hierfür können die entsprechenden beiden Schlüssel
 angepasst werden:
 
-{% highlight xml %}
-<tu tuid="button_label_add_one_more<Feld>">
-  <tuv xml:lang="en">
-    <seg>Add one more <old fieldname></seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Eine weiteres <alter Feldname> hinzufügen</seg>
-  </tuv>
-</tu>
-<tu tuid="button_label_delete<Feld>">
-  <tuv xml:lang="en">
-    <seg>Delete the last <old fieldname></seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Das letzte <alter Feldname>löschen</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
+| Schlüssel | Beschreibung | Beispiel | 
+|-----------+--------------+----------| 
+| `button_label_add_one_more[FELDNAME]` | Hinzufügen  | `button_label_add_one_moreSubjectDDC` |  
+| `button_label_delete[FELDNAME]` | Entfernen | `button_label_deleteSubjectDDC` |
 
 ## Browsing-Felder
+
+TODO this does not belong on this page
 
 ### Browsing-Felder für Sammlungen
 
@@ -400,7 +289,7 @@ XML-Dokumenttypdefinition
 Dafür muss der gewünschte Dokumenttyp angepasst werden. Beispiel für ein Feld mit 4 Optionen:
 
 {% highlight xml %}
-<field name="NeuesSelectXYZ" required="no" formelement="Select" datatype="Enrichment" multiplicity="*" >
+<field name="NeuesSelectXYZ" required="no" formelement="Select" datatype="Enrichment" multiplicity="*">
   <option value="option1" />
   <option value="option2" />
   <option value="option3" />

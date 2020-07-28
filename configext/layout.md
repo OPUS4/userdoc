@@ -94,7 +94,6 @@ Die individuellen Anpassungen für das Logo müssen in folgenden Dateien erfolge
     width: 175px;
     background: white url(../img/logo/logo-inividuell.png) no-repeat right;
 }
-
 {% endhighlight %}
 
 * Änderung des Logo-Links in der Datei `$BASEDIR/application/configs/config.ini`
@@ -102,24 +101,12 @@ Die individuellen Anpassungen für das Logo müssen in folgenden Dateien erfolge
 {% highlight ini %}
 ; Link for main logo
 logoLink = https://www.domain-individuell.de/
-
 {% endhighlight %}
 
+* Änderung des Logo-Titels
 
-
-* Änderung des Logo-Titels in der Datei `$BASEDIR/modules/default/language_custom/default.tmx`
-
-{% highlight php %}
-<tu tuid="logo_title">
-    <tuv xml:lang="en">
-        <seg>Individueller Titel</seg>
-    </tuv>
-    <tuv xml:lang="de">
-        <seg>Individueller Titel</seg>
-    </tuv>
-</tu>
-
-{% endhighlight %}
+Der Übersetzungsschlüssel für den Title des Logos lautet `logo_title` und kann in der 
+[Übersetzungsverwaltung][TRANSLATIONS] editiert bzw. angelegt werden.
 
 ## Verwendung von 2 Logos
 
@@ -127,13 +114,13 @@ logoLink = https://www.domain-individuell.de/
 
 {% highlight text %}
 /* CSS for standard logo - modify to change logo*/
-#logo a{
+#logo a {
     height: 81px;
     width: 175px;
     background: white url(../img/logo/logo-individuell-1.png) no-repeat right;
 }
 
-#logo a.logo2{
+#logo a.logo2 {
     height: 81px;
     width: 171px;
     background: white url(../img/logo/logo-individuell-2.png) no-repeat right;
@@ -149,29 +136,6 @@ logoLink = https://www.domain-individuell-1.de/
 logoLink2 = https://www.domain-individuell-2.de/
 {% endhighlight %}
 
-* Eintrag beider Titel in der Datei `$BASEDIR/modules/default/language_custom/default.tmx`
-
-{% highlight php %}
-<tu tuid="logo_title">
-    <tuv xml:lang="en">
-        <seg>Individueller Titel-1</seg>
-    </tuv>
-    <tuv xml:lang="de">
-        <seg>Individueller Titel-1</seg>
-    </tuv>
-</tu>
-
-<tu tuid="logo2_title">
-    <tuv xml:lang="en">
-        <seg>Individueller Titel-2</seg>
-    </tuv>
-    <tuv xml:lang="de">
-        <seg>Individueller Titel-2</seg>
-    </tuv>
-</tu>
-
-{% endhighlight %}
-
 
 * Eintrag des 2. Logos mit dem Attribut class="logo2" in der Datei `$BASEDIR/public/layouts/mylayout/common.phtml`
 
@@ -181,3 +145,7 @@ logoLink2 = https://www.domain-individuell-2.de/
     <a class="logo2" href="<?= $this->optionUrl('logoLink2') ?>" title="<?= $this-> translate('logo2_title') ?>"</a>	
 </h1>
 {% endhighlight %}
+
+Für den Titel des zweiten Logos kann in der Übersetzungsverwaltung ein weiterer Schlüssel angelegt werden.
+
+[TRANSLATIONS]: ../translation/index.html

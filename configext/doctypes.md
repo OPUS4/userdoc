@@ -481,26 +481,9 @@ Beschreibungen der [Dokumenttypen](../documenttypen/index.html) entnommen werden
 
 ## Dokumenttypen umbenennen
 
-Um Dokumenttypen umzubenennen, muss der entsprechende Schlüssel aus der Datei
-`$BASEDIR/modules/default/language/doctypes.tmx` in die Datei
-`$BASEDIR/modules/default/language_custom/my_doctypes.tmx` kopiert und angepasst
-werden:
-
-{% highlight xml %}
-<tu tuid="movingimage">
-  <tuv xml:lang="en">
-    <seg>Video</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Video</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-<p class="note" markdown="1">
-Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in [Übersetzungsressourcen](translations.html) beschrieben.
-</p>
+Um Dokumenttypen umzubenennen, muss die entsprechende [Übersetzung][TRANSLATIONS] angepasst werden. 
+Die Übersetzungsschlüssel für Dokumenttypen entsprechen den Namen der Typen, also z.B. `article` oder
+`movingimage`.
 
 ## Neuen Dokumenttyp anlegen
 
@@ -526,20 +509,9 @@ Danach ergänzen bzw. entfernen Sie die Felder.
 * [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufgenentfernen)
 {: class="navlist" }
 
-Nach dem Erstellen eines neuen Dokumenttyps muss in der Datei
-`modules/default/language_custom/my_doctypes.tmx` ein entsprechender Eintrag ergänzt
-werden:
-
-{% highlight xml %}
-<tu tuid="mydocumenttype">
-  <tuv xml:lang="en">
-    <seg>New Documenttype</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Neuer Dokumenttyp</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
+Damit der neue Dokumenttyp in allen Sprachen mit einer korrekten Bezeichnung angezeigt wird, muss
+in der [Übersetzungsverwaltung][TRANSLATIONS] ein neuer Übersetzungsschlüssel angelegt werden, der
+dem Namen des Dokumenttyp entspricht, also z.B. `mydocumenttype`.
 
 ### BibTeX Export von neuen Dokumenttypen
 
@@ -608,3 +580,5 @@ folgende Fehlermeldung:
 
     given xml document type definition for document type beispiel is not
     valid
+
+[TRANSLATIONS]: ../translation/index.html
