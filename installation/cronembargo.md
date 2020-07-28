@@ -1,5 +1,6 @@
 ---
 title: Cronjob für Embargo-Updates
+weight: 320
 ---
 
 # Cronjob für Embargo-Updates

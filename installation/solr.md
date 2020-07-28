@@ -1,5 +1,6 @@
 ---
 title: Apache Solr
+weight: 30
 ---
 
 # Apache Solr installieren
