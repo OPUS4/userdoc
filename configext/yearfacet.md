@@ -57,4 +57,17 @@ momentan mehrere redundante Varianten das Verhalten der Jahr-Facette zu verände
 in kommenden Releases die Befüllung von `published_year` und `completed_year` nicht mehr die `Date`-Felder 
 berücksichtigen wird.
 </p> 
+
+### Beispiel
+
+Die Konfiguration, um `CompletedDate` für die Jahr-Facette zu verwenden und dabei das jüngste Jahr zuerst 
+anzuzeigen, würde wie folgt aussehen.
+
+{% highlight ini %}
+searchengine.solr.facets = author_facet,year,doctype, ...
+
+search.facet.year.indexField = 'year_inverted'
+search.facet.year.sort = 'lexi'
+search.index.field.year.order = 'CompletedDate'
+{% endhighlight %}
      
