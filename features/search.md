@@ -65,3 +65,7 @@ In den Browsern Chrome und Chromium funktioniert dies nur, wenn die
 Suchseite direkt über eine Domain ohne weiteren Pfad aufgerufen werden
 kann. Also zum Beispiel: ´https://myrepo.org/´ und **nicht** ´https://mydomain.org/myrepo´.
 </p>
+
+## Konfiguration
+
+Die 
