@@ -1,6 +1,6 @@
 ---
 title: Cronjob zur Cache-Revalidierung
-weight: 300
+weight: 650
 ---
 
 # Cronjob zur Cache-Revalidierung

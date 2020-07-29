@@ -1,6 +1,6 @@
 ---
 title: MathJax installieren
-weight: 65
+weight: 600
 ---
 
 # MathJax installieren

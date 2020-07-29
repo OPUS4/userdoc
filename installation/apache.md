@@ -1,6 +1,6 @@
 ---
 title: Apache Webserver
-weigth: 10
+weight: 100
 ---
 
 # Apache Webserver

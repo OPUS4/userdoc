@@ -1,6 +1,6 @@
 ---
 title: Installationsskript
-weight: 50
+weight: 150
 ---
 
 # Installationsskript
