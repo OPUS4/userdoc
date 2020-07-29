@@ -1,5 +1,6 @@
 ---
-title: Anpassung der Jahr-Facette
+title: Jahr-Facette
+weight: 30
 --- 
 
 # Anpassung der Jahr-Facette
@@ -27,11 +28,14 @@ Es gibt folgende Felder im Index, die für die Jahr-Facette verwendet werden kö
 | `completed_year`          | Verwendet `CompeletedDate` oder `CompletedYear` in dieser Reihenfolge. |
 | `completed_year_inverted` | Umgekehrte Reihenfolge von `completed_year`. |
 
+## Absteigend Sortierung
+
 Jedes dieser Felder kann als Wert für `search.facet.year.indexField` verwendet werden. Mithilfe der `_inverted` Felder
 kann man dafür sorgen, dass das jüngste Jahr zuerst angezeigt wird. Dazu muss man zusätzlich die Sorting der Facette
-konfigurieren, so dass die Reihenfolge nicht mehr durch die Anzahl der gefunden Dokumente bestimmt wird.
+konfigurieren, damit die Reihenfolge nicht mehr durch die Anzahl der gefunden Dokumente bestimmt wird.
 
-    searchengine.solr.sortcrit.year_inverted = lexi
+    search.facet.year.indexField = published_year_inverted
+    search.facet.year.sort = lexi
 
 ## Konfiguration der Indizierung von `year`
 
