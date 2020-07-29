@@ -35,7 +35,7 @@ Es ist auch möglich an der Dokumentation mitzuarbeiten. Weitere Hinweise dazu f
 auf der Hauptseite des [Git-Repositoriums][GITREPO] für dieses Online-Handbuch.
 
 [GNUGPL]: http://www.gnu.org/copyleft/gpl.html
-[OPUS4]: http://opus4.kobv.de
+[OPUS4]: https://www.kobv.de/entwicklung/software/opus-4/
 [OPUS4PDF]: https://www.kobv.de/wp-content/uploads/2015/03/kobv_opus_dokumentation_version-4.4.4_de.pdf
 [GITHUB]: https://github.com/opus4
 [DEVDOC]: https://opus4.github.io
