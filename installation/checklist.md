@@ -10,16 +10,16 @@ wurden:
 
 ## Individualisierung der Oberfläche:
 
-* [Layout](../configext/layout.html) anpassen
-* [Startseite](../configext/startpage.html) anpassen
+* [Layout](../config/layout.html) anpassen
+* [Startseite](../translation/startpage.html) anpassen
 * [Dokumenttypen](../config/doctype.html) wählen
-* [FAQ-Seite](../configext/faq.html) anpassen
+* [FAQ-Seite](../translation/faq.html) anpassen
 
 ## Rechtliches:
 
-* [Impressum](../configext/imprintpage.html) einstellen
-* [Kontaktinformationen](../configext/contactspage.html) einstellen
-* [Leitlinien](../configext/policies.html) (inkl. Deposit Licence / Rechtseinräumung und Haftungsausschluss) einstellen
+* [Impressum](../translation/imprintpage.html) einstellen
+* [Kontaktinformationen](../translation/contactspage.html) einstellen
+* [Leitlinien](../config/policies.html) (inkl. Deposit Licence / Rechtseinräumung und Haftungsausschluss) einstellen
 * [Lizenzen](../admin/licences.html) anpassen
 
 ## Weiteres
@@ -31,11 +31,11 @@ wurden:
 * **Wenn die maximale Dateigröße und die Anzahl der hochladbaren Dateien angepasst, sowie weitere als die
   Standard-Dateiformate für den Upload erlaubt werden sollen:**
 
-  Einstellungen für [Dateien](../configext/upload.html) anpassen
+  Einstellungen für [Dateien](../publish/upload.html) anpassen
 
 * **Wenn die OAI-Schnittstelle genutzt werden soll:**
 
-  [OAI-Parameter](../config/configini.html#oai-export) eintragen, OAI-Schnittstelle aktivieren
+  [OAI-Parameter](../export/oaiexport.html#oai-export) eintragen, OAI-Schnittstelle aktivieren
 
 * **Wenn Hochschulschriften per XMetaDissPlus an die DNB geliefert werden sollen:**
 
@@ -47,7 +47,7 @@ wurden:
 
 * **Wenn die Bibliographiefunktion genutzt werden soll:**
 
-  [Bibliographiefunktion](../config/configini.html#bibliographiefunktion) aktivieren
+  [Bibliographiefunktion](../publish/publish.html#bibliographiefunktion) aktivieren
 
 <p class="info" markdown="1">
 Es wäre schön, wenn Sie uns nach der Liveschaltung eine kurze Nachricht an `opus4@kobv.de` mit der
