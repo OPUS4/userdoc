@@ -19,8 +19,8 @@ Diese Funktion ermöglicht es, nach Dokumenten anhand des Dokumenttyps zu browse
 mit einer Reihe in der Beschreibungssprache XML formulierten [Dokumenttypen](../documenttypes/index.html) ausgeliefert.
 Diese können editiert und neue Typen können hinzugefügt werden.
 
-* [Dokumenttypen ändern](../configext/doctypes.html)
-* [Dokumenttypen hinzufügen](../configext/doctypes.html#neuen-dokumenttyp-anlegen)
+* [Dokumenttypen ändern](../config/doctypes.html)
+* [Dokumenttypen hinzufügen](../config/doctypes.html#neuen-dokumenttyp-anlegen)
 {: class="navlist" }
 
 ## Schriftenreihen

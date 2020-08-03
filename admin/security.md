@@ -50,7 +50,7 @@ zwei Nutzerrollen:
 * administrator (besitzt uneingeschränkt alle Rechte und kann nicht verändert werden)
 * guest (darf: suchen, browsen, veröffentlichen, veröffentlichte nicht-zugriffsgeschützte Dokumente
   sehen, nicht-zugriffsgeschützte Dateien herunterladen,
-  exportieren, RSS exportieren, erlaubt das [Indexieren durch Webcrawler](../configext/crawler.html)).
+  exportieren, RSS exportieren, erlaubt das [Indexieren durch Webcrawler](../integration/crawler.html)).
 
 ### Anlegen einer neuen Nutzerrolle
 
