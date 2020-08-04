@@ -5,8 +5,6 @@ weight: 60
 
 # Sprachen
 
-TODO translation
-
 Unter diesem Menüpunkt können die Sprachen verwaltet werden, die beim Veröffentlichungsprozess
 und beim Editieren der Metadaten eines Dokuments zur Auswahl stehen sollen. Für das Anlegen
 neuer Sprachen müssen entsprechende ISO-Werte der ISO-Normen 639-2 und 639-1 eingetragen
@@ -27,8 +25,8 @@ Die ISO-Werte der ISO-Normen 639-2 und 639-1 können z.B. bei der
 [Library of Congress](http://www.loc.gov/standards/iso639-2/php/code_list.php) abgerufen werden.
 </p>
 
-Für die Übersetzung von Sprachbezeichnungen in der Oberfläche werden PHP-Funktionen verwendet (OPUS 4.7+), so dass es 
-nicht notwendig ist Übersetzungsschlüssel für neue Sprachen hinzuzufügen.
+Für die Übersetzung von Sprachbezeichnungen in der Oberfläche werden PHP-Funktionen verwendet (OPUS 4.7+). Damit ist es 
+nicht notwendig Übersetzungsschlüssel für neue Sprachen hinzuzufügen.
 
 <p class="warning">
 Sprachen können deaktiviert werden! Werden vorhandene Sprachen nicht benötigt, genügt es,

@@ -7,7 +7,7 @@ weight: 10
 
 OPUS4 benutzt für die Suche und das Browsing Apache Solr, das lokal installiert sein muss. Die
 Standardwerte der Solr-Parameter für den Index (`searchengine.index`) und für die Textextraktion
-(`searchengine.extract`) werden im Kapitel 'Installation und Konfiguration des Solr-Servers<!--TODO-->'
+(`searchengine.extract`) werden auf der Seite [Apache Solr installieren](../installation/solr.html)
 erläutert. Wird für Index und Textextraktion der gleiche Solr-Server benutzt, müssen auch für beide
 Bereiche die gleichen Parameter eingetragen werden.
 

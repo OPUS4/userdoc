@@ -103,8 +103,6 @@ angepasst werden:
 
 ## Browsing-Felder
 
-TODO this does not belong on this page
-
 ### Browsing-Felder für Sammlungen
 
 Für die Auswahl von Sammlungen im Veröffentlichungsformular können Browsing-Felder ("Drill-Down-

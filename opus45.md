@@ -15,10 +15,6 @@ die Installation und das Update von OPUS 4 Instanzen. Git ist hervoragend geeign
 zwei Version von Software Sourcen aufzulösen. Es wird in Zukunft einen großen Teil des Update-Skriptes ersetzen.
 Die Installation und Updates werden mit Git-Anweisungen durchgeführt werden.
 
-<!-- TODO link installation -->
-<!-- TODO link updates -->
-
-
 ## Composer
 
 In Zunkunft wird [Composer](https://getcomposer.org) eingesetzt werden, um die Abhängigkeiten von OPUS 4 zu verwalten.
@@ -34,13 +30,6 @@ Pakete werden auf [Packagist.org](https://packagist.org) gehostet. Die OPUS Pake
 Der Code für die Migration von OPUS 3 wurde aus der normalen OPUS 4 Release entfernt und in ein eigenes
 Repository [migration](https://github.com/opus4/migration) auf GitHub verschoben. Die Migration wird in Zukunft eine
 optionale Komponente sein, die bei Bedarf installiert werden kann.
-
-
-
-## Changes
-
-<!-- TODO link CHANGES -->
-
 
 [GITHUB]: https://github.com/OPUS4
 

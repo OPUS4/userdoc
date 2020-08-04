@@ -34,8 +34,6 @@ Das so angelegte benutzerdefinierte Feld kann nun in den gewünschten Dokumentty
 werden. Wie diese Felder in den Dokumenttyp aufgenommen werden ist in der Konfiguration
 beschrieben.
 
-TODO links anpassen (Inhalt passt nicht vollständig in den Übersetzungsbereich)
-
 * [Einfache Textfelder neu anlegen](../translation/fields.html#einfache-textfelder-neu-anlegen)
 * [Select-Felder neu anlegen](../translation/fields.html#select-felder-neu-anlegen)
 

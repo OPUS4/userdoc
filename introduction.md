@@ -75,7 +75,7 @@ Für weitere Informationen zu URNs konsultieren Sie bitte die Richtlinien zu [Pe
 OPUS4 akzeptiert in den Formularfeldern nur Zeichen, die im XML-1.0-Standard erlaubt sind. Werden Sonderzeichen
 (z.B. per Copy-Paste) in die Formularfelder eingetragen, die in XML-1.0 nicht erlaubt sind (in Hexadezimal lauten sie
 `[\x00-\x08\x0B\x0C\x0E-\x1F]`), dann werden diese
-Zeichen für die Frontdoor durch das Mojibake-Zeichen "TODO" ersetzt, das in UTF-8 für nicht darstellbare Zeichen
+Zeichen für die Frontdoor durch das Mojibake-Zeichen (&#65533;) ersetzt, das in UTF-8 für nicht darstellbare Zeichen
 benutzt wird.
 
 ## Bibliographiefunktion
