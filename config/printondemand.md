@@ -29,7 +29,7 @@ printOnDemand.button =
 Bei dem Parameter `printOnDemand.url` wird die URL eines Anbieters eingetragen. Optional kann
 für den Parameter `printOnDemand.button` eine Bild-Datei für einen Button eingetragen werden.
 Diese Datei muss im `image`-Ordner (`$BASEDIR/public/layouts/<LAYOUTNAME>/img/`) des
-verwendeten [Layouts](../configext/layout.html) abgelegt werden.
+verwendeten [Layouts](../config/layout.html) abgelegt werden.
 Bsp:
 
 {% highlight ini %}

@@ -29,6 +29,7 @@ dem Klick auf "Hinzufügen" ausgefüllt werden (Pflichtfelder sind orange markie
 | Parameter | Erläuterung |
 |-----------+-------------|
 | **Name*** | der Name der Sammlung, z.B. "Neue Sammlung"
+| Angezeigter Name | Übersetzungen der neuen Sammlung |
 | **Bezeichnung des OAI-Sets*** | Muss ausgefüllt werden, wenn die Sammlung über OAI-PMH 146 ausgeliefert werden soll. Die Bezeichnung des OAI-Sets kann beliebig sein, aber: erlaubte Zeichen: A-Za-z0-9-_.!~*'() |
 | Sortierreihenfolge | legt fest, welche Position die neue Sammlung in der Anzeige bekommt, standardmäßig wird die neue Sammlung ganz unten angelegt |
 | sichtbar | Sammlung ist vollständig sichtbar / unsichtbar (Vgl. weiter unten in diesem Kapitel "Sichtbarkeit") Wird hier das Häkchen entfernt, (z.B. um eine Änderung an der Sammlung vorzunehmen), so gilt dies global (für Browsing, Frontdoor und OAI) |
@@ -44,27 +45,6 @@ Administrationsbereich "Sammlungen verwalten" angezeigt:
 Falls notwendig, kann sie durch einen Klick auf "Editieren" bearbeitet werden. Auch die Sortierung
 kann mit den Pfeilen "Hoch" und "Runter" angepasst werden. Mit dem Befehl "Ausblenden" wird die
 Sammlung in der Frontdoor nicht angezeigt, der Name der Sammlung wird rot gekennzeichnet.
-
-Nach dem Speichern wird der Name der Sammlung in der Administration, im Browsing und auf der
-Frontdoor so angezeigt, wie er in der Datenbank gespeichert ist (in diesem Beispielfall:
-"Testsammlung"), da für die neue Sammlung noch keine Übersetzung existiert. Damit neu angelegte
-Sammlungen im Browsing und in der Frontdoor in allen verfügbaren Sprachen korrekt (Standard
-deutsch und englisch) angezeigt werden, muss die Übersetzungsdatei
-`$BASEDIR/modules/default/language_custom/my_collectionroles.tmx`
-angelegt (einmalig) und folgender Eintrag aufgenommen werden:
-
-Bsp.:
-
-{% highlight xml %}
-<tu tuid="default_collection_role_Testsammlung">
-  <tuv xml:lang="en">
-    <seg><My new Testcollection></seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg><Meine neue Testsammlung></seg>
-  </tuv>
-</tu>
-{% endhighlight %}
 
 ## Anlegen eines neuen Sammlungseintrags
 
@@ -86,30 +66,28 @@ Wenn nötig, kann man den Sammlungeintrag über "Editieren" bearbeiten, wieder "
 mit "Ausblenden" in der Frontdoor unsichtbar schalten. Sind mehrere Sammlungseinträge vorhanden,
 kann auch die Sortierreihenfolge mit den Pfeilen "Hoch" und "Runter" verändert werden.
 
+Sammlungseinträge können momentan nicht in die verschiedenen Sprachen der Oberfläche übersetzt werden.
+
 ## Sammlungen umbenennen
 
-Übersetzung
+Im Edit-Formular der entsprechenden Sammlung lassen sich die Übersetzungen für eigene und auch Standardsammlungen
+editieren. 
 
-Soll eine standardmäßig ausgelieferte Übersetzung angepasst werden, so muss zunächst per
-Tooltip der interne Übersetzungsschlüssel der betreffenden Sammlung (CollectionRole) ermittelt
-werden. Dieser wird angezeigt, wenn man in der Übersicht der Sammlungen im
-Administrationsbereich mit der Maus auf die gewünschte Sammlung zeigt:
-
-Dann den so ermittelten Schlüssel aus der Datei in die Datei `modules/default/language_custom/browsing.tmx`
-kopieren und eine neue Übersetzung festlegen.
-
-Sammlungseinträge können bislang nicht übersetzt werden.
+Die Schlüssel für Sammlungen entsprechen folgendem Format `default_collection_role_NAME`, also z.B.
+`default_collection_role_ddc` oder `default_collection_role_Testsammlung`. Diese Schlüssel können auch in der 
+[Übersetzungsverwaltung][TRANSLATIONS] editiert werden.
 
 ## Sortierreihenfolge ändern
 
-Browsing
+### Browsing
 
 Die Reihenfolge der Sammlungen im Browsing entspricht der angezeigten Reihenfolge im Bereich
 "Sammlungen" in der Administration. Soll also die Reihenfolge der Sammlungen im Browsing
 geändert werden, genügt es, diese im Administrationsbereich nach oben oder unten zu verschieben.
 Gleiches gilt für Sammlungseinträge.
 
-Frontdoor
+### Frontdoor
+
 Standardmäßig wird eine neu erstellte Sammlung "Testsammlung" immer an letzter Stelle aller
 Sammlungen in der Frontdoor eines Dokuments angezeigt. Soll die Reihenfolge der Sammlungen
 geändert werden, muss in der Datei `$BASEDIR/modules/frontdoor/views/scripts/index/index_custom.xslt`
@@ -119,7 +97,8 @@ das folgende Statement
 
 im Bereich
 
-    <!-- Collection Roles Section: add the collection roles keys that have to be displayed in frontdoor -->
+    <!-- Collection Roles Section: add the collection roles keys 
+         that have to be displayed in frontdoor -->
     ...
     <!-- End Collection Roles -->
 
@@ -202,3 +181,5 @@ Daraus ergibt sich für die Abfrage der Dokumente der folgende Link:
 Um sich eine Übersicht über die verfügbaren OAI-Sets zu verschaffen, kann man in der
 Administration im Bereich "OAI-Link" 169 den Link "OAI Anfrage mit dem Verb ListSets" anklicken.
 Eine Beispielausgabe liefert der Link "OAI Anfrage mit dem Verb ListRecords (mit OAI-Set)".
+
+[TRANSLATIONS]: ../translation/translations.html

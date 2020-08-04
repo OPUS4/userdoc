@@ -1,8 +1,9 @@
 ---
-title: Solr Verbindung
----
+title: Solr-Verbindung
+weight: 10
+--- 
 
-# Search Engine
+# Solr-Verbindung
 
 OPUS4 benutzt für die Suche und das Browsing Apache Solr, das lokal installiert sein muss. Die
 Standardwerte der Solr-Parameter für den Index (`searchengine.index`) und für die Textextraktion
@@ -29,7 +30,7 @@ searchengine.extract.app =
 
 <p class="warning" markdown="1">
 Die alten Konfigurationsparameter funktionierten weiterhin, so daß existierdene `config.ini` Dateien auch mit
-OPUS 4.5 verwendet werden können. Die Kompatiblität zu den alten Parametern könnte in Zukunft abgeschaltet werden.
+OPUS 4.5 verwendet werden können. Die Kompatibilität zu den alten Parametern könnte in Zukunft abgeschaltet werden.
 Bei der Installation einer neuen Instanz werden die neuen Parameter verwendet.
 </p>
 
@@ -67,10 +68,7 @@ searchengine.solr.default.service.search.endpoint.localhost.path =
 
 |Service | Beschreibung |
 |--------|------|
-| default | Defaultverbindung für alle Services |
+| default | Standardverbindung für alle Services |
 | index | Verbindung für Indizierung |
 | extract | Verbindung für die Extraktion von Volltexten |
-| search | Verbindung für die Suchefunktionen |
-
-
-
+| search | Verbindung für die Suchfunktionen |

@@ -2,7 +2,50 @@
 title: Dokumenttypen
 ---
 
-# Dokumenttypen
+# Dokumenttyp Einstellungen
+
+In der `$BASEDIR/application/configs/config.ini` besteht die Möglichkeit, Einstellungen an den Dokumenttypen
+vorzunehmen. Es kann definiert werden, welche Dokumenttypen dem Benutzer zur Auswahl stehen sollen (`include`). Ist
+dieser Parameter auskommentiert, werden alle Dokumenttypen angezeigt. Sollen nur einzelne Dokumenttypen nicht
+angezeigt werden, können diese durch `exclude` ausgeschlossen werden.
+
+{% highlight ini %}
+; DOCUMENTTYPE SETTINGS
+; You can define which document types should be shown in the publish module or
+; which ones should be excluded (comma separated names of XML files without
+; extension). If you don't set documentTypes.include and documentTypes.exclude
+; all document types will be shown.
+documentTypes.include = preprint, doctype1
+documentTypes.exclude = doctype2
+{% endhighlight %}
+
+Darüber hinaus kann über `documentTypes.templates` für ausgewählte Dokumenttypen angegeben werden, welches Template für
+die Formulargenerierung benutzt werden soll.
+
+{% highlight ini %}
+; Use to configure templates names that do not match the document type name
+documentTypes.templates.preprint = defaulttmpl
+documentTypes.templates.doctype1 = doctype2
+{% endhighlight %}
+
+<p class="info">
+Um diese Funktion nutzen zu können, müssen die Templates, für die der gleiche Dokumenttyp benutzt werden soll,
+identische Felder enthalten.
+</p>
+
+Die folgenden Parameter werden beim Veröffentlichen (Publish-Modul) unter [Dateien](../publish/upload.html)
+näher erläutert.
+
+{% highlight ini %}
+; publish.maxfilesize defines the allowed maximum size of a file.
+; This does not changes any values of your Apache or php.ini. Please assure
+; the values in your Apache or php settings are big enough.
+publish.maxfilesize = 10240000
+; publish.filetypes.allowed defines which filetypes can be uploaded in publication form
+publish.filetypes.allowed = pdf,txt,html,htm,jpg
+{% endhighlight %}
+
+# Dokumenttypen anpassen
 
 OPUS4 liefert standardmäßig 21 vordefinierte [Dokumenttypen](../documenttypes/index.html) aus.
 Jeder Dokumenttyp besteht aus einer XML-Dokumenttypdefinition und einem Template.
@@ -380,7 +423,7 @@ als Bsp. kann hier das Template des Testdokumenttyps "all" unter
 {% endhighlight %}
 
 Schließlich sollten noch die erläuterten Sprachdateien (Überschrift und Name des
-Feldes, Hilfetext) angepasst werden (siehe auch [Leitlinien](../configext/policies.html)).
+Feldes, Hilfetext) angepasst werden (siehe auch [Leitlinien](policies.html)).
 
 * [Felder umbenennen](fields.html#felder-umbenennen)
 {: class="navlist" }
@@ -481,26 +524,9 @@ Beschreibungen der [Dokumenttypen](../documenttypen/index.html) entnommen werden
 
 ## Dokumenttypen umbenennen
 
-Um Dokumenttypen umzubenennen, muss der entsprechende Schlüssel aus der Datei
-`$BASEDIR/modules/default/language/doctypes.tmx` in die Datei
-`$BASEDIR/modules/default/language_custom/my_doctypes.tmx` kopiert und angepasst
-werden:
-
-{% highlight xml %}
-<tu tuid="movingimage">
-  <tuv xml:lang="en">
-    <seg>Video</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Video</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-<p class="note" markdown="1">
-Die Bearbeitung von Übersetzungsressourcen sowie statischer Seiten ist seit Version 4.4 über
-die Opus4-Oberfläche möglich. Näheres dazu ist in [Übersetzungsressourcen](translations.html) beschrieben.
-</p>
+Um Dokumenttypen umzubenennen, muss die entsprechende [Übersetzung][TRANSLATIONS] angepasst werden. 
+Die Übersetzungsschlüssel für Dokumenttypen entsprechen den Namen der Typen, also z.B. `article` oder
+`movingimage`.
 
 ## Neuen Dokumenttyp anlegen
 
@@ -526,20 +552,9 @@ Danach ergänzen bzw. entfernen Sie die Felder.
 * [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufgenentfernen)
 {: class="navlist" }
 
-Nach dem Erstellen eines neuen Dokumenttyps muss in der Datei
-`modules/default/language_custom/my_doctypes.tmx` ein entsprechender Eintrag ergänzt
-werden:
-
-{% highlight xml %}
-<tu tuid="mydocumenttype">
-  <tuv xml:lang="en">
-    <seg>New Documenttype</seg>
-  </tuv>
-  <tuv xml:lang="de">
-    <seg>Neuer Dokumenttyp</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
+Damit der neue Dokumenttyp in allen Sprachen mit einer korrekten Bezeichnung angezeigt wird, muss
+in der [Übersetzungsverwaltung][TRANSLATIONS] ein neuer Übersetzungsschlüssel angelegt werden, der
+dem Namen des Dokumenttyp entspricht, also z.B. `mydocumenttype`.
 
 ### BibTeX Export von neuen Dokumenttypen
 
@@ -608,3 +623,5 @@ folgende Fehlermeldung:
 
     given xml document type definition for document type beispiel is not
     valid
+
+[TRANSLATIONS]: ../translation/index.html

@@ -1,57 +1,9 @@
 ---
-title: Übersetzungsressourcen
+title: Übersetzungsverwaltung
+weight: 20
 ---
 
-# Übersetzungsressourcen
-
-OPUS4 arbeitet mit Übersetzungsressourcen, die es ermöglichen, in der Applikation zwischen
-verschiedenen Sprachen umzuschalten. Diese Übersetzungsressourcen (Schlüssel) werden in
-Sprachdateien (`.tmx`-Dateien) verwaltet. OPUS4 liefert für OPUS-Module, in denen
-Übersetzungsressourcen angepasst werden können, ein Verzeichnis
-
-    $BASEDIR/(modulname)/language_custom/
-
-mit aus. Beim Laden der Sprachdateien gilt folgende Reihenfolge:
-
-1. modules/default/language/*.tmx
-2. modules/default/language_custom/*.tmx
-3. modules/(modulname)/language/*.tmx
-4. modules/(modulname)/language_custom/*.tmx
-
-Das heißt, dass ein Schlüssel, der in 1 existiert, in 2 durch einen individuellen Text überschrieben
-werden kann. Ein Schlüssel, der in 3 existiert, überschreibt in dem speziellen Modul mögliche
-Schlüsseldefinitionen aus 1 und 2. Ein individueller Schlüssel aus 4 überschreibt für das spezielle
-Modul alle Definitionen aus 1 bis 3. Generell müssen Übersetzungsschlüssel nur dann im Modul
-default geändert / erstellt werden, wenn sie "modulübergreifend" genutzt werden sollen (z.B. im Fall
-der Namen der Dokumenttypen).
-
-## Aufbau der Schlüssel und Bearbeitung
-
-Im Verzeichnis `$BASEDIR/(modulname)/language_custom/` existiert bereits eine
-Beispielsprachdatei `example.tmx.template`, die als Vorlage genutzt werden kann und bereits einen
-Beispielschlüssel enthält. Anhand dieses Beispielschlüssels wird im Folgenden der grundlegende
-Aufbau eines Übersetzungsschlüssels in einer `.tmx`-Datei erläutert:
-
-{% highlight xml %}
-<tu tuid="example_key"> <!-- Übersetzungsschlüssels -->
-  <tuv xml:lang="en"> <!-- Sprache: english -->
-    <seg>Text that should be shown.</seg>
-  </tuv>
-  <tuv xml:lang="de"><!-- Sprache: deutsch -->
-    <seg>Text der angezeigt werden soll.</seg>
-  </tuv>
-</tu>
-{% endhighlight %}
-
-Die gewünschten Texte können direkt in den entsprechenden `.tmx`-Dateien editiert werden. Für
-Hilfetexte (FAQ) existiert zusätzlich die Möglichkeit, diese in Textdateien in das Verzeichnis
-`$BASEDIR/application/configs/help` auszulagern.
-
-Nach der Bearbeitung der .tmx-Datei wird die Endung `.template` entfernt und sie wird wieder im
-Verzeichnis `$BASEDIR/(modulname)/language_custom/` gespeichert. Es können beliebig
-viele `.tmx`-Dateien angelegt werden. Dateien in diesem Verzeichnis werden bei einem Update nicht
-überschrieben und die geänderten Schlüssel behalten weiter ihre Gültigkeit. Deshalb sollten
-Übersetzungsschlüssel ausschließlich an dieser Stelle geändert werden.
+# Übersetzungsverwaltung
 
 ## Bearbeitung von Übersetzungsressourcen und statischen Inhalten über die Oberfläche
 
@@ -122,26 +74,7 @@ Alle Dateien mit der Endung `.txt` im Verzeichnis:
 
     $BASEDIR/application/configs/help/
 
-### 3. Statische Seiten (Hauptseite, Kontaktinformationen, Impressum)
-
-Hier können die Startseite, die Kontaktdaten und das Impressum angepasst werden.
-Dafür sind folgende Schreibrechte erforderlich:
-
-    $BASEDIR/application/configs/help/<Seitenname>.de.txt
-    $BASEDIR/application/configs/help/<Seitenname>.en.t t
-
-    $BASEDIR/modules/home/language_custom/<Seitenname>.tmx (wenn bereits vorhanden, ansonsten das Verzeichnis)
-
-Dabei ist `<Seitenname>` jeweils durch `home`, `contact` oder `imprint` zu ersetzen.
-
-<p class="warning" markdown="1">
-Bei Änderungen an den Übersetzungsschlüsseln werden die geänderten Übersetzungen in den
-Dateien `$BASEDIR/modules/home/language_custom/<Seitenname>.tmx` gespeichert.
-Sind in diesem Verzeichnis bereits anders benannte Dateien angelegt, die die gleichen Schlüssel
-beinhalten, dann kann es sein, dass die Änderung nicht übernommen wird.
-</p>
-
-### 4. Anzeige und Bearbeitung von Übersetzungsschlüssen
+### 4. Anzeige und Bearbeitung von Übersetzungsschlüsseln
 
 Über eine Suchfunktion können aus allen Übersetzungsschlüsseln diejenigen herausgefiltert werden,
 in denen der Suchbegriff vorkommt. Dabei bezieht sich die Suche bisher auf den Namen des

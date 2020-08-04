@@ -39,3 +39,8 @@ Diese Anpassungen erfordern häufig das Editieren oder Hinzufügen von weiteren 
 Modifizieren der `config.ini` hinaus.
 
 [INSTALL]:../installation/index.html
+
+TODO expand
+
+* [Dokumententypen erstellen und editieren](doctypes.html)
+{: class="navlist" }

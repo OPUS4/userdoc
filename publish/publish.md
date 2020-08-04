@@ -52,4 +52,4 @@ Sollte kein Interesse bestehen, dieses Feld anzuzeigen, entfernen Sie bitte den 
 Parameter in Ihrer `config.ini` und setzen Sie den Wert auf `0`. Für den Fall, dass nur bei bestimmten
 Dokumenttypen das Ankreuzen der Checkbox für das Einräumen eines Nutzungsrechts verpflichtend
 sein soll, besteht die Möglichkeit, die Checkbox direkt in den Dokumenttyp aufzunehmen (Siehe auch
-[Grundlage: Templates](../configext/doctypes.html#grundlage-templates)).
+[Grundlage: Templates](../config/doctypes.html#grundlage-templates)).

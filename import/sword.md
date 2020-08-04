@@ -185,7 +185,9 @@ der beschreibenden Angaben ist in der Spezifikation von SWORD 1.3 erläutert
 
 ## SWORD-Import mit cURL
 
-Es gibt keinen Standard-Client für den Zugriff auf die SWORD-Schnittstelle. Ohne zusätzlichen Aufwand lässt sie sich auf Kommandozeilenebene mit dem Tool cURL ansprechen, das sowohl unter Linux als auch Windows 10 standardmäßig vorhanden ist. Auch andere Tools wie z.B. die API-Entwicklungsplattform Postman eignen sich gut.
+Es gibt keinen Standard-Client für den Zugriff auf die SWORD-Schnittstelle. Ohne zusätzlichen Aufwand lässt sie sich auf
+Kommandozeilenebene mit dem Tool cURL ansprechen, das sowohl unter Linux als auch Windows 10 standardmäßig vorhanden 
+ist. Auch andere Tools wie z.B. die API-Entwicklungsplattform Postman eignen sich gut.
  
 Beim Aufruf von cURL sind mindestens diese Parameter anzugeben:
 * MIME-Type der zu importierenden Paket-Datei (`application/tar` oder `application/zip`)
@@ -193,17 +195,20 @@ Beim Aufruf von cURL sind mindestens diese Parameter anzugeben:
 * Username und Passwort des SWORD-Accounts in OPUS
 * Deposit-URL der SWORD-Schnittstelle
 
-Darüber hinaus empfiehlt es sich, auch den Parameter `--verbose` zu setzen, um aussagekräftigere Rückmeldungen der Schnittstelle in der Kommandozeile und im Logfile zu erhalten. Die Protokollierung erfolgt im Standard-OPUS-Logfile.
+Darüber hinaus empfiehlt es sich, auch den Parameter `--verbose` zu setzen, um aussagekräftigere Rückmeldungen der 
+Schnittstelle in der Kommandozeile und im Logfile zu erhalten. Die Protokollierung erfolgt im Standard-OPUS-Logfile.
 
 Die Syntax lautet:
 
-`curl --verbose --header "Content-Type: [MIME-Type]" --data-binary "@[Pfad zur Paket-Datei]" -u "[Username]:[Passwort]" "https:// [OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit"`
+    curl --verbose --header "Content-Type: [MIME-Type]" --data-binary "@[Pfad zur Paket-Datei]" -u "[Username]:[Passwort]" "https:// [OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit"
 
 Also z.B.:
 
-`curl --verbose --header "Content-Type: application/zip" --data-binary "@/verzeichnis/sword-import-paket.zip" -u "username:passwort" "https://meinbeipielserver.de/opus-instanz/sword/deposit"`
+    curl --verbose --header "Content-Type: application/zip" --data-binary "@/verzeichnis/sword-import-paket.zip" -u "username:passwort" "https://meinbeipielserver.de/opus-instanz/sword/deposit"
 
-Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in der Form `Import finished successfully.` *N* `documents were imported.`
+Der Import hat funktioniert, wenn auf der Kommandozeile keine Fehlermeldung zurückgeliefert wird. Im OPUS-Logfile findet
+sich für jedes erfolgreich importierte Dokument der Eintrag `... OK` sowie abschließend eine zusammenfassende Meldung in
+der Form `Import finished successfully.` *N* `documents were imported.`
 
 In den über SWORD importierten Dokumenten werden Informationen in folgenden Enrichment-Feldern abgelegt:
 - opus.import.user : [user]
@@ -215,4 +220,5 @@ Es ist darauf zu achten, dass diese EnrichmentKeys existieren.
 
 ## Beispiel-Skripte für NISO JATS
 
-Ein Beispiel für ein Bash-Skript mit eingebetteten XSLT-Skripten zur Konversion und zum Import von Daten für das Format NISO JATS findet sich [hier](jats.html).
+Ein Beispiel für ein Bash-Skript mit eingebetteten XSLT-Skripten zur Konversion und zum Import von Daten für das Format 
+NISO JATS findet sich [hier](jats.html).

@@ -28,17 +28,12 @@ defaults:
     scope:
       path: "config"
     values:
-      sort: "title"
-  -
-    scope:
-      path: "configext"
-    values:
-      sort: "title"
+      sort: "weight"
   -
     scope:
       path: "installation"
     values:
-      sort: "title"
+      sort: "weight"
 
-plugins:
+plugins-dir:
   - jekyll-sitemap

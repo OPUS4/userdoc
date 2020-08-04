@@ -1,5 +1,5 @@
 ---
-title: Vorausetzungen
+title: Voraussetzungen
 weight: 10
 ---
 

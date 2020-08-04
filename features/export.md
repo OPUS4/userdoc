@@ -11,8 +11,8 @@ Es gibt in OPUS die folgenden Möglichkeiten, Metadaten zu exportieren:
 2. Export über die Frontdoor im BibTeX-, RIS- und XML-Format
 
 <p class="note" markdown="1">
-In der Standardauslieferung ist der Zugriff auf das Modul nur für Administratoren erlaubt. Soll der Zugriff weiteren Personen
-erlaubt sein, muss die ihnen zugewiesene Rolle das Recht erhalten, auf das Modul `export` zuzugreifen. Die
+In der Standardauslieferung ist der Zugriff auf das Modul nur für Administratoren erlaubt. Soll der Zugriff weiteren 
+Personen erlaubt sein, muss die ihnen zugewiesene Rolle das Recht erhalten, auf das Modul `export` zuzugreifen. Die
 Einstellungen der [Zugriffskontrolle](../admin/security.html) können in der Administration vorgenommen werden.
 </p>
 
@@ -23,10 +23,11 @@ Nutzerrollen mit dem Recht `export` zur Verfügung.
 
 ## Export über Ergebnislisten von Suche und Browsen
 
-Für die Ergebnislisten von Suche und Browsen kann in der Oberfläche ausgewählt werden, wie viele Dokumente auf einer Seite 
-angezeigt werden (10 = default, 20, 50, 100). Im Standard ist der Export für normale Nutzer auf 100 Dokumente und für eingeloggte 
-Nutzer auf 500 Dokumente begrenzt (dafür ist der Rows-Parameter in der URL anzupassen). Um diese Standardwerte zu ändern, 
-können die folgenden Parameter von der `$BASEDIR/application/configs/application.ini` in die `config.ini` übernommen und angepasst werden:
+Für die Ergebnislisten von Suche und Browsen kann in der Oberfläche ausgewählt werden, wie viele Dokumente auf einer 
+Seite angezeigt werden (10 = default, 20, 50, 100). Im Standard ist der Export für normale Nutzer auf 100 Dokumente und
+für eingeloggte Nutzer auf 500 Dokumente begrenzt (dafür ist der Rows-Parameter in der URL anzupassen). Um diese 
+Standardwerte zu ändern, können die folgenden Parameter von der `$BASEDIR/application/configs/application.ini` in die
+`config.ini` übernommen und angepasst werden:
 
 {% highlight ini %}
 ; PLUGINS
@@ -34,8 +35,8 @@ plugins.export.default.maxDocumentsGuest = 100
 plugins.export.default.maxDocumentsUser = 500
 {% endhighlight %}
 
-Der angemeldete Administrator kann für eine unbegrenzte Anzahl von Dokumenten Metadaten exportieren. Dafür ist der Rows-Parameter 
-in der URL anzupassen.
+Der angemeldete Administrator kann für eine unbegrenzte Anzahl von Dokumenten Metadaten exportieren. Dafür ist der 
+Rows-Parameter in der URL anzupassen.
 
 ## Export im XML-Format
 

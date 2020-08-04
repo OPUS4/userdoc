@@ -1,5 +1,6 @@
 ---
 title: Workspace
+weight: 160
 ---
 
 # Workspace

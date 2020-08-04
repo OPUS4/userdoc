@@ -5,10 +5,11 @@ weight: 10
 
 # HTML-Meta-Tags in der Frontdoor
 
-OPUS gibt die Metadaten zu einem Dokument in der Frontdoor auch in maschinenlesbarer Form aus. Sie werden im HTML-Quellcode
-in Meta-Tags gemäß den beiden Standards [*Dublin Core*](http://www.dublincore.org/specifications/dublin-core/dcmi-terms/) 
-sowie den *Highwire Press Tags* abgebildet. Letztere empfiehlt u.a. Google, um eine gute Indexierung des eigenen 
-Repositoriums in Google Scholar zu erzielen. Die Generierung der Highwire Press Tags in OPUS basiert auf den 
+OPUS gibt die Metadaten zu einem Dokument in der Frontdoor auch in maschinenlesbarer Form aus. Sie werden im 
+HTML-Quellcode in Meta-Tags gemäß den beiden Standards 
+[*Dublin Core*](http://www.dublincore.org/specifications/dublin-core/dcmi-terms/) sowie den *Highwire Press Tags* 
+abgebildet. Letztere empfiehlt u.a. Google, um eine gute Indexierung des eigenen Repositoriums in Google Scholar zu 
+erzielen. Die Generierung der Highwire Press Tags in OPUS basiert auf den 
 [Inclusion Guidelines for Webmasters](https://scholar.google.de/intl/de/scholar/inclusion.html) für Google Scholar und 
 berücksichtigt weitere Spezifikationen wie jene im Aufsatz "Invisible institutional repositories: addressing the low 
 indexing ratios of IRs in Google".[^1]
