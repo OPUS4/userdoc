@@ -5,63 +5,80 @@ weight: 100
 
 # Wartung des Index
 
-TODO Aufruf vereinfachen
+Für die Wartung des Index kann das Skript `opus4` im `bin`-Verzeichnis verwendet werden. Mit folgendem Aufruf wird
+die Hilfe für die Indexierung angezeigt.
 
-TODO Sicherheitsabfrage vor neuindexierung (override option für Batchmode)
+    $ bin/opus4 help index:index
+    
+Um sich alle verfügbaren Kommandos anzeigen zu lassen, kann man das `list`-Kommando verwenden.
 
-TODO Indexieren ohne Volltext
-
-TODO Was tun bei Problemen?
-
-Für die Wartung des Index gibt es das Skript `SolrIndexBuilder.php`. Das Skript befindet sich im `scripts` Verzeichnis.
-Dort kann es direkt aufgerufen werden. 
-
-    $ cd scripts
-    $ ./SolrIndexBuilder.php -h
+    $ bin/opus4 list   
     
 ## Dokumente indexieren
 
-Wird das Skript ohne Argument aufgerufen werden alle Dokumente neu indexiert.
+Wird das Index-Kommando ohne Argumente aufgerufen, werden alle Dokumente neu indexiert. Dabei werden dann vorher
+sämtliche Dokumente aus dem Index entfernt. 
 
-    $ ./SolrIndexBuilder.php
 
-Ein einzelnes Dokument kann durch die Angabe seiner Idee indexiert werden.
-
-    $ ./SolrIndexBuilder.php 155
+    $ bin/opus4 index:index
     
-Durch Angabe einer End-ID kann ein Block von Dokumenten indexiert werden.
-
-    $ ./SolrIndexBuilder.php 40 60
-
-Sollte die zweite ID kleiner als die erste sein, werden die Werte automatisch vertauscht.    
+Das Kommando kann auch kürzer geschrieben werden.    
     
-Wird statt einer ID das Zeichen `*` verwendet, werden alle Dokumente vom Anfang bzw. bis zum Ende indexiert.
+    $ bin/opus4 i:i
 
-    $ ./SolrIndexBuilder.php * 100
+Ein einzelnes Dokument kann durch die Angabe seiner ID indexiert werden. Sollte die ID nicht existieren gibt es eine
+entsprechende Fehlermeldung.
+
+    $ bin/opus4 index:index 155
     
-    $ ./SolrIndexBuilder.php 100 *  
+Durch Angabe einer Anfangs- und einer End-ID kann ein Block von Dokumenten indexiert werden. Sollte die zweite ID 
+kleiner sein als die erste, werden die Werte automatisch vertauscht.    
+
+    $ bin/opus4 index:index 40 60
     
-### Optionen für die Indexierung               
+Wird statt einer ID ein Bindestrich (`-`) verwendet, werden alle Dokumente vom Anfang bzw. bis zum Ende indexiert.
 
-## Dokumente entfernen
+    $ bin/opus4 index:index - 100
+    
+    $ bin/opus4 index:index 100 -  
+    
+### Optionen für die Indexierung
 
-Mit der Option `-r` bzw. `--remove` kann man Dokumente aus dem Index entfernen. Wie beim Indexieren können einzelne
+#### Index optimieren
+
+Um den Index nach der Indexierung zu optimieren, kann die Option `-o` bzw. `--optimize` verwendet werden.
+
+    $ bin/opus4 index:index -o
+    
+#### Blocksize
+    
+Mit der Option `-b` bzw. `--blocksize` kann bestimmt werden wie viele Dokumente auf einmal zum Solr-Server geschickt 
+werden sollen.
+
+Das Bündeln von Dokumenten erhöht die Performanz. Es kann allerdings zu Problemen kommen, wenn die Indexierung eines 
+Dokuments fehlschlägt und dadurch alle Dokumente im Block nicht indexiert werden. Das kann unter anderem passieren,
+wenn die Volltexte der Dokumente besonders groß sind. In diesem Fall kann man die Blockgröße auf `1` setzen, damit 
+jedes Dokument separat indexiert wird.      
+
+    $ bin/opus4 index:index -b=1
+    
+    $ bin/opus4 index:index --blocksize=1
+
+## Dokumente aus dem Index entfernen
+
+Mit dem Kommando `index:remove` kann man Dokumente aus dem Index entfernen. Wie beim Indexieren können einzelne
 Dokumente oder ganze Blöcke entfernt werden.
 
-    $ ./SolrIndexBuilder.php -r 45
-    $ ./SolrIndexBuilder.php --remove 245 839
+    $ bin/opus4 index:remove 45
+    
+    $ bin/opus4 i:r 245 839
     
 Ein Aufruf ohne ID entfernt alle Dokumente aus dem Index.
 
-    $ ./SolrIndexBuilder.php --remove
+    $ bin/opus4 index:remove
 
 ## Index optimieren
 
-Um den Index nach der Indexierung zu optimieren kann die Option `-o` bzw. `--optimize` verwendet werden.
+Um nur die Optimierung des Index ohne eine Neuindexierung durchzuführen, kann das Kommando `optimize` verwendet werden.
 
-    $ ./SolrIndexBuilder.php -o
-    
-Um nur die Optimierung des Index ohne eine Neuindexierung durchzuführen kann das Kommando `optimize` verwendet werden.
-
-    $ ./SolrIndexBuilder.php optimize     
-
+    $ bin/opus4 optimize     
