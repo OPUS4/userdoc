@@ -50,12 +50,19 @@ Wird statt einer ID ein Bindestrich (`-`) verwendet, werden alle Dokumente vom A
     
 ### Optionen für die Indexierung
 
-#### Index optimieren
+#### Dokumente for der Indexierung entfernen
 
-Um den Index nach der Indexierung zu optimieren, kann die Option `-o` bzw. `--optimize` verwendet werden.
+Um die Dokumente vor der Indexierung aus dem Index zu löschen, kann die Option `--remove` bzw. `-r` verwendet werden.
 
-    $ bin/opus4 index:index -o
+    $ bin/opus4 index:index -r
     
+Die Option kann nützlich sein, um sicherzustellen, dass bei einer vollständigen Neuindexierung keine alten, nicht mehr     
+existierenden Dokumente im Index verbleiben. Diese Situation könnte eintreten, wenn beim Löschen von Dokumenten der 
+Index nicht aktualisiert werden konnte.
+
+Eine Neuindexierung ohne vorheriges Löschen hat den Vorteil, dass der Index während der Indexierung weiter genutzt
+werden kann.
+     
 #### Blocksize
     
 Mit der Option `-b` bzw. `--blocksize` kann bestimmt werden wie viele Dokumente auf einmal zum Solr-Server geschickt 
@@ -69,7 +76,7 @@ jedes Dokument separat indexiert wird.
     $ bin/opus4 index:index -b=1
     
     $ bin/opus4 index:index --blocksize=1
-
+    
 ## Dokumente aus dem Index entfernen
 
 Mit dem Kommando `index:remove` kann man Dokumente aus dem Index entfernen. Wie beim Indexieren können einzelne
