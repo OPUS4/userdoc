@@ -82,9 +82,3 @@ Dokumente oder ganze Blöcke entfernt werden.
 Ein Aufruf ohne ID entfernt alle Dokumente aus dem Index.
 
     $ bin/opus4 index:remove
-
-## Index optimieren
-
-Um nur die Optimierung des Index ohne eine Neuindexierung durchzuführen, kann das Kommando `optimize` verwendet werden.
-
-    $ bin/opus4 optimize     
