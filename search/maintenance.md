@@ -10,6 +10,11 @@ die Hilfe für die Indexierung angezeigt.
 
     $ bin/opus4 help index:index
     
+Für das Index-Kommando gibt es außerdem den Alias `index`, damit es auch ohne Angabe den Namespaces aufgerufen 
+werden kann.
+
+    $ bin/opus4 index    
+    
 Um sich alle verfügbaren Kommandos anzeigen zu lassen, kann man das `list`-Kommando verwenden.
 
     $ bin/opus4 list   
@@ -19,10 +24,11 @@ Um sich alle verfügbaren Kommandos anzeigen zu lassen, kann man das `list`-Komm
 Wird das Index-Kommando ohne Argumente aufgerufen, werden alle Dokumente neu indexiert. Dabei werden dann vorher
 sämtliche Dokumente aus dem Index entfernt. 
 
-
+    $ bin/opus4 index
     $ bin/opus4 index:index
     
-Das Kommando kann auch kürzer geschrieben werden.    
+Das Kommando kann auch kürzer geschrieben werden. Falls ein Kommando durch die Kürzung nicht mehr eindeutig ist,
+gibt das Skript einen entsprechenden Hinweis aus.
     
     $ bin/opus4 i:i
 
