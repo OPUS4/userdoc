@@ -29,7 +29,7 @@ searchengine.extract.app =
 {% endhighlight %}
 
 <p class="warning" markdown="1">
-Die alten Konfigurationsparameter funktionierten weiterhin, so daß existierdene `config.ini` Dateien auch mit
+Die alten Konfigurationsparameter funktionierten weiterhin, so daß existierende `config.ini` Dateien auch mit
 OPUS 4.5 verwendet werden können. Die Kompatibilität zu den alten Parametern könnte in Zukunft abgeschaltet werden.
 Bei der Installation einer neuen Instanz werden die neuen Parameter verwendet.
 </p>
@@ -72,3 +72,32 @@ searchengine.solr.default.service.search.endpoint.localhost.path =
 | index | Verbindung für Indizierung |
 | extract | Verbindung für die Extraktion von Volltexten |
 | search | Verbindung für die Suchfunktionen |
+
+### Timeouts bei der Extraction/Indexierung
+
+Bei sehr grossen Dateien kann es bei der Volltextextraktion zu Timeouts kommen. Die Timeouts
+lassen sich konfigurieren. 
+
+{% highlight ini %}
+searchengine.solr.default.service.default.endpoint.localhost.timeout = 10
+searchengine.solr.default.service.extract.endpoint.localhost.timeout = 10
+{% endhighlight %}
+
+Die Extraktion dauert wesentlich länger als die Indexierung. Daher wird ein Volltextcache
+verwendet, der verhindert, dass die Dateien bei jeder Indexierung erneut extrahiert werden müssen.
+Das hilft natürlich nicht bei der Indexierung von neu hinzugefügten Dokumenten, z.B. im 
+Publish-Modul.
+
+Um bei einer Neuindexierung mit `SolrIndexBuilder.php` keine Probleme mit Timeouts zu haben, 
+können dieser für die Skripte auch komplett abgeschaltet werden in dem man die entsprechenden
+Einträge zur Datei {{console.ini}} hinzufügt. Für den normalen Betrieb gelten dann immer noch
+die Einstellungen aus der {{config.ini}} bzw. 5 Sekunden als Defaultwert.
+
+{% highlight ini %}
+searchengine.solr.default.service.default.endpoint.localhost.timeout = 0
+searchengine.solr.default.service.extract.endpoint.localhost.timeout = 0
+{% endhighlight %}
+
+Um Problem mit Timeouts im Betrieb, bei der Anzeige von Webseiten nach der Indexierung eines
+Dokuments zu vermeiden, kann die [asynchrone Indexierung](../config/jobs.html) verwendet werden.
+
