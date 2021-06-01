@@ -8,9 +8,11 @@ weight: 110
 OPUS unterstützt folgende Import-Verfahren:
 
 * Import von Metadaten auf Kommandozeilenebene
-* Import von Metadaten und Volltextdateien in gepackter Form über eine SWORD-Schnittstelle (Simple Webservice Offering Repository Deposit).
+* Import von Metadaten und Volltextdateien in gepackter Form über eine SWORD-Schnittstelle (Simple Webservice Offering 
+  Repository Deposit).
+* Import von Dokumentmetadaten aus BibTeX-Datei
 
-Für beide Verfahren gilt, dass die Metadaten in OPUS-XML gemäß dem Import-Schema vorliegen müssen:
+Für die ersten beiden Verfahren gilt, dass die Metadaten in OPUS-XML gemäß dem Import-Schema vorliegen müssen:
 <br />
 <http://www.opus-repository.org/schema/opus-import.xsd>
 
