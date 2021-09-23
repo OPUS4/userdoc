@@ -18,7 +18,7 @@ Einstellungen der [Zugriffskontrolle](../admin/security.html) können in der Adm
 
 Seit OPUS Version 4.4.4 gibt es die Möglichkeit, einen Button für den Export nach XML auf der Frontdoor und auf den
 Ergebnisseiten von Suche und Browsen anzuzeigen. Dieser Button wird über Parameter in der `config.ini` aktiviert, wie in
-[Export Einstellungen](../config/export.html) beschrieben, und steht dann für den Administrator und für alle
+[Export Einstellungen](../export/index.html) beschrieben, und steht dann für den Administrator und für alle
 Nutzerrollen mit dem Recht `export` zur Verfügung.
 
 ## Export über Ergebnislisten von Suche und Browsen

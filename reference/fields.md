@@ -120,6 +120,12 @@ geachtet werden, dass die URN aus dem eigenen Namensraum kommt.
 * ORCID
 * Interne ID
 
+<p class="note" markdown="1">
+In manchen Kulturkreisen kann die Namensbezeichnung der Person nur aus einem Namen bestehen.
+Auch bei Persönlichkeiten aus anderen Epochen (z.B. bei Digitalisaten)kann es vorkommen, dass der Name nur aus einem s.g. Givenname besteht.
+Wenn kein Vorname zur Namensbezeichnung zugehörig ist, dann muss der Eintrag ins Feld "Nachname" erfolgen. 
+</p>
+
 ## Klassifikationen
 
 | Feld | Label | Beschreibung |
