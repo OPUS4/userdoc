@@ -99,8 +99,8 @@ z.B.
 </dc:creator>
 {% endhighlight %}
 
-`<dcterms:isPartOf>` - Pflichtelement für alle periodischen Veröffentlichungen, wie z.B. Jahrbücher, Amtsblätter etc. Dieses Element erwartet als Attribute die Angabe einer Schriftenreihe und einer Bandnummer,
-die dann als `<ZSTitelID>` und als `<ZS-Ausgabe>` übergeben werden.
+`<dcterms:isPartOf>` - Pflichtelement für alle periodischen Veröffentlichungen beim Dokumenttyp "PeriodicalPart", wie z.B. Jahrbücher, Amtsblätter etc. Dieses Element erwartet als Attribute `<ZSTitelID>` und `<ZS-Ausgabe>`. In der OPUS-Standardauslieferung können diese Angaben mit der Zuordnung zu einer Schriftenreihe und einer Bandnummer 
+übergeben werden. Im Attribut "ddb:ZSTitelID" erscheint dann die ID der Schriftenreihe, über welche die DNB den Bezug zum Dokument herstellt.
 {% highlight ini %}
 z.B.
 <dcterms:isPartOf xsi:type="ddb:ZSTitelID" >250</dcterms:isPartOf>
@@ -117,5 +117,5 @@ marc21.isil= <ISIL der Bibliothek eingeben>
 ; default value used to set subfield a of MARC field 264
 marc21.publisherCity= <Ist nur erforderlich, wenn kein DNB-Institut angelegt ist>
 ; default value used to set subfield b of MARC field 264
-marc21.publisherName=
+marc21.publisherName= <Ist nur erforderlich, wenn kein DNB-Institut angelegt ist>
 {% endhighlight %}
