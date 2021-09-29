@@ -9,7 +9,7 @@ weight: 110
 
 ## Installation
 
-Unter Ubuntu kann MySQL mit folgendem Kommando installiert werden. Für OPUS wird mindestens die Version 5.1
+Unter Ubuntu kann MySQL mit folgendem Kommando installiert werden. Für OPUS wird mindestens die Version 5.6
 vorausgesetzt.
 
     sudo apt-get install mysql-server
@@ -21,7 +21,7 @@ Um die Datenbank für OPUS 4 zu erstellen logged man sich als MySQL Root Nutzer 
 Kommandos aus.
 
 {% highlight sql %}
-create database opusdb default character set = utf8 default collate = utf8_general_ci;
+create database opusdb default character set = UTF8MB4 default collate = UTF8MB4_UNICODE_C;
 {% endhighlight %}
 
 Der *opus4admin* Nutzer wird verwendet um die Datenbank zu initialisieren.
@@ -38,6 +38,16 @@ create user 'opus4'@'localhost' identified by '<passwd>';
 grant select,insert,update,delete on opusdb.* to 'opus4'@'localhost';
 {% endhighlight %}
 
+## Hinweise für MYSQL-DB ab Ver.8 
+
+<p class="note" markdown="1">
+Die Default-Passwort-Regelung hat sich in MYSQL-Ver. 8 verändert.
+OPUS Vers. 4.7 erwartet noch die alte Password-Regelung! In der Config-Datei von MYSQL kann auf die alte Password-Regelung zurückgesetzt werden.
+</p>
+
+    vi /etc/mysql/mysql.conf.d/mysqld.cnf
+    default-authentication-plugin=mysql_native_password
+
 ## MariaDB
 
 OPUS 4 funktioniert auch mit MariaDB.
@@ -51,4 +61,3 @@ Informationen können in der
 [Dokumentation von MariaDB](https://mariadb.com/kb/en/mariadb/server-system-variables/#max_allowed_packet)
 gefunden werden.
 </p>
-

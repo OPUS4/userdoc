@@ -13,14 +13,14 @@ einer Software verwalten und synchronisieren zu können.
 <p class="note">
 Die folgende Anleitung bezieht sich auf ein Ubuntu System. Momentan ist 
 Ubuntu auch das einzige Linux, das vom Installationsskript direkt 
-unterstützt wird. OPUS 4.5 kann aber auch mit anderen Distributionen 
+unterstützt wird. OPUS 4 kann aber auch mit anderen Distributionen 
 betrieben werden, indem die einzelne Schritte der Installation manuell 
 ausgeführt werden.
 </p>
 
 ## Voraussetzungen
 
-Bevor OPUS 4 installiert werden kann müssen einige Voraussetzungen 
+Bevor OPUS 4 installiert werden kann, müssen einige Voraussetzungen 
 erfüllt sein.
 
 * [Git](requirements.html#git-installieren)
