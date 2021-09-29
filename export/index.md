@@ -10,6 +10,6 @@ weight: 109
 
 * [OAI Export](oaiexport.html)
   
-* [Publiaktionslisten](publists.html)
+* [Publikationslisten](publists.html)
 
-* [Exportsettings](export.html)
+* [Export Settings](export.html)
