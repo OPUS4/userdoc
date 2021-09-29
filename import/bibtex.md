@@ -106,6 +106,13 @@ BibTeX-Records aufgeteilt. Tritt dabei ein Fehler auf, z. B. weil die zu import
 BibTeX-Standard ist, so wird der Import beendet. Es wird eine Fehlermeldung ausgegeben, die weitere Details zum Fehler,
 beispielsweise die Zeilennummer, enthält.
 
+**Hinweis:** Enthält die BibTeX-Datei einen Eintrag mit Unterstrich `_`, muss dieser speziell maskiert werden mit `\url{...}`.
+Beispiel: 
+```ini
+code = {\url{https://beispiel.url.de/mit_unterstrich}},
+doi = {\url{doi.prefix/1234_67890}},
+```
+
 Nach dem erfolgreichen Parsen der BibTeX-Datei erzeugt ein **BibTeX-Processor** aus jedem BibTeX-Record auf Basis der
 beim Aufruf des Imports angegebenen Konfigurationseinstellungen (siehe oben) ein OPUS4-Metadatendokument.
 
