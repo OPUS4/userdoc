@@ -30,6 +30,8 @@ erfüllt sein.
 * [Apache 2](apache.html)
 * [MySQL](database.html)
 * [Apache Solr](solr.html)
+* [Mailserver](requirements.html#mailserver)
+* [Pandoc](requirements.html#pandoc)
 {: class="navlist" }
 
 ## Git clone
