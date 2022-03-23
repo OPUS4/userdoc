@@ -8,19 +8,32 @@ Seit der Version 4.6.2 bietet OPUS4 eine Unterstützung für die automatische Ge
 Object Identifiern (DOI). Eine DOI ist ein eindeutiger und persistenter Identifikator für beliebige Objekte, z.B. eine
 Publikation oder ein Forschungsdatensatz (Datei). Die Granularitätsebene, auf der DOIs vergeben werden, ist nicht 
 vorgegeben. Die Implementierung in OPUS verknüpft DOIs allerdings auf der Ebene der OPUS-Dokumente, d.h. einzelne 
-Dateien eines OPUS-Dokuments können keine separaten DOIs erhalten. DOIs können von akademischen Institutionen, wie 
-Universitäten und Hochschulen, mit dem Fokus auf Forschungsdaten beim DataCite-Konsortium kostenfrei registriert werden.
-In Deutschland ist hierfür die Technische Informationsbibliothek (TIB) in Hannover als DataCite-Konsortialmitglied 
-zuständig. Vor der Aktivierung der DOI-Registrierung in OPUS muss ein entsprechender Vertrag mit der TIB geschlossen 
-werden. In diesem Zusammenhang teilt die TIB der beantragenden Institution ein sogenanntes **DOI-Präfix** zu, 
-beispielsweise `10.5072`.
+Dateien eines OPUS-Dokuments können keine separaten DOIs erhalten. DOIs können von akademischen Institutionen,
+wie Universitäten und Hochschulen, über eine direkte [DataCite Mitgliedschaft](https://datacite.org/become.html)
+oder über ein DataCite-DOI-Konsortium registriert werden. In Deutschland gibt es zur Zeit (Stand März 2022)
+fünf DataCite-DOI-Konsortien (alphabetische Reihenfolge):
+
+* [DARA Konsortium](https://www.da-ra.de/get-a-doi#become-a-user)
+* [DOI-Konsortium NRW](https://service-wiki.hbz-nrw.de/display/DOI/FAQ+zum+DOI-Konsortium)
+* [SUB Göttingen Konsortium](https://www.eresearch.uni-goettingen.de/de/knowledge-base/howto/getting-an-identifier/)
+* [TIB DOI Konsortium](https://projects.tib.eu/pid-service/tib-doi-konsortium/mitglied-werden/)
+* [ZB MED DOI-Konsortium](https://www.publisso.de/wir-fuer-sie/doi-service/)
+
+Eine aktuelle Auflistung und Beschreibung der deutschen DOI-Konsortien finden Sie hier:
+[https://projects.tib.eu/pid-service/tib-doi-konsortium/faqs/](https://projects.tib.eu/pid-service/tib-doi-konsortium/faqs/).
+Vor der Aktivierung der DOI-Registrierung in OPUS muss ein entsprechender Vertrag mit DataCite oder einem Konsortium geschlossen,
+ein Repository Konto in Fabrica eingerichtet und ein Präfix zugewiesen werden.
+Informationen zu Fabrica finden Sie im [DataCite Fabrica Handbuch](https://wiki.tib.eu/confluence/display/pid/DataCite+Fabrica+Handbuch+Startseite).
+
+Nach dem Abschluss eines Vertrages teilt z.B die TIB der beantragenden Institution ein sogenanntes **DOI-Präfix** zu, 
+beispielsweise `10.5072`, welches dann in OPUS hinterlegt wird.
 
 Eine DOI ist grundsätzlich nach folgendem Schema aufgebaut:
 ```
 ${prefix}/${localPrefix}-${suffix}
 ```
 
-Der vordere Teil bis zum Schrägstrich entspricht dem von der TIB zugeteilten **DOI-Präfix**. Der Teil nach dem 
+Der vordere Teil bis zum Schrägstrich entspricht dem von DataCite zugeteilten **DOI-Präfix**. Der Teil nach dem 
 Schrägstrich kann von der Institution frei vergeben werden. Sind innerhalb einer Institution mehrere Anwendungen im 
 Einsatz, die DOIs vergeben und registrieren sollen, so bietet sich die Verwendung eines **lokalen DOI-Präfix** an, 
 z.B. `opus4` für das OPUS4-Repositorium und `anothersystem` für ein anderes System der Institution, das ebenfalls DOIs
