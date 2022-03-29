@@ -1,5 +1,6 @@
 ---
 title: BibTeX Export
+weight: 20
 ---
 
 # BibTeX Export

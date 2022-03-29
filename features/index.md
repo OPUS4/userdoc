@@ -30,7 +30,7 @@ hochgeladen werden.
 
 ## Sammlungen
 
-Hierarchische System zur Organisation von Dokumenten, z.B. Institute, Klassifikationen oder Projekte.
+Hierarchisches System zur Organisation von Dokumenten, Instituten, Klassifikationen oder Projekten.
 
 [Mehr](collections.html)
 
@@ -38,7 +38,19 @@ Hierarchische System zur Organisation von Dokumenten, z.B. Institute, Klassifika
 
 Export von Suchergebnissen als XML bzw. transformiert in andere Formate mit Hilfe von XSLT.
 
-[Mehr](export.html)
+[Mehr](../export/index.html)
+
+## Import
+Import von reinen Metadaten oder auch von Metadaten und Dateien mit verschiedenen Verfahren.
+
+[Mehr](../import/index.html)
+
+## DINI-Zertifikat
+Das DINI-Zertifikat für Open-Access-Publikationsdienste dient im Wesentlichen zwei übergeordneten Zielen:
+* Verbesserung der Publikationsinfrastruktur für das elektronische Publizieren
+* Stärkung Open-Access-basierter Publikationsformen.
+
+[Mehr](dini.html)
 
 ## OpenAIRE
 
@@ -59,3 +71,9 @@ OPUS 4 kann in vieler Hinsicht angepasst werden. Die Inhalte der Startseite und 
 das eigene Repositorium geändert werden und die Übersetzungen fast aller Texte können angepasst werden.
 
 [Mehr](customization.html)
+
+## Workflow
+
+Für die Dokumentverwaltung existieren verschiedene Zustände, die für die Abbildung eines Workflows innerhalb von OPUS verwendet werden können.
+
+[Mehr](workflow.html)

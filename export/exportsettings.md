@@ -1,6 +1,6 @@
 ---
 title: Export Settings
-weight: 20
+weight: 30
 ---
 
 # Export Settings
@@ -23,4 +23,4 @@ Stylesheets werden unter `$BASEDIR/modules/export/views/scripts/stylesheets-cust
 [XML-Export][EXPORT]).
 Die Parameter können auch einzeln gesetzt werden.
 
-[EXPORT]: ../features/export.html
+[EXPORT]: exportlist.html

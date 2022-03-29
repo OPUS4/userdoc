@@ -1,13 +1,12 @@
 ---
 title: DINI-Zertifikat
-weight: 60
+weight: 50
 ---
 
 # DINI-Zertifikat
 
 Das von der DINI (Deutsche Initiative für Netzwerkinformation) geschaffene Zertifizierungsverfahren für Dokumenten-
-und Publikationsservice (DINI-Zertifikat), das nach den Fassungen von 2004 und 2007 nun bereits in der dritten Version
-2010 vorliegt, verfolgt folgende Ziele:
+und Publikationsservice (DINI-Zertifikat) verfolgt folgende Ziele:
 
 * Die Stärkung serviceorientierter Informationsinfrastrukturen für wissenschaftliche Open-Access-Publikationen,
 * die Definition von Mindestanforderungen an Dokumenten und Publikationsservices sowie deren detaillierte Beschreibung,
@@ -19,12 +18,12 @@ und Publikationsservice (DINI-Zertifikat), das nach den Fassungen von 2004 und 2
   Institution oder Disziplin.
 
 Informationen zu Anforderungen, Empfehlungen und Antragsverfahren finden sich unter
-<http://www.dini.de/dini-zertifikat/>.
+<https://dini.de/dienste-projekte/dini-zertifikat/>.
 
 OPUS4 erfüllt die grundsätzlichen technischen Anforderungen des Zertifikats. Da im Zertifizierungsverfahren jedoch
 nicht nur rein technische Aspekte berücksichtigt werden, sondern auch ggf. von der betreibenden Institution bestimmte
 Workflows geschaffen werden müssen, enthält dieses Kapitel Hinweise auf Anpassungs- bzw. Konfigurationsmöglichkeiten
 in OPUS4 im Hinblick auf das DINI-Zertifikat.
 
-* [Richtlinien für die OAI-Schnittstelle](../config/dinioai.html)
+* [Richtlinien für die OAI-Schnittstelle](../faq/dinioai.html)
 {: class="navlist" }

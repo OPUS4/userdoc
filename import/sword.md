@@ -9,7 +9,7 @@ SWORD (Simple Web-service Offering Repository Deposit) ist eine webbasierte
 Standard-Schnittstelle für Importe. OPUS 4.6 implementiert die SWORD-Schnittstelle in
 Version 1.3. Die Details der Spezifikation sind unter folgender Adresse verfügbar:
 
-<http://swordapp.org/sword-v1/>
+<https://sword.cottagelabs.com/previous-versions-of-sword/sword-v1/>
 
 SWORD ist normalerweise darauf ausgelegt, mit jedem Request nur *ein* Dokument zu
 verarbeiten. Die Antworten der Schnittstelle beziehen sich gemäß der Spezifikation auf

@@ -6,7 +6,7 @@ weight: 150
 # Installationsskript
 
 Das Installationsskript führt mehrere Schritte aus. Bevor es 
-ausgeführt werden kann müssen die [Voraussetzungen](requirements.html)
+ausgeführt werden kann, müssen die [Voraussetzungen](requirements.html)
 für OPUS 4 auf dem System erfüllt sein.
 
 Das Skript kann mit `sudo` oder ohne ausgeführt werden. Einige Schritte
@@ -15,7 +15,7 @@ der Installation sind nur mit `sudo` möglich.
 |---|
 | # | Schritt | Optional | `sudo` |
 |---|
-| 1 | [Serverpfad](#serverpfad) (/opus4) | | |
+| 1 | [Serverpfad](#serverpfad) | | |
 | 2 | [Composer](#composer-dependencies) | | |
 | 3 | [Apache2 Site Konfiguration](#webserver-apache2) |
 |   | [Apache2 Link](#apache2-site-link-anlegen) | X | X |
@@ -24,22 +24,22 @@ der Installation sind nur mit `sudo` möglich.
 | 6 | [Workspace-Verzeichnisse anlegen](#workspace-verzeichnisse-anlegen) | | |
 | 7 | [Dateirechte setzen](#dateirechte-setzen) | | X |
 | 8 | [Admin Passwort setzen](#admin-passwort-setzen) | | |
-| 9 | [Solr installieren](#apache-solr-installieren) | X | X |
-| 10 | [Solr Konfiguration eintragen](#solr-konfiguration-eintragen) | | |
-| 11 | [Testdaten importieren](#testdaten-importieren) | X | |
-| 12 | [Apache2 Neustart](#apache2-neustart) | X | X |
+| 9 | [Solr Konfiguration eintragen](#solr-konfiguration-eintragen) | | |
+| 10 | [Testdaten importieren](#testdaten-importieren) | X | |
+| 11 | [Apache2 Neustart](#apache2-neustart) | X | X |
 
 Wenn das Skript ohne `sudo` ausgeführt wird, kann es immer noch dafür 
 verwendet werden, die notwendigen Konfigurationsdateien mit den Daten
-Verbindungsinformationen für eine bestehende Datenbank und einen Solr
-Index zu erzeugen.
- 
-Viele der Installationsschritte sind in einzelnen Dateien implementiert,
+für die Verbindungsinformationen für eine bestehende Datenbank zu erzeugen.
+
+Viele der Installationsschritte sind in einzelnen Skript-Dateien implementiert,
 die auch gezielt einzeln ausgeführt werden können.
 
 Die Installation wird folgendermaßen aufgerufen: 
 
-    $ sudo bin/install.sh
+{% highlight bash %}
+$ sudo bin/install.sh
+{% endhighlight %}
 
 ## Parameter
 
@@ -50,18 +50,22 @@ Die Installation wird folgendermaßen aufgerufen:
 Als erstes wird nach dem Pfad für die OPUS 4 Applikation auf dem 
 Webserver gefragt.
 
-    Base URL for OPUS [/opus4]: 
-    
+```
+Base URL for OPUS [/opus4]: 
+```
+
 Mit dem vorgegebenen Wert wird OPUS 4 nach der Installation unter
 folgender URL verfügbar sein.
-     
-     http://localhost/opus4 
-     
+
+```
+http://localhost/opus4 
+```
+
 ### 2. Composer Dependencies
 
-Es wird das Skript `bin/install-composer.sh` ausgeführt, das wenn 
-notwendig zuerst `composer.phar` herunterlädt und dann die für OPUS 4 
-notwendigen Composer Pakete installiert. 
+Es wird das Skript `bin/install-composer.sh` ausgeführt, das zuerst `composer.phar` 
+herunterlädt (wenn notwendig) und dann die für OPUS 4 notwendigen Composer-Pakete 
+installiert. 
 
 <p class="warning" markdown="1">
 Unabhängig davon, ob das Installationsskript mit `sudo` aufgerufen wurde,
@@ -83,7 +87,7 @@ mehrere Parameter übergeben.
 | 4 | Distribution | `ubuntu` |
 | 5 | Restart Apache2 | Nein (?) |
 
-Es wird die Datei `apacheconf/apache.conf` basierend auf der Templatedatei
+Es wird die Datei `apacheconf/apache.conf` basierend auf der Template-Datei
 `apacheconf/apache24.conf.template` angelegt und dabei der in Schritt 1
 eingegebene Serverpfad für OPUS 4 eingetragen.
 
@@ -91,17 +95,21 @@ Optional (mit `sudo`) kann ein Link zu der Konfigurationsdatei im
 Verzeichnis `/etc/apache2/sites-available` angelegt und die Site 
 aktiviert werden.
 
-    a2ensite opus4
-    
+```
+a2ensite opus4
+```
+
 Anschließend wird die Konfiguration geprüft und optional der Webserver
 neu gestartet.
 
-    service apache2 restart
+```
+service apache2 restart
+```
 
 ### 4. Datenbank
 
 Folgende Informationen werden für die Konfiguration der Datenbank 
-abgefragt.
+abgefragt:
 
 * Name der Datenbank
 * Name des OPUS 4 Admin Accounts
@@ -118,11 +126,11 @@ Diese Informationen werden in die Konfigurationsdateien
     
 eingetragen.
  
-Der OPUS 4 Admin Account wird für das Erstellen und Updaten der
-Datenbank verwendet. Der OPUS 4 User Account ist für den normalen 
+Der `OPUS 4 Admin Account` wird für das Erstellen und Aktualisieren der
+Datenbank verwendet. Der `OPUS 4 User Account` findet Verwendung für den normalen 
 Zugriff über die Weboberfläche und hat nur eigeschränkte Rechte.
 
-Der Adminaccount ist nur durch die `console.ini` verfügbar,
+Der Admin Account ist nur durch die `console.ini` verfügbar,
 die von den OPUS 4 Skripten verwendet wird, die mit direktem Zugriff auf
 das Hostsystem ausgeführt werden können, z.B. um ein Update durchzuführen.
 
@@ -132,7 +140,7 @@ die Konfiguratonsdateien erzeugt.
 
 Soll die Datenbank angelegt werden, muss der Username und das Passwort
 für einen MySQL Account angegeben werden, der eine neue Datenbank anlegen
-kann, z.B. MySQL "root".
+kann, z.B. `MySQL root`.
 
 ### 5. Konfigurationsdateien
 
@@ -150,11 +158,13 @@ notwendigen Verzeichnisse an.
 |-------------+--------------|
 | Verzeichnis | Beschreibung |
 |-------------+--------------|
-| files | Volltexte usw. der Dokumente |
-| incoming | Datei für den Import |
-| log | Logdateien |
 | cache | Temporäre Dateien für die Beschleunigung von Operationen |
-| export | Verzeichnisse für Exportfunktionen in Skripten |
+| export | Verzeichnis für Exportfunktionen in Skripten |
+| filecache | Verzeichnis für zukünftige Funktion der PDFs mit Deckblatt |
+| files | Volltexte und andere Dateien der Dokumente |
+| import | Verzeichnis für Importfunktion in Skripten |
+| incoming | Verzeichnis für den Datei-Import in der Administration |
+| log | Logdateien |
 | tmp | Temporäre Dateien |
 | tmp/resumption | Temporäre Dateien für OAI Schnittstelle |
 |---+---|
@@ -167,26 +177,21 @@ Das Skript `bin/set-file-permissions.sh` muss mit `sudo` ausgeführt
 werden und setzt die Rechte für die OPUS 4 Dateien und Verzeichnisse.
 Zum einen muss auf diese Dateien auf der Konsole zugegriffen werden.
 Zum anderen muss der Webserver die Dateien lesen und in manche, wie zum
-Beispiel `opus.log` schreiben können.
+Beispiel `opus.log`, schreiben können.
 
 ### 8. Admin Passwort setzen
 
 In OPUS gibt es einen festen Administrator Account. An dieser Stelle 
 der Installation muss ein Passwort für diesen Account festgelegt werden.
 
-    Please enter password for OPUS 'admin' account:
+```
+Please enter password for OPUS 'admin' account:
+```
 
 Mit diesem Account kann auf sämtliche Funktionen der Administration
 zugegriffen werden.
 
-### 9. Apache Solr installieren
-
-Die Installation von Apache Solr ist optional. Insbesondere im Hosting
-läuft der Solr Server manchmal auf einem anderen System. In diesem Fall
-müssen nur die Verbindunginformationen eingegeben werden, damit diese
-in die Konfigurationsdateien eingetragen werden können.
-
-### 10. Solr Konfiguration eintragen
+### 9. Solr Konfiguration eintragen
 
 Es werden folgende Informationen abgefragt.
 
@@ -200,30 +205,40 @@ soll.
 
 Diese Informationen werden dann in die Konfigurationsdatei eingetragen.
 
-    application/configs/config.ini
-    
+```
+application/configs/config.ini
+```
+
 ### 11. Testdaten importieren
-    
-Für Testinstanz können einige Beispieldokumente installiert werden.
+
+Für Testinstanzen können einige Beispieldokumente installiert werden.
 Diese sind auch notwendig, wenn die Unit Tests ausgeführt werden
 sollen.
-    
-    Import test data? [Y]
-           
+
+```
+Import test data? [Y]
+```
+
 Wenn die Testdaten installiert werden sollen, wird eine zusätzliche 
 Konfigurationsdatei angelegt.
- 
-    tests/config.ini
-    
+
+```
+tests/config.ini
+```
+
 Dann werden die Workspace-Verzeichnisse unterhalb 
-    
-    tests/workspace
-    
+
+```
+tests/workspace
+```
+
 angelegt und die Testdokumente zu OPUS hinzugefügt.
-    
+
 ### 12. Apache2 Neustart
     
 Wird das Skript mit `sudo` ausgeführt, wird am Ende gefragt, ob Apache2
 neu gestartet werden soll, damit OPUS 4 aktiviert wird. 
- 
-    $ sudo service apache2 restart
+
+```
+$ sudo service apache2 restart
+```
