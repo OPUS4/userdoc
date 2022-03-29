@@ -1,5 +1,6 @@
 ---
 title: Publikationslisten
+weight: 50
 ---
 
 # Publikationslisten

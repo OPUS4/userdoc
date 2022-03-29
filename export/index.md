@@ -3,13 +3,26 @@ title: Export
 weight: 109
 ---
 
-# Export
+# Export 
 
+## Allgemeine Exportformate
 
-* [Bibtex Export](bibtexexport.html)
+Beschreibung für Exportmöglichkeiten der Suchergebnisse als Liste und dem Export von einzelnen Datensätzen über die Frontdoor.
 
-* [OAI Export](oaiexport.html)
-  
-* [Publikationslisten](publists.html)
+[Allgemeine Exportformate](exportlist.html)
 
-* [Export Settings](export.html)
+## Export über die OAI-Schnittstelle
+
+[OAI Export](oaiexport.html) 
+
+## Export Settings
+
+### Globale Export Settings
+
+[Export Settings](exportsettings.html)
+
+### Spezielle Export Settings
+
+[Bibtex Export](bibtexexport.html)
+
+[Publikationslisten](publists.html)
