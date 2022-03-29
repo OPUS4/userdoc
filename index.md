@@ -10,7 +10,7 @@ Auf diesen Seiten finden sie Informationen zu OPUS 4, der Anpassung, Konfigurati
 bzw. institutionellen Dokumentenservers.
 
 Die Dokumentation hier bezieht sich auf die OPUS 4 Version, die auf [GitHub][GITHUB] entwickelt wird. Die aktuelle
-Version ist OPUS 4.7.
+Version ist OPUS 4.7.1.
 
 * [Was ist OPUS?](introduction.html)
 * [OPUS 4.7](opus47.html)
