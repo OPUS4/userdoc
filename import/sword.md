@@ -149,7 +149,7 @@ der URL
 aufgerufen werden. 
 
 Auf eine korrekte Konfiguration weist insbesondere das `href`-Attribut im
-Collection-Tag mit der URL der Sammlung[^1] hin:
+Collection-Tag mit der URL der Sammlung hin:
 
 ``` xml
 <service>
@@ -160,8 +160,6 @@ Collection-Tag mit der URL der Sammlung[^1] hin:
             <atom:title>sword</atom:title>
             …
 ```
-*[^1]: Bitte beachten Sie, dass dies nicht die Deposit-Adresse ist. Diese lautet in OPUS 4:  
-    `https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit`*
 
 Ist die Konfiguration falsch, fehlen das `href`-Attribut sowie das folgende 
 `<atom:title>`-Tag:
@@ -174,7 +172,11 @@ Ist die Konfiguration falsch, fehlen das `href`-Attribut sowie das folgende
         <collection>
             …
 ```
-    
+
+Bitte beachten Sie, dass dies nicht die **Deposit-Adresse** ist. Diese lautet in OPUS 4:
+
+    https://user:password@[OPUS4-Servername]/[OPUS4-Instanz]/sword/deposit
+
 Die weiteren Parameter zur SWORD-Schnittstelle in den Konfigurationsdateien dienen
 überwiegend dazu, beschreibende Angaben zu machen, die dann z.B.im Servicedokument
 angezeigt werden. Diese Angaben können hilfreich sein, um externen Datenlieferanten
