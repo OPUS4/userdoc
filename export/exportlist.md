@@ -93,7 +93,7 @@ In die Zeile
 ```
 export.csv.enrichments_visible =
 ```
-werden die die Werte "0" oder "1" (kommasepariert) eingetragen. "0" bedeutet, dass das Enrichment für alle User (guest) angezeigt wird. "1" bedeutet, dass das Enrichment nur für eingeloggte User sichtbar ist, die Zugriff auf den Administrationsbereich "Dokumente verwalten" haben. 
+werden die die Werte "1" oder "0" (kommasepariert) eingetragen. "1" bedeutet, dass das Enrichment für alle User (guest) angezeigt wird. "0" bedeutet, dass das Enrichment nur für eingeloggte User sichtbar ist, die Zugriff auf den Administrationsbereich "Dokumente verwalten" haben. 
 Beispiel:
 ``` 
 export.csv.enrichments_visible = 0,1
