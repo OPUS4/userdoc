@@ -97,7 +97,7 @@ Für den "DOI-Import" (ab Version 4.8.1) werden einige Enrichment-Felder benöti
 
 ### Weitere Felder, die nur systemintern von Bedeutung sind:
 
-`opus_import_data` Enthält nach dem DOI-Import die kompletten Metadaten des Dokuments von Crossref.
+`opus_doi_json` Enthält nach dem DOI-Import die kompletten Metadaten des Dokuments von Crossref.
 
 `opus_doiImportPopulated` Enthält eine Liste der Felder, die mittels DOI-Import befüllt wurden (kommasepariert).
 
