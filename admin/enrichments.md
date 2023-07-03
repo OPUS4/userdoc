@@ -82,3 +82,25 @@ angelegt, die bestimmte individuelle Inhalte aus OPUS 3 erfassen:
 Diese benutzerdefinierten Felder sind geschützt und nur für die Instanzen verwendbar, die von
 OPUS3 migriert wurden. In neu installierten OPUS4 Instanzen können diese Felder nicht verwendet
 werden.
+
+## Felder für die Funktion "DOI-Import"
+
+Für den "DOI-Import" (ab Version 4.8.1) werden einige Enrichment-Felder benötigt. Diese werden bei Neuinstallationen automatisch angelegt. 
+
+`ConferencePlace` und `ConferenceTitle` Enthalten "Ort der Konferenz" und "Name der Konferenz"; v.a. für den Dokumenttyp conferenceobject relevant.
+
+`opus_crossrefLicence` Enthält die Lizenz, die in Crossref angegeben ist (User-relevant, da die OPUS-Lizenz u.U. entsprechend einzutragen ist).
+
+`opus_crossrefDocumentType` Enthält nach dem Import den Dokumenttyp, der in Crossref angegeben ist (kann User-relevant sein, zwecks Nachvollziehbarkeit des Mappings).
+
+`opus_import_origin`  Enthält die Quelle des DOI-Imports, z.Zt. immer "crossref" (evtl. User-relevant, z.B. als Facette)
+
+### Weitere Felder, die nur systemintern von Bedeutung sind:
+
+`opus_doi_json` Enthält nach dem DOI-Import die kompletten Metadaten des Dokuments von Crossref.
+
+`opus_doiImportPopulated` Enthält eine Liste der Felder, die mittels DOI-Import befüllt wurden (kommasepariert).
+
+`opus_doi_flag` Enthält 'true', wenn ein DOI-Import erfolgreich durchgeführt wurde, d.h. alle verfügbaren Metadaten ins Formular eingetragen wurden.
+
+ 
