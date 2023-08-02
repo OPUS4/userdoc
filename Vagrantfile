@@ -10,7 +10,7 @@ if ! grep "Install Ruby" /home/vagrant/.bashrc > /dev/null; then
   echo 'export GEM_HOME="$HOME/gems"' >> /home/vagrant/.bashrc
   echo 'export PATH="$GEM_HOME/bin:$PATH"' >> /home/vagrant/.bashrc
   echo 'export BUNDLE_PATH="$HOME/bundles"' >> /home/vagrant/.bashrc
-  echo 'alias runsite="bundle exec jekyll serve --host 0.0.0.0"' >> /home/vagrant/.bashrc
+  echo 'alias runsite="bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling --livereload"' >> /home/vagrant/.bashrc
 fi
 
 source /home/vagrant/.bashrc
