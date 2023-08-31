@@ -8,11 +8,11 @@ Es ist möglich, in OPUS4 bestimmte lang laufende Jobs (z.B. die Indexierung gro
 asynchron zu verarbeiten. Auf diese Weise können Timeouts (weiße Seite) vermieden werden. Die
 asynchrone Verarbeitung nutzt den Mechanismus des Unix cron-Daemon, der die zeitbasierte
 Ausführung von Prozessen und wiederkehrende Aufgaben in sogenannten Cron-Jobs automatisiert.
-Die Aktivierung der asynchronen Jobverarbeitung wird im folgenden beschrieben.
+Die Aktivierung der asynchronen Jobverarbeitung wird im Folgenden beschrieben.
 
 <p class="warning">
 Beim Aktivieren der asynchronen Jobverarbeitung ist zu beachten, dass die Änderungen im
-System immer mit einer zeitlichen Verzögerung eintreten. So werden beispielsweise Änderungen
+System immer mit einer Verzögerung eintreten. So werden beispielsweise Änderungen
 an Dokumenten erst über die Suche auffindbar, wenn die Solr-Indexierung erfolgt ist. In der
 Zwischenzeit befindet sich der Solr-Index in einem inkonsistenten Zustand.
 </p>
@@ -20,6 +20,12 @@ Zwischenzeit befindet sich der Solr-Index in einem inkonsistenten Zustand.
 <p class="warning">
 Achtung: Die Aktivierung erfolgt global für alle asynchronen Jobs (derzeit Solr-Indexierung, Mail-
 Versand und Löschen temporärer Dokumente).
+</p>
+
+<p class="info" markdown="1">
+Für OPUS 4.8.1 und PHP 8.1 wurde ein neues System für die Verarbeitung von Jobs entwickelt, das
+die Konfiguration und Entwicklung vereinfachen soll. [Mehr Informationen](#neue-jobverarbeitung-mit-crunz) 
+dazu weiter unten. Die alten Skripte können vorerst unverändert weiter genutzt werden.
 </p>
 
 ## Erstellen von Cron-Jobs auf dem Server
@@ -122,3 +128,14 @@ Bereich unter [Zugriffskontrolle der IP-Bereich](../admin/security.html#ip-adres
 für das Monitoring freigeschaltet werden,
 ansonsten ist die URL von außen nicht erreichbar.
 </p>
+
+## Neue Jobverarbeitung mit Crunz
+
+Mit OPUS 4.8.1 wurde ein neues System für die Verarbeitung von Jobs eingeführt, das 
+[Crunz](https://github.com/lavary/crunz) verwendet, um die Anzahl der notwendigen 
+Cron-Jobs aus einen zu reduzieren.
+
+Mit Crunz muss nur noch ein Cron-Job angelegt werden, der dann jede Minute aufgerufen wird, um zu
+prüfen, ob ein OPUS 4 Job ausgeführt werden muss. Die Konfiguration der einzelnen Jobs erfolgt 
+dann innerhalb von OPUS 4. 
+
