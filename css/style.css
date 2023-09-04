@@ -235,15 +235,15 @@ body {
     margin: 0.5em 1em;
     padding: 0.5em 0.5em;
     /* background: #EEEEEE; */
-    border-top: 1px dashed gray;
-    border-bottom: 1px dashed gray;
     line-height: 150%;
 }
 
 .highlight pre {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0.5em;
     white-space: pre-wrap;
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
 }
 
 /* Inline code */
