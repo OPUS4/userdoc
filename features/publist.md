@@ -79,10 +79,10 @@ vollzogen werden.
    Basis von `default.xslt` an.
 2. Ändern Sie den Konfigurationsparameter:
 
-    publist.stylesheet = mylayout
+    plugins.export.publist.stylesheet = mylayout
 
 <p class="info">
-Alternative kann auch /stylesheet/mylayout an die URL angehängt werden.
+Alternativ kann auch /stylesheet/mylayout an die URL angehängt werden.
 </p>
 
 ## Ausgabe von Dateien
