@@ -53,6 +53,8 @@ Vor OPUS 4.6.2 gab es keinen eingebauten DOI-Support, so dass die Funktionen zur
 **DOI-Registrierung** standardmäßig in der Konfiguration deaktiviert sind und vor der Verwendung zuerst aktiviert 
 werden müssen.
 
+Die Konfiguration erfolgt in der `$BASEDIR/application/configs/config.ini`.
+
 Zum Aktivieren der DOI-Generierung muss die Konfigurationseinstellung
 ```
 doi.autoCreate
@@ -138,6 +140,20 @@ Folgende Konfigurationsparameter bestimmen das Verhalten der E-Mail-Benachrichti
 | --------------------------------- |-------------------------------------------------|--------------|
 | `doi.notificationEmailEnabled` | false (true/1 oder false/0)                        | aktiviert bzw. deaktiviert das Verschicken von Benachrichtigungen für (fehlgeschlagene) DOI-Registrierungen |
 | `doi.notificationEmail[]` | *leer*                                                  | E-Mail-Adresse(n) für Notifikationsnachrichten für registrierte DOIs (Array); pro E-Mailadresse eine Konfigurationszeile angeben! |
+
+
+## Verwendung einer eigenen XSLT-Datei für DataCite
+
+Für die Generierung des DataCite-XML mit den erforderlichen Pflichtfeldern zur Registrierung einer DOI, greift OPUS auf eine Standard-XSLT-Datei zurück.
+ `$BASEDIR/vendor/opus4-repo/framework/library/Opus/Doi/datacite.xslt`
+
+Sollen darüberhinaus weitere Felder oder angepasste Paramter übergeben werden, kann auf Grundlage der Standard-XSLT-Datei ein eigenes Stylesheet verwendet werden. 
+Die angepasste XSLT-Datei sollte an einem Ort abgelegt werden, wo die Datei bei einem Update nicht überschrieben wird.
+Der Pfad für die Verwendung einer eigenen XSLT-Datei muss in der `config.ini` mit dem Konfigurationsschlüssel `datacite.stylesheetPath` deklariert werden.
+
+```
+datacite.stylesheetPath = APPLICATION_PATH "/application/configs/doi/datacite.xslt"
+```
 
 ## Automatisierung von Prozessen im Zusammenhang mit der DOI-Registrierung
 
