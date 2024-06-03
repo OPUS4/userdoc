@@ -5,8 +5,9 @@ weight: 90
 
 # OPUS mit Git
 
-OPUS 4 ist für die Entwicklung zu GitHub gewechselt. Der Umstieg auf [Git][GIT] wirkt sich aber auch auf die
+OPUS 4 ist für die Entwicklung ab der Version 4.5 zu GitHub gewechselt. Der Umstieg auf [Git][GIT] wirkte sich auch auf die
 Installation und das Update von OPUS 4 Instanzen aus.
+
 
 ## Warum Installation und Updates mit Git?
 
@@ -22,13 +23,15 @@ die weitere Entwicklung entstanden sind, zusammengeführt werden. Das kann kompl
 für OPUS 4 ein Update Skript, daß versucht hat das möglichst einfach zu machen. Der Aufwand dafür war aber
 sehr hoch und die Updates waren trotzdem noch ziemlich komplex. In der Entwicklung müssen auch ständig
 unterschiedliche Versionen zusammengeführt werden. Ein gutes Werkzeug dafür ist Git.
+Die Zusammenarbeit mit externen Entwicklern wird durch die Arbeit mit Git ebenfalls vereinfacht.
 
-Um mehr Zeit in neue Funktionen zu können werden wir in Zukunft Git für das Update, das Zusammenführen der
+Um mehr Zeit in neue Funktionen investieren zu können, werden wir in Zukunft Git für das Update, das Zusammenführen der
 neuen und der lokalen Version von OPUS 4 verwenden.
+
 
 ## Installation
 
-Ber der [Installation mit Git][INSTALL] ändert sich nicht viel. Statt einen Tarball herunterzuladen und auszupacken
+Bei der [Installation mit Git][INSTALL] ändert sich nicht viel. Statt einen Tarball herunterzuladen und auszupacken,
 werden die Sourcen mit einem Git Kommando direkt von GitHub auf das lokale System geholt. Anschließend wird
 wie bisher der größte Teil der Installation mit einem Skript durchgeführt.
 
@@ -39,13 +42,23 @@ Filterung nicht mehr statt. Es wird daran gearbeitet diese Ressourcen aus dem no
 daß diese nach der Installation nicht mehr manuell entfernt werden müssen.
 </p>
 
+## Composer
+
+Um die Abhängigkeiten von OPUS 4 zu verwalten, wird [Composer](https://getcomposer.org) eingesetzt.
+Notwendige Softwarebibliotheken, wie z.B. das ZendFramework, werden in einer Konfigurationsdatei aufgelistet und können
+dann durch Composer installiert und aktualisiert werden. 
+Das OPUS 4 Framework, die Verbindung zur Datenbank und zum Suchindex, ist mit Version 4.5 ein eigenständiges Composer
+Paket geworden, so daß es ebenfalls als Abhängigkeit von Composer heruntergeladen und aktualisiert werden kann. Die
+Pakete werden auf [Packagist.org](https://packagist.org) gehostet. Die OPUS Pakete finden sich dort unter
+[opus4-repo](https://packagist.org/packages/opus4-repo).
+
 ## Update
 
-Der große Unterschied wird in Zukunft das [Update mit Git][UPDATE] sein. Mit Hilfe eines Kommandos, können die lokalen
-Dateien auf den aktuellen Stand der GitHub Version gebracht werden. Gibt es dabei keine Konflikte zwischen
-lokal angepassten Dateien und Änderungen in OPUS, läuft das Update in wenigen Sekunden automatisch durch. Es
-muss nicht mehr wie bisher ein Tarball veröffentlich werden, der dann für das Update verwendet wird und Git
-ist viel besser in der Lage die Zusammenführung der Versionen so weit wie möglich zu automatisieren.
+Mit Hilfe eines Kommandos können die lokalen Dateien auf den aktuellen Stand der GitHub Version gebracht werden. 
+Gibt es dabei keine Konflikte zwischen lokal angepassten Dateien und Änderungen in OPUS, läuft das Update
+in wenigen Sekunden automatisch durch. Es muss nicht mehr wie bisher ein Tarball veröffentlich werden,
+der dann für das Update verwendet wird und Git ist viel besser in der Lage die Zusammenführung 
+der Versionen so weit wie möglich zu automatisieren.
 
 Die meisten Updates werden durch dieses Verfahren wesentlich schneller und einfacher werden. Dadurch können
 Respositorien sofort mit der neuesten Version arbeiten und müssen nicht darauf warten, daß ein neuer Tarball
@@ -70,3 +83,11 @@ Hashwert der sie eindeutig identifiziert.
 [INSTALL]: installation/index.html
 [UPDATE]: update/index.html
 [GIT]: https://git-scm.com/
+
+## Migration Skripte
+
+Der Code für die Migration von OPUS 3 wurde aus dem normalen OPUS 4 Release entfernt und in ein eigenes
+Repository [migration](https://github.com/opus4/migration) auf GitHub verschoben. Die Migration wird in Zukunft eine
+optionale Komponente sein, die bei Bedarf installiert werden kann.
+
+[GITHUB]: https://github.com/OPUS4

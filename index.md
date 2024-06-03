@@ -6,29 +6,25 @@ weight: 0
 
 # Willkommen zur OPUS 4 Dokumentation
 
-Auf diesen Seiten finden sie Informationen zu OPUS 4, der Anpassung, Konfiguration und dem Betrieb eines Repositoriums
+Auf diesen Seiten finden Sie Informationen zu OPUS 4, der Anpassung, Konfiguration und dem Betrieb eines Repositoriums
 bzw. institutionellen Dokumentenservers.
 
-Die Dokumentation hier bezieht sich auf die OPUS 4 Version, die auf [GitHub][GITHUB] entwickelt wird. Die aktuelle
-Version ist OPUS 4.7.1.
+Die Dokumentation hier bezieht sich auf die OPUS 4 Version, welche auf [GitHub][GITHUB] entwickelt wird. Die aktuelle
+Version ist OPUS 4.8.0.5, einen Überblick von neuen Features und Erweiterungen finden Sie in den [Release Notes](https://github.com/OPUS4/application/blob/master/RELEASE_NOTES.md).
 
 * [Was ist OPUS?](introduction.html)
-* [OPUS 4.7](opus47.html)
-* [OPUS 4.5](opus45.html)
-* [OPUS mit Git](gitopus.html)
+* [Übersicht](features/index.html)
 * [Installation](installation/index.html)
+* [Update](update/index.html)
 {: class="navlist" }
-
-## OPUS 4.4.5 (und früher)
 
 Die offizielle [OPUS 4 Homepage][OPUS4] bietet weitere Informationen zum Projekt und den bisher veröffentlichten
 Releases bis Version 4.4.5. Dort ist auch ein Handbuch ([PDF][OPUS4PDF]) für diese Versionen zu finden.
 
-Diese Version ist momentan auch am Besten für die [Migration von OPUS 3][OPUS3MIG] geeignet.
 
 ## Dokumentation verbessern
 
-Problem mit der Dokumentation, Hinweise und Verbesserungsvorschläge können als [Issues][ISSUES] gemeldet werden. Bitte
+Probleme mit der Dokumentation, Hinweise und Verbesserungsvorschläge können als [Issues][ISSUES] gemeldet werden. Bitte
 dabei vorher prüfen, ob nicht evtl. bereits ein Issue zu dem Thema angelegt wurde.
 
 Es ist auch möglich an der Dokumentation mitzuarbeiten. Weitere Hinweise dazu finden sich in der `README.md` Datei und

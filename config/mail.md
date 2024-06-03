@@ -4,16 +4,38 @@ title: E-Mail
 
 # Mail
 
-Die folgenden Einstellungen legen fest, welche E-Mailadresse benutzt wird, wenn OPUS4 Mails
+## Allgemeine Konfigurationsparameter 
+
+Die folgenden Einstellungen legen fest, welcher Mailserver und welche E-Mailadresse benutzt wird, wenn OPUS4 Mails
 verschickt:
 
 {% highlight ini %}
 ; MAIL SETTINGS
-; mail.opus.smtp = localhost ; SMTP server for sending email
-; mail.opus.port = 25 ; SMTP server port for sending email
+mail.opus.smtp = <localhost ; SMTP server for sending email>
+mail.opus.port = <25 ; SMTP server port for sending email>
 mail.opus.address = <E-Mail-Adresse, z.B. noreply@bibliothekxyz.de>
 mail.opus.name = <Name, z.B. BibliothekXYZ>
 {% endhighlight %}
+
+
+## E-Mail-Versand mit Authentifizierung
+
+Das Versenden der E-Mails mit Authentifizierung wird seit OPUS Version 4.8.0.1 unterstützt und lässt sich konfigurieren. 
+Folgende Parameter müssen dafür in der `config.ini` hinzugefügt werden:
+
+{% highlight ini %}
+; MAIL-AUTHENTICATION SETTINGS
+mail.opus.auth =
+mail.opus.username =
+mail.opus.password =
+mail.opus.ssl =
+{% endhighlight %}
+
+Die verfügbaren Authentifizierungsmethoden für den Parameter `mail.opus.auth=` sind `plain`, `login`  oder `crammd5`, die alle einen „Benutzernamen“- und „Passwort“-Wert erwarten.
+
+Mehr Informationen zu den Optionen finden sich in der Zend Framework 1 (ZF1) Dokumentation.
+
+https://framework.zend.com/manual/1.12/en/zend.mail.smtp-authentication.html
 
 ## Benachrichtigungen (Notification)
 
