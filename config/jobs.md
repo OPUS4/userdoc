@@ -128,14 +128,3 @@ Bereich unter [Zugriffskontrolle der IP-Bereich](../admin/security.html#ip-adres
 für das Monitoring freigeschaltet werden,
 ansonsten ist die URL von außen nicht erreichbar.
 </p>
-
-## Neue Jobverarbeitung mit Crunz
-
-Mit OPUS 4.8.1 wurde ein neues System für die Verarbeitung von Jobs eingeführt, das 
-[Crunz](https://github.com/lavary/crunz) verwendet, um die Anzahl der notwendigen 
-Cron-Jobs aus einen zu reduzieren.
-
-Mit Crunz muss nur noch ein Cron-Job angelegt werden, der dann jede Minute aufgerufen wird, um zu
-prüfen, ob ein OPUS 4 Job ausgeführt werden muss. Die Konfiguration der einzelnen Jobs erfolgt 
-dann innerhalb von OPUS 4. 
-
