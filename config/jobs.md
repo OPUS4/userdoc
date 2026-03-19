@@ -8,11 +8,11 @@ Es ist möglich, in OPUS4 bestimmte lang laufende Jobs (z.B. die Indexierung gro
 asynchron zu verarbeiten. Auf diese Weise können Timeouts (weiße Seite) vermieden werden. Die
 asynchrone Verarbeitung nutzt den Mechanismus des Unix cron-Daemon, der die zeitbasierte
 Ausführung von Prozessen und wiederkehrende Aufgaben in sogenannten Cron-Jobs automatisiert.
-Die Aktivierung der asynchronen Jobverarbeitung wird im folgenden beschrieben.
+Die Aktivierung der asynchronen Jobverarbeitung wird im Folgenden beschrieben.
 
 <p class="warning">
 Beim Aktivieren der asynchronen Jobverarbeitung ist zu beachten, dass die Änderungen im
-System immer mit einer zeitlichen Verzögerung eintreten. So werden beispielsweise Änderungen
+System immer mit einer Verzögerung eintreten. So werden beispielsweise Änderungen
 an Dokumenten erst über die Suche auffindbar, wenn die Solr-Indexierung erfolgt ist. In der
 Zwischenzeit befindet sich der Solr-Index in einem inkonsistenten Zustand.
 </p>
@@ -20,6 +20,12 @@ Zwischenzeit befindet sich der Solr-Index in einem inkonsistenten Zustand.
 <p class="warning">
 Achtung: Die Aktivierung erfolgt global für alle asynchronen Jobs (derzeit Solr-Indexierung, Mail-
 Versand und Löschen temporärer Dokumente).
+</p>
+
+<p class="info" markdown="1">
+Für OPUS 4.8.1 und PHP 8.1 wurde ein neues System für die Verarbeitung von Jobs entwickelt, das
+die Konfiguration und Entwicklung vereinfachen soll. [Mehr Informationen](#neue-jobverarbeitung-mit-crunz) 
+dazu weiter unten. Die alten Skripte können vorerst unverändert weiter genutzt werden.
 </p>
 
 ## Erstellen von Cron-Jobs auf dem Server
