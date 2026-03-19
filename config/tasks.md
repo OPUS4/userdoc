@@ -103,6 +103,11 @@ der Datei `tasks.ini` konfigurierten Tasks abrufen.
 
     $ bin/opus4 task:info NAME_OF_TASK
 
+Das Kommando `task:info` kann auch ohne Argument verwendet werden, um dann den gewünschten Task
+über eine Liste auszuwählen.
+
+Mit `task:run` können einzelne Tasks auch gezielt manuell ausgeführt werden.
+
 ### Test-Mode
 
 Der Test-Mode kann aktiviert werden, um das Scheduling der Hintergrundaufgaben zu prüfen, ohne
