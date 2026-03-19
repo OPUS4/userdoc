@@ -74,7 +74,7 @@ cleanTemporariesTask.schedule = "0 0 * * *"
 cleanTemporariesTask.options.duration = "P2D";
 ``` 
 
-## Debugging
+## Debugging und Test-Mode
 
 Die Ausführung von Tasks wird in der Datei `tasks.log` geloggt.
 
@@ -102,3 +102,22 @@ der Datei `tasks.ini` konfigurierten Tasks abrufen.
     $ bin/opus4 task:list
 
     $ bin/opus4 task:info NAME_OF_TASK
+
+### Test-Mode
+
+Der Test-Mode kann aktiviert werden, um das Scheduling der Hintergrundaufgaben zu prüfen, ohne
+das die eigentlich Aufgaben ausgeführt werden. Der Test-Mode kann global aktiviert werden.
+
+``` ini
+cron.testModeEnabled = true
+```
+
+Der Test-Mode kann in der Datei `tasks.ini` auch für einzelne Tasks aktiviert werden.
+
+``` ini
+TASK_NAME.testModeEnabled = true
+```
+
+Die Ausführung des Tasks wird dann im Log, `tasks.log`, mit **TEST MODE** markiert. Sollte die  
+Implementation des Tasks den Test-Mode explizit unterstützen, kann er im Test-Mode weitere 
+Informationen ausgeben, um anzuzeigen, welche Aktionen ausgeführt worden wären.
