@@ -40,25 +40,10 @@ Rows-Parameter in der URL anzupassen.
 
 ## Besonderheiten des CSV-Exports
 
-### Auswahl des gewünschten CSV-Formats: "CSV" oder "CSV_FN"
-
-Für den Export von Ergebnislisten im CSV-Format kann zwischen zwei Formatierungen gewählt werden. Standardmäßig aktiviert ist das Format "__csv__" (mit dem XSLT-Stylesheet $BASEDIR/modules/export/views/scripts/stylesheets/csv.xslt). Dieses liefert die Metadaten spaltenweise getrennt aus. Beim Import in z.B. Excel ist darauf zu achten, dass als "Dateiursprung" der Zeichensatz "Unicode (UTF-8)" ausgewählt wird. 
-
-Alternativ kann das CSV-Format "__csv_fn__" (zugehöriges XSLT-Stylesheet: $BASEDIR/modules/export/views/scripts/stylesheets/csv_fn.xslt) eingestellt werden. Dieses liefert die wesentlichen Metadaten in einer Spalte aus, ähnlich einer Zitation. Dieses Format ist hilfreich, wenn der Export z.B. für einen Jahresforschungsbericht genutzt werden soll. 
-
-Um das Format "csv_fn" einzustellen, muss in der `config.ini` die Zeile
-```
-; EXPORT SETTINGS
-plugins.export.csv.stylesheet = 'csv'
-```
-geändert werden in 
-```
-; EXPORT SETTINGS
-plugins.export.csv.stylesheet = 'csv_fn'
-```
+Standardmäßig wird das XSLT-Stylesheet $BASEDIR/modules/export/views/scripts/stylesheets/csv.xslt verwendet. Dieses liefert die Metadaten spaltenweise getrennt aus. Beim Import in z.B. Excel ist darauf zu achten, dass als "Dateiursprung" der Zeichensatz "Unicode (UTF-8)" ausgewählt wird. 
 
 ### Ergänzung des CSV-Exports um weitere Spalten
-Beide CSV-Formate können um weitere Spalten mit Metadaten aus Enrichment-Feldern und Collections ergänzt werden. Dazu können die folgenden Parameter von der `$BASEDIR/application/configs/application.ini` in die `config.ini` übernommen und angepasst werden:
+Der CSV-Export kann um weitere Spalten mit Metadaten aus Enrichment-Feldern und Collections ergänzt werden. Dazu können die folgenden Parameter von der `$BASEDIR/application/configs/application.ini` in die `config.ini` übernommen und angepasst werden:
 ```
 ; ENRICHMENTS AND COLLECTIONS TO BE EXPORTED IN CSV
 export.csv.enrichments = 
@@ -109,9 +94,6 @@ erfolgt analog.
 
 ### Ausgabe von __öffentlichen__ und __internen__ Bemerkungen
 Die Spalte "Öffentliche Bemerkungen" wird allen Usern (guest) angezeigt. Die Spalte "Interne Bemerkungen" wird nur eingeloggten Usern angezeigt, die Zugriff auf den Administrationsbereich "Dokumente verwalten" haben. Diese Einstellung ist nicht änderbar.
-
-### Hervorhebung von hochschulangehörigen Autoren und Herausgebern
-Hochschulangehörige Autoren und Herausgeber können im Format "csv_fn" durch ein Asterisk (*) kenntlich gemacht werden. Dazu muss in der Personenverwaltung das Feld `Interne ID` der jeweiligen Person einen (beliebigen) Eintrag enthalten.
 
 ## Export im XML-Format
 
