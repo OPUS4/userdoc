@@ -85,7 +85,7 @@ werden.
 
 ## Felder für die Funktion "DOI-Import"
 
-Für den "DOI-Import" (ab Version 4.8.1) werden einige Enrichment-Felder benötigt. Diese werden bei Neuinstallationen automatisch angelegt. 
+Für den "DOI-Import" (ab Version 4.9) werden einige Enrichment-Felder benötigt. Diese werden bei Neuinstallationen automatisch angelegt. 
 
 `ConferencePlace` und `ConferenceTitle` Enthalten "Ort der Konferenz" und "Name der Konferenz"; v.a. für den Dokumenttyp conferenceobject relevant.
 

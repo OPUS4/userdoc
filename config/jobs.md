@@ -23,7 +23,7 @@ Versand und Löschen temporärer Dokumente).
 </p>
 
 <p class="info" markdown="1">
-Für OPUS 4.8.1 und PHP 8.1 wurde ein neues System für die Verarbeitung von Jobs entwickelt, das
+Für OPUS 4.9 und PHP 8.1 wurde ein neues System für die Verarbeitung von Jobs entwickelt, das
 die Konfiguration und Entwicklung vereinfachen soll. [Mehr Informationen](#neue-jobverarbeitung-mit-crunz) 
 dazu weiter unten. Die alten Skripte können vorerst unverändert weiter genutzt werden.
 </p>
