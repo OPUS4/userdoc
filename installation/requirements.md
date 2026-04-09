@@ -16,34 +16,32 @@ Hier sind die grundlegenden Voraussetzungen für einen OPUS 4 Server und die Cli
 Vor der Installation und den Betrieb von OPUS 4 muss das System einige Grundvoraussetzungen erfüllen.
 
 <p class="note" markdown="1">
-In der Entwicklung und im Hosting beim KOBV wird momentan [Ubuntu](http://www.ubuntu.com/) 20.04 LTS eingesetzt. Die
+In der Entwicklung und im Hosting beim KOBV wird momentan [Ubuntu](http://www.ubuntu.com/) 24.04 LTS eingesetzt. Die
 Informationen und Kommandos beziehen sich auf Ubuntu. OPUS sollte auch auf anderen gängigen Distribution funktionieren.
 Dort sind aber unter Umständen andere Kommandos bzw. zusätzliche Installationsschritte notwendig.
 </p>
 
 * [Apache 2]({{ site.baseurl }}/installation/apache.html)
-* [MySQL](https://www.mysql.com/) (mindestens Version 5.6)
-* [PHP](http://php.net/) 7.1
+* [MySQL](https://www.mysql.com/) (mindestens Version 8)
+* [PHP](http://php.net/) 8.1 oder 8.2
 * [Git](https://git-scm.com/)
 * [cURL](https://curl.haxx.se/)
-* [SOLR](https://solr.apache.org/) 7.x
-* [Java Runtime](#java-runtime) (mindestens 1.8)
+* [SOLR](https://solr.apache.org/) 9.10.1
+* [Java Runtime](#java-runtime) (passend für Apache Solr)
 * [Mailserver](#mailserver)
 * [Pandoc](#pandoc)
 
-Es wird empfohlen, eine möglichst aktuelle Version von PHP zu verwenden, die immer noch gewartet und mit
-Sicherheitsupdates versorgt wird. OPUS 4 funktioniert derzeit bis PHP Version 7.1 
+Es wird empfohlen, eine möglichst aktuelle Version von PHP zu verwenden, die 
+immer noch gewartet und mit Sicherheitsupdates versorgt wird. OPUS 4 
+funktioniert derzeit mit PHP Versions 8.1 und 8.2
 
 
 ### PHP Pakete installieren
 
 <p class="warning" markdown="1">
-Ubuntu 20 kommt standardmäßig mit PHP Version 7.2. OPUS 4 verwendet momentan noch Zend Framework 1 und ist damit leider nicht kompatibel zu PHP 7.2 und neuer.
-Daher muss derzeit bei Verwendung von Ubuntu 20 ein Downgrade der PHP-Version auf die Version 7.1 erfolgen.
-Die Pakete für PHP 7.1 sind unter dem Repository ppa:ondrej/php verfügbar (siehe weiteres Software-Repository einbinden).
-
-Die PHP Version 7.2 für OPUS 4 kann nach dem Umbau des Zendframeworks genutzt werden.
-Achten Sie dafür auf die aktuelle Entwicklung von OPUS 4.
+Ubuntu 24 kommt standardmäßig mit PHP Version 8.3. OPUS 4.9 ist zur Zeit nur
+mit PHP 8.1 und 8.2 kompatibel. Die Pakete für PHP 8.2 sind unter dem 
+Repository ppa:ondrej/php verfügbar (siehe weiteres Software-Repository einbinden).
 </p>
 
 Für den Betrieb von OPUS 4 sind einige zusätzliche PHP-Pakete notwendig. PHP und diese Pakete können unter Ubuntu
@@ -88,11 +86,11 @@ $ sudo apt-get update
 {% endhighlight %}
 
 <p class="note" markdown="1">
-Die Namen der Pakete sind mitunter mit einer Versionsnummer versehen. Für die PHP-Version 7.1 z.B. `php7.1-curl`. 
+Die Namen der Pakete sind mitunter mit einer Versionsnummer versehen. Für die PHP-Version 8.2 z.B. `php8.2-curl`. 
 </p>
 
 {% highlight bash %}
-$ sudo apt-get install php7.1-curl
+$ sudo apt-get install php8.2-curl
 {% endhighlight %}
 
 <p class="warning" markdown="1">
@@ -137,7 +135,7 @@ $ sudo apt-get install openjdk-8-jdk
 <p class="note" markdown="1">
 Java wird für den Betrieb von [Apache Solr][SOLR] benötigt. Abhängig von der Solr Version kann es unterschiedliche
 Mindestanforderungen an das verwendete Java Runtime Environment geben. Siehe z.B.
-[System Requirements for Solr 7.7.2](https://solr.apache.org/docs/7_7_2/SYSTEM_REQUIREMENTS.html).
+[System Requirements for Solr 9.10.1](https://solr.apache.org/docs/9_10_1/SYSTEM_REQUIREMENTS.html).
 </p>
 
 ### Mailserver
