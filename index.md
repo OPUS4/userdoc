@@ -6,7 +6,7 @@ weight: 0
 
 # Willkommen zur OPUS 4 Dokumentation
 
-Auf diesen Seiten finden sie Informationen zu OPUS 4, der Anpassung, Konfiguration und dem Betrieb eines Repositoriums
+Auf diesen Seiten finden Sie Informationen zu OPUS 4, der Anpassung, Konfiguration und dem Betrieb eines Repositoriums
 bzw. institutionellen Dokumentenservers.
 
 Die Dokumentation hier bezieht sich auf die OPUS 4 Version, die auf [GitHub][GITHUB] entwickelt wird. Die aktuelle
@@ -28,7 +28,7 @@ Diese Version ist momentan auch am Besten für die [Migration von OPUS 3][OPUS3M
 
 ## Dokumentation verbessern
 
-Problem mit der Dokumentation, Hinweise und Verbesserungsvorschläge können als [Issues][ISSUES] gemeldet werden. Bitte
+Probleme mit der Dokumentation, Hinweise und Verbesserungsvorschläge können als [Issues][ISSUES] gemeldet werden. Bitte
 dabei vorher prüfen, ob nicht evtl. bereits ein Issue zu dem Thema angelegt wurde.
 
 Es ist auch möglich an der Dokumentation mitzuarbeiten. Weitere Hinweise dazu finden sich in der `README.md` Datei und

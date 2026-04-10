@@ -12,7 +12,7 @@ Die Aktivierung der asynchronen Jobverarbeitung wird im Folgenden beschrieben.
 
 <p class="warning">
 Beim Aktivieren der asynchronen Jobverarbeitung ist zu beachten, dass die Änderungen im
-System immer mit einer Verzögerung eintreten. So werden beispielsweise Änderungen
+System immer mit einer zeitlichen Verzögerung eintreten. So werden beispielsweise Änderungen
 an Dokumenten erst über die Suche auffindbar, wenn die Solr-Indexierung erfolgt ist. In der
 Zwischenzeit befindet sich der Solr-Index in einem inkonsistenten Zustand.
 </p>

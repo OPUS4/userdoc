@@ -16,17 +16,17 @@ Kommentarzeichen zu entfernen und die Parameter mit den gewünschten Werten zu b
 ; PUBLICATION LIST SETTINGS
 ; Per default publication lists are rendered by the default stylehseet.
 ; Here you can define your own stylesheet for rendering publication lists:
-publist.stylesheet =
+plugins.export.publist.stylesheet =
 
 ; Per default publications are grouped by 'published year'.
 ; Here you can switch grouping to 'completed year':
-publist.groupby.completedyear = 1
+plugins.export.publist.groupby.completedyear = 1
 ```
 
-Der Parameter `publist.stylesheet` gibt den Namen des zuvor erstellten eigenen Layout für die
+Der Parameter `plugins.export.publist.stylesheet` gibt den Namen des zuvor erstellten eigenen Layout für die
 Publikationslisten an.
 
-Der Parameter `publist.groupby.completedyear` ermöglicht die standardmäßig nach 'published
+Der Parameter `plugins.export.publist.groupby.completedyear` ermöglicht die standardmäßig nach 'published
 year' sortierte Ergebnisliste umzustellen nach 'completed year' .
 
 Das folgende Beispiel aktiviert anstelle des Standardlayouts für Publikationslisten das eigene
@@ -34,6 +34,6 @@ erstellte Layout `mylayout` und ändert die Sortierung der Ergebnisliste nach de
 'completed year':
 
 {% highlight ini %}
-publist.stylesheet = mylayout
-publist.groupby.completedyear = 1
+plugins.export.publist.stylesheet = mylayout
+plugins.export.publist.groupby.completedyear = 1
 {% endhighlight %}

@@ -7,7 +7,7 @@ weight: 30
 
 Die Dateien von OPUS 4 werden seit Version 4.5-RC1 mit Hilfe von Git 
 Kommandos installiert und aktualisiert. Git ist ein Werkzeug, das in 
-der Softwareentwicklung eingetzt wird, um unterschiedliche Versionen 
+der Softwareentwicklung eingesetzt wird, um unterschiedliche Versionen 
 einer Software verwalten und synchronisieren zu können.
 
 <p class="note">
@@ -44,7 +44,7 @@ $ git clone https://github.com/opus4/application opus4
 $ cd opus4
 {% endhighlight %}
 
-Durch die Kommando wir das Verzeichnis `opus4` mit allen Dateien aus
+Durch das Kommando wird das Verzeichnis `opus4` mit allen Dateien aus
 dem Git-Repository von OPUS 4 angelegt. Nun kann das Installationsskript
 ausgeführt werden.
 

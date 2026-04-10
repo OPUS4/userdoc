@@ -5,7 +5,8 @@ weight: 10
 
 # Voraussetzungen
 
-Hier sind die grundlegenden Voraussetzungen für einen OPUS 4 Server und die Client-System beschrieben.
+Hier sind die grundlegenden Voraussetzungen für einen OPUS 4 Server und 
+Client-Systeme beschrieben.
 
 * [Server](#server)
 * [Client](#client-browser)
@@ -140,7 +141,7 @@ Mindestanforderungen an das verwendete Java Runtime Environment geben. Siehe z.B
 
 ### Mailserver
 
-Damit OPUS 4 Nachrichten an Autoren verschicken kann, z.B. wenn ihr Dokument freigeschaltet wird, ist ein ein Mailserver
+Damit OPUS 4 Nachrichten an Autoren verschicken kann, z.B. wenn ihr Dokument freigeschaltet wird, ist ein Mailserver
 (SMTP) notwendig, der eingehende Mails von `localhost` (`127.0.0.1`) annehmen und weiterleiten kann. In den meisten
 Fällen sollte die sogenannte "smarthost"-Konfiguration ausreichen
 
