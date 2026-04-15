@@ -244,6 +244,8 @@ body {
     margin: 0px;
     padding: 0px;
     white-space: pre-wrap;
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
 }
 
 /* Inline code */

@@ -38,6 +38,63 @@ plugins.export.default.maxDocumentsUser = 500
 Der angemeldete Administrator kann für eine unbegrenzte Anzahl von Dokumenten Metadaten exportieren. Dafür ist der 
 Rows-Parameter in der URL anzupassen.
 
+## Besonderheiten des CSV-Exports
+
+Standardmäßig wird das XSLT-Stylesheet $BASEDIR/modules/export/views/scripts/stylesheets/csv.xslt verwendet. Dieses liefert die Metadaten spaltenweise getrennt aus. Beim Import in z.B. Excel ist darauf zu achten, dass als "Dateiursprung" der Zeichensatz "Unicode (UTF-8)" ausgewählt wird. 
+
+### Ergänzung des CSV-Exports um weitere Spalten
+Der CSV-Export kann um weitere Spalten mit Metadaten aus Enrichment-Feldern und Collections ergänzt werden. Dazu können die folgenden Parameter von der `$BASEDIR/application/configs/application.ini` in die `config.ini` übernommen und angepasst werden:
+```
+; ENRICHMENTS AND COLLECTIONS TO BE EXPORTED IN CSV
+export.csv.enrichments = 
+export.csv.enrichments_labels = 
+export.csv.collections = 
+export.csv.collections_labels =  
+; Visibility in CSV: 1 = All users, 0 = Logged in users only
+export.csv.enrichments_visible = 
+export.csv.collections_visible = 
+```
+In die Zeile
+```
+export.csv.enrichments =
+```
+werden die internen Namen des/der gewünschten Enrichments (kommasepariert) eingetragen. 
+Beipiel:
+```
+export.csv.enrichments = ConferenceName,ConferencePlace
+```
+
+In die Zeile
+```
+export.csv.enrichments_labels =
+```
+werden die gewünschten Spaltenüberschriften des/der gewünschten Enrichments (kommasepariert) eingetragen.
+Beispiel:
+``` 
+export.csv.enrichments_labels = Name der Konferenz,Ort der Konferenz
+```
+
+In die Zeile
+```
+export.csv.enrichments_visible =
+```
+werden die die Werte "1" oder "0" (kommasepariert) eingetragen. "1" bedeutet, dass das Enrichment für alle User (guest) angezeigt wird. "0" bedeutet, dass das Enrichment nur für eingeloggte User sichtbar ist, die Zugriff auf den Administrationsbereich "Dokumente verwalten" haben. 
+Beispiel:
+``` 
+export.csv.enrichments_visible = 0,1
+```
+
+Die Anpassung der Zeilen für die Sammlungszugehörigkeit 
+```
+export.csv.collections = 
+export.csv.collections_labels =
+export.csv.collections_visible =
+```
+erfolgt analog.
+
+### Ausgabe von __öffentlichen__ und __internen__ Bemerkungen
+Die Spalte "Öffentliche Bemerkungen" wird allen Usern (guest) angezeigt. Die Spalte "Interne Bemerkungen" wird nur eingeloggten Usern angezeigt, die Zugriff auf den Administrationsbereich "Dokumente verwalten" haben. Diese Einstellung ist nicht änderbar.
+
 ## Export im XML-Format
 
 Standardmäßig wird die Datei

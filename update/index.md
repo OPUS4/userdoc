@@ -32,7 +32,7 @@ git commit -m "<commit message>" <DATEI>
 git pull
 {% endhighlight %}
 
-3.)  Git Status überprüfen
+3.) Git Status überprüfen
 {% highlight bash %}
 git status
 {% endhighlight %}
@@ -56,6 +56,10 @@ bin/update.sh
 
 
 ## Spezielle Hinweise zu den Versionen
+
+Hinweise zum Update auf eine neue Version sind in der Regel in den 
+[Release Notes](https://github.com/OPUS4/application/blob/master/RELEASE_NOTES.md)
+zu finden.
 
 * [OPUS 4.7 Update](update47.html)
 * [OPUS 4.6 Update](update46.html)

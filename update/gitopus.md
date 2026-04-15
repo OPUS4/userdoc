@@ -61,8 +61,8 @@ der dann für das Update verwendet wird und Git ist viel besser in der Lage die 
 der Versionen so weit wie möglich zu automatisieren.
 
 Die meisten Updates werden durch dieses Verfahren wesentlich schneller und einfacher werden. Dadurch können
-Respositorien sofort mit der neuesten Version arbeiten und müssen nicht darauf warten, daß ein neuer Tarball
-veröffentlich wird.
+Respositorien sofort mit der neuesten Version arbeiten und müssen nicht darauf warten, dass ein neuer Tarball
+veröffentlicht wird.
 
 Wenn für ein Update die Datenbank oder der Solr-Index angepasst werden müssen, wird es auch weiterhin notwendig
 sein nach der Aktualisierung der Dateien Skripte auszuführen, die dann die weiteren Anpassungen vornehmen.

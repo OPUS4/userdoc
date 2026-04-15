@@ -1,7 +1,9 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-require 'json'
-require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
-
+# to publish on github page
 gem 'github-pages', group: :jekyll_plugins
+
+# to publish without github page
+#gem "jekyll"
+
+gem "webrick", "~> 1.8"

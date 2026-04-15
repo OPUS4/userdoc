@@ -17,7 +17,6 @@ mail.opus.address = <E-Mail-Adresse, z.B. noreply@bibliothekxyz.de>
 mail.opus.name = <Name, z.B. BibliothekXYZ>
 {% endhighlight %}
 
-
 ## E-Mail-Versand mit Authentifizierung
 
 Das Versenden der E-Mails mit Authentifizierung wird seit OPUS Version 4.8.0.1 unterstützt und lässt sich konfigurieren. 
