@@ -1,28 +1,31 @@
 ---
-title: Bericht
+title: Konferenz-Proceedings
 ---
 
-# Bericht
+# Konferenz-Proceedings
 
-Der Dokumenttyp Bericht [**report**] enthält textgeprägtes Material, das nicht anderweitig zugeordnet
-werden kann. Ausgeschlossen sind Konferenzberichte. Beispiele sind Reports, externe Forschungsberichte,
-interne Reports, Mitteilungen, statistische Berichte, Projektabschlussberichte, technische Dokumentationen
-und Anleitungen.
+Der Dokumenttyp Konferenz-Proceedings [**Conference Proceedings**] meint eine Publikation von
+Beiträgen, die als Sammelwerk erscheinen. Herausgeber\*innen können natürliche Personen oder
+Körperschaften sein. Sie enthält Beiträge zu Tagungen, Kongressen oder wissenschaftlichen
+Konferenzen verschiedener Autor\*innen.
 
-Standardfelder im Dokumenttyp Bericht:
+Standardfelder im Dokumenttyp Konferenz-Proceedings:
 
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* Edition
 * IdentifierDoi
 * IdentifierIsbn
-* IdentifierUrl
+* IdentifierIssn
 * Institute
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
+* OpusConferenceName
+* OpusConferenceNumber
+* OpusConferencePlace
+* OpusConferenceYear
 * PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
 * PersonContributor *(Subfield: AcademicTitle)*

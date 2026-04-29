@@ -1,27 +1,31 @@
 ---
-title: Lehrmaterial
+title: Entscheidungs- oder Urteilsanmerkung
 ---
 
-# Lehrmaterial
+# Entscheidungs- oder Urteilsanmerkung
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Der Dokumenttyp Entscheidungs- oder Urteilsanmerkung [**Annotation**] bezeichnet eine Anmerkung zu einer juristischen
+Entscheidung wie z.B. einem Gerichtsurteil.
 
+Standardfelder im Dokumenttyp Entscheidungs- oder Urteilsanmerkung:
+
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
-* ContributingCorporation
 * Edition
+* EmbargoDate
 * IdentifierDoi
-* IdentifierIsbn
+* IdentifierIssn
 * Institute
+* Issue
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
+* PageFirst
+* PageLast
 * PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
-* PersonContributor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublisherName
 * PublisherPlace
@@ -34,3 +38,4 @@ hingegen [Vorlesung](lecture.html).
 * **TitleMain**
 * TitleParent
 * TitleSub
+* Volume

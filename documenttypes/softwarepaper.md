@@ -1,30 +1,31 @@
 ---
-title: Lehrmaterial
+title: Softwareartikel
 ---
 
-# Lehrmaterial
+# Softwareartikel
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Ein Softwareartikel [**Software Paper**] enthält die Grundprinzipien der Entwicklung und Details
+zum verwendeten Code.
 
+Standardfelder im Dokumenttyp Softwareartikel:
+
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
-* ContributingCorporation
-* Edition
-* IdentifierDoi
-* IdentifierIsbn
+* EmbargoDate
+* IdentifierIssn
 * Institute
+* Issue
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
+* PageFirst
+* PageLast
 * PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
-* PersonContributor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
-* PublisherName
-* PublisherPlace
+* PublishedDate
 * Series
 * SubjectDDC
 * SubjectSwd
@@ -34,3 +35,4 @@ hingegen [Vorlesung](lecture.html).
 * **TitleMain**
 * TitleParent
 * TitleSub
+* Volume

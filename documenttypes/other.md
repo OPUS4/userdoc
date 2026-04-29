@@ -4,37 +4,33 @@ title: Sonstiges
 
 # Sonstiges
 
-Der Dokumenttyp Sonstiges [**Other**] ist für alles gedacht, das in keinen der vorhandenen
-Dokumenttypen passt .
+Der Dokumenttyp Sonstiges [**Other**] ist für alles gedacht, was keinem der anderen
+Dokumenttypen zugeordnet werden kann.
 
 Standardfelder im Dokumenttyp Sonstiges:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* CreatingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
+* IdentifierUrl
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
-* PageFirst
-* PageLast
-* PageNumber
-* PersonAuthor
-* PersonContributor
-* PersonEditor
-* **PersonSubmitter**
-* PersonTranslator
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
-* PublishedDate
+* open_access
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* PersonEditor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublisherName
+* PublisherPlace
 * Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract**
-* **TitleMain** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
+* **TitleMain**
+* TitleParent
+* TitleSub

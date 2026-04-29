@@ -1,31 +1,29 @@
 ---
-title: Lehrmaterial
+title: Teil einer dynamischen Online-Ressource
 ---
 
-# Lehrmaterial
+# Teil einer dynamischen Online-Ressource
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Der Dokumenttyp Teil einer dynamischen Online-Ressource [**Part of a Dynamic Web Resource**] umfasst Beiträge mit
+Bezug auf wissenschaftliche Tätigkeiten, die z.B. in Blogs oder Wikis veröffentlicht wurden.
+
+Standardfelder im Dokumenttyp Teil einer dynamischen Online-Ressource:
 
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* Edition
 * IdentifierDoi
-* IdentifierIsbn
+* IdentifierUrl
 * Institute
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
-* PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
 * PersonContributor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublisherName
 * PublisherPlace
-* Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled

@@ -2,27 +2,30 @@
 title: Vorlesung
 ---
 
-Der Dokumenttyp Vorlesung [**Lecture**] enthält Universitätsreden, Vorlesungen und Antrittsvorlesungen.
+Der Dokumenttyp Vorlesung [**Lecture**] umfasst Vorlesungen oder auch Präsentationen, die
+anlässlich einer akademischen Veranstaltung gehalten werden. Ausgeschlossen sind Konferenzvorträge.
 
 Standardfelder im Dokumenttyp Vorlesung:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* ContributingCorporation
+* IdentifierDoi
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageNumber
-* PersonAuthor
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * Series
 * SubjectDDC
+* SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub

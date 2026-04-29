@@ -11,26 +11,30 @@ oder einem anderen nicht-wissenschaftlichen Periodicum.
 Standardfelder im Dokumenttyp Beitrag zu einer (nichtwissenschaftlichen) Zeitung oder
 Zeitschrift:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* EmbargoDate
+* IdentifierIssn
 * Institute
+* Issue
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageFirst
 * PageLast
-* **PersonAuthor**
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PageNumber
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
 * Series
 * SubjectDDC
+* SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
 * TitleParent
+* TitleSub
+* Volume

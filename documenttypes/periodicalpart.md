@@ -12,23 +12,30 @@ Standardfelder im Dokumenttyp Ausgabe (Heft) zu einer Zeitschrift:
 
 * **CompletedDate**
 * CompletedYear
-* Email *(Subfield in Verbindung mit Personen)*
+* CreatingCorporation
+* IdentifierDoi
 * IdentifierIssn
 * Institute
+* Issue
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
+* PageFirst
+* PageLast
 * PageNumber
-* PersonContributor
-* PersonEditor
-* **PersonSubmitter**
-* PublishedDate
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonEditor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublisherName
 * PublisherPlace
-* **Series**
+* Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub
+* Volume

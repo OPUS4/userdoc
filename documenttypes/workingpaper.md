@@ -4,30 +4,34 @@ title: Arbeitspapier
 
 # Arbeitspapier
 
-Der Dokumenttyp Arbeitspapier [**Workingpaper**] bezeichnet ein vorläufiges wissenschaftliches
-oder technisches Papier, das in der Reihe einer Institution 221 erscheint (auch: Research Paper,
-Research Memorandum, Diskussionspapier).
+Der Dokumenttyp Arbeitspapier [**Workingpaper**] bezeichnet eine wissenschaftliche Veröffentlichung,
+die entweder von der Institution herausgegeben wird, in der die Forschung stattfindet, oder im
+Auftrag einer Institution angefertigt wurde. Es hat (noch) kein Begutachtungsverfahren durchlaufen.
+Siehe auch Dokumenttyp [Preprint](preprint.html).
 
 Standardfelder im Dokumenttyp Arbeitspapier:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* ContributingCorporation
+* IdentifierDoi
+* IdentifierIsbn
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageNumber
-* **PersonAuthor**
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublisherName
+* PublisherPlace
 * Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub

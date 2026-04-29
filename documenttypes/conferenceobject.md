@@ -4,43 +4,50 @@ title: Konferenzveröffentlichung
 
 # Konferenzveröffentlichung
 
-Der Dokumenttyp Konferenzveröffentlichung [**Conference Object**] beinhaltet alle Arten von
-Dokumenten, die mit einer Konferenz verbunden sind. (KonferenzPapers, Konferenzberichte,
-Conference-Lectures, Beiträge in KonferenzProceedings, Konferenzbeiträge, Abstracts, Bände von
-Konferenzbeiträgen, Poster von Konferenzen).
+Der Dokumenttyp Konferenzveröffentlichung [**Conference Object**] beinhaltet alle Arten von Dokumenten,
+die mit einer Konferenz verbunden sind, z.B. Konferenzbände, Konferenzberichte, Konferenzvorträge 
+und Konferenzposter.
+
+Ist eine feinere Differenzierung gewünscht, stehen dafür die Dokumenttypen [Konferenzfolien](conferenceslides.html),
+[Konferenz: Meeting Abstract](conferenceabstract.html), [Konferenzpaper](conferencepaper.html),
+[Konferenzposter](conferenceposter.html) und [Konferenz-Proceedings](conferenceproceedings.html) zur Verfügung.
 
 Standardfelder im Dokumenttyp Konferenzveröffentlichung:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* CreatingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
 * IdentifierIsbn
 * IdentifierIssn
 * Institute
+* Issue
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
+* OpusConferenceName
+* OpusConferenceNumber
+* OpusConferencePlace
+* OpusConferenceYear
 * PageFirst
 * PageLast
 * PageNumber
-* PersonAuthor
-* PersonContributor
-* PersonEditor
-* **PersonSubmitter**
-* PersonTranslator
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* PersonEditor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
 * PublisherName
 * PublisherPlace
 * Series
 * SubjectDDC
+* SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
 * TitleParent
+* TitleSub
+* Volume

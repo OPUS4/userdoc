@@ -9,34 +9,28 @@ die den Eindruck von Bewegung vermitteln, wenn sie nacheinander gezeigt werden. 
 Animationen, Filme, Fernsehprogramme, Videos, Zoetropen oder die visuelle Darstellung einer
 Simulation.
 
-Hinweis: Objekte des Dokumenttyps Bewegte Bilder entsprechen auch dem Typ Bild. Bei der
-Auslieferung über XMetaDissPlus2.0 wird daher im Element dini:PublType neben MovingImage
-auch Image verlangt.
-
 Standardfelder im Dokumenttyp Bewegte Bilder:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* CreatingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
-* PersonAuthor
-* PersonContributor
-* PersonEditor
-* **PersonSubmitter**
-* PersonTranslator
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* open_access
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublisherName
+* PublisherPlace
 * Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub

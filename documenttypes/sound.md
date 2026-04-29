@@ -5,33 +5,30 @@ title: Ton
 # Ton
 
 Der Dokumenttyp Ton [**Sound**] bezeichnet eine Ressource, die hauptsächlich dazu bestimmt ist,
-dass man sie hört, wie bspw. Musikdateien, Audio-CDs, Sprach- und Tonaufzeichnungen. Es wird
-nicht zwischen Tönen, Geräuschen und Musik unterschieden.
+dass man sie hört, wie bspw. Musikdateien, Audio-CDs, Sprach- und Tonaufzeichnungen.
 
 Standardfelder im Dokumenttyp Ton:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* CreatingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
-* PersonAuthor
-* PersonContributor
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
-* PublishedDate
+* open_access
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublisherName
 * PublisherPlace
 * Series
 * SubjectDDC
+* SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub

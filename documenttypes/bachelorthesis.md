@@ -1,14 +1,12 @@
 ---
-title: Studienarbeit
+title: Bachlorarbeit
 ---
 
-# Studienarbeit
+# Bachlorarbeit
 
-Der Dokumenttyp Studienarbeit [**Study Thesis**] bezeichnet textgeprägte Ausarbeitungen, die im
-Rahmen eines Studiums entstehen. Dies können z.B. Haus- und Seminarberichte, Untersuchungs- und
-Projektberichte sein, die nicht als Abschlussarbeit eingestuft sind.
+Der Dokumenttyp Bachelorarbeit [**Bachelor's Thesis**] bezeichnet die niedrigste Stufe einer Abschlussarbeit (meist nach 3 Jahren Studium).
 
-Standardfelder im Dokumenttyp Studienarbeit:
+Standardfelder im Dokumenttyp Bachelorarbeit:
 
 * **CompletedDate**
 * CompletedYear
@@ -22,11 +20,14 @@ Standardfelder im Dokumenttyp Studienarbeit:
 * PageNumber
 * PersonAdvisor *(Subfield: AcademicTitle)*
 * **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonReferee *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
+* **ThesisDateAccepted** *(wenn Volltext vhd.)*
+* **ThesisGrantor**
 * **ThesisPublisher** *(wenn Volltext vhd.)*
 * TitleAbstract
 * **TitleMain**

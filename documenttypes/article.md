@@ -4,33 +4,42 @@ title: Wissenschaftlicher Artikel
 
 # Wissenschaftlicher Artikel
 
-Der Dokumenttyp (wissenschaftlicher) Artikel [**article**] beinhaltet Dokumente, die als Artikel,
+Der Dokumenttyp Wissenschaftlicher Artikel [**article**] beinhaltet Dokumente, die z.B. als Artikel,
 Leitartikel, Editorial, Register, Inhaltsverzeichnis oder redaktioneller Teil in einer wissenschaftlichen
 Zeitschrift oder einem wissenschaftlichen Periodicum veröffentlicht wurden (Postprint).
 
-Standardfelder im Dokumenttyp (wissenschaftlicher) Artikel:
+Ist eine feinere Differenzierung gewünscht, stehen dafür die Dokumenttypen [Data Paper](datapaper.html), 
+[Forschungsartikel](researcharticle.html), [Korrigendum](corrigendum.html), [Letter to the Editor](letter.html),
+[Quellenedition](sourceedition.html), [Softwareartikel](softwarepaper.html), [Übersichtsartikel](reviewarticle.html)
+und [Vorwort](editorial.html) zur Verfügung.
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
+Standardfelder im Dokumenttyp Wissenschaftlicher Artikel:
+
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* EmbargoDate
+* IdentifierDoi
+* IdentifierIssn
 * Institute
+* Issue
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageFirst
 * PageLast
-* **PersonAuthor**
-* PersonEditor
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PageNumber
+* **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
 * Series
 * SubjectDDC
+* SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
 * TitleParent
+* TitleSub
+* Volume
