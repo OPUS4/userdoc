@@ -18,23 +18,22 @@ machen, darauf zu suchen, zu browsen und den Veröffentlichungsprozess zu verein
 
 ### Dokumenttypen
 
-Für die Erstellung der Dokumenttypen in OPUS4 wurde das "Gemeinsames Vokabular für Publikations- und Dokumenttypen"
-[(DINI AG Elektronisches Publizieren, DNB, BSZ, DINI Schriften 12-de, Version 1.0, Juni 2010)][DINI] als Grundlage
-genommen. Entsprechend diesem Standard sind die
-ausgelieferten [Dokumenttypen][DOCTYPES] definiert. Dieser Standard wird weiterentwickelt und gestattet es den
+Die Dokumenttypen in OPUS4 basieren auf dem ["Gemeinsamen Vokabular für Publikations- und Dokumenttypen 2.0"][DINI]
+der DINI-Arbeitsgruppen "Elektronisches Publizieren" und "Forschungsinformationssysteme". Entsprechend diesem Standard
+sind die ausgelieferten [Dokumenttypen][DOCTYPES] definiert. Dieser Standard wird weiterentwickelt und gestattet es den
 Betreibern von Repositorien, eigene Dokumenttypen zu definieren, wenn sie bei der Auslieferung über eine
-OAI-Schnittstelle auf die entsprechenden DINI-Dokumenttypen gemappt werden. Der Hintergrund hierfür ist das Ziel,
-den Metadatenaustausch im Bereich der Dokument- und Publikationstypen auf institutionellen und fachlichen Repositorien
-besser zu standardisieren.
+OAI-Schnittstelle auf die entsprechenden DINI-Dokumenttypen gemappt werden. Der Hintergrund hierfür ist das Ziel, den
+Metadatenaustausch im Bereich der Dokument- und Publikationstypen auf institutionellen und fachlichen Repositorien besser
+zu standardisieren.
 
 ### Netzpublikationen
 
-Des Weiteren wurden für die Auslieferung der OPUS-Dokumente über die OAI-Schnittstelle die
-Metadaten-Kernset-Definitionen "Lieferung von Metadaten für Netzpublikationen an die Deutsche Nationalbibliothek"
-[(Version 1.2, Stand 12. März 2012)][DNBMDKERN] und das
-"XMetaDissPlus - Format des Metadatensatzes der Deutschen Nationalbibliothek für Online-Hochschulschriften inklusive
-Angaben zum Autor (XMetaPers)" [(DNB, Version 2.2, Stand 21. Februar 2012)][XMETADISSPLUS]
-berücksichtigt, um die Grundlage für eine standardisierte Ablieferung an die DNB zu schaffen.
+Um die Grundlagen für die Ablieferung an die Deutsche Nationalbibliothek zu schaffen, wurden des Weiteren 
+die Standards der DNB für die Auslieferung der OPUS-Dokumente über die OAI-Schnittstelle berücksichtigt:
+
+* Metadaten-Kernset-Definitionen: [Lieferung von Metadaten für Netzpublikationen an die Deutsche Nationalbibliothek][DNBMDKERN] (Version 2.0, Stand: 27.
+Juni 2023)
+* Dokumentation des Austauschformats XMetaDissPlus: [Lieferung von Metadaten im Format XMetaDissPlus (XMDP) an die Deutsche Nationalbibliothek][XMETADISSPLUS] (Version 2.0, Stand: 15. Februar 2023)
 
 ### URN-Vergabe
 
@@ -66,9 +65,7 @@ Sobald sich ein Objekt, für das eine urn:nbn:de vergeben wurde, auch nur gering
 erhalten. 
 </p>
 
-
-Für weitere Informationen zu URNs konsultieren Sie bitte die Richtlinien zu [Persistent Identifier][PERSISTENTID].
-
+Für weitere Informationen zu URNs konsultieren Sie bitte die Website des [URN-Service der DNB][URNSERVICE].
 
 ### Zeichenkodierung
 
@@ -94,12 +91,12 @@ Bibliographie -> Ja" ein und [exportiert][EXPORT] diese.
 Selbstverständlich kann man die Dokumente auch noch zusätzlich nach anderen Aspekten einschränken.
 </p>
 
-[GNUGPL]: http://www.gnu.org/copyleft/gpl.html
-[DINI]: http://nbn-resolving.de/urn:nbn:de:kobv:11-100109998
-[DNBMDKERN]: http://d-nb.info/1020730110/34
-[XMETADISSPLUS]: http://d-nb.info/1020009535/34
-[PERSISTENTID]: http://www.persistent-identifier.de/?link=3352
-[NESTOR]: http://nestor.sub.uni-goettingen.de/handbuch/artikel/nestor_handbuch_artikel_336.pdf
+[GNUGPL]: https://www.gnu.org/licenses/gpl-3.0
 [DOCTYPES]: documenttypes/index.html
-[EXPORT]: features/export.html
-[URNPOLICY]: http://nbn-resolving.de/urn:nbn:de:101-2012121200
+[DINI]: https://doi.org/10.18452/24147.2
+[DNBMDKERN]: https://nbn-resolving.org/urn:nbn:de:101-20220930197
+[XMETADISSPLUS]: https://nbn-resolving.org/urn:nbn:de:101-2023031097
+
+[URNPOLICY]: https://nbn-resolving.de/urn:nbn:de:101-2012121200
+[URNSERVICE]: https://www.dnb.de/urnservice
+[EXPORT]: export/index.html
