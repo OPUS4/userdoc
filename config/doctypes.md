@@ -417,7 +417,7 @@ dienen).
 ### Anzeige der Checkbox für rechtliche Hinweise für einzelne Dokumenttypen
 
 Neben der Checkbox für rechtliche Hinweise, die auf der ersten Seite angezeigt wird (siehe
-[Publish-Formular](../config/publish.html)), kann die Anzeige dieser Checkbox als Pflichtfeld auch für einzelne
+[Publish-Formular](../publish/publish.html)), kann die Anzeige dieser Checkbox als Pflichtfeld auch für einzelne
 Dokumenttypen erfolgen. Dafür muss im entsprechenden Template folgender Aufruf eingefügt werden
 als Bsp. kann hier das Template des Testdokumenttyps "all" unter
 `$BASEDIR/application/configs/doctypes_templates/all.phtml` dienen):
@@ -461,7 +461,7 @@ Alle Dokumenttypen, die standardmäßig mit OPUS4 ausgeliefert werden, bestehen 
 bestimmten Set an Feldern. Diese Vorauswahl kann individuell angepasst werden, indem Felder aus
 den entsprechenden XML-Dokumenttypdefinitionen und den dazugehörigen Templates entfernt oder
 hinzugefügt werden. Zur Veranschaulichung wird im Folgenden beispielhaft dem Dokumenttyp
-[(wissenschaftlicher) Artikel](../documenttypes/article.html) ([Article) das Feld
+[(wissenschaftlicher) Artikel](../documenttypes/article.html) (Article) das Feld
 `IdentifierUrl` hinzugefügt, um z.B. das Eintragen
 einer externen URL zu einem Dokument zu ermöglichen.
 
@@ -654,7 +654,7 @@ documentType. neuer Dokumenttyp .openAireType = ' Gewünschter OpenAIRE-Publikat
 {% endhighlight %}
 
 Die Auflistung der Publikationstypen für OpenAIRE v3 finden Sie unter
-https://guidelines.openaire.eu/en/latest/literature/field_publicationtype.html.
+https://guidelines.openaire.eu/en/latest/literature/field_publicationtype.html
 
 Beispiel:
 
@@ -719,7 +719,7 @@ Das führt dann zu folgender Ausgabe:
 `<resourceType resourceTypeGeneral="Image">CartographicMaterial</resourceType>`.
 
 Informationen zum Element `ResourceType` und den zulässigen Werten des DataCite-Vokabulariums finden sich
-unter https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/resourcetype/.
+unter https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/resourcetype/
 
 ### Prüfung der neu angelegten XML-Dokumenttypdefinition(en)
 
