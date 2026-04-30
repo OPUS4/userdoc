@@ -10,8 +10,8 @@ in OPUS zugeordnet.
 
 <p class="info">
 Besondere Vorsicht ist bei einer Anpassung der Felder geboten. Im Formular müssen alle
-Felder vorhanden sein, die für das Mapping von Crossref nach OPUS 4 in 
- `$BASEDIR/public/layouts/opus4/js/doiAssist.js` bzw. `$BASEDIR/public/layouts/opus4/js/getDoi.js`
+Felder vorhanden sein, die für das Mapping von Crossref nach OPUS 4 in
+`$BASEDIR/public/layouts/opus4/js/doiAssist.js` bzw. `$BASEDIR/public/layouts/opus4/js/getDoi.js`
 definiert sind. Insbesondere das Entfernen von Standardfeldern kann dazu führen, dass
 der DOI-Import nicht mehr (korrekt) funktioniert.
 </p>
