@@ -4,27 +4,26 @@ title: Teil eines Buches
 
 # Teil eines Buches
 
-Im Dokumenttyp Teil eines Buches (Kapitel) [**Part of a Book**] sind Dokumente repräsentiert, die
-im Rahmen eines monographischen Werks entstanden sind, wie bspw. Kapitel oder Beiträge in
-Sammelwerken.
+Der Dokumenttyp Teil eines Buches (Kapitel) [**Part of a Book**] repräsentiert Teile oder Kapitel eines Buches
+(Monographie oder Sammelband).
 
 Standardfelder im Dokumenttyp Teil eines Buches (Kapitel):
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
+* IdentifierIsbn
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageFirst
 * PageLast
-* **PersonAuthor**
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PageNumber
+* PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
 * PublisherName
 * PublisherPlace
@@ -32,7 +31,8 @@ Standardfelder im Dokumenttyp Teil eines Buches (Kapitel):
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)                  *
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
 * TitleParent
+* TitleSub

@@ -9,31 +9,25 @@ die Metadaten die Zeitschrift bzw. das Periodikum als Ganzes referenzieren.
 
 Standardfelder im Dokumenttyp Periodikum:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* CreatingCorporation
+* IdentifierDoi
 * IdentifierIssn
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
-* PageNumber
-* PersonAuthor
-* PersonContributor
-* PersonEditor
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
-* PublishedDate
+* open_access
+* PersonContributor *(Subfield: AcademicTitle)*
+* PersonEditor *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublisherName
 * PublisherPlace
-* Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisPublisher**
-* **TitleAbstract**
-* **TitleMain** *(wenn Volltext vhd.)*
-* TitleParent
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
+* **TitleMain**
+* TitleSub

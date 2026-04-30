@@ -1,28 +1,31 @@
 ---
-title: Studienarbeit
+title: Übersichtsartikel
 ---
 
-# Studienarbeit
+# Übersichtsartikel
 
-Der Dokumenttyp Studienarbeit [**Study Thesis**] bezeichnet textgeprägte Ausarbeitungen, die im
-Rahmen eines Studiums entstehen. Dies können z.B. Haus- und Seminarberichte, Untersuchungs- und
-Projektberichte sein, die nicht als Abschlussarbeit eingestuft sind.
+Der Dokumenttyp Übersichtsartikel [**Review Article**] bezeichnet einen Artikel, der die Summe von
+veröffentlichten wissenschaftlichen Arbeiten zu einem Thema zusammenfasst.
 
-Standardfelder im Dokumenttyp Studienarbeit:
+Standardfelder im Dokumenttyp Übersichtsartikel:
 
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
-* ContributingCorporation
-* IdentifierDoi
+* EmbargoDate
+* IdentifierIssn
 * Institute
+* Issue
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
+* PageFirst
+* PageLast
 * PageNumber
-* PersonAdvisor *(Subfield: AcademicTitle)*
 * **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublishedDate
 * Series
 * SubjectDDC
 * SubjectSwd
@@ -32,3 +35,4 @@ Standardfelder im Dokumenttyp Studienarbeit:
 * **TitleMain**
 * TitleParent
 * TitleSub
+* Volume

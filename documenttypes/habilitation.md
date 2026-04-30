@@ -4,33 +4,26 @@ title: Habilitation
 
 # Habilitation
 
-Für die Definition des Dokumenttyps Habilitation [**Habilitation**] siehe Dissertation
-212.
+Der Dokumenttyp Habilitation [**Habilitation**] bezeichnet eine wissenschaftliche Arbeit für den
+Erwerb der universitären Lehrbefähigung.
 
 Standardfelder im Dokumenttyp Habilitation:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* CreatingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
 * IdentifierIsbn
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageNumber
-* PersonAdvisor
-* **PersonAuthor**
-* PersonContributor
-* PersonEditor
-* PersonReferee
-* **PersonSubmitter**
-* PersonTranslator
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PersonAdvisor *(Subfield: AcademicTitle)*
+* **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonReferee *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
 * PublisherName
 * PublisherPlace
@@ -38,8 +31,10 @@ Standardfelder im Dokumenttyp Habilitation:
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisDateAccepted**
+* **ThesisDateAccepted** *(wenn Volltext vhd.)*
 * **ThesisGrantor**
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub

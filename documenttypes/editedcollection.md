@@ -1,16 +1,16 @@
 ---
-title: Lehrmaterial
+title: Sammelband
 ---
 
-# Lehrmaterial
+# Sammelband
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Der Dokumenttyp Sammelband [**Edited Collection**] bezeichnet Bücher, die von einer oder mehreren Personen
+herausgegeben wurden. Er enthält Beiträge in Form von Kapiteln oder Aufsätzen verschiedener Autor\*innen.
+
+Standardfelder im Dokumenttyp Sammelband:
 
 * **CompletedDate**
 * CompletedYear
-* ContributingCorporation
 * Edition
 * IdentifierDoi
 * IdentifierIsbn
@@ -22,7 +22,9 @@ hingegen [Vorlesung](lecture.html).
 * PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
 * PersonContributor *(Subfield: AcademicTitle)*
+* PersonEditor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublishedDate
 * PublisherName
 * PublisherPlace
 * Series

@@ -11,33 +11,28 @@ Staatsexamen).
 
 Standardfelder im Dokumenttyp Masterarbeit:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
+* IdentifierDoi
 * Institute
 * **Language**
-* **Licence**
+* **Licence** *(wenn Volltext vhd.)*
 * Note
+* open_access
 * PageNumber
-* PersonAdvisor
-* **PersonAuthor**
-* PersonContributor
-* PersonReferee
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
-* PublishedDate
-* PublisherName
-* PublisherPlace
+* PersonAdvisor *(Subfield: AcademicTitle)*
+* **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
+* PersonReferee *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
-* **ThesisDateAccepted**
+* **ThesisDateAccepted** *(wenn Volltext vhd.)*
 * **ThesisGrantor**
-* **ThesisPublisher**
-* **TitleAbstract** *(wenn Volltext vhd.)*
+* **ThesisPublisher** *(wenn Volltext vhd.)*
+* TitleAbstract
 * **TitleMain**
+* TitleParent
+* TitleSub

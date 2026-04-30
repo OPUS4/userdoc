@@ -1,16 +1,16 @@
 ---
-title: Lehrmaterial
+title: Monographie
 ---
 
-# Lehrmaterial
+# Monographie
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Der Dokumenttyp Monographie [**Monograph**] repräsentiert ein Buch, das von einem oder mehreren Autor\*innen
+geschrieben wurde.
+
+Standardfelder im Dokumenttyp Monographie:
 
 * **CompletedDate**
 * CompletedYear
-* ContributingCorporation
 * Edition
 * IdentifierDoi
 * IdentifierIsbn
@@ -22,7 +22,9 @@ hingegen [Vorlesung](lecture.html).
 * PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
 * PersonContributor *(Subfield: AcademicTitle)*
+* PersonEditor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublishedDate
 * PublisherName
 * PublisherPlace
 * Series

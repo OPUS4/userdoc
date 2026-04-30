@@ -1,31 +1,30 @@
 ---
-title: Lehrmaterial
+title: Konferenzfolien
 ---
 
-# Lehrmaterial
+# Konferenzfolien
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Beim Dokumenttyp Konferenzfolien [**Conference Slides**] handelt es sich um Folien eines Vortrags,
+der auf einer Konferenz oder Tagung gehalten wurde.
+
+Standardfelder im Dokumenttyp Konferenzfolien:
 
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* Edition
 * IdentifierDoi
-* IdentifierIsbn
 * Institute
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
+* OpusConferenceName
+* OpusConferenceNumber
+* OpusConferencePlace
+* OpusConferenceYear
 * PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
-* PersonContributor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
-* PublisherName
-* PublisherPlace
-* Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled

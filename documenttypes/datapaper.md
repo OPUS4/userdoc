@@ -1,20 +1,21 @@
 ---
-title: Rezension
-sort: title
+title: Data Paper
 ---
 
-# Rezension
+# Data Paper
 
-Der Dokumenttyp Rezension [**Review**] umfasst Rezensionen von Büchern oder
-Artikeln.
+Der Dokumenttyp Data Paper [**Data Paper**] beschreibt einen bestimmten Datensatz bzw. ein Set an
+Daten, das/der in Form eines peer-reviewed Artikels in einer Zeitschrift erscheint. Der Fokus eines
+Data Papers liegt auf der Beschreibung der Daten sowie Informationen zur Zugänglichkeit und
+potentieller Nachnutzung.
 
-Standardfelder im Dokumenttyp Rezension:
+Standardfelder im Dokumenttyp Data Paper:
 
 * ArticleNumber
 * **CompletedDate**
 * CompletedYear
 * EmbargoDate
-* IdentifierDoi
+* IdentifierIssn
 * Institute
 * Issue
 * **Language**
@@ -27,8 +28,6 @@ Standardfelder im Dokumenttyp Rezension:
 * **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
-* PublisherName
-* PublisherPlace
 * Series
 * SubjectDDC
 * SubjectSwd

@@ -1,28 +1,30 @@
 ---
-title: Studienarbeit
+title: Letter to the Editor
 ---
 
-# Studienarbeit
+# Letter to the Editor
 
-Der Dokumenttyp Studienarbeit [**Study Thesis**] bezeichnet textgeprägte Ausarbeitungen, die im
-Rahmen eines Studiums entstehen. Dies können z.B. Haus- und Seminarberichte, Untersuchungs- und
-Projektberichte sein, die nicht als Abschlussarbeit eingestuft sind.
+Der Dokumenttyp Letter to the Editor [**Letter to the Editor**] bezeichnet eine Zuschrift an die Redaktion.
 
-Standardfelder im Dokumenttyp Studienarbeit:
+Standardfelder im Dokumenttyp Letter to the Editor:
 
+* ArticleNumber
 * **CompletedDate**
 * CompletedYear
-* ContributingCorporation
-* IdentifierDoi
+* EmbargoDate
+* IdentifierIssn
 * Institute
+* Issue
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
+* PageFirst
+* PageLast
 * PageNumber
-* PersonAdvisor *(Subfield: AcademicTitle)*
 * **PersonAuthor** *(Subfields: AcademicTitle, IdentifierOrcid)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
+* PublishedDate
 * Series
 * SubjectDDC
 * SubjectSwd
@@ -32,3 +34,4 @@ Standardfelder im Dokumenttyp Studienarbeit:
 * **TitleMain**
 * TitleParent
 * TitleSub
+* Volume

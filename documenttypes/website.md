@@ -1,36 +1,36 @@
 ---
-title: Lehrmaterial
+title: Website
 ---
 
-# Lehrmaterial
+# Website
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
-bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
-hingegen [Vorlesung](lecture.html).
+Der Dokumenttyp Website [**Website**] bezeichnet eine Sammlung miteinander verwandter Werke, typischerweise
+basierend auf einer gemeinsamen Webdomain. Eine Website wird auf mindestens einem Server gehostet und ist
+über das Internet oder lokale Netzwerke unter einer uniform resource locator (url) aufrufbar. Alle öffentlich
+aufrufbaren Webseiten bilden gemeinsam das World Wide Web.
+
+Standardfelder im Dokumenttyp Website:
 
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* Edition
+* CreatingCorporation
 * IdentifierDoi
-* IdentifierIsbn
+* IdentifierUrl
 * Institute
 * **Language**
 * **Licence** *(wenn Volltext vhd.)*
 * Note
 * open_access
-* PageNumber
 * PersonAuthor *(Subfields: AcademicTitle, IdentifierOrcid)*
 * PersonContributor *(Subfield: AcademicTitle)*
 * **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublisherName
 * PublisherPlace
-* Series
 * SubjectDDC
 * SubjectSwd
 * SubjectUncontrolled
 * **ThesisPublisher** *(wenn Volltext vhd.)*
 * TitleAbstract
 * **TitleMain**
-* TitleParent
 * TitleSub

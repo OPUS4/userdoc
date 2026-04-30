@@ -11,24 +11,19 @@ Bologna-Prozesses für akademische Grade auf der gleichen Stufe des jetzigen Mas
 
 Standardfelder im Dokumenttyp Examensarbeit:
 
-* AcademicTitle *(Subfield in Verbindung mit Personen)*
-* AllowEmailContact *(Subfield in Verbindung mit Personen)*
 * **CompletedDate**
 * CompletedYear
 * ContributingCorporation
-* DateOfBirth *(Subfield in Verbindung mit Personen)*
-* Email *(Subfield in Verbindung mit Personen)*
 * Institute
 * **Language**
 * **Licence**
 * Note
 * PageNumber
-* PersonAdvisor
-* **PersonAuthor**
-* PersonContributor
-* PersonReferee
-* **PersonSubmitter**
-* PlaceOfBirth *(Subfield in Verbindung mit Personen)*
+* PersonAdvisor *(Subfield: AcademicTitle)*
+* **PersonAuthor** *(Subfields: AcademicTitle, AllowEmailContact, DateOfBirth, Email, PlaceOfBirth)*
+* PersonContributor *(Subfield: AcademicTitle)*
+* PersonReferee *(Subfield: AcademicTitle)*
+* **PersonSubmitter** *(Subfields: AcademicTitle, **Email**)*
 * PublishedDate
 * PublisherName
 * PublisherPlace
