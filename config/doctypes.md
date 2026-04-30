@@ -98,7 +98,7 @@ müssen deklariert werden, z.B.:
 ### Das Attribut name
 
 Das Attribut `name` legt die Bezeichnung des Feldes fest. Die Namen der Felder sind in der
-CamelCase Schreibweise formuliert. OPUS bringt bereits eine große Anzahl verschiedener
+CamelCase Schreibweise formuliert. OPUS4 bringt bereits eine große Anzahl verschiedener
 [Standardfelder](../reference/fields.html) mit.
 Darüber hinaus können neue, benutzerdefinierte Felder angelegt werden.
 
@@ -673,11 +673,53 @@ XMetaDissPlus. Dafür sind insbesondere die korrekten Terme des Gemeinsamen Voka
 der DCMI-Typ relevant.
 
 In MARC21 wird der DC-Typ (d.h. der Dokumenttyp aus dem Gemeinsamen Vokabular) zur Generierung des
-Hochschulschriftenvermerks verwendet.
+Hochschulschriftenvermerks (Feld 502) verwendet.
 Für die darüber hinausgehende Abbildung eines neues Dokumenttyps auf MARC21 muss das Mapping für die
 Variablen `aufnahmeart`, `bibliographischesLevel` und ggf. `monographisch` (steuert die Verarbeitung
 als selbständiges oder unselbstständiges Werk) sowie ggf. für das Feld 655 in
 `$BASEDIR/modules/oai/views/scripts/index/prefixes/marc21.xslt` angepasst werden.
+
+### Weitere Anpassungen
+
+Für eine möglichst optimale Indexierung durch Suchmaschinen sollte ein neu angelegter Dokumenttyp der
+passenden [HTML-Meta-Tags](../reference/metatags.html)-Klasse zugeordnet werden.
+
+Werden DOIs bei DataCite registriert, sollte auch das Mapping auf das Element `<ResoureType>` im
+DataCite-XML überprüft und ggf. in einer
+[eigenen XSLT-Datei für DataCite](../integration/doi.html#verwendung-einer-eigenen-xslt-datei-für-datacite)
+angepasst werden. Die Umsetzung in OPUS4 folgt im Default dem Muster:
+
+{% highlight xml %}
+<resourceType resourceTypeGeneral=" Resource Type General aus dem DataCite-Vokabularium "> Dokumenttyp aus dem Gemeinsamen Vokabular </resourceType>
+{% endhighlight %}
+
+Um das Mapping für einen neu angelegten Dokumenttyp zu erweitern, sind folgende Zeilen zu ergänzen:
+
+{% highlight xml %}
+<xsl:when test=".=' neuer Dokumenttyp '">
+    <xsl:attribute name="resourceTypeGeneral">
+        <xsl:text> Gewünschter Resource Type General aus dem DataCite-Vokabularium </xsl:text>
+    </xsl:attribute>
+    <xsl:text> Gewünschter Dokumenttyp aus dem Gemeinsamen Vokabular </xsl:text>
+</xsl:when>
+{% endhighlight %}
+
+Beispiel:
+
+{% highlight xml %}
+<xsl:when test=".='mydocumenttype'">
+    <xsl:attribute name="resourceTypeGeneral">
+        <xsl:text>Image</xsl:text>
+    </xsl:attribute>
+    <xsl:text>CartographicMaterial</xsl:text>
+</xsl:when>
+{% endhighlight %}
+
+Das führt dann zu folgender Ausgabe:
+`<resourceType resourceTypeGeneral="Image">CartographicMaterial</resourceType>`.
+
+Informationen zum Element `ResourceType` und den zulässigen Werten des DataCite-Vokabulariums finden sich
+unter https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/resourcetype/.
 
 ### Prüfung der neu angelegten XML-Dokumenttypdefinition(en)
 
