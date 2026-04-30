@@ -47,7 +47,7 @@ publish.filetypes.allowed = pdf,txt,html,htm,jpg
 
 # Dokumenttypen anpassen
 
-OPUS4 liefert standardmäßig 21 vordefinierte [Dokumenttypen](../documenttypes/index.html) aus.
+OPUS4 liefert standardmäßig fast 50 vordefinierte [Dokumenttypen](../documenttypes/index.html) aus.
 Jeder Dokumenttyp besteht aus einer XML-Dokumenttypdefinition und einem Template.
 
 <p class="note" markdown="1">
@@ -98,12 +98,13 @@ müssen deklariert werden, z.B.:
 ### Das Attribut name
 
 Das Attribut `name` legt die Bezeichnung des Feldes fest. Die Namen der Felder sind in der
-CamelCase Schreibweise formuliert. Zur Wahl stehen 70 verschiedene [Standardfelder](../reference/fields.html).
-Es können neue, benutzerdefinierte Felder angelegt werden.
+CamelCase Schreibweise formuliert. OPUS bringt bereits eine große Anzahl verschiedener
+[Standardfelder](../reference/fields.html) mit.
+Darüber hinaus können neue, benutzerdefinierte Felder angelegt werden.
 
-* [Einfache Textfelder neu anlegen](fields.html#einfache-textfelder-neu-anlegen)
-* [Select-Felder neu anlegen](fields.html#select-felder-neu-anlegen)
-* [Benutzerdefinierte Felder (EnrichmentKeys)](../admin/userinterface.html#benutzerdefinierte-felder-enrichmentkeys)
+* [Einfache Textfelder neu anlegen](../translation/fields.html#einfache-textfelder-neu-anlegen)
+* [Select-Felder neu anlegen](../translation/fields.html#select-felder-neu-anlegen)
+* [Benutzerdefinierte Felder (EnrichmentKeys)](../admin/enrichments.html)
 {: class="navlist" }
 
 ### Das Attribut required
@@ -132,7 +133,7 @@ Das Attribut `datatyp` definiert, welchen Eingaben ein Feld erwartet. Folgende W
 | Wert für datatype | Bedeutung |
 |-------------------+-----------|
 | Collection | Browsing-Feld für Sammlungen (Collections) |
-| CollectionLeaf | Browsing-Feld 71 für Sammlungen (Collections), bei dem man bis zur untersten verfügbaren Ebene absteigen muss |
+| CollectionLeaf | Browsing-Feld für Sammlungen (Collections), bei dem man bis zur untersten verfügbaren Ebene absteigen muss |
 | Date | verlangt als Eingabe ein valides Datum |
 | Email | prüft, ob die Eingabe dem Schema einer E-Mail-Adresse entspricht |
 | Enrichment | muss für benutzerdefinierte Felder verwendet werden |
@@ -162,22 +163,25 @@ des gleichen Typs anfordern kann (z. B. um mehrere Autoren einzutragen).
 Bestimmte Felder dürfen jedoch pro Dokument nur einmal abgespeichert werden, weshalb bei
 diesen Feldern eine multiplicity von 1 zwingend notwendig ist:
 
+* ArticleNumber
 * CompletedDate
 * CompletedYear
 * ContributingCorporation
 * CreatingCorporation
-* ThesisDateAccepted
-* ThesisYearAccepted
 * Edition
+* EmbargoDate
 * Issue
 * Language (der Veröffentlichung)
 * PageFirst
 * PageLast
 * PageNumber
+* PublicationState
 * PublishedDate
 * PublishedYear
 * PublisherName
 * PublisherPlace
+* ThesisDateAccepted
+* ThesisYearAccepted
 * Volume
 
 ### Das Unterelement default
@@ -425,7 +429,7 @@ als Bsp. kann hier das Template des Testdokumenttyps "all" unter
 Schließlich sollten noch die erläuterten Sprachdateien (Überschrift und Name des
 Feldes, Hilfetext) angepasst werden (siehe auch [Leitlinien](policies.html)).
 
-* [Felder umbenennen](fields.html#felder-umbenennen)
+* [Felder umbenennen](../translation/fields.html#felder-umbenennen)
 {: class="navlist" }
 
 ## Reihenfolge der angezeigten Felder ändern
@@ -453,7 +457,7 @@ Feld für Advisor an die erste Stelle verschoben:
 
 ## Felder zu einem Dokumenttyp hinzufügen/entfernen
 
-Alle 21 Dokumenttypen, die standardmäßig mit OPUS4 ausgeliefert werden, bestehen aus einem
+Alle Dokumenttypen, die standardmäßig mit OPUS4 ausgeliefert werden, bestehen aus einem
 bestimmten Set an Feldern. Diese Vorauswahl kann individuell angepasst werden, indem Felder aus
 den entsprechenden XML-Dokumenttypdefinitionen und den dazugehörigen Templates entfernt oder
 hinzugefügt werden. Zur Veranschaulichung wird im Folgenden beispielhaft dem Dokumenttyp
@@ -482,7 +486,7 @@ eintragen:
 Die Reihenfolge der Felder im XML-Dokumenttyp hat keine Auswirkung auf die spätere Darstellung.
 Die wird separat über das dazugehörige Template gesteuert.
 
-* [Reihenfolge der angezeigten Felder eines Dokumenttyps ändern](doctypes.html#reihenfolge-der-angezeigten-felder-eines-dokumenttyps-ndern)
+* [Reihenfolge der angezeigten Felder eines Dokumenttyps ändern](#reihenfolge-der-angezeigten-felder-ändern)
 {: class="navlist" }
 
 <p class="warning" markdown="1">
@@ -506,7 +510,7 @@ Die neue Zeile kann an einer beliebigen Stelle im Template (nicht zwingend am En
 werden. Die Reihenfolge der Felder wird über das dazugehörige Template gesteuert.
 </p>
 
-* [Reihenfolge der angezeigten Felder eines Dokumenttyps ändern](doctypes.html#reihenfolge-der-angezeigten-felder-eines-dokumenttyps-ndern)
+* [Reihenfolge der angezeigten Felder eines Dokumenttyps ändern](#reihenfolge-der-angezeigten-felder-ändern)
 {: class="navlist" }
 
 Auf die gleiche Weise können Felder aus einem Dokumenttyp entfernt werden.
@@ -519,7 +523,7 @@ Dokument ohne Sprache als "unbekannter Titel" angezeigt wird und somit nicht suc
 <p class="warning" markdown="1">
 Einige Felder sollten im Hinblick auf die Ablieferung von Netzpublikationen an die DNB (über
 XMetadissPlus) in allen Dokumenttypen erhalten bleiben. Welche Felder dies sind, kann den
-Beschreibungen der [Dokumenttypen](../documenttypen/index.html) entnommen werden.
+Beschreibungen der [Dokumenttypen](../documenttypes/index.html) entnommen werden.
 </p>
 
 ## Dokumenttypen umbenennen
@@ -549,41 +553,54 @@ darf).
 
 Danach ergänzen bzw. entfernen Sie die Felder.
 
-* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufgenentfernen)
+* [Felder zu einem Dokumenttyp hinzufügen/entfernen](#felder-zu-einem-dokumenttyp-hinzufügenentfernen)
 {: class="navlist" }
 
 Damit der neue Dokumenttyp in allen Sprachen mit einer korrekten Bezeichnung angezeigt wird, muss
 in der [Übersetzungsverwaltung][TRANSLATIONS] ein neuer Übersetzungsschlüssel angelegt werden, der
 dem Namen des Dokumenttyp entspricht, also z.B. `mydocumenttype`.
 
-### BibTeX Export von neuen Dokumenttypen
+### BibTeX-Export von neuen Dokumenttypen
 
-Neu angelegte Dokumenttypen werden beim Export in Literaturverwaltungssysteme (RIS- bzw.
-BibTeX-Export) standardmäßig dem Typ "Generic" (RIS) bzw. "MISC" (BibTeX) zugeordnet. Um
-dies zu ändern, muss der neue Dokumenttyp wie folgt in der Datei
-`$BASEDIR/modules/citationExport/views/scripts/index/ris.xslt` (für den RIS-Export) eingetragen werden:
+Neu angelegte Dokumenttypen werden beim BibTeX-Export standardmäßig dem Typ "misc" zugeordnet.
+Um dies zu ändern, muss der neue Dokumenttyp in die beiden Dateien
+* `$BASEDIR/modules/citationExport/views/scripts/index/bibtex.xslt` (für den Einzeltreffer-Export) 
+* `$BASEDIR/modules/export/views/scripts/stylesheets/bibtex.xslt` (für den Listenexport)
+eingetragen werden.
 
-Folgende Zeile muss ergänzt werden:
+Der BibTeX-Dokumenttyp wird in die Variable `pubtype` eingelesen:
 
 {% highlight xml %}
-<xsl:when test="@Type=' neuer Dok umenttyp '">
-<xsl:text>TY - gewünschter RIS-Dok umenttyp </xsl:text>
+<xsl:variable name="pubtype">
+    <xsl:choose>
+        <xsl:when test="@Type='article'">article</xsl:when>
+        <xsl:when test="@Type='bachelorthesis'">mastersthesis</xsl:when>
+         ...
 {% endhighlight %}
 
-Für den BibTeX-Export ist es notwendig, analog zu den im Verzeichnis
-`$BASEDIR/modules/citationEx port/views/scripts/index/`
-bereits vorhandenen Stylesheets
+Hier ist nun das Mapping um den neuen Dokumenttyp mit folgender Zeile zu ergänzen:
 
-* bibtex_article.xslt
-* bibtex_book.xslt
-* bibtex_bookpart.xslt
-* bibtex_conferenceobject.xslt
-* bibtex_doctoralthesis.xslt
-* bibtex_masterthesis.xslt
-* bibtex_preprint.xslt
-* bibtex_report.xslt
+{% highlight xml %}
+<xsl:when test="@Type=' neuer Dokumenttyp '"> gewünschter BibTeX-Dokumenttyp </xsl:when>
+{% endhighlight %}
 
-ein weiteres Stylesheet für den neuen Dokumenttyp zu erstellen.
+### RIS-Export von neuen Dokumenttypen
+
+Im RIS-Export werden neue Dokumenttypen standardmäßig dem Typ "GEN" ("generic") zugeordnet. Um
+dies zu ändern, muss der neue Dokumenttyp in die beiden Dateien
+* `$BASEDIR/modules/citationExport/views/scripts/index/ris.xslt` (für den Einzeltreffer-Export) 
+* `$BASEDIR/modules/export/views/scripts/stylesheets/ris.xslt` (für den Listenexport)
+eingetragen werden.
+
+Das Mapping der OPUS- auf die RIS-Dokumenttypen ist um folgende Zeilen zu ergänzen:
+
+{% highlight xml %}
+<xsl:when test="@Type=' neuer Dokumenttyp '">
+    <xsl:text>TY - gewünschter RIS-Dokumenttyp </xsl:text>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>U1  - neuer Dokumenttyp </xsl:text>
+</xsl:when>
+{% endhighlight %}
 
 ### Ablieferung neuer Dokumenttypen an die DNB
 
