@@ -584,6 +584,12 @@ Hier ist nun das Mapping um den neuen Dokumenttyp mit folgender Zeile zu ergänz
 <xsl:when test="@Type=' neuer Dokumenttyp '"> gewünschter BibTeX-Dokumenttyp </xsl:when>
 {% endhighlight %}
 
+Beispiel: 
+
+{% highlight xml %}
+<xsl:when test="@Type='mydocumenttype'">manual</xsl:when>
+{% endhighlight %}
+
 ### RIS-Export von neuen Dokumenttypen
 
 Im RIS-Export werden neue Dokumenttypen standardmäßig dem Typ "GEN" ("generic") zugeordnet. Um
@@ -602,20 +608,76 @@ Das Mapping der OPUS- auf die RIS-Dokumenttypen ist um folgende Zeilen zu ergän
 </xsl:when>
 {% endhighlight %}
 
-### Ablieferung neuer Dokumenttypen an die DNB
-
-Für die Ablieferung der Dokumente an die Deutsche Nationalbibliothek über die OAI-
-Schnittstelle ist es bei neu angelegten Dokumenttypen sinnvoll, sie auf die Publikationstypen des
-Gemeinsamen Vokabulars für Publikations- und Dokumenttypen zu mappen, da sie sonst dem
-Dokumenttyp [Sonstiges (other)](../documenttypes/other.html) zugeordnet werden. Hierfür muss in der Datei
-`$BASEDIR/modules/oai/views/scripts/index/prefixes/XMetaDissPlus.xslt` folgende Zeile ergänzt werden:
+Beispiel:
 
 {% highlight xml %}
-<xsl:when test="@Type='neuer Dokumenttyp'">
-  <xsl:text> hier einen passenden Dok umenttyp aus dem Gemeinsamen Vok abular für
-             Publik ations- und Dok umenttypen eintragen </xsl:text>
+<xsl:when test="@Type='mydocumenttype'">
+    <xsl:text>TY - COMP</xsl:text>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>U1  - mydocumenttype</xsl:text>
 </xsl:when>
 {% endhighlight %}
+
+### Mapping neuer Dokumenttypen über die OAI-PMH-Schnittstelle
+
+Über die OAI-PMH-Schnittstelle werden Dienste wie BASE oder die Ablieferung an die Deutsche
+Nationalbibliothek bedient. Um eine gute Datenqualität zu gewährleisten, sollte das Mapping
+für neu angelegte Dokumenttypen spezifisch konfiguriert werden.
+
+Die Konfiguration erfolgt in der Datei `$BASEDIR/application/configs/config.ini`. Dort sind die im 
+Folgenden erläuterten Parameter zu ergänzen, sofern der neue Dokumenttyp eine vom Default-Wert 
+abweichende Konfiguration erfordert.
+
+Der Term aus dem Gemeinsamen Vokabular steht im **DC-Typ**. Der Default-Wert ist "Other". Dies bedeutet,
+dass alle neu angelegten Dokumenttypen über die OAI-Schnittstelle standardmäßig als Typ
+[Sonstiges (other)](../documenttypes/other.html) deklariert werden, sofern kein anderer Wert konfiguriert wird.
+
+{% highlight xml %}
+documentType. neuer Dokumenttyp .dcType = ' Gewünschter Dokumenttyp aus dem Gemeinsamen Vokabular '
+{% endhighlight %}
+
+Der Default-Wert für den **DCMI-Typ** ist "Text". Wenn der neue Dokumenttyp hauptsächlich nicht-textuelles Material
+umfasst, ist der DCMI-Typ ebenfalls anzupassen:
+
+{% highlight xml %}
+documentType. neuer Dokumenttyp .dcmiType = ' Gewünschter DCMI-Typ '
+{% endhighlight %}
+
+Die möglichen Werte lassen sich im
+[DCMI Type Vocabulary](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7)
+nachschlagen.
+
+Für **OpenAIRE** ist der Default-Publikationstyp "other". Auch hier empfiehlt es sich, nach Möglichkeit
+einen spezifischeren Publikationstyp zu konfigurieren:
+{% highlight xml %}
+documentType. neuer Dokumenttyp .openAireType = ' Gewünschter OpenAIRE-Publikationstyp '
+{% endhighlight %}
+
+Die Auflistung der Publikationstypen für OpenAIRE v3 finden Sie unter
+https://guidelines.openaire.eu/en/latest/literature/field_publicationtype.html.
+
+Beispiel:
+
+{% highlight xml %}
+doucmentType.mydocumenttype.dcType = 'CartographicMaterial'
+doucmentType.mydocumenttype.dcmiType = 'Image'
+{% endhighlight %}
+
+`doucmentType.mydocumenttype.openAireType` muss im Beispiel nicht konfiguriert werden, weil es für
+kartographisches Material keinen passenden OpenAIRE-Publikationstyp gibt und somit der Default-Wert
+"other" korrekt ist.
+
+Die Einstellungen über die genannten Parameter wirken sich in den Formaten OAI-DC (einschl. OpenAIRE)
+und XMetaDissPlus aus. Die Ablieferung an die Deutsche Nationalbibliothek erfolgt im Format
+XMetaDissPlus. Dafür sind insbesondere die korrekten Terme des Gemeinsamen Vokabulars im DC-Typ sowie
+der DCMI-Typ relevant.
+
+In MARC21 wird der DC-Typ (d.h. der Dokumenttyp aus dem Gemeinsamen Vokabular) zur Generierung des
+Hochschulschriftenvermerks verwendet.
+Für die darüber hinausgehende Abbildung eines neues Dokumenttyps auf MARC21 muss das Mapping für die
+Variablen `aufnahmeart`, `bibliographischesLevel` und ggf. `monographisch` (steuert die Verarbeitung
+als selbständiges oder unselbstständiges Werk) sowie ggf. für das Feld 655 in
+`$BASEDIR/modules/oai/views/scripts/index/prefixes/marc21.xslt` angepasst werden.
 
 ### Prüfung der neu angelegten XML-Dokumenttypdefinition(en)
 
