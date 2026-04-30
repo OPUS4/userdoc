@@ -12,7 +12,7 @@ wurden:
 
 * [Layout](../config/layout.html) anpassen
 * [Startseite](../translation/startpage.html) anpassen
-* [Dokumenttypen](../config/doctype.html) wählen
+* [Dokumenttypen](../config/doctypes.html) wählen
 * [FAQ-Seite](../translation/faq.html) anpassen
 
 ## Rechtliches:
@@ -52,8 +52,8 @@ wurden:
 <p class="info" markdown="1">
 Es wäre schön, wenn Sie uns nach der Liveschaltung eine kurze Nachricht an `opus4@kobv.de` mit der
 Instanz-URL schicken würden, so dass wir die Instanz in die Liste der bekannten OPUS4-Instanzen
-unter Referenzen (<http://www.kobv.de/opus4/referenzen/>) auf der OPUS-Homepage aufnehmen können.
+unter Referenzen (<https://www.kobv.de/opus4/referenzen/>) auf der OPUS-Homepage aufnehmen können.
 Wir empfehlen darüber hinaus, dass der Admin sich auf der OPUS4-User-Mailingliste unter
-<http://listserv.zib.de/mailman/listinfo/kobv-opus-tester> einträgt. Dort werden neue
+<https://listserv.zib.de/mailman/listinfo/kobv-opus-tester> einträgt. Dort werden neue
 Releases bekannt gegeben und Fragen direkt von den Entwicklern beantwortet.
 </p>
