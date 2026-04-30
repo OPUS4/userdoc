@@ -10,7 +10,7 @@ Dokumenttypen 2.0](https://doi.org/10.18452/24147.2)" und sind auch daran angele
 Anwender grundsätzlich freigestellt, die Dokumenttypen nach Bedarf umzubenennen oder nach eigenen Inhalten zu
 definieren. Allerdings sollte beachtet werden, dass das "Gemeinsame Vokabular" einer der wesentlichen
 Standards für den Datenaustausch mit anderen Systemen darstellt, beispielsweise für die automatisierte Ablieferung 
-der Dokumente des Repositoriums an die DNB. Auch das [DINI-Zertifikat](features/dini.html) gibt die Verwendung der
+der Dokumente des Repositoriums an die DNB. Auch das [DINI-Zertifikat](../features/dini.html) gibt die Verwendung der
 Dokumenttypen gemäß dem Gemeinsamen Vokabular vor.
 
 ## Arbeitspapier
