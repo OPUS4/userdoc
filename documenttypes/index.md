@@ -176,7 +176,7 @@ Korrektur eines zuvor veröffentlichten Dokuments.
 
 ## Lehrmaterial
 
-Der Dokumenttyp Lehrmaterial [**Course Material**] bezeichnet Lehrmaterial im weitesten Sinn,
+Der Dokumenttyp [Lehrmaterial](coursematerial.html) (Course Material) bezeichnet Lehrmaterial im weitesten Sinn,
 bspw. Übungsmaterial, Vorbereitungs- oder auch Prüfungsmaterial. Für Vorlesungstexte selbst steht 
 hingegen der Dokumenttyp [Vorlesung](#vorlesung).
 
