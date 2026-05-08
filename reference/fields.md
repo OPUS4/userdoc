@@ -4,42 +4,45 @@ title: Bedeutung der Felder
 
 # Bedeutung der Felder
 
-In den folgenden Tabellen sind alle Felder aufgeführt, die für Dokumente in OPUS 4 verfügbar sind. Im Gegensatz zu
+In den folgenden Tabellen sind die Felder aufgeführt, die für Dokumente in OPUS 4 verfügbar sind. Im Gegensatz zu
 den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind in unterschiedliche Bereiche geteilt.
 
 * [Allgemein](#allgemein)
 * [Datumsangaben](#datumsangaben)
 * [Identifier](#identifier)
 * [Personen](#personen)
-* [Klassifikationen](#klassifikationen)
+* [Klassifikationen und Schlagwörter](#klassifikationen-und-schlagwörter)
 {: class="navlist" }
 
 ## Allgemein
 
 | Feld | Label | Beschreibung |
 |------+-----------------+--------------|
+| ArticleNumber | Artikelnummer | E-Journals verwenden ergänzend oder anstelle von Heftnummern und/oder Seitenzahlen Artikelnummern zur eindeutigen Referenzierung der Artikel |   
 | ContributingCorporation | Beteiligte Körperschaft | Name der Organisation, die einen bedeutsamen intellektuellen Beitrag zum Dokument geleistet hat |
-| CreatingCorporation | Urhebende Körperschaft | Name der Organisation, die den intellektuellen Inhalt des Dokuments verantwortet (bibliographische Angabe) |
-| Edition | Auflage | z.B. Auflage eines Buches (bibliographisches Feld) |
-| Issue | Heft | Heft, in dem bspw. ein Artikel erschienen ist; bibliographisches Feld |
-| Language | Sprache der Veröffentlichung | Sprache, in der die elektronische Ressource verfasst wurde |
-| Licence | Lizenz | beschreibt die Rechte / den Zugriff auf das Dokument (mit / ohne Print on Demand, welche CC-Lizenz ) |
+| CreatingCorporation | Urhebende Körperschaft | Name der Organisation, die den intellektuellen Inhalt des Dokuments verantwortet |
+| Edition | Auflage | Auflage der Veröffentlichung (Ausgabebezeichnung, z.B. "4. Aufl.") |
+| Institute | Institut | zur Abbildung der Struktur einer Einrichtung, um die Dokumente den jeweiligen Einheiten zuordnen zu können (an Hochschulen bspw. Fakultäten, Institute, zentrale Einrichtungen odder Studiengänge) |
+| Issue | Heft | Bezeichnung (meist Nummer) des Heftes, in dem ein Artikel erschienen ist |
+| Language | Sprache der Veröffentlichung | Sprache, in der die elektronische Ressource vorliegt |
+| Licence | Lizenz | Die Bedingungen, zu denen eine Veröffentlichung nachgenutzt werden darf (urheberrechtliche Regelungen, CC-Lizenzen) |
 | Note | Bemerkung | freies Feld für (öffentliche und private) Anmerkungen |
 | PageFirst | Erste Seite | Nummer der ersten Textseite |
 | PageLast | Letzte Seite | Nummer der letzten Textseite |
-| PageNumber | Seitenzahl |Anzahl der Seiten des Dokuments |
-| PublisherName | Verlag | Name des Verlags;bibliographisches Feld |
-| PublisherPlace | Verlagsort | Ort des Verlags; bibliographisches Feld |
+| PageNumber | Seitenzahl | Anzahl der Seiten des Dokuments |
+| PublicationState | Version | Version der Veröffentlichung im Publikationsprozess (Entwurf, Akzeptiertes Manuskript, Originale Verlagspublikation etc.) |
+| PublisherName | Verlag | Name des Verlags |
+| PublisherPlace | Verlagsort | Ort des Verlags |
 | Series | Schriftenreihen | Browsingfeld zur Auswahl der verfügbaren Schriftenreihen |
-| ThesisGrantor | Titel verleihende Institution | der Inhalt dieses Feldes wird über die Institute (Verbreitende Stelle) im Administrationsbereich verwaltet. |
-| ThesisPublisher | Veröffentlichende Institution | der Inhalt dieses Feldes wird über die Institute (Verbreitende Stelle) im Administrationsbereich verwaltet. |
-| TitleAbstract | Abstract / Kurzfassung | Eine Zusammenfassung der Arbeit
+| ThesisGrantor | Titel verleihende Institution | der Inhalt dieses Feldes wird über die ["Informationen für die DNB"](../admin/institutes.html) im Administrationsbereich verwaltet |
+| ThesisPublisher | Veröffentlichende Institution | der Inhalt dieses Feldes wird über die ["Informationen für die DNB"](../admin/institutes.html) im Administrationsbereich verwaltet |
+| TitleAbstract | Abstract / Kurzfassung | eine Zusammenfassung der Arbeit |
 | TitleAdditional | Übersetzter Titel | dieses Feld kommt zum Einsatz, wenn neben dem Originaltitel noch ein übersetzter Titel gefordert ist |
 | TitleMain | Haupttitel | Originaltitel des Dokuments oder des Objekts |
 | TitleParent | Titel des übergordneten Werkes | z.B. Titel der Zeitschrift, des Sammelwerks etc. |
 | TitleSub | Untertitel | Untertitel (Zusatz zum Sachtitel) des Dokuments oder des Objekts |
-| Type | Dokumenttyp | |
-| Volume | Band | Band, in dem bspw. ein Artikel erschienen ist; bibliographisches Feld |
+| Type | Dokumenttyp | OPUS-Dokumenttyp, vgl. Übersicht über die [Dokumenttypen](../documenttypes/index.html) |
+| Volume | Band | i.d.R. Band(nummer)/Jahrgang der Zeitschrift oder Band(zählung) der Schriftenreihe, in der die vorliegende Publiaktion erschienen ist |
 
 ## Datumsangaben
 
@@ -67,19 +70,23 @@ das Datum im Feld "Datum der Abschlussprüfung" (ThesisDateAccepted) verwendet. 
 
 | Feld | Label | Beschreibung |
 |------+-----------------+--------------|
-| IdentifierArxiv | Arxiv-ID | <http://arxiv.org/help/arxiv_identifier> |
-| IdentifierDoi | DOI | Digital Object Identifier, <http://de.wikipedia.org/wiki/Digital_Object_Identifier> |
-| IdentifierHandle | Handle | Handle, Allg. Aufbau: http://hdl.handle.net/Prefix/Suffix |
-| IdentifierIsbn | ISBN | ISBN-Nummer |
-| IdentifierIssn | ISSN | ISSN-Nummer |
+| IdentifierArxiv | ArXiv-ID | <https://info.arxiv.org/help/arxiv_identifier.html> |
+| IdentifierCrisLink | CRIS-Link | Link auf das Forschungsinformationssystem (Current Research Information System, CRIS) |
+| IdentifierDoi | DOI | Digital Object Identifier, <https://de.wikipedia.org/wiki/Digital_Object_Identifier> |
+| IdentifierHandle | Handle | <https://de.wikipedia.org/wiki/Handle_System> |
+| IdentifierIsbn | ISBN | Internationale Stanardbuchnummer (International Standard Book Number, ISBN) |
+| IdentifierIsmn | ISMN | Internationale Standardmusiknummer (International Standard Music Number, ISMN) |
+| IdentifierIssn | ISSN | Internationale Standardnummer für fortlaufende Sammelwerke (International Standard Serial Number, ISSN) |
 | IdentifierOld | alter Identifier | kann genutzt werden, um Datensätze zu referenzieren, die bereits eine ID in einem Vorgängersystem hatten |
-| IdentifierOpac | OPAC-ID | |
-| IdentifierOpus3 |  | Feld für die alte OPUS3-ID |
-| IdentifierPubmed | | |
-| IdentifierSerial | SICI | [Serial Item and Contribution Identifier](http://en.wikipedia.org/wiki/Serial_Item_and_Contribution_Identifier) |
+| IdentifierOpac | OPAC-ID | Identnummer im lokalen Bibliothekskatalog |
+| IdentifierOpus3 | OPUS 3 ID | Feld für die alte OPUS3-ID |
+| IdentifierPubmed | Pubmed-ID | ID in der biomedizinischen Datenbank [PubMed](https://de.wikipedia.org/wiki/PubMed) der National Library of Medicine (USA) |
+| IdentifierSerial | Sequenznummer | |
+| IdentifierSplashUrl | SplashURL |  |
+| IdentifierUnionCat | Verbundkatalog-ID | Identnummer im Verbundkatalog, z.B. PPN im K10plus |
 | IdentifierUrl | URL | kann z.B. benutzt werden, um eine externe URL zum Dokument zu erfassen |
-| [IdentifierUrn](#identifierurn) | URN | eindeutiger Identifikator des Dokuments, der bei der Freischaltung eines Dokuments automatisch vergeben wird, siehe URN SETTINGS 54 (Wichtiger Hinweis zu diesem Feld siehe unten.) |
-| IdentifierUuid | UUID | Universal Identifier |
+| IdentifierUrn | URN | eindeutiger Identifikator des Dokuments, der bei der Freischaltung eines Dokuments automatisch vergeben wird, siehe [Konfiguration der URN-Vergabe](../config/urn.html) (Wichtiger Hinweis zu diesem Feld [siehe unten](#identifierurn)) |
+| IdentifierUuid | UUID | [Universally Unique Identifier](https://de.wikipedia.org/wiki/Universally_Unique_Identifier) (UUID) |
 
 ### IdentifierUrn
 
@@ -98,16 +105,16 @@ geachtet werden, dass die URN aus dem eigenen Namensraum kommt.
 
 ## Personen
 
-| Feld | Label | Bescreibung |
+| Feld | Label | Beschreibung |
 |------+-------+-------------|
-| PersonAdvisor | Betreuer | verantwortlicher Betreuer einer Abschluss- oder Studienarbeit |
-| PersonAuthor | Autor(en) | Angaben zu(m) Autor(en) |
+| PersonAdvisor | Betreuer\*in | verantwortliche/r Betreuer\*in einer Abschluss- oder Studienarbeit |
+| PersonAuthor | Autor\*innen | Autor\*in(nen) der Publikation |
 | PersonContributor | Beteiligte Person | Name der Person, die einen bedeutsamen intellektuellen Beitrag zum Dokument geleistet hat |
-| PersonEditor | Herausgeber | der herausgeber des Werks (bibliographische Angabe) |
-| PersonReferee | Gutachter | ein externer Gutachter, der über die Freischaltung eines Dokuments entschieden hat |
-| PersonSubmitter | Kontaktdaten des Einstellers | Kontaktdaten des Einstellers, Feld für den internen Gebrauch |
-| PersonTranslator | Übersetzer | der Übersetzer eines Werkes |
-| PersonOther | Sonstige beteiligte Personen | Weitere Personen, die nicht den anderen Rollen entsprechen |
+| PersonEditor | Herausgeber*innen | Herausgeber\*in(nen) des Werks |
+| PersonReferee | Gutachter\*innen | Gutachter\*in(nen)/Prüfer\*in(nen) einer Abschluss- oder Studienarbeit |
+| PersonSubmitter | Kontaktdaten der Einstellerin/des Einstellers | Kontaktdaten der Einstellerin/des Einstellers, Feld für den internen Gebrauch |
+| PersonTranslator | Übersetzer\*in | Übersetzer\*in(nen) eines Werkes |
+| PersonOther | Weitere Person | sonstige beteiligte Personen, die nicht den anderen Rollen entsprechen |
 
 ### Unterfelder zu Personen
 * Nachname
@@ -116,8 +123,8 @@ geachtet werden, dass die URN aus dem eigenen Namensraum kommt.
 * E-Mail
 * Geburtsort
 * Geburtsdatum
-* GNDID
-* ORCID
+* GND-ID
+* ORCID iD
 * Interne ID
 
 <p class="note" markdown="1">
@@ -126,20 +133,16 @@ Auch bei Künstlernamen und Persönlichkeiten aus anderen Epochen (z.B. bei Digi
 Wenn kein Vorname zur Namensbezeichnung zugehörig ist, dann muss der Eintrag ins Feld "Nachname" erfolgen. 
 </p>
 
-## Klassifikationen
+## Klassifikationen und Schlagwörter
 
 | Feld | Label | Beschreibung |
 |------+-------+--------------|
-| SubjectBKL | BKL-Klassifikation | Browsingfeld zur Auswahl einer Klassifikation |
-| SubjectCCS | CCS-Klassifikation | Browsingfeld Auswahl einer Klassifikation zur CCS- |
-| SubjectDDC | DDC-Klassifikation | Browsingfeld Auswahl einer Klassifikation zur DDC- |
-| SubjectJEL | JEL-Klassifikation | Browsingfeld Auswahl einer Klassifikation zur JEL- |
-| SubjectMSC | MSC-Klassifikation | Browsingfeld zur Auswahl einer MSC-Klassifikation |
-| SubjectPACS | PACS-Klassifikation | Browsingfeld zur Auswahl einer PACS-Klassifikation |
-| SubjectSwd | SWD-Schlagwort | kontrolliertes Vokabular (SWD) |
+| SubjectBKL | BKL-Klassifikation | Browsingfeld zur Auswahl von Notationen der [Basisklassifikation](https://de.wikipedia.org/wiki/Basisklassifikation) (BKL bzw. BK) |
+| SubjectCCS | CCS-Klassifikation | Browsingfeld zur Auswahl von Notationen des [ACM Computing Classification System](https://de.wikipedia.org/wiki/ACM_Computing_Classification_System) (CCS) |
+| SubjectDDC | DDC-Klassifikation | Browsingfeld zur Auswahl von Notationen der [Dewey-Dezimalklassifikation](https://de.wikipedia.org/wiki/Dewey-Dezimalklassifikation) (Dewey Decimal Classification, DDC) |
+| SubjectJEL | JEL-Klassifikation | Browsingfeld zur Auswahl von Notationen der [JEL-Klassifikation](https://de.wikipedia.org/wiki/Journal_of_Economic_Literature) (wirtschaftswissenschaftliche Klassifikation des _Journal of Economic Literature_) |
+| SubjectMSC | MSC-Klassifikation | Browsingfeld zur Auswahl von Notationen der [Mathematics Subject Classification](https://de.wikipedia.org/wiki/Mathematics_Subject_Classification) (MSC) |
+| SubjectPACS | PACS-Klassifikation | Browsingfeld zur Auswahl von Nationen des [Physics and Astronomy Classification Scheme](https://de.wikipedia.org/wiki/Physics_and_Astronomy_Classification_Scheme) (PACS) |
+| SubjectPsyndex | Psyndex-Schlagwort | Schlagwort aus dem kontrollierten Vokabular von [Psyndex](https://psyndex.de/ueber/inhalte-aufbau/schlagwoerter-klassifikationen/) |
+| SubjectSwd | GND-Schlagwort | Kontrolliertes Vokabular aus der Gemeinsamen Normdatei (GND) |
 | SubjectUncontrolled | Freies Schlagwort / Tag | frei wählbare Beschreibung (kein kontrolliertes Vokabular) |
-
-
-
-
-
