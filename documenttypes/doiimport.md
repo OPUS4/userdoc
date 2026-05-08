@@ -8,7 +8,7 @@ Veröffentlichungsvorgang zu ermöglichen. Im Zuge des Imports wird der Datensat
 anhand der Informationen von Crossref automatisiert dem eigentlichen Dokumenttyp
 in OPUS zugeordnet.
 
-<p class="info">
+<p class="info" markdown="1">
 Besondere Vorsicht ist bei einer Anpassung der Felder geboten. Im Formular müssen alle
 Felder vorhanden sein, die für das Mapping von Crossref nach OPUS 4 in
 `$BASEDIR/public/layouts/opus4/js/doiAssist.js` bzw. `$BASEDIR/public/layouts/opus4/js/getDoi.js`
