@@ -654,16 +654,16 @@ documentType. neuer Dokumenttyp .openAireType = ' Gewünschter OpenAIRE-Publikat
 {% endhighlight %}
 
 Die Auflistung der Publikationstypen für OpenAIRE v3 finden Sie unter
-https://guidelines.openaire.eu/en/latest/literature/field_publicationtype.html
+<https://guidelines.openaire.eu/en/latest/literature/field_publicationtype.html>.
 
 Beispiel:
 
 {% highlight xml %}
-doucmentType.mydocumenttype.dcType = 'CartographicMaterial'
-doucmentType.mydocumenttype.dcmiType = 'Image'
+documentType.mydocumenttype.dcType = 'CartographicMaterial'
+documentType.mydocumenttype.dcmiType = 'Image'
 {% endhighlight %}
 
-`doucmentType.mydocumenttype.openAireType` muss im Beispiel nicht konfiguriert werden, weil es für
+`documentType.mydocumenttype.openAireType` muss im Beispiel nicht konfiguriert werden, weil es für
 kartographisches Material keinen passenden OpenAIRE-Publikationstyp gibt und somit der Default-Wert
 "other" korrekt ist.
 
@@ -716,10 +716,13 @@ Beispiel:
 {% endhighlight %}
 
 Das führt dann zu folgender Ausgabe:
-`<resourceType resourceTypeGeneral="Image">CartographicMaterial</resourceType>`.
+
+{% highlight xml %}
+<resourceType resourceTypeGeneral="Image">CartographicMaterial</resourceType>
+{% endhighlight %}
 
 Informationen zum Element `ResourceType` und den zulässigen Werten des DataCite-Vokabulariums finden sich
-unter https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/resourcetype/
+unter <https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/resourcetype/>.
 
 ### Prüfung der neu angelegten XML-Dokumenttypdefinition(en)
 
