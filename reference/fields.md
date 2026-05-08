@@ -22,10 +22,10 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 | ContributingCorporation | Beteiligte Körperschaft | Name der Organisation, die einen bedeutsamen intellektuellen Beitrag zum Dokument geleistet hat |
 | CreatingCorporation | Urhebende Körperschaft | Name der Organisation, die den intellektuellen Inhalt des Dokuments verantwortet |
 | Edition | Auflage | Auflage der Veröffentlichung (Ausgabebezeichnung, z.B. "4. Aufl.") |
-| Institute | Institut | zur Abbildung der Struktur einer Einrichtung, um die Dokumente den jeweiligen Einheiten zuordnen zu können (an Hochschulen bspw. Fakultäten, Institute, zentrale Einrichtungen odder Studiengänge) |
+| Institute | Institut | zur Abbildung der Struktur einer Einrichtung, um die Dokumente den jeweiligen Einheiten zuordnen zu können (an Hochschulen bspw. Fakultäten, Institute, zentrale Einrichtungen oder Studiengänge) |
 | Issue | Heft | Bezeichnung (meist Nummer) des Heftes, in dem ein Artikel erschienen ist |
 | Language | Sprache der Veröffentlichung | Sprache, in der die elektronische Ressource vorliegt |
-| Licence | Lizenz | Die Bedingungen, zu denen eine Veröffentlichung nachgenutzt werden darf (urheberrechtliche Regelungen, CC-Lizenzen) |
+| Licence | Lizenz | die Bedingungen, zu denen eine Veröffentlichung nachgenutzt werden darf (urheberrechtliche Regelungen, CC-Lizenzen) |
 | Note | Bemerkung | freies Feld für (öffentliche und private) Anmerkungen |
 | PageFirst | Erste Seite | Nummer der ersten Textseite |
 | PageLast | Letzte Seite | Nummer der letzten Textseite |
@@ -34,10 +34,10 @@ den Labeln können die Feldbezeichnungen nicht geändert werden. Die Felder sind
 | PublisherName | Verlag | Name des Verlags |
 | PublisherPlace | Verlagsort | Ort des Verlags |
 | Series | Schriftenreihen | Browsingfeld zur Auswahl der verfügbaren Schriftenreihen |
-| ThesisGrantor | Titel verleihende Institution | der Inhalt dieses Feldes wird über die ["Informationen für die DNB"](../admin/institutes.html) im Administrationsbereich verwaltet |
-| ThesisPublisher | Veröffentlichende Institution | der Inhalt dieses Feldes wird über die ["Informationen für die DNB"](../admin/institutes.html) im Administrationsbereich verwaltet |
+| ThesisGrantor | Titel verleihende Institution | der Inhalt dieses Feldes wird über die [Informationen für die DNB](../admin/institutes.html) im Administrationsbereich verwaltet |
+| ThesisPublisher | Veröffentlichende Institution | der Inhalt dieses Feldes wird über die [Informationen für die DNB](../admin/institutes.html) im Administrationsbereich verwaltet |
 | TitleAbstract | Abstract / Kurzfassung | eine Zusammenfassung der Arbeit |
-| TitleAdditional | Übersetzter Titel | dieses Feld kommt zum Einsatz, wenn neben dem Originaltitel noch ein übersetzter Titel gefordert ist |
+| TitleAdditional | Übersetzter Titel | Feld für Titel in weiteren Sprachen neben dem Originaltitel |
 | TitleMain | Haupttitel | Originaltitel des Dokuments oder des Objekts |
 | TitleParent | Titel des übergordneten Werkes | z.B. Titel der Zeitschrift, des Sammelwerks etc. |
 | TitleSub | Untertitel | Untertitel (Zusatz zum Sachtitel) des Dokuments oder des Objekts |
@@ -85,7 +85,7 @@ das Datum im Feld "Datum der Abschlussprüfung" (ThesisDateAccepted) verwendet. 
 | IdentifierSplashUrl | SplashURL |  |
 | IdentifierUnionCat | Verbundkatalog-ID | Identnummer im Verbundkatalog, z.B. PPN im K10plus |
 | IdentifierUrl | URL | kann z.B. benutzt werden, um eine externe URL zum Dokument zu erfassen |
-| IdentifierUrn | URN | eindeutiger Identifikator des Dokuments, der bei der Freischaltung eines Dokuments automatisch vergeben wird, siehe [Konfiguration der URN-Vergabe](../config/urn.html) (Wichtiger Hinweis zu diesem Feld [siehe unten](#identifierurn)) |
+| IdentifierUrn | URN | eindeutiger Identifikator des Dokuments, der bei der Freischaltung eines Dokuments automatisch vergeben wird, siehe [Konfiguration der URN-Vergabe](../config/urn.html) (wichtiger Hinweis zu diesem Feld [siehe unten](#identifierurn)) |
 | IdentifierUuid | UUID | [Universally Unique Identifier](https://de.wikipedia.org/wiki/Universally_Unique_Identifier) (UUID) |
 
 ### IdentifierUrn
@@ -140,7 +140,7 @@ Wenn kein Vorname zur Namensbezeichnung zugehörig ist, dann muss der Eintrag in
 | SubjectBKL | BKL-Klassifikation | Browsingfeld zur Auswahl von Notationen der [Basisklassifikation](https://de.wikipedia.org/wiki/Basisklassifikation) (BKL bzw. BK) |
 | SubjectCCS | CCS-Klassifikation | Browsingfeld zur Auswahl von Notationen des [ACM Computing Classification System](https://de.wikipedia.org/wiki/ACM_Computing_Classification_System) (CCS) |
 | SubjectDDC | DDC-Klassifikation | Browsingfeld zur Auswahl von Notationen der [Dewey-Dezimalklassifikation](https://de.wikipedia.org/wiki/Dewey-Dezimalklassifikation) (Dewey Decimal Classification, DDC) |
-| SubjectJEL | JEL-Klassifikation | Browsingfeld zur Auswahl von Notationen der [JEL-Klassifikation](https://de.wikipedia.org/wiki/Journal_of_Economic_Literature) (wirtschaftswissenschaftliche Klassifikation des _Journal of Economic Literature_) |
+| SubjectJEL | JEL-Klassifikation | Browsingfeld zur Auswahl von Notationen der [JEL-Klassifizierung](https://de.wikipedia.org/wiki/JEL-Klassifizierung)(wirtschaftswissenschaftliche Klassifikation des _Journal of Economic Literature_) |
 | SubjectMSC | MSC-Klassifikation | Browsingfeld zur Auswahl von Notationen der [Mathematics Subject Classification](https://de.wikipedia.org/wiki/Mathematics_Subject_Classification) (MSC) |
 | SubjectPACS | PACS-Klassifikation | Browsingfeld zur Auswahl von Nationen des [Physics and Astronomy Classification Scheme](https://de.wikipedia.org/wiki/Physics_and_Astronomy_Classification_Scheme) (PACS) |
 | SubjectPsyndex | Psyndex-Schlagwort | Schlagwort aus dem kontrollierten Vokabular von [Psyndex](https://psyndex.de/ueber/inhalte-aufbau/schlagwoerter-klassifikationen/) |
