@@ -15,20 +15,20 @@ Die wichtigste Datei dafür ist die `config.ini`:
 Die Datei wurde während der Installation angelegt und alle aus technischer Sicht (zwingend) notwendigen Einträge
 wurden dabei bereits vorgenommen.
 
-Weitere Optionen, die hier beschrieben sind ermöglichen die Anpassung der OPUS 4 Instanz an die individuellen
+Weitere Optionen, die hier beschrieben sind, ermöglichen die Anpassung der OPUS 4 Instanz an die individuellen
 Bedürfnisse Ihres Repositoriums.
 
-<p class="note" markdown="1">
-Die Administration enthält in OPUS 4.5 die Möglichkeit einige wenige Konfigurationseinstellungen im Browser
-zu editieren. Diese Funktionalität ist noch in der Entwicklung. Die so modifizierten Einstellungen werden
-in der Datei `config.xml` gespeichert. Die Werte in dieser Datei überschreiben die Einstellungen der
-`config.ini`.
+<p class="warning" markdown="1">
+Die Defaultwerte für viele Konfigurationseinstellungen befinden sich in der `application.ini`. Diese Datei
+sollte lokal nicht editiert werden. Sie enthält viele Parameter, die bestimmten wie OPUS 4 intern funktioniert.
 </p>
 
-<!--p class="warning" markdown="1">
-Die Defaultwerte für viele Konfigurationseinstellungen befinden sich in der `application.ini`. Diese Datei
-sollte lokal nicht editiert werden. Sei enthält viele Parameter, die bestimmten wie OPUS 4 intern funktioniert.
-</p-->
+## Optionen in der Administration
+
+Einige Optionen können in der Administration unter Einstellungen->Optionen im Browser editiert werden. Diese
+Einstellungen werden in der Datenbank gespeichert.
+
+Welche Optionen hier verfügbar sind, wird über die Datei `application/configs/options.yml` bestimmt. 
 
 ## Erweiterte Konfiguration
 
