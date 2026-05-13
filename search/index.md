@@ -25,3 +25,17 @@ Die Übersetzungsschlüssel der Suche sind dem Modul **solrsearch** zugeordnet.
 
 * [Übersetzungsressourcen](../translation/index.html)
 {: class="navlist" }
+
+### Anzahl der Suchergebnisse 
+
+Die Optionen für die Anzahl der Suchergebnisse pro Seite können konfiguriert 
+werden.
+
+    search.resultsPerPageOptions = 10, 20, 50, 100
+
+Als Wert ist auch `all` möglich. Dabei ist zu beachten, dass auch die folgenden
+Optionen greifen und die maximal angezeigten Dokumente begrenzen.
+
+    plugins.export.default.maxDocumentsGuest = 100
+    plugins.export.default.maxDocumentsUser = 500
+
