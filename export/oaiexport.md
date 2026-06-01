@@ -102,7 +102,7 @@ oai.format.marc21.xsltFile = APPLICATION_PATH "/application/configs/oai/mymarc21
 ### Format EPICUR
 
 Das Format `EPICUR` beinhaltet die Transfersyntax, um einen Metadatensatz mit der URN und der entsprechenden URL zu harvesten.
-Durch den Abruf der Daten mit dem Präfix `EPICUR` holt sich die DNB die Informationen zu den vergegeben URNs und registriert diese bei sich.
+Durch den Abruf der Daten mit dem Präfix `epicur` holt sich die DNB die Informationen zu den vergegeben URNs und registriert diese bei sich.
 
 ### Format OAI-DC
 
@@ -120,8 +120,8 @@ Folgende zwei Vorteile bietet die Ablieferung mit XMetadissPlus:
 
 Die Repositorien, die ihre Daten auf diesem Wege an die DNB liefern möchten, müssen bestimmte Pflichtmetadaten erfassen und sich an die entsprechenden Konventionen halten.
 
-Alle Elemente von XMetaDissPlus finden Sie unter
-<https://www.dnb.de/SharedDocs/Downloads/DE/Professionell/Standardisierung/xmdpSchema24.zip?__blob=publicationFile&v=5>
+Weitere Informationen zu XMetaDissPlus finden Sie auf den Seiten der DNB unter
+<https://www.dnb.de/xmetadissplusnp>.
 
 Wichtige Elemente von XMetaDissPlus sind:
 
@@ -162,7 +162,7 @@ z.B.
 </dc:creator>
 ~~~
 
-`<dcterms:isPartOf>` - Pflichtelement für alle periodischen Veröffentlichungen beim Dokumenttyp "PeriodicalPart", wie z.B. Jahrbücher, Amtsblätter etc. Dieses Element erwartet als Attribute `<ZSTitelID>` und `<ZS-Ausgabe>`. In der OPUS-Standardauslieferung können diese Angaben mit der Zuordnung zu einer Schriftenreihe und einer Bandnummer 
+`<dcterms:isPartOf>` - Pflichtelement für alle periodischen Erstveröffentlichungen bei den Dokumenttypen "Article", "ContributionToPeriodical", "Corrigendum", "DataPaper", "Editorial", "LetterToTheEditor", "PeriodicalPart", "ResearchArticle", "ReviewArticle" und "SoftwarePaper", wie z.B. Aufsätze, Jahrbücher, Amtsblätter etc. Dieses Element erwartet als Attribute `<ZSTitelID>` und `<ZS-Ausgabe>`. In der OPUS-Standardauslieferung können diese Angaben mit der Zuordnung zu einer Schriftenreihe und einer Bandnummer 
 übergeben werden. Im Attribut "ddb:ZSTitelID" erscheint dann die ID der Schriftenreihe, über welche die DNB den Bezug zum Dokument herstellt.
 
 ~~~ xml
@@ -173,7 +173,7 @@ z.B.
 
 ### Format MARC21
 
-`MARC21` ist eine Version von MARC (MAchine-Readable Cataloging) und wird vor allem in Bibliothekskatalogen für Bibliografische Daten verwendet. Siehe "Deutsche Übersetzung des  MARC 21 Format for Bibliographic Data" <https://d-nb.info/996983511/34>.
+`MARC21` ist die am weitesten vebreitete Variante von MARC (MAchine-Readable Cataloging) und dient vor allem in der Bibliothekswelt für den Austausch bibliografischer Daten. Die Umsetzung in OPUS basiert auf der [Spezifikation der Libary of Congress](https://www.loc.gov/marc/marcdocz.html), die für die Pflege und Weiterentwicklung des Formats zuständig ist. Eine deutsche Übersetzung des "MARC 21 Format for Bibliographic Data" von 2008 ist bei der DNB unter <https://nbn-resolving.org/urn:nbn:de:101-2009061901> verfügbar. 
 Für den Abruf der Daten über die OAI-Schnittstelle mit dem Präfix `marc21` können noch zusätzliche Angaben in der `config.ini`-Datei konfiguriert werden, die noch nicht in der Datenbank stehen.
 
 ~~~ ini
