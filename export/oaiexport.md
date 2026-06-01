@@ -162,7 +162,7 @@ z.B.
 </dc:creator>
 ~~~
 
-`<dcterms:isPartOf>` - Pflichtelement für alle periodischen Erstveröffentlichungen bei den Dokumenttypen "Article", "ContributionToPeriodical", "Corrigendum", "DataPaper", "Editorial", "LetterToTheEditor", "PeriodicalPart", "ResearchArticle", "ReviewArticle" und "SoftwarePaper", wie z.B. Aufsätze, Jahrbücher, Amtsblätter etc. Dieses Element erwartet als Attribute `<ZSTitelID>` und `<ZS-Ausgabe>`. In der OPUS-Standardauslieferung können diese Angaben mit der Zuordnung zu einer Schriftenreihe und einer Bandnummer 
+`<dcterms:isPartOf>` - Pflichtelement für alle periodischen Veröffentlichungen beim Dokumenttyp "PeriodicalPart", wie z.B. Jahrbücher, Amtsblätter etc. Dieses Element erwartet als Attribute `<ZSTitelID>` und `<ZS-Ausgabe>`. In der OPUS-Standardauslieferung können diese Angaben mit der Zuordnung zu einer Schriftenreihe und einer Bandnummer 
 übergeben werden. Im Attribut "ddb:ZSTitelID" erscheint dann die ID der Schriftenreihe, über welche die DNB den Bezug zum Dokument herstellt.
 
 ~~~ xml
@@ -173,7 +173,7 @@ z.B.
 
 ### Format MARC21
 
-`MARC21` ist die am weitesten vebreitete Variante von MARC (MAchine-Readable Cataloging) und dient vor allem in der Bibliothekswelt für den Austausch bibliografischer Daten. Die Umsetzung in OPUS basiert auf der [Spezifikation der Libary of Congress](https://www.loc.gov/marc/marcdocz.html), die für die Pflege und Weiterentwicklung des Formats zuständig ist. Eine deutsche Übersetzung des "MARC 21 Format for Bibliographic Data" von 2008 ist bei der DNB unter <https://nbn-resolving.org/urn:nbn:de:101-2009061901> verfügbar. 
+`MARC21` ist die am weitesten vebreitete Variante von MARC (MAchine-Readable Cataloging) und dient vor allem in der Bibliothekswelt für den Austausch bibliografischer Daten. Die Umsetzung in OPUS basiert auf der [Spezifikation der Library of Congress](https://www.loc.gov/marc/marcdocz.html), die für die Pflege und Weiterentwicklung des Formats zuständig ist. Eine deutsche Übersetzung des "MARC 21 Format for Bibliographic Data" von 2008 ist bei der DNB unter <https://nbn-resolving.org/urn:nbn:de:101-2009061901> verfügbar. 
 Für den Abruf der Daten über die OAI-Schnittstelle mit dem Präfix `marc21` können noch zusätzliche Angaben in der `config.ini`-Datei konfiguriert werden, die noch nicht in der Datenbank stehen.
 
 ~~~ ini
