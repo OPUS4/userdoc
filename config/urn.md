@@ -30,8 +30,7 @@ Um zu prüfen, ob in einer früheren OPUS-Version URNs für Dokumente ohne sicht
 folgendes Script genutzt werden:
 
 {% highlight bash %}
-$ opus4/scripts/
-$ php opus-console.php snippets/find_urns_for_docs_without_visible_files.php
+$ bin/opus4 console:exec scripts/snippets/find_urns_for_docs_without_visible_files.php
 {% endhighlight %}
 
 Bitte achten Sie beim Migrieren von Dokumenten, die bereits URNs besitzen, darauf, innerhalb des Konfigschlüssels
